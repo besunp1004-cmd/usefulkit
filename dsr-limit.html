@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSR 대출 한도 계산기 (2026년 기준·스트레스 금리 반영) | 유용한 생활 도구함</title>
+<meta name="description" content="연소득과 기존 대출 원리금을 넣으면 현재 DSR과 추가로 빌릴 수 있는 최대 금액을 계산합니다. 스트레스 금리와 상환 방식(원리금균등·원금균등)별 한도를 함께 비교합니다.">
+<link rel="canonical" href="https://usefulkit.kr/dsr-limit.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:title" content="DSR 대출 한도 계산기">
+<meta property="og:description" content="DSR 40% 규제와 스트레스 금리를 반영해 추가 대출 가능액을 계산합니다.">
+<meta property="og:url" content="https://usefulkit.kr/dsr-limit.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="theme-color" content="#12305f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"DSR 대출 한도 계산기","url":"https://usefulkit.kr/dsr-limit.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"연소득, 기존 대출 원리금, DSR 규제비율, 스트레스 금리, 상환 방식을 넣어 현재 DSR과 최대 신규 대출액을 계산합니다."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"DSR은 원금까지 포함하나요?","acceptedAnswer":{"@type":"Answer","text":"네. DSR(총부채원리금상환비율)은 모든 가계대출의 1년치 원금과 이자를 합쳐 연소득으로 나눈 값입니다. 이자만 보는 DTI보다 엄격합니다."}},
+{"@type":"Question","name":"스트레스 금리는 실제로 내는 이자인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 대출 심사에서 한도만 계산할 때 쓰는 가상의 가산금리입니다. 실제 대출 금리에는 붙지 않습니다."}},
+{"@type":"Question","name":"마이너스통장은 어떻게 반영하나요?","acceptedAnswer":{"@type":"Answer","text":"은행은 약정 한도 전체를 빚으로 보고 연간 이자를 산정하는 경우가 많습니다. 실제 사용액이 아니라 한도 기준으로 계산되므로, 쓰지 않는 통장은 해지하는 편이 한도에 유리합니다."}},
+{"@type":"Question","name":"DSR 40%를 넘으면 대출이 안 되나요?","acceptedAnswer":{"@type":"Answer","text":"은행권은 차주별 DSR 40%가 기준이지만, 예외 상품(정책대출·전세대출 일부)과 2금융권(50%) 기준이 따로 있습니다. 총량 규제와 담보 가치에 따라 실제 한도는 더 줄어들 수 있습니다."}}
+]}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">UK</span>
+      <span class="brand-text">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 10종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">대출 한도</span>
+      <h1>DSR 대출 한도 계산기</h1>
+      <p class="page-lead">대출 한도는 금리표가 아니라 <b>소득과 기존 빚</b>이 결정합니다. 연소득과 지금 갚고 있는 원리금을 넣으면 <b>현재 DSR</b>과 <b>추가로 빌릴 수 있는 금액</b>을 스트레스 금리까지 반영해 계산합니다.</p>
+      <div class="page-meta">
+        <span>2026년 11월 기준</span>
+        <span>스트레스 DSR 3단계 반영</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">DSR 구조</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#examples">사례</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>DSR은 '빚 ÷ 소득'이 아니라 '1년에 갚는 돈 ÷ 소득'</h2>
+      <p>DSR(총부채원리금상환비율, Debt Service Ratio)은 내가 가진 모든 가계대출의 <b>1년치 원금과 이자</b>를 연소득으로 나눈 비율입니다. 잔액 3억원이 아니라 <b>올해 갚아야 하는 금액</b>을 봅니다. 이자만 계산하는 DTI보다 엄격해서, 같은 소득이라도 만기가 짧은 대출을 많이 보유하면 한도가 크게 줄어듭니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>DSR 계산식과 예시</caption>
+          <thead>
+            <tr><th>항목</th><th>계산</th><th class="num">예시</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>연소득</td><td>근로소득 기준(비과세 제외)</td><td class="num">6,000만원</td></tr>
+            <tr><td>기존 대출 연간 원리금</td><td>주담대 + 신용대출 + 마이너스통장 이자 + 전세대출 이자</td><td class="num">1,560만원</td></tr>
+            <tr><td>현재 DSR</td><td>1,560만 ÷ 6,000만</td><td class="num">26%</td></tr>
+            <tr><td>허용 원리금 (DSR 40%)</td><td>2,400만 − 1,560만</td><td class="num">840만원</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>스트레스 금리 — 한도만 줄이는 가상의 금리</h2>
+      <p>2025년 7월 1일부터 <b>스트레스 DSR 3단계</b>가 시행됐습니다. 모든 업권의 가계대출에 <b>1.5%p</b>의 가산금리를 더한 금리로 상환 능력을 심사합니다. 실제 대출 금리에는 붙지 않고, 한도 계산에만 쓰입니다. 비수도권 주택담보대출은 0.75%p를 적용해 왔습니다.</p>
+      <p>즉 금리 4.0%짜리 대출도 심사에서는 <b>5.5%</b>로 계산합니다. 같은 소득으로 빌릴 수 있는 금액이 줄어드는 이유입니다. 이 계산기는 가산금리를 직접 고를 수 있게 했습니다.</p>
+      <div class="callout warn">
+        <span class="callout-title">한도 계산에서 자주 틀리는 세 가지</span>
+        <ul>
+          <li><b>마이너스통장</b> — 실제 사용액이 아니라 <b>약정 한도</b>와 그에 대한 이자로 잡히는 경우가 많습니다. 쓰지 않는 통장은 한도 축소나 해지를 검토하세요.</li>
+          <li><b>신용대출</b> — 만기가 짧아 연간 원금 부담이 큽니다. 1억원을 5년 만기로 빌리면 연 원금만 2,000만원입니다.</li>
+          <li><b>전세대출</b> — 이자만 넣는 경우가 많은데, 규제에 따라 원금 일부가 반영될 수 있습니다. 은행에 <b>DSR 산정 내역</b>을 서면으로 요청하세요.</li>
+        </ul>
+      </div>
+
+      <h2>상환 방식이 한도를 바꿉니다</h2>
+      <p>같은 금리·같은 기간이라도 <b>원리금균등</b>은 첫해 상환액이 적고, <b>원금균등</b>은 첫해에 원금을 많이 갚아 연간 부담이 큽니다. 은행은 원금균등 대출의 한도를 계산할 때 통상 <b>1년차 원리금</b>을 기준으로 잡기 때문에, 원리금균등보다 한도가 낮게 나옵니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>상환 방식</th><th>1년차 원리금</th><th>한도에 미치는 영향</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>원리금균등분할</td><td>매달 같은 금액</td><td>가장 유리(한도 최대)</td></tr>
+            <tr><td>원금균등분할</td><td>원금 ÷ 만기 + 이자(1년차)</td><td>원리금균등보다 한도가 낮음</td></tr>
+            <tr><td>만기일시</td><td>이자만 + 만기 원금</td><td>은행별로 원금 안분을 반영, 한도가 크게 줄 수 있음</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">DSR 40% · 스트레스 금리 1.5%p 기본</span>
+        <h2 class="calc-title">DSR 한도 계산기</h2>
+        <p class="calc-lead">연소득과 기존 대출 원리금을 넣으면 <b>현재 DSR</b>, <b>추가 가능한 연간 원리금</b>, <b>최대 신규 대출액</b>과 월 상환액을 계산합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>소득</h2></div>
+        <div class="calc-field">
+          <label class="calc-label" for="ds-income">본인 연소득</label>
+          <div class="calc-input"><input id="ds-income" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip">근로소득은 <b>비과세를 제외한 총급여</b> 기준입니다. 사업소득은 종합소득금액으로 넣으세요.</p>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check"><input type="checkbox" id="ds-joint"><span class="calc-box"></span>
+            <span class="calc-rowtext"><b>배우자 소득 합산</b><em>공동명의·부부합산 심사 상품에 해당할 때</em></span></label>
+        </div>
+        <div class="calc-field" id="ds-spouseWrap" hidden>
+          <label class="calc-label" for="ds-spouse">배우자 연소득</label>
+          <div class="calc-input calc-input-sm"><input id="ds-spouse" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>기존 대출 (연간 원리금)</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ds-mortgage">주택담보대출</label>
+            <div class="calc-input calc-input-sm"><input id="ds-mortgage" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원/년</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ds-credit">신용대출</label>
+            <div class="calc-input calc-input-sm"><input id="ds-credit" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원/년</span></div>
+          </div>
+        </div>
+        <div class="calc-grid2 calc-mt">
+          <div class="calc-field">
+            <label class="calc-label" for="ds-overdraft">마이너스통장 이자</label>
+            <div class="calc-input calc-input-sm"><input id="ds-overdraft" type="number" inputmode="numeric" min="0" step="1" placeholder="0"><span class="calc-unit">만원/년</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ds-jeonse">전세대출 이자</label>
+            <div class="calc-input calc-input-sm"><input id="ds-jeonse" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원/년</span></div>
+          </div>
+        </div>
+        <p class="calc-tip">은행 앱의 <b>대출 상환 스케줄</b>에서 1년치 원금+이자를 확인해 넣으면 가장 정확합니다. 이자만 있는 항목은 이자만 넣으세요.</p>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">3</span><h2>신규 대출 조건</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ds-rate">신규 대출 금리 (연)</label>
+            <div class="calc-input"><input id="ds-rate" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="0"><span class="calc-unit">%</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ds-years">만기</label>
+            <div class="calc-input calc-input-sm"><input id="ds-years" type="number" inputmode="numeric" min="1" max="50" step="1" placeholder="30"><span class="calc-unit">년</span></div>
+          </div>
+        </div>
+        <div class="calc-grid2 calc-mt">
+          <div class="calc-field">
+            <label class="calc-label" for="ds-stress">스트레스 금리 가산</label>
+            <div class="calc-input calc-input-sm"><select id="ds-stress">
+              <option value="0">없음 (0%p)</option>
+              <option value="0.5">0.50%p</option>
+              <option value="0.75">0.75%p (지방 주담대)</option>
+              <option value="1">1.00%p</option>
+              <option value="1.5" selected>1.50%p (3단계)</option>
+              <option value="3">3.00%p</option>
+            </select></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ds-method">상환 방식</label>
+            <div class="calc-input calc-input-sm"><select id="ds-method">
+              <option value="annuity" selected>원리금균등분할</option>
+              <option value="equal">원금균등분할</option>
+            </select></div>
+          </div>
+        </div>
+        <div class="calc-field calc-mt">
+          <label class="calc-label" for="ds-ratio">적용 DSR 비율</label>
+          <div class="calc-input calc-input-sm"><input id="ds-ratio" type="number" inputmode="numeric" min="1" max="100" step="1" placeholder="40"><span class="calc-unit">%</span></div>
+          <p class="calc-tip">은행권 차주별 기준 40%, 2금융권 50%입니다. 비우면 40%로 계산합니다.</p>
+        </div>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">4</span><h2>계산 결과</h2></div>
+        <div id="ds-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="ds-resNow"></div>
+          <div class="calc-res" id="ds-resMax"></div>
+        </div>
+
+        <dl class="calc-summary" id="ds-summary"></dl>
+
+        <details class="calc-break" id="ds-stressBox">
+          <summary>스트레스 금리별 한도 비교</summary>
+          <div class="calc-tablewrap" id="ds-stressBody"></div>
+        </details>
+
+        <details class="calc-break" id="ds-basisBox">
+          <summary>계산에 쓴 숫자 보기</summary>
+          <div class="calc-tablewrap" id="ds-basisBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="ds-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="ds-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ds-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="ds-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">한도를 늘리는 현실적인 순서</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span>쓰지 않는 <b>마이너스통장·카드론</b>을 정리합니다. 한도만 있어도 연간 이자가 DSR에 잡힐 수 있습니다.</span></li>
+          <li><b>②</b><span>만기가 짧은 <b>신용대출을 장기로 바꾸거나 갚습니다</b>. 원금 부담이 줄면 DSR이 내려갑니다.</span></li>
+          <li><b>③</b><span>부부 합산 심사 상품인지 확인합니다. 합산하면 소득이 늘지만 <b>배우자 부채도 함께</b> 들어갑니다.</span></li>
+          <li><b>④</b><span>연소득은 <b>비과세 소득을 뺀 값</b>으로 잡힙니다. 식대·차량보조금이 많다면 심사 기준 소득이 생각보다 낮을 수 있습니다.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#2b3550;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>계산 방식</b> — 추가 가능 원리금 = 연소득 × DSR 비율 − 기존 연간 원리금. 이 금액을 신규 대출 조건(금리 + 스트레스 금리, 만기, 상환 방식)의 연간 상환액으로 나눠 최대 대출액을 역산합니다.</p>
+          <p><b>상환 방식</b> — 원리금균등은 월납입액 × 12, 원금균등은 1년차 원금분(대출액 ÷ 만기) + 이자로 계산합니다. 은행 실무와 같지는 않지만 방향은 일치합니다.</p>
+          <p><b>포함하지 않은 것</b> — 총부채원리금상환비율 외의 규제(LTV·총량 한도), 신용평가·담보가치, 카드론·현금서비스, 보증기관 보증 심사, 정책대출 예외는 반영하지 않았습니다. 실제 한도는 은행 심사 결과입니다.</p>
+          <p><b>주의</b> — 스트레스 금리는 6개월마다 바뀌고, 지방 주담대 우대 적용의 종료 여부도 정책에 따라 달라집니다. 실행 전 은행에 적용 금리와 DSR 산정 내역을 확인하세요.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 한도는 금융기관 심사·규제·담보 가치에 따라 달라집니다.</p>
+    </div>
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>판정</th><th>조건</th><th>해석</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>여유 있음</b></td><td>현재 DSR &lt; 규제비율의 80%</td><td>추가 대출 여력이 있습니다. 다만 총량 한도·LTV가 먼저 걸릴 수 있습니다.</td></tr>
+            <tr><td><b>한도 임박</b></td><td>현재 DSR ≥ 규제비율의 80%</td><td>추가 대출이 가능해도 금액이 작습니다. 소액 대출을 갚아 DSR을 낮추는 편이 효과적입니다.</td></tr>
+            <tr><td><b>한도 없음</b></td><td>기존 원리금 ≥ 연소득 × DSR 비율</td><td>지금은 추가 대출이 어렵습니다. 기존 대출 정리나 만기 연장이 먼저입니다.</td></tr>
+            <tr><td><b>입력 대기</b></td><td>연소득 미입력</td><td>연소득을 넣어야 계산이 시작됩니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">'한도'는 '빌릴 수 있는 금액'이고 '빌려도 되는 금액'은 아닙니다</span>
+        DSR은 상환 능력의 상한을 정할 뿐입니다. 원리금균등 30년으로 한도를 꽉 채우면 매달 나가는 돈이 소득의 40%에 가까워집니다. 변동 금리·소득 감소·경조사 같은 변수까지 감당할 수 있는지 따로 판단하세요.
+      </div>
+    </section>
+
+    <section class="prose" id="examples" style="margin-top:16px;">
+      <h2>사례 — 연소득 6,000만원, 기존 원리금 1,560만원</h2>
+      <p>주담대 1,200만원, 신용대출 300만원, 마이너스통장 이자 60만원을 갚고 있는 직장인이 DSR 40%로 신규 대출을 받는다고 가정합니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>계산기로 확인한 사례(원 단위)</caption>
+          <thead>
+            <tr><th>조건</th><th class="num">스트레스 1.5%p</th><th class="num">스트레스 없음</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>적용 금리 (4.0% 기준)</td><td class="num">5.5%</td><td class="num">4.0%</td></tr>
+            <tr><td>허용 연간 원리금</td><td class="num">840만원</td><td class="num">840만원</td></tr>
+            <tr><td>최대 대출액 (30년 원리금균등)</td><td class="num">1억 2,328만원</td><td class="num">1억 4,662만원</td></tr>
+            <tr><td>월 상환액</td><td class="num">70만원</td><td class="num">70만원</td></tr>
+            <tr><td>30년 총이자</td><td class="num">1억 2,871만원</td><td class="num">1억 815만원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>스트레스 금리 1.5%p 때문에 한도가 <b>2,334만원</b> 줄었습니다. 같은 조건에서 상환 방식을 원금균등으로 바꾸면 한도는 <b>9,509만원</b>까지 내려갑니다. 1년차에 원금을 30년으로 나눠 갚아야 하기 때문입니다.</p>
+      <p>반대로 기존 대출이 1,700만원(DSR 28.3%)이라면 허용 원리금은 700만원으로 줄어 한도도 함께 줄어듭니다. <b>기존 부채 100만원이 신규 한도 약 1,500만원을 지웁니다</b>(30년·5.5% 기준). 소액 대출 정리가 한도 회복에 효과적인 이유입니다.</p>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>DSR은 원금까지 포함하나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>네. 1년치 <b>원금과 이자를 모두</b> 합쳐 연소득으로 나눕니다. 이자만 보는 DTI보다 엄격하고, 만기가 짧은 대출에 불리합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>스트레스 금리는 실제로 내는 이자인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아닙니다. 심사에서 한도만 계산할 때 쓰는 <b>가상의 가산금리</b>입니다. 실제 대출 금리에는 붙지 않으므로, 한도가 줄었다고 이자가 늘어나는 것은 아닙니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>마이너스통장은 어떻게 반영되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>은행은 <b>약정 한도 전체</b>를 빚으로 보고 연간 이자를 산정하는 경우가 많습니다. 실제로 쓰지 않아도 한도가 있으면 DSR이 올라갑니다. 쓰지 않는 통장은 한도를 줄이거나 해지하세요.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>전세대출도 DSR에 들어가나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>전세대출은 상품·규제 시점에 따라 반영 방식이 다릅니다. 이자만 반영되던 시기와 원금 일부가 반영되는 시기가 있었으므로, 심사 전에 <b>DSR 산정 내역</b>을 은행에 요청해 확인하는 것이 정확합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>계산기에 개인정보가 저장되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>금융위원회·금융감독원 「3단계 스트레스 DSR 시행방안」(2025년 5월) — 가산금리 1.5%p, 지방 주담대 0.75%p, 신용대출 1억원 초과 적용</li>
+        <li>은행권 여신심사 가이드라인 — 차주별 DSR 40%, 2금융권 50%</li>
+        <li>금융감독원 소비자 안내 — 마이너스통장 한도 기준 산정, 원금균등 1년차 원리금 기준</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지는 일반적인 정보이며 대출 자문이 아닙니다. 실제 한도는 금융기관 심사 결과이므로 실행 전 은행 안내를 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="loan-switch.html">
+        <b>주담대·전세 대환 실익 계산기</b>
+        <span>금리차와 수수료를 넣어 갈아탈지 판단합니다.</span>
+      </a>
+      <a href="prepay-vs-invest.html">
+        <b>중도상환 vs 예치 비교기</b>
+        <span>여유자금으로 대출을 갚을지 예금할지 계산합니다.</span>
+      </a>
+      <a href="guide-jeonse-loan.html">
+        <b>전세 이사·대출 갈아타기 체크리스트</b>
+        <span>부채와 소득을 동시에 보는 순서를 정리했습니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* DS-CORE-START */
+function dsAnnuityFactor(annualRate, years){
+  var months = Math.max(1, Math.round(years * 12));
+  var i = Math.max(0, annualRate) / 1200;
+  if (i === 0) return 1 / years;
+  return (i / (1 - Math.pow(1 + i, -months))) * 12;
+}
+function dsEqualFactor(annualRate, years){
+  return 1 / Math.max(0.01, years) + Math.max(0, annualRate) / 100;
+}
+function dsFactor(annualRate, years, method){
+  return method === 'equal' ? dsEqualFactor(annualRate, years) : dsAnnuityFactor(annualRate, years);
+}
+function dsMaxLoan(annualBudget, annualRate, years, method){
+  var budget = Math.max(0, annualBudget || 0);
+  var factor = dsFactor(annualRate, years, method);
+  return { loan: factor > 0 ? budget / factor : 0, factor: factor };
+}
+function dsEvaluate(cfg){
+  cfg = cfg || {};
+  var income = Math.max(0, Math.round(cfg.income || 0));
+  var ratio = Math.max(1, Math.min(100, cfg.ratio || 40));
+  var existing = Math.max(0, Math.round(cfg.existing || 0));
+  var baseRate = Math.max(0, cfg.rate || 0);
+  var stress = Math.max(0, cfg.stress || 0);
+  var rate = baseRate + stress;
+  var years = Math.max(1, cfg.years || 30);
+  var method = cfg.method === 'equal' ? 'equal' : 'annuity';
+  var allowed = income * ratio / 100 - existing;
+  var max = dsMaxLoan(allowed, rate, years, method);
+  var currentDsr = income > 0 ? existing / income * 100 : 0;
+  var maxLoan = allowed > 0 ? max.loan : 0;
+  var monthly = maxLoan * max.factor / 12;
+
+  var out = {
+    income: income, ratio: ratio, existing: existing, baseRate: baseRate, stress: stress, rate: rate,
+    years: years, method: method, currentDsr: currentDsr, allowed: allowed,
+    maxLoan: maxLoan, monthly: monthly, factor: max.factor,
+    totalInterest: 0, afterDsr: income > 0 ? (existing + Math.max(0, allowed)) / income * 100 : 0,
+    verdict: 'empty'
+  };
+  if (maxLoan > 0){
+    if (method === 'annuity') out.totalInterest = monthly * years * 12 - maxLoan;
+    else out.totalInterest = maxLoan * rate / 100 * (years + 1) / 2;
+  }
+  if (income <= 0) return out;
+  if (allowed <= 0) out.verdict = 'over';
+  else if (currentDsr >= ratio * 0.8) out.verdict = 'tight';
+  else out.verdict = 'ok';
+  return out;
+}
+function dsScenario(cfg, stress, method){
+  var next = {};
+  for (var k in cfg) if (Object.prototype.hasOwnProperty.call(cfg, k)) next[k] = cfg[k];
+  next.stress = stress;
+  next.method = method || cfg.method;
+  return dsEvaluate(next);
+}
+function dsComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function dsWon(n){ return dsComma(Math.round(n || 0)) + '원'; }
+function dsMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + dsComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
+}
+/* DS-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    income: $('ds-income'), joint: $('ds-joint'), spouse: $('ds-spouse'), spouseWrap: $('ds-spouseWrap'),
+    mortgage: $('ds-mortgage'), credit: $('ds-credit'), overdraft: $('ds-overdraft'), jeonse: $('ds-jeonse'),
+    rate: $('ds-rate'), years: $('ds-years'), stress: $('ds-stress'), method: $('ds-method'), ratio: $('ds-ratio'),
+    verdict: $('ds-verdict'), resNow: $('ds-resNow'), resMax: $('ds-resMax'),
+    summary: $('ds-summary'), stressBody: $('ds-stressBody'), basisBody: $('ds-basisBody'), toast: $('ds-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function readCfg(){
+    var income = Math.round(num(el.income.value) * 10000);
+    if (el.joint.checked) income += Math.round(num(el.spouse.value) * 10000);
+    var existing = Math.round((num(el.mortgage.value) + num(el.credit.value) + num(el.overdraft.value) + num(el.jeonse.value)) * 10000);
+    var ratio = num(el.ratio.value);
+    return {
+      income: income,
+      existing: existing,
+      ratio: ratio > 0 ? ratio : 40,
+      rate: num(el.rate.value),
+      stress: parseFloat(el.stress.value) || 0,
+      years: num(el.years.value) > 0 ? num(el.years.value) : 30,
+      method: el.method.value
+    };
+  }
+
+  var VERDICT = {
+    ok: ['is-good', '여유 있음', '추가 대출 여력이 있습니다'],
+    tight: ['is-tight', '한도 임박', '추가 대출은 가능하지만 금액이 작습니다'],
+    over: ['is-bad', '한도 없음', '기존 대출만으로 규제비율을 넘습니다'],
+    empty: ['is-empty', '입력 대기', '연소득을 입력하세요']
+  };
+
+  function render(){
+    var cfg = readCfg();
+    var r = dsEvaluate(cfg);
+    var v = VERDICT[r.verdict];
+    el.spouseWrap.hidden = !el.joint.checked;
+
+    el.verdict.className = 'calc-verdict ' + v[0];
+    if (r.verdict === 'empty'){
+      el.verdict.innerHTML = '<span class="v-tag">' + v[1] + '</span><span class="v-title">' + v[2] +
+        '</span><span class="v-desc">연소득과 기존 대출 원리금을 넣으면 현재 DSR과 최대 대출액이 계산됩니다.</span>';
+      el.resNow.className = 'calc-res';
+      el.resNow.innerHTML = '<div class="r-head">현재 DSR</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resMax.className = 'calc-res';
+      el.resMax.innerHTML = '<div class="r-head">신규 대출 한도</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>적용 DSR 비율</dt><dd>' + r.ratio + '%</dd></div><div class="total"><dt>최대 대출액</dt><dd>—</dd></div>';
+      el.stressBody.innerHTML = '<table class="calc-table"><tbody><tr><td>연소득을 입력하면 비교표가 만들어집니다.</td></tr></tbody></table>';
+      el.basisBody.innerHTML = '';
+      return;
+    }
+
+    var desc;
+    if (r.verdict === 'over'){
+      desc = '기존 연간 원리금 ' + dsWon(r.existing) + '이(가) 연소득의 ' + r.ratio + '%(' + dsWon(r.income * r.ratio / 100) +
+        ')를 넘습니다. 현재 DSR은 ' + r.currentDsr.toFixed(1) + '%입니다. 소액 대출 정리나 만기 연장이 먼저입니다.';
+    } else {
+      desc = '현재 DSR ' + r.currentDsr.toFixed(1) + '%. 연 ' + dsWon(r.allowed) + '까지 원리금을 더 갚을 수 있고, 적용 금리 ' +
+        r.rate.toFixed(2) + '%(가산 ' + r.stress.toFixed(2) + '%p 포함) ' + r.years + '년 ' + (r.method === 'equal' ? '원금균등' : '원리금균등') +
+        ' 기준 최대 ' + dsMan(r.maxLoan) + '입니다.';
+    }
+    el.verdict.innerHTML = '<span class="v-tag">' + v[1] + '</span><span class="v-title">' + v[2] +
+      '</span><span class="v-desc">' + desc + '</span>';
+
+    el.resNow.className = 'calc-res';
+    el.resNow.innerHTML = '<div class="r-head">현재 DSR</div><dl>'
+      + '<div><dt>DSR</dt><dd class="big">' + r.currentDsr.toFixed(1) + '%</dd></div>'
+      + '<div><dt>연소득</dt><dd>' + dsMan(r.income) + '</dd></div>'
+      + '<div><dt>기존 원리금</dt><dd>' + dsMan(r.existing) + '</dd></div>'
+      + '<div><dt>규제비율</dt><dd>' + r.ratio + '%</dd></div>'
+      + '</dl>';
+
+    el.resMax.className = 'calc-res';
+    el.resMax.innerHTML = '<div class="r-head">신규 대출 한도</div><dl>'
+      + '<div><dt>최대 대출액</dt><dd class="big">' + dsMan(r.maxLoan) + '</dd></div>'
+      + '<div><dt>월 상환액</dt><dd>' + dsWon(r.monthly) + '</dd></div>'
+      + '<div><dt>추가 가능 원리금</dt><dd>' + dsMan(Math.max(0, r.allowed)) + '</dd></div>'
+      + '<div><dt>30년 총이자</dt><dd>' + dsMan(r.totalInterest) + '</dd></div>'
+      + '</dl>';
+
+    var sum = '';
+    sum += '<div><dt>적용 금리 (기본 ' + r.baseRate.toFixed(2) + '% + 가산 ' + r.stress.toFixed(2) + '%p)</dt><dd>' + r.rate.toFixed(2) + '%</dd></div>';
+    sum += '<div><dt>만기·상환 방식</dt><dd>' + r.years + '년 ' + (r.method === 'equal' ? '원금균등' : '원리금균등') + '</dd></div>';
+    sum += '<div><dt>연소득 대비 기존 원리금</dt><dd>' + r.currentDsr.toFixed(1) + '%</dd></div>';
+    sum += '<div><dt>허용 원리금 (연)</dt><dd>' + dsMan(r.income * r.ratio / 100) + '</dd></div>';
+    sum += '<div class="total"><dt>최대 신규 대출액</dt><dd class="pos">' + dsWon(r.maxLoan) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var sb = '<table class="calc-table"><thead><tr><th>가산금리</th><th>적용 금리</th><th>최대 대출액</th><th>월 상환액</th></tr></thead><tbody>';
+    [0, 0.5, 0.75, 1, 1.5, 3].forEach(function(st){
+      var s = dsScenario(cfg, st, cfg.method);
+      sb += '<tr><td>' + st.toFixed(2) + '%p' + (st === cfg.stress ? ' (현재)' : '') + '</td><td>' + s.rate.toFixed(2) + '%</td><td>'
+        + dsMan(s.maxLoan) + '</td><td>' + dsWon(s.monthly) + '</td></tr>';
+    });
+    sb += '</tbody></table>';
+    el.stressBody.innerHTML = sb;
+
+    var bb = '<table class="calc-table"><tbody>';
+    bb += '<tr><td>연소득 (합산 ' + (el.joint.checked ? '포함' : '미포함') + ')</td><td>' + dsWon(r.income) + '</td></tr>';
+    bb += '<tr><td>기존 연간 원리금</td><td>' + dsWon(r.existing) + '</td></tr>';
+    bb += '<tr><td>허용 원리금</td><td>' + dsWon(r.allowed) + '</td></tr>';
+    bb += '<tr><td>연간 상환계수(대출 1원당)</td><td>' + r.factor.toFixed(5) + '</td></tr>';
+    bb += '<tr><td>최대 대출액</td><td>' + dsWon(r.maxLoan) + '</td></tr>';
+    bb += '<tr><td>신규 대출 반영 후 DSR</td><td>' + r.afterDsr.toFixed(1) + '%</td></tr>';
+    bb += '</tbody></table>';
+    el.basisBody.innerHTML = bb;
+  }
+
+  ['income','spouse','mortgage','credit','overdraft','jeonse','rate','years','ratio'].forEach(function(k){
+    el[k].addEventListener('input', render);
+  });
+  el.joint.addEventListener('change', render);
+  el.stress.addEventListener('change', render);
+  el.method.addEventListener('change', render);
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('ds-example').addEventListener('click', function(){
+    el.income.value = '6000';
+    el.joint.checked = false;
+    el.spouse.value = '';
+    el.mortgage.value = '1200';
+    el.credit.value = '300';
+    el.overdraft.value = '60';
+    el.jeonse.value = '0';
+    el.rate.value = '4.0';
+    el.years.value = '30';
+    el.stress.value = '1.5';
+    el.method.value = 'annuity';
+    el.ratio.value = '40';
+    render();
+  });
+  $('ds-reset').addEventListener('click', function(){
+    ['income','spouse','mortgage','credit','overdraft','jeonse','rate','years','ratio'].forEach(function(k){ el[k].value = ''; });
+    el.joint.checked = false;
+    el.stress.value = '1.5';
+    el.method.value = 'annuity';
+    render();
+  });
+  $('ds-copy').addEventListener('click', function(){
+    var cfg = readCfg();
+    var r = dsEvaluate(cfg);
+    if (r.verdict === 'empty'){ toast('값을 먼저 입력하세요'); return; }
+    var text = 'DSR 한도 계산\n'
+      + '· 연소득 ' + dsWon(r.income) + ' / 기존 원리금 ' + dsWon(r.existing) + ' → 현재 DSR ' + r.currentDsr.toFixed(1) + '%\n'
+      + '· 규제 ' + r.ratio + '%, 허용 원리금 ' + dsWon(r.allowed) + '\n'
+      + '· 금리 ' + r.rate.toFixed(2) + '%(' + r.stress.toFixed(2) + '%p 가산) ' + r.years + '년 → 최대 ' + dsWon(r.maxLoan) + ', 월 ' + dsWon(r.monthly) + '\n'
+      + '· 판정: ' + VERDICT[r.verdict][2] + '\n'
+      + '계산: usefulkit.kr/dsr-limit.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

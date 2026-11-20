@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>퇴직금·퇴직소득세 계산기 (2026년 근속연수공제 반영) | 유용한 생활 도구함</title>
+<meta name="description" content="입사일·퇴사일과 최근 3개월 급여로 세전 퇴직금을 계산하고, 근속연수공제·환산급여공제를 적용해 퇴직소득세와 세후 실수령 퇴직금을 보여 드립니다. IRP 연금수령 감면도 비교합니다.">
+<link rel="canonical" href="https://usefulkit.kr/severance-pay.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:title" content="퇴직금·퇴직소득세 계산기">
+<meta property="og:description" content="평균임금으로 퇴직금을 계산하고 퇴직소득세를 뺀 실수령액을 확인합니다.">
+<meta property="og:url" content="https://usefulkit.kr/severance-pay.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="theme-color" content="#12305f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"퇴직금·퇴직소득세 계산기","url":"https://usefulkit.kr/severance-pay.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"평균임금과 근속연수로 퇴직금을 계산하고 근속연수공제·환산급여공제를 적용해 퇴직소득세와 세후 실수령액을 계산합니다."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"퇴직금은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"1일 평균임금 × 30일 × (재직일수 ÷ 365)입니다. 1일 평균임금은 퇴직 전 3개월 임금총액을 그 기간의 총일수로 나눈 값이고, 여기에는 연간 상여금과 연차수당의 3개월분이 포함됩니다."}},
+{"@type":"Question","name":"퇴직소득세가 생각보다 적게 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"퇴직소득세는 근속연수만큼 나눠 계산하는 '연분연승' 방식입니다. 근속연수공제와 환산급여공제를 두 번 빼고, 남은 금액에 세율을 적용한 뒤 다시 12로 나누고 근속연수를 곱합니다. 그래서 장기 근속자의 실효세율은 1~3% 수준입니다."}},
+{"@type":"Question","name":"IRP에 넣으면 세금이 줄어드나요?","acceptedAnswer":{"@type":"Answer","text":"당장은 과세가 이연되어 퇴직소득세를 내지 않습니다. 이후 연금으로 받으면 퇴직소득세의 70%(11년 이상 수령 시 60%)만 내면 됩니다. 다만 중간에 해지하면 감면이 사라지고 기타소득세 16.5%가 붙을 수 있습니다."}},
+{"@type":"Question","name":"1년 미만 근무면 퇴직금을 받을 수 없나요?","acceptedAnswer":{"@type":"Answer","text":"네. 근로자퇴직급여 보장법은 계속근로기간 1년 이상인 근로자에게 퇴직급여를 지급하도록 정하고 있습니다. 수습기간도 계속근로에 포함되지만, 1년 미만이면 법정 퇴직금 청구권이 생기지 않습니다."}}
+]}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">UK</span>
+      <span class="brand-text">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 10종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">퇴직 · 세금</span>
+      <h1>퇴직금 · 퇴직소득세 계산기</h1>
+      <p class="page-lead">퇴직금은 <b>1일 평균임금 × 30일 × 근속연수</b>로 계산하고, 여기에 <b>근속연수공제와 환산급여공제</b>를 두 번 적용해 세금을 뺍니다. 그래서 오래 일한 사람의 퇴직소득세는 생각보다 훨씬 적습니다.</p>
+      <div class="page-meta">
+        <span>2026년 세법 기준</span>
+        <span>평균임금·환산급여 방식</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">계산 구조</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#irp">IRP·연금수령 비교</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>1단계 — 퇴직금은 '평균임금'에서 시작합니다</h2>
+      <p>퇴직금 = <b>1일 평균임금 × 30일 × (재직일수 ÷ 365)</b>입니다. 여기서 1일 평균임금은 퇴직 전 <b>3개월 임금총액 ÷ 그 기간의 총일수</b>입니다. 임금총액에는 기본급·수당뿐 아니라 <b>연간 상여금과 연차수당의 3개월분</b>도 들어갑니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>3개월 임금총액 구성 예시</caption>
+          <thead>
+            <tr><th>항목</th><th>계산</th><th class="num">금액</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>3개월 급여</td><td>월급 × 3</td><td class="num">1,200만원</td></tr>
+            <tr><td>연간 상여금</td><td>400만원 × 3/12</td><td class="num">100만원</td></tr>
+            <tr><td>연차수당</td><td>120만원 × 3/12</td><td class="num">30만원</td></tr>
+            <tr><td><b>3개월 임금총액</b></td><td>합계</td><td class="num"><b>1,330만원</b></td></tr>
+            <tr><td>1일 평균임금</td><td>1,330만 ÷ 92일</td><td class="num">144,565원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <span class="callout-title">3개월 총일수는 달력 기준입니다</span>
+        같은 3개월이라도 89일에서 92일까지 차이가 납니다. 분모가 작을수록 1일 평균임금이 커지므로, 퇴직일이 언제인지에 따라 퇴직금이 달라집니다. 이 계산기는 기간을 비우면 퇴사일 기준 <b>달력 3개월</b>로 자동 계산합니다.
+      </div>
+
+      <h2>2단계 — 퇴직소득세는 네 단계로 계산합니다</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><span class="t"><b>근속연수공제</b>5년 이하 연 100만원, 5~10년 500만원+연 200만원, 10~20년 1,500만원+연 250만원, 20년 초과 4,000만원+연 300만원.</span></li>
+        <li><span class="n">2</span><span class="t"><b>환산급여</b>(퇴직금 − 근속연수공제) ÷ 근속연수 × 12. 30년 모은 돈을 '1년치 소득'으로 줄여 놓는 과정입니다.</span></li>
+        <li><span class="n">3</span><span class="t"><b>환산급여공제</b>800만원 이하 전액, 7,000만원 이하 800만원+초과분 60%, 1억원 이하 4,520만원+초과분 55%, 3억원 이하 6,170만원+초과분 45%, 3억원 초과 1억 5,170만원+초과분 35%.</span></li>
+        <li><span class="n">4</span><span class="t"><b>세율 적용 후 되돌리기</b>과세표준에 기본세율을 적용한 세액을 ÷12 × 근속연수로 되돌립니다. 여기에 지방소득세 10%가 붙습니다.</span></li>
+      </ol>
+      <p>이렇게 나눴다 곱하는 방식을 <b>연분연승</b>이라고 합니다. 한꺼번에 받은 돈에 높은 세율이 몰리지 않도록 만든 장치라서, 근속 10년·퇴직금 5,000만원의 세금은 약 74만 8,000원(실효 1.5%)입니다.</p>
+
+      <h2>3단계 — 근속연수는 어떻게 세나</h2>
+      <p>근속연수는 <b>총근속월수 ÷ 12</b>로 계산하고, 1개월 미만의 일수는 1개월로, 1년 미만의 월수는 1년으로 봅니다. 예를 들어 2018년 3월 2일 입사해 2026년 11월 20일 퇴사하면 8년 9개월(8.75년)입니다. 이 값이 근속연수공제와 환산급여 양쪽에 쓰이므로, 입사일을 정확히 넣는 것이 중요합니다.</p>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">2026년 세법 · 근속연수공제 반영</span>
+        <h2 class="calc-title">퇴직금 계산기</h2>
+        <p class="calc-lead">입사일·퇴사일과 최근 3개월 급여를 넣으면 <b>세전 퇴직금</b>, <b>퇴직소득세</b>, <b>세후 실수령액</b>을 계산합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>재직 기간</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="sv-startDate">입사일</label>
+            <div class="calc-input calc-input-sm"><input id="sv-startDate" type="date"></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="sv-endDate">퇴사일</label>
+            <div class="calc-input calc-input-sm"><input id="sv-endDate" type="date"></div>
+          </div>
+        </div>
+        <details class="calc-adv" style="margin-top:10px;">
+          <summary><span>날짜를 모르나요?<em>재직일수를 직접 입력할 수 있습니다</em></span></summary>
+          <div class="calc-adv-body">
+            <div class="calc-field" style="margin-top:10px;">
+              <label class="calc-label" for="sv-serviceDays">재직일수 직접 입력</label>
+              <div class="calc-input calc-input-sm"><input id="sv-serviceDays" type="number" inputmode="numeric" min="0" step="1" placeholder="0"><span class="calc-unit">일</span></div>
+              <p class="calc-tip">입사일과 퇴사일을 넣으면 그 값이 우선입니다. 날짜 없이 계산할 때만 입력하세요.</p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>최근 3개월 임금</h2></div>
+        <div class="calc-field">
+          <label class="calc-label" for="sv-pay3m">최근 3개월 급여 총액</label>
+          <div class="calc-input"><input id="sv-pay3m" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip">세전 금액 3개월치 <b>합계</b>입니다. 월급 400만원이면 1,200만원을 넣습니다.</p>
+        </div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="sv-bonus">연간 상여금</label>
+            <div class="calc-input calc-input-sm"><input id="sv-bonus" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">3개월분(×3/12)이 더해집니다.</p>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="sv-annual">연차수당 (연간)</label>
+            <div class="calc-input calc-input-sm"><input id="sv-annual" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">3개월분(×3/12)이 더해집니다.</p>
+          </div>
+        </div>
+        <details class="calc-adv">
+          <summary><span>3개월 총일수 직접 입력<em>비우면 퇴사일 기준 달력 3개월로 자동 계산</em></span></summary>
+          <div class="calc-adv-body">
+            <div class="calc-field" style="margin-top:10px;">
+              <label class="calc-label" for="sv-periodDays">3개월 총일수</label>
+              <div class="calc-input calc-input-sm"><input id="sv-periodDays" type="number" inputmode="numeric" min="1" max="120" step="1" placeholder="자동"><span class="calc-unit">일</span></div>
+              <p class="calc-tip">퇴직 전 3개월이 89~92일 사이에서 달라집니다. 급여명세서 기준 기간을 알고 있으면 직접 넣으세요.</p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">3</span><h2>계산 결과</h2></div>
+        <div id="sv-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="sv-resTotal"></div>
+          <div class="calc-res" id="sv-resNet"></div>
+        </div>
+
+        <dl class="calc-summary" id="sv-summary"></dl>
+
+        <details class="calc-break" id="sv-calcBox" open>
+          <summary>퇴직소득세 계산 과정</summary>
+          <div class="calc-tablewrap" id="sv-calcBody"></div>
+        </details>
+
+        <details class="calc-break" id="sv-irpBox">
+          <summary>IRP·연금수령 시 세금 비교</summary>
+          <div class="calc-tablewrap" id="sv-irpBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="sv-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="sv-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="sv-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="sv-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">퇴직금을 받을 때 확인할 것</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span>퇴직일로부터 <b>14일 이내</b>에 지급해야 합니다(근로자퇴직급여 보장법). 지연되면 이자가 붙습니다.</span></li>
+          <li><b>②</b><span>퇴직금은 <b>IRP 계좌로 이체</b>되는 경우가 일반적입니다. 55세 이후 연금으로 받으면 세금이 30~40% 줄어듭니다.</span></li>
+          <li><b>③</b><span>중간정산을 했다면 그 이후 기간만 근속연수에 들어갑니다. 정산 이력이 있으면 회사에 확인하세요.</span></li>
+          <li><b>④</b><span>평균임금이 통상임금보다 적으면 <b>통상임금</b>으로 계산합니다. 수당이 많은 직군은 차이가 큽니다.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#2b3550;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>퇴직금</b> — 근로자퇴직급여 보장법 제8조: 1일 평균임금 × 30일 × (재직일수 ÷ 365). 평균임금은 근로기준법 시행령 제2조에 따라 퇴직 전 3개월 임금총액을 그 기간 총일수로 나눕니다.</p>
+          <p><b>퇴직소득세</b> — 소득세법 제48조(근속연수공제·환산급여공제), 제55조(기본세율). 환산급여 = (퇴직소득금액 − 근속연수공제) ÷ 근속연수 × 12, 산출세액 = (환산급여 − 환산급여공제) × 기본세율 ÷ 12 × 근속연수. 지방소득세 10%를 더합니다.</p>
+          <p><b>포함하지 않은 것</b> — 비과세 퇴직소득(장해보상금 등), 중간정산 이력, 임원 퇴직금 한도 초과분, 퇴직연금 DC형 적립금 운용수익, 2015년 이전 근속분의 경과규정(2016년 이후 퇴직자 기준으로 계산)은 반영하지 않았습니다.</p>
+          <p><b>주의</b> — 퇴직소득세는 회사가 원천징수하고, 다음 연도 5월에 확정신고로 정산됩니다. 실제 금액은 회사 급여 담당자나 홈택스에서 확인하세요.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 퇴직금·세액은 회사 규정과 근로계약에 따라 달라집니다.</p>
+    </div>
+
+    <section class="prose" id="irp" style="margin-top:20px;">
+      <h2>IRP로 받으면 세금이 얼마나 줄어드나</h2>
+      <p>퇴직금을 <b>IRP(개인형 퇴직연금)</b>에 넣으면 그때는 퇴직소득세를 내지 않습니다(과세이연). 이후 55세 이후 연금으로 나눠 받으면 <b>퇴직소득세의 70%만</b> 내면 되고, 수령 기간이 11년을 넘으면 <b>60%</b>까지 줄어듭니다. 나머지는 감면입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>위 계산기 사례(퇴직금 3,785만원, 8.75년) 기준</caption>
+          <thead>
+            <tr><th>수령 방법</th><th>내는 세금</th><th>세후 수령액</th><th>절약</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>즉시 일시금 수령</td><td class="num">51만 5,405원</td><td class="num">3,734만 879원</td><td class="num">—</td></tr>
+            <tr><td>IRP 이체 후 연금수령</td><td class="num">36만 783원 (70%)</td><td class="num">3,749만 5,501원</td><td class="num">15만 4,622원</td></tr>
+            <tr><td>IRP 이체 후 11년 이상 수령</td><td class="num">30만 9,243원 (60%)</td><td class="num">3,754만 7,041원</td><td class="num">20만 6,162원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <span class="callout-title">중간에 깨면 감면이 사라집니다</span>
+        IRP를 연금이 아닌 <b>일시금으로 해지</b>하면 과세이연된 퇴직소득세를 그대로 내고, 운용수익에는 기타소득세 16.5%가 붙습니다. 연금수령 요건(55세 이후, 연 1,200만원 한도 등)을 확인하고 넣으세요.
+      </div>
+      <p>퇴직금이 크지 않다면 IRP의 세금 감면액은 수십만원 수준입니다. 반대로 <b>퇴직금이 1억원을 넘으면</b> 감면액이 수백만원으로 커지므로 IRP 이체를 진지하게 검토할 만합니다.</p>
+    </section>
+
+    <section class="prose" id="read-result" style="margin-top:16px;">
+      <h2>결과 읽는 법</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>지표</th><th>의미</th><th>확인할 점</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1일 평균임금</td><td>3개월 임금총액 ÷ 총일수</td><td>상여·연차수당이 들어갔는지</td></tr>
+            <tr><td>세전 퇴직금</td><td>평균임금 × 30 × 근속연수</td><td>재직일수 기준이 맞는지</td></tr>
+            <tr><td>근속연수공제</td><td>근속연수에 따른 공제</td><td>1년 미만 월수를 1년으로 올렸는지</td></tr>
+            <tr><td>환산급여·공제</td><td>1년치로 환산한 소득과 공제</td><td>구간 경계에서 계산이 맞는지</td></tr>
+            <tr><td>세후 퇴직금</td><td>실제 통장에 들어오는 금액</td><td>지방소득세 10% 포함 여부</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">퇴직소득세는 '실효세율'로 보세요</span>
+        퇴직금 대비 세금 비율(실효세율)은 근속 10년·퇴직금 5,000만원이면 1.5%, 3억원이면 14% 수준입니다. 근속이 길수록, 퇴직금이 작을수록 실효세율이 낮아지는 구조입니다.
+      </div>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>퇴직금은 어떻게 계산하나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>1일 평균임금 × 30일 × (재직일수 ÷ 365)입니다. 1일 평균임금은 퇴직 전 3개월 임금총액을 그 기간 총일수로 나눈 값이고, 연간 상여금과 연차수당의 3개월분이 포함됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>퇴직소득세가 생각보다 적게 나오는 이유는 무엇인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>근속연수만큼 나눠 계산하는 연분연승 방식이기 때문입니다. 근속연수공제와 환산급여공제를 두 번 빼고, 남은 금액에 세율을 적용한 뒤 다시 12로 나누고 근속연수를 곱합니다. 장기 근속자의 실효세율은 1~3% 수준입니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>IRP에 넣으면 세금이 줄어드나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>당장은 과세가 이연되어 퇴직소득세를 내지 않고, 연금으로 받을 때 퇴직소득세의 70%(11년 이상 수령 시 60%)만 냅니다. 다만 일시금으로 해지하면 감면이 사라지고 운용수익에 기타소득세 16.5%가 붙을 수 있습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>1년 미만 근무면 퇴직금을 받을 수 없나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>법정 퇴직금은 계속근로기간 1년 이상인 근로자에게 지급됩니다. 1년 미만이라면 근로계약·취업규칙에 별도 규정이 있는지 확인하세요. 이 계산기는 1년 미만이면 경고를 표시합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>계산기에 개인정보가 저장되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>근로자퇴직급여 보장법 제8조 — 퇴직금 지급 기준(계속근로 1년, 14일 이내 지급)</li>
+        <li>근로기준법 시행령 제2조 — 평균임금 산정(3개월 임금총액, 상여금·연차수당 포함)</li>
+        <li>소득세법 제48조·제55조 — 근속연수공제, 환산급여공제, 기본세율</li>
+        <li>소득세법 제64조의2 — 연금계좌 이체 시 과세이연과 연금수령 감면(30%·40%)</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지는 일반적인 정보이며 노무·세무 자문이 아닙니다. 실제 금액은 회사 규정·근로계약과 세무 대리인 확인을 거쳐 결정됩니다.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="salary-net.html">
+        <b>연봉 실수령액 계산기</b>
+        <span>재직 중 월 실수령액과 공제 내역을 계산합니다.</span>
+      </a>
+      <a href="deposit-interest.html">
+        <b>예·적금 이자 계산기</b>
+        <span>받은 퇴직금을 예치했을 때 세후 이자를 계산합니다.</span>
+      </a>
+      <a href="guide-tax-refund.html">
+        <b>연말정산 경정청구 체크리스트</b>
+        <span>퇴직 전 놓친 공제를 돌려받는 방법을 정리했습니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* SV-CORE-START */
+var SV_DAY = 86400000;
+var SV_TAX_BRACKETS = [
+  [14000000, 0.06, 0],
+  [50000000, 0.15, 1260000],
+  [88000000, 0.24, 5760000],
+  [150000000, 0.35, 15440000],
+  [300000000, 0.38, 19940000],
+  [500000000, 0.40, 25940000],
+  [1000000000, 0.42, 35940000]
+];
+
+function svParseDate(s){
+  if (!s) return null;
+  var p = String(s).split('-');
+  if (p.length !== 3) return null;
+  var y = parseInt(p[0], 10), m = parseInt(p[1], 10), d = parseInt(p[2], 10);
+  if (!y || !m || !d) return null;
+  return Date.UTC(y, m - 1, d);
+}
+function svAddMonths(t, n){
+  var d = new Date(t);
+  var y = d.getUTCFullYear(), m = d.getUTCMonth(), day = d.getUTCDate();
+  var endOfTarget = new Date(Date.UTC(y, m + n + 1, 0));
+  return Date.UTC(y, m + n, Math.min(day, endOfTarget.getUTCDate()));
+}
+function svServiceYears(startMs, endMs){
+  if (!startMs || !endMs || endMs < startMs) return 0;
+  var months = 0;
+  while (svAddMonths(startMs, months + 1) <= endMs) months++;
+  if (endMs > svAddMonths(startMs, months)) months++;
+  var years = months / 12;
+  return years < 1 ? 1 : years;
+}
+function svServiceDeduction(years){
+  var y = Math.max(0, years || 0);
+  if (y <= 5) return 1000000 * y;
+  if (y <= 10) return 5000000 + 2000000 * (y - 5);
+  if (y <= 20) return 15000000 + 2500000 * (y - 10);
+  return 40000000 + 3000000 * (y - 20);
+}
+function svConvertedDeduction(converted){
+  var c = Math.max(0, converted || 0);
+  if (c <= 8000000) return c;
+  if (c <= 70000000) return 8000000 + (c - 8000000) * 0.6;
+  if (c <= 100000000) return 45200000 + (c - 70000000) * 0.55;
+  if (c <= 300000000) return 61700000 + (c - 100000000) * 0.45;
+  return 151700000 + (c - 300000000) * 0.35;
+}
+function svBasicTax(base){
+  if (base <= 0) return 0;
+  for (var i = 0; i < SV_TAX_BRACKETS.length; i++){
+    if (base <= SV_TAX_BRACKETS[i][0]) return base * SV_TAX_BRACKETS[i][1] - SV_TAX_BRACKETS[i][2];
+  }
+  return base * 0.45 - 65940000;
+}
+
+function svEvaluate(cfg){
+  cfg = cfg || {};
+  function won(v){ return Math.max(0, Math.round(v || 0)); }
+  var startMs = svParseDate(cfg.startDate);
+  var endMs = svParseDate(cfg.endDate);
+  var pay3m = won(cfg.pay3m), bonus = won(cfg.bonus), annual = won(cfg.annual);
+  var periodInput = Math.round(cfg.periodDays || 0);
+
+  var serviceDays = 0;
+  if (startMs && endMs && endMs >= startMs) serviceDays = Math.round((endMs - startMs) / SV_DAY) + 1;
+  else serviceDays = won(cfg.serviceDays);
+
+  var autoPeriod = endMs ? Math.round((endMs - svAddMonths(endMs, -3)) / SV_DAY) : 0;
+  var days = periodInput > 0 ? periodInput : (autoPeriod > 0 ? autoPeriod : 90);
+
+  var wage3m = pay3m + bonus * 3 / 12 + annual * 3 / 12;
+  var dailyWage = days > 0 ? wage3m / days : 0;
+  var totalSeverance = Math.round(dailyWage * 30 * (serviceDays / 365));
+
+  var years = svServiceYears(startMs, endMs);
+  if (!years && serviceDays > 0) years = Math.max(1, serviceDays / 365);
+
+  var serviceDeduction = Math.min(totalSeverance, Math.round(svServiceDeduction(years)));
+  var converted = years > 0 ? Math.round((totalSeverance - serviceDeduction) / years * 12) : 0;
+  var convertedDeduction = Math.round(Math.min(converted, svConvertedDeduction(converted)));
+  var taxBase = Math.max(0, converted - convertedDeduction);
+  var convertedTax = Math.floor(svBasicTax(taxBase));
+  var incomeTax = Math.floor(convertedTax / 12 * years);
+  var localTax = Math.floor(incomeTax * 0.1);
+  var taxTotal = incomeTax + localTax;
+
+  return {
+    startDate: cfg.startDate || '', endDate: cfg.endDate || '',
+    serviceDays: serviceDays, serviceYears: years, periodDays: days, autoPeriod: autoPeriod,
+    pay3m: pay3m, bonus: bonus, annual: annual, wage3m: Math.round(wage3m),
+    dailyWage: dailyWage, totalSeverance: totalSeverance,
+    serviceDeduction: serviceDeduction, converted: converted,
+    convertedDeduction: convertedDeduction, taxBase: taxBase,
+    convertedTax: convertedTax, incomeTax: incomeTax, localTax: localTax, taxTotal: taxTotal,
+    netSeverance: totalSeverance - taxTotal,
+    effectiveRate: totalSeverance > 0 ? taxTotal / totalSeverance * 100 : 0,
+    eligible: serviceDays >= 365,
+    empty: !(totalSeverance > 0)
+  };
+}
+function svPensionTax(incomeTax, localTax, keepRate){
+  var t = Math.floor(incomeTax * keepRate);
+  var l = Math.floor(t * 0.1);
+  return { incomeTax: t, localTax: l, total: t + l };
+}
+function svComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function svWon(n){ return svComma(Math.round(n || 0)) + '원'; }
+function svMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + svComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
+}
+/* SV-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    startDate: $('sv-startDate'), endDate: $('sv-endDate'), serviceDays: $('sv-serviceDays'),
+    pay3m: $('sv-pay3m'), bonus: $('sv-bonus'), annual: $('sv-annual'), periodDays: $('sv-periodDays'),
+    verdict: $('sv-verdict'), resTotal: $('sv-resTotal'), resNet: $('sv-resNet'),
+    summary: $('sv-summary'), calcBody: $('sv-calcBody'), irpBody: $('sv-irpBody'), toast: $('sv-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function readCfg(){
+    return {
+      startDate: el.startDate.value,
+      endDate: el.endDate.value,
+      serviceDays: Math.round(num(el.serviceDays.value)),
+      pay3m: Math.round(num(el.pay3m.value) * 10000),
+      bonus: Math.round(num(el.bonus.value) * 10000),
+      annual: Math.round(num(el.annual.value) * 10000),
+      periodDays: Math.round(num(el.periodDays.value))
+    };
+  }
+
+  function render(){
+    var cfg = readCfg();
+    var r = svEvaluate(cfg);
+
+    if (r.empty){
+      el.verdict.className = 'calc-verdict is-empty';
+      el.verdict.innerHTML = '<span class="v-tag">입력 대기</span><span class="v-title">재직 기간과 급여를 입력하세요</span>'
+        + '<span class="v-desc">입사일·퇴사일과 최근 3개월 급여 총액을 넣으면 퇴직금과 세후 금액이 계산됩니다.</span>';
+      el.resTotal.className = 'calc-res';
+      el.resTotal.innerHTML = '<div class="r-head">세전 퇴직금</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resNet.className = 'calc-res';
+      el.resNet.innerHTML = '<div class="r-head">세후 실수령액</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>근속일수</dt><dd>' + (r.serviceDays || '—') + '</dd></div><div class="total"><dt>세후 퇴직금</dt><dd>—</dd></div>';
+      el.calcBody.innerHTML = '<table class="calc-table"><tbody><tr><td>값을 입력하면 계산 과정이 표시됩니다.</td></tr></tbody></table>';
+      el.irpBody.innerHTML = '';
+      return;
+    }
+
+    if (r.eligible){
+      el.verdict.className = 'calc-verdict is-good';
+    } else {
+      el.verdict.className = 'calc-verdict is-bad';
+    }
+    el.verdict.innerHTML = '<span class="v-tag">' + (r.eligible ? '계산 완료' : '1년 미만 재직') + '</span>'
+      + '<span class="v-title">세전 ' + svMan(r.totalSeverance) + ' · 세후 ' + svMan(r.netSeverance) + '</span>'
+      + '<span class="v-desc">근속 ' + r.serviceYears.toFixed(2) + '년(' + r.serviceDays + '일), 1일 평균임금 ' + svWon(r.dailyWage) +
+      ' 기준입니다. 퇴직소득세와 지방소득세 ' + svWon(r.taxTotal) + '을 뺀 금액이며 실효세율은 ' + r.effectiveRate.toFixed(2) + '%입니다.' +
+      (r.eligible ? '' : ' 계속근로 1년 미만이면 법정 퇴직금 지급 대상이 아닙니다. 회사 규정을 확인하세요.') + '</span>';
+
+    el.resTotal.className = 'calc-res';
+    el.resTotal.innerHTML = '<div class="r-head">세전 퇴직금</div><dl>'
+      + '<div><dt>퇴직금</dt><dd class="big">' + svWon(r.totalSeverance) + '</dd></div>'
+      + '<div><dt>1일 평균임금</dt><dd>' + svWon(r.dailyWage) + '</dd></div>'
+      + '<div><dt>근속연수</dt><dd>' + r.serviceYears.toFixed(2) + '년</dd></div>'
+      + '<div><dt>3개월 임금총액</dt><dd>' + svMan(r.wage3m) + '</dd></div>'
+      + '</dl>';
+
+    el.resNet.className = 'calc-res';
+    el.resNet.innerHTML = '<div class="r-head">세후 실수령 퇴직금</div><dl>'
+      + '<div><dt>세전 퇴직금</dt><dd>' + svWon(r.totalSeverance) + '</dd></div>'
+      + '<div><dt>퇴직소득세</dt><dd class="neg">−' + svWon(r.incomeTax) + '</dd></div>'
+      + '<div><dt>지방소득세</dt><dd class="neg">−' + svWon(r.localTax) + '</dd></div>'
+      + '<div><dt>세후 실수령</dt><dd class="big">' + svWon(r.netSeverance) + '</dd></div>'
+      + '</dl>';
+
+    var sum = '';
+    sum += '<div><dt>재직일수</dt><dd>' + svComma(r.serviceDays) + '일</dd></div>';
+    sum += '<div><dt>3개월 총일수</dt><dd>' + r.periodDays + '일' + (cfg.periodDays ? ' (직접 입력)' : ' (자동)') + '</dd></div>';
+    sum += '<div><dt>근속연수공제</dt><dd>' + svWon(r.serviceDeduction) + '</dd></div>';
+    sum += '<div><dt>환산급여</dt><dd>' + svWon(r.converted) + '</dd></div>';
+    sum += '<div><dt>환산급여공제</dt><dd>' + svWon(r.convertedDeduction) + '</dd></div>';
+    sum += '<div class="total"><dt>세후 실수령액</dt><dd class="pos">' + svWon(r.netSeverance) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var cb = '<table class="calc-table"><tbody>';
+    cb += '<tr><td>최근 3개월 급여</td><td>' + svWon(r.pay3m) + '</td></tr>';
+    cb += '<tr><td>상여금 3개월분</td><td>' + svWon(r.bonus * 3 / 12) + '</td></tr>';
+    cb += '<tr><td>연차수당 3개월분</td><td>' + svWon(r.annual * 3 / 12) + '</td></tr>';
+    cb += '<tr><td>3개월 임금총액</td><td>' + svWon(r.wage3m) + '</td></tr>';
+    cb += '<tr><td>1일 평균임금 (÷' + r.periodDays + '일)</td><td>' + svWon(r.dailyWage) + '</td></tr>';
+    cb += '<tr><td>퇴직금 (×30일 ×' + r.serviceYears.toFixed(2) + '년)</td><td>' + svWon(r.totalSeverance) + '</td></tr>';
+    cb += '<tr><td>근속연수공제</td><td>−' + svWon(r.serviceDeduction) + '</td></tr>';
+    cb += '<tr><td>환산급여 (÷' + r.serviceYears.toFixed(2) + '년 ×12)</td><td>' + svWon(r.converted) + '</td></tr>';
+    cb += '<tr><td>환산급여공제</td><td>−' + svWon(r.convertedDeduction) + '</td></tr>';
+    cb += '<tr><td>과세표준</td><td>' + svWon(r.taxBase) + '</td></tr>';
+    cb += '<tr><td>환산 산출세액 (기본세율)</td><td>' + svWon(r.convertedTax) + '</td></tr>';
+    cb += '<tr><td><b>퇴직소득세 (÷12 ×' + r.serviceYears.toFixed(2) + '년)</b></td><td><b>' + svWon(r.incomeTax) + '</b></td></tr>';
+    cb += '<tr><td>지방소득세 (10%)</td><td>' + svWon(r.localTax) + '</td></tr>';
+    cb += '</tbody></table>';
+    el.calcBody.innerHTML = cb;
+
+    var keep70 = svPensionTax(r.incomeTax, r.localTax, 0.7);
+    var keep60 = svPensionTax(r.incomeTax, r.localTax, 0.6);
+    var ib = '<table class="calc-table"><thead><tr><th>수령 방법</th><th>내는 세금</th><th>세후 수령액</th></tr></thead><tbody>';
+    ib += '<tr><td>즉시 일시금</td><td>' + svWon(r.taxTotal) + '</td><td>' + svWon(r.totalSeverance - r.taxTotal) + '</td></tr>';
+    ib += '<tr><td>IRP 후 연금수령 (70%)</td><td>' + svWon(keep70.total) + '</td><td>' + svWon(r.totalSeverance - keep70.total) + '</td></tr>';
+    ib += '<tr><td>IRP 후 11년 이상 수령 (60%)</td><td>' + svWon(keep60.total) + '</td><td>' + svWon(r.totalSeverance - keep60.total) + '</td></tr>';
+    ib += '<tr><td>절약 (11년 이상 기준)</td><td colspan="2"><b>' + svWon(r.taxTotal - keep60.total) + '</b></td></tr>';
+    ib += '</tbody></table>';
+    el.irpBody.innerHTML = ib;
+  }
+
+  ['serviceDays', 'pay3m', 'bonus', 'annual', 'periodDays'].forEach(function(k){ el[k].addEventListener('input', render); });
+  el.startDate.addEventListener('change', render);
+  el.endDate.addEventListener('change', render);
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('sv-example').addEventListener('click', function(){
+    el.startDate.value = '2018-03-02';
+    el.endDate.value = '2026-11-20';
+    el.serviceDays.value = '';
+    el.pay3m.value = '1200';
+    el.bonus.value = '400';
+    el.annual.value = '120';
+    el.periodDays.value = '';
+    render();
+  });
+  $('sv-reset').addEventListener('click', function(){
+    el.startDate.value = '';
+    el.endDate.value = '';
+    el.serviceDays.value = '';
+    el.pay3m.value = '';
+    el.bonus.value = '';
+    el.annual.value = '';
+    el.periodDays.value = '';
+    render();
+  });
+  $('sv-copy').addEventListener('click', function(){
+    var r = svEvaluate(readCfg());
+    if (r.empty){ toast('값을 먼저 입력하세요'); return; }
+    var text = '퇴직금 계산 (2026년 세법)\n'
+      + '· 근속 ' + r.serviceYears.toFixed(2) + '년 (' + r.serviceDays + '일), 3개월 임금총액 ' + svWon(r.wage3m) + ' (' + r.periodDays + '일)\n'
+      + '· 1일 평균임금 ' + svWon(r.dailyWage) + ' → 세전 퇴직금 ' + svWon(r.totalSeverance) + '\n'
+      + '· 근속연수공제 ' + svWon(r.serviceDeduction) + ', 환산급여 ' + svWon(r.converted) + ', 환산급여공제 ' + svWon(r.convertedDeduction) + '\n'
+      + '· 과세표준 ' + svWon(r.taxBase) + ' → 퇴직소득세 ' + svWon(r.incomeTax) + ' + 지방소득세 ' + svWon(r.localTax) + '\n'
+      + '· 세후 실수령 ' + svWon(r.netSeverance) + ' (실효세율 ' + r.effectiveRate.toFixed(2) + '%)\n'
+      + '계산: usefulkit.kr/severance-pay.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

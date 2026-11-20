@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>신용카드 vs 체크카드 소득공제 문턱 계산기 (2026년 귀속) | 유용한 생활 도구함</title>
+<meta name="description" content="총급여 25% 최저사용금액 문턱과 자녀 수에 따른 공제 한도를 반영해, 지금부터 체크카드(30%)와 신용카드(15%) 중 어느 쪽이 실제로 이득인지 계산합니다. 2026년 귀속 기준.">
+<link rel="canonical" href="https://usefulkit.kr/card-tax.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:title" content="신용카드 vs 체크카드 소득공제 문턱 계산기">
+<meta property="og:description" content="총급여 25% 문턱, 자녀 수 한도, 실제 공제액과 체크·신용 손익분기를 한 번에 계산합니다.">
+<meta property="og:url" content="https://usefulkit.kr/card-tax.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="theme-color" content="#12305f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"신용카드 vs 체크카드 소득공제 문턱 계산기","url":"https://usefulkit.kr/card-tax.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"총급여의 25% 최저사용금액과 자녀 수에 따른 공제 한도를 반영해 신용카드·체크카드 소득공제액과 추가 사용 시 실익을 계산합니다."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"카드 소득공제는 세금을 얼마나 줄여 주나요?","acceptedAnswer":{"@type":"Answer","text":"소득공제는 소득에서 빼는 방식이므로 절세액은 공제액에 본인의 소득세율을 곱한 값입니다. 공제액 100만원이면 소득세 6% 구간은 6만 6천원, 24% 구간은 26만 4천원(지방소득세 포함) 정도 차이가 납니다."}},
+{"@type":"Question","name":"체크카드만 쓰면 무조건 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 최저사용금액(총급여의 25%)을 넘지 못하면 어떤 카드를 써도 공제가 0원이고, 한도를 다 채운 뒤에도 추가 사용에는 공제가 붙지 않습니다. 공제율 30%는 문턱을 넘고 한도가 남아 있을 때만 의미가 있습니다."}},
+{"@type":"Question","name":"최저사용금액은 어느 카드에서 먼저 빼나요?","acceptedAnswer":{"@type":"Answer","text":"공제율이 낮은 신용카드 사용분에서 먼저 차감하고, 신용카드 사용액이 최저사용금액에 못 미치면 그 차액을 체크카드·현금영수증 사용분에서 차감합니다. 이 계산기도 같은 순서로 계산합니다."}},
+{"@type":"Question","name":"자녀가 2명 이상이면 한도가 계속 늘어나나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 2026년 귀속 기준으로 총급여 7천만원 이하이면 자녀 1명 350만원, 2명 이상 400만원, 7천만원 초과이면 1명 275만원, 2명 이상 300만원이 한도입니다. 자녀가 셋 이상이어도 2명 기준 금액에서 더 늘지 않습니다."}}
+]}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">UK</span>
+      <span class="brand-text">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 10종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">연말정산 · 카드 공제</span>
+      <h1>신용카드 vs 체크카드 소득공제 문턱 계산기</h1>
+      <p class="page-lead">카드 소득공제는 <b>쓴 금액 전체</b>에 붙지 않습니다. 총급여의 25%를 넘긴 부분에만, 한도 안에서만 붙습니다. 지금 내 사용액이 문턱과 한도 사이 어디에 있는지 넣어 보면 <b>지금부터 체크카드가 유리한지 신용카드가 유리한지</b>가 숫자로 갈립니다.</p>
+      <div class="page-meta">
+        <span>2026년 귀속 기준</span>
+        <span>총급여 25% 문턱</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">공제 구조</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#examples">사례 3가지</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>카드 소득공제는 세 단계로 결정됩니다</h2>
+      <p>연말정산에서 신용카드·체크카드 사용액이 유리하게 작용하는 항목은 <b>신용카드 등 사용금액에 대한 소득공제</b>입니다(조세특례제한법 제126조의2). 이름은 '신용카드'지만 체크카드·현금영수증·전통시장·대중교통 사용액도 함께 담깁니다. 계산 순서는 늘 같습니다.</p>
+      <ol class="steps">
+        <li><span class="n">1</span><span class="t"><b>문턱 — 총급여의 25%</b>총급여의 25%(최저사용금액)를 넘긴 금액만 공제 대상입니다. 이 문턱 아래에서는 카드 종류와 무관하게 공제가 0원입니다.</span></li>
+        <li><span class="n">2</span><span class="t"><b>공제율 — 사용 수단별</b>넘긴 금액에 사용 수단별 공제율을 곱합니다. 신용카드 15%, 체크카드·현금영수증 30%, 전통시장 40%, 대중교통 40%입니다.</span></li>
+        <li><span class="n">3</span><span class="t"><b>한도 — 총급여와 자녀 수</b>계산된 공제액은 한도를 넘을 수 없습니다. 2026년 귀속부터는 자녀 수에 따라 한도가 올라갑니다.</span></li>
+      </ol>
+
+      <h2>공제율과 한도, 2026년 귀속 기준</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>사용 수단별 공제율(조세특례제한법 제126조의2 제2항)</caption>
+          <thead>
+            <tr><th>사용 수단</th><th class="num">공제율</th><th>메모</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>신용카드</td><td class="num">15%</td><td>할부 결제는 구입 시점 기준으로 전액 포함</td></tr>
+            <tr><td>체크카드·현금영수증·직불·선불카드</td><td class="num">30%</td><td>현금영수증은 소득공제용으로 발급받은 것</td></tr>
+            <tr><td>전통시장 사용분</td><td class="num">40%</td><td>전통시장 안에서 결제한 금액</td></tr>
+            <tr><td>대중교통 사용분</td><td class="num">40%</td><td>버스·지하철 등</td></tr>
+            <tr><td>도서·공연·박물관·미술관·체육시설</td><td class="num">30%</td><td>총급여 7천만원 이하만 적용</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>공제 한도(2026년 귀속, 자녀 수 반영)</caption>
+          <thead>
+            <tr><th>총급여</th><th class="num">자녀 0명</th><th class="num">1명</th><th class="num">2명 이상</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7,000만원 이하</td><td class="num">300만원</td><td class="num">350만원</td><td class="num">400만원</td></tr>
+            <tr><td>7,000만원 초과</td><td class="num">250만원</td><td class="num">275만원</td><td class="num">300만원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>표의 '자녀 2명 이상'은 자녀가 셋, 넷이어도 같은 금액입니다. 자녀 1인당 50만원(총급여 7천만원 초과는 25만원)을 더하되 <b>늘어나는 폭은 100만원(50만원)이 상한</b>이기 때문입니다.</p>
+
+      <h2>2026년에 달라진 점</h2>
+      <p>2025년 말 개정으로 자녀 수에 따른 한도 상향이 2026년 귀속분부터 적용되고, 제도 적용기한도 <b>2028년 12월 31일까지</b>로 연장됐습니다. 자녀가 2명인 맞벌이 근로자가 한도를 꽉 채웠다면 총급여 구간에 따라 <b>연 12만~15만원</b> 정도 세금이 줄어드는 효과가 있습니다.</p>
+      <div class="callout warn">
+        <span class="callout-title">소득공제와 세액공제를 헷갈리지 마세요</span>
+        카드 공제는 <b>소득공제</b>입니다. 공제액 100만원이 세금 100만원이 줄어드는 것이 아니라, <b>과세표준이 100만원 줄어드는</b> 것입니다. 실제 절세액은 소득세율에 따라 공제액의 6.6%(6% 구간)~46.2%(42% 구간)입니다. 지방소득세 10%를 포함한 값입니다.
+      </div>
+
+      <h2>왜 '체크카드가 무조건 유리'는 아닌가</h2>
+      <p>공제율만 보면 체크카드(30%)가 신용카드(15%)의 두 배입니다. 그런데 실제 계산에서는 세 가지 경우에 이 차이가 사라집니다.</p>
+      <ul>
+        <li><b>문턱 아래</b> — 총 사용액이 총급여의 25%에 못 미치면 공제는 0원입니다. 이때 1만원을 더 써도 두 카드 모두 공제가 늘지 않습니다.</li>
+        <li><b>한도 소진 뒤</b> — 공제액이 한도를 채웠다면 더 써도 공제는 늘지 않습니다. 이때는 공제율이 아니라 <b>포인트·할인·무이자 혜택</b>이 기준이 됩니다.</li>
+        <li><b>최저사용금액이 신용카드에서 먼저 빠질 때</b> — 신용카드 사용액이 아직 문턱보다 적으면, 신용카드로 더 쓰는 것도 체크카드로 더 쓰는 것도 결과가 같아지는 구간이 생깁니다. 문턱을 채우는 데 먼저 쓰이고, 넘긴 뒤에야 공제율이 갈리기 때문입니다.</li>
+      </ul>
+      <p>그래서 이 계산기는 <b>지금 내 사용액에서 1만원을 더 쓸 때 공제가 얼마나 늘어나는지</b>를 카드별로 비교합니다. 평균 공제율이 아니라 <b>앞으로 쓸 돈의 한계 효과</b>를 보는 것이 실제 결정에 맞습니다.</p>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">2026년 귀속 · 총급여 25% 문턱 기준</span>
+        <h2 class="calc-title">카드 소득공제 문턱 계산기</h2>
+        <p class="calc-lead">올해 사용액을 넣으면 <b>문턱 통과 여부·예상 공제액·한도 잔여</b>와, 추가 지출 시 <b>체크카드와 신용카드 중 어느 쪽이 유리한지</b>를 계산합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>소득과 가족</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ct-salary">총급여 (연)</label>
+            <div class="calc-input"><input id="ct-salary" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">근로소득만 있다면 원천징수영수증의 <b>총급여</b> 금액입니다. 비과세 식대는 빼고 넣습니다.</p>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ct-children">기본공제대상 자녀 수</label>
+            <div class="calc-input"><input id="ct-children" type="number" inputmode="numeric" min="0" max="5" step="1" placeholder="0"><span class="calc-unit">명</span></div>
+            <p class="calc-tip">자녀가 2명 이상이면 한도는 2명 기준에서 멈춥니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>올해 카드 사용액</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ct-credit">신용카드</label>
+            <div class="calc-input"><input id="ct-credit" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ct-check">체크카드</label>
+            <div class="calc-input"><input id="ct-check" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+        </div>
+        <div class="calc-grid2 calc-mt">
+          <div class="calc-field">
+            <label class="calc-label" for="ct-cash">현금영수증</label>
+            <div class="calc-input"><input id="ct-cash" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ct-market">전통시장</label>
+            <div class="calc-input"><input id="ct-market" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+        </div>
+        <div class="calc-field calc-mt">
+          <label class="calc-label" for="ct-transit">대중교통</label>
+          <div class="calc-input calc-input-sm"><input id="ct-transit" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip">전통시장·대중교통은 신용카드로 결제했더라도 40%가 적용됩니다. <b>신용카드 합계에 넣지 말고 따로</b> 넣어 주세요.</p>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">3</span><h2>앞으로 더 쓸 금액 비교</h2></div>
+        <div class="calc-field">
+          <label class="calc-label" for="ct-extra">연말까지 추가로 쓸 금액</label>
+          <div class="calc-input calc-input-sm"><input id="ct-extra" type="number" inputmode="numeric" min="0" step="10" placeholder="100"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip">비우면 100만원 기준으로 비교합니다. 이 금액을 체크카드로 쓸 때와 신용카드로 쓸 때의 공제 차이를 봅니다.</p>
+        </div>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">4</span><h2>계산 결과</h2></div>
+        <div id="ct-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="ct-resThreshold"></div>
+          <div class="calc-res" id="ct-resDeduct"></div>
+        </div>
+
+        <dl class="calc-summary" id="ct-summary"></dl>
+
+        <details class="calc-break" id="ct-detailBox">
+          <summary>사용 수단별 공제 내역</summary>
+          <div class="calc-tablewrap" id="ct-detailBody"></div>
+        </details>
+
+        <details class="calc-break" id="ct-extraBox">
+          <summary>추가 사용 시 체크 vs 신용 비교</summary>
+          <div class="calc-tablewrap" id="ct-extraBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="ct-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="ct-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ct-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="ct-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">12월에 결정할 세 가지</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span>문턱까지 남은 금액이 크다면, <b>남은 기간 지출 계획</b>을 먼저 세우세요. 문턱을 채우려고 필요 없는 지출을 늘리면 공제보다 소비가 큽니다.</span></li>
+          <li><b>②</b><span>문턱을 넘겼고 한도가 남았다면, 그때부터는 <b>체크카드·현금영수증</b>이 공제율 두 배입니다. 신용카드 혜택(포인트·할인)이 15% 차이를 덮는지 따져 보세요.</span></li>
+          <li><b>③</b><span>한도를 채웠다면 <b>카드 종류는 공제와 무관</b>합니다. 이때는 연회비 대비 실적·포인트·할인으로 카드를 고르는 게 맞습니다.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#2b3550;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>적용 기준</b> — 조세특례제한법 제126조의2(신용카드 등 사용금액에 대한 소득공제)와 같은 법 시행령 제121조의2. 최저사용금액은 총급여의 25%, 한도는 총급여 7천만원 이하 300만원(자녀 1명 350만원·2명 이상 400만원), 7천만원 초과 250만원(자녀 1명 275만원·2명 이상 300만원)입니다. 2026년 귀속 기준입니다.</p>
+          <p><b>차감 순서</b> — 최저사용금액은 신용카드 사용분에서 먼저 차감하고, 신용카드 사용액이 최저사용금액에 미달하면 그 차액을 체크카드·현금영수증, 전통시장, 대중교통 순으로 차감합니다. 이 순서가 납세자에게 유리합니다.</p>
+          <p><b>포함하지 않은 것</b> — 문화체육관광형 사용분(도서·공연 등 30%), 자녀 자료제공동의가 필요한 자녀 명의 카드, 맞벌이 배우자 사용액의 합산 가능 여부, 연말정산 추가공제 항목(주택자금·연금저축 등)과의 상호작용은 반영하지 않았습니다. 자녀 카드 사용액은 <b>기본공제를 받는 쪽</b>에서만 공제됩니다.</p>
+          <p><b>주의</b> — 공제율·한도는 개정으로 바뀔 수 있습니다. 신고 전에 국세청 연말정산 안내와 홈택스 간소화 자료로 확인하세요.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 공제액은 간소화 자료와 부양가족 요건에 따라 달라집니다.</p>
+    </div>
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법 — 판정 다섯 가지</h2>
+      <p>숫자보다 판정 문구를 먼저 보세요. 같은 공제액이라도 다음에 무엇을 해야 하는지가 다릅니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>판정</th><th>조건</th><th>할 일</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>체크카드가 유리</b></td><td>한도 남음, 문턱 통과, 추가 사용 시 체크 공제 &gt; 신용 공제</td><td>남은 지출은 체크카드·현금영수증으로. 차액이 곧 공제 차이입니다.</td></tr>
+            <tr><td><b>공제 효과 같음</b></td><td>한도 남음, 문턱 통과, 두 카드의 한계 공제가 같음</td><td>공제는 같으니 포인트·할인·무이자 혜택이 큰 카드로.</td></tr>
+            <tr><td><b>문턱 미달</b></td><td>총 사용액 ≤ 총급여 25%</td><td>지금은 추가 지출에 공제가 붙지 않습니다. 소비를 늘릴 이유가 되지 못합니다.</td></tr>
+            <tr><td><b>한도 소진</b></td><td>공제액 = 한도</td><td>더 써도 공제는 0. 카드 혜택과 고정지출 점검으로 넘어가세요.</td></tr>
+            <tr><td><b>입력 대기</b></td><td>총급여 미입력</td><td>원천징수영수증의 총급여를 넣으면 바로 계산됩니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="prose" id="examples" style="margin-top:16px;">
+      <h2>사례 3가지 — 같은 1,800만원, 다른 결과</h2>
+      <p>총 사용액이 비슷해도 총급여와 자녀 수, 사용 수단 구성에 따라 공제액은 두 배 이상 벌어집니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>계산기로 확인한 사례(2026년 귀속 기준)</caption>
+          <thead>
+            <tr><th>구분</th><th>사례 A</th><th>사례 B</th><th>사례 C</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>총급여</td><td>5,000만원</td><td>8,000만원</td><td>6,000만원</td></tr>
+            <tr><td>자녀 수</td><td>1명</td><td>2명</td><td>0명</td></tr>
+            <tr><td>최저사용금액</td><td>1,250만원</td><td>2,000만원</td><td>1,500만원</td></tr>
+            <tr><td>사용액</td><td>신용 1,200만 + 체크 600만</td><td>신용 2,400만 + 체크 400만</td><td>신용 3,000만 + 체크 500만 + 전통시장 200만</td></tr>
+            <tr><td>공제 한도</td><td>350만원</td><td>300만원</td><td>300만원</td></tr>
+            <tr><td><b>공제액</b></td><td><b>165만원</b></td><td><b>180만원</b></td><td><b>300만원(한도)</b></td></tr>
+            <tr><td>한도 잔여</td><td>185만원</td><td>120만원</td><td>0원</td></tr>
+            <tr><td>해석</td><td>신용카드 사용분이 전부 문턱에 흡수되고 체크 550만원만 공제 대상</td><td>신용 초과분 400만원은 15%, 체크 400만원은 30%</td><td>계산상 455만원이지만 한도 300만원에서 잘림</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>사례 A는 총 사용액이 사례 C의 절반 수준인데도 공제액 차이가 135만원입니다. <b>총급여가 낮아 문턱이 낮고 자녀 한도가 붙었기 때문</b>입니다. 반대로 사례 C는 카드를 많이 썼지만 한도에서 잘려 초과분 155만원이 그대로 사라졌습니다.</p>
+      <div class="callout tip">
+        <span class="callout-title">사례 C라면 남은 12월은 '공제 없는 달'입니다</span>
+        한도를 채운 상태에서는 체크카드로 바꿔도 공제가 늘지 않습니다. 이때는 <b>연회비 대비 혜택</b>, 무이자 할부, 카드사 포인트 적립률로 판단하세요. 공제를 위해 지출을 늘리는 것은 어떤 경우에도 손해입니다.
+      </div>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>카드 소득공제는 세금을 얼마나 줄여 주나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>공제액에 본인 소득세율을 곱한 만큼입니다. 예를 들어 공제액 300만원이라면 소득세 15% 구간은 약 49만 5천원, 24% 구간은 약 79만 2천원(지방소득세 포함)의 세금이 줄어듭니다. 공제액이 300만원이라고 300만원이 환급되는 것이 아닙니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>체크카드만 쓰면 무조건 유리한가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아닙니다. 최저사용금액(총급여의 25%)을 넘지 못하면 어떤 카드를 써도 공제는 0원이고, 한도를 다 채운 뒤에도 추가 사용에는 공제가 붙지 않습니다. 공제율 30%는 <b>문턱을 넘고 한도가 남아 있는 구간</b>에서만 힘을 냅니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>최저사용금액은 어느 카드에서 먼저 빼나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>공제율이 낮은 <b>신용카드 사용분에서 먼저</b> 차감하고, 신용카드 사용액이 최저사용금액에 못 미치면 그 차액을 체크카드·현금영수증에서 차감합니다. 그래서 신용카드 사용액이 문턱보다 적을 때는 신용카드로 더 써도 체크카드로 더 써도 결과가 같아지는 구간이 생깁니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>배우자 카드 사용액을 합칠 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>배우자가 연간소득금액 100만원 이하(근로소득만 있으면 총급여 500만원 이하)인 경우에만 본인 공제에 합칠 수 있습니다. 맞벌이라면 각자 계산해야 하고, 자녀 카드 사용액은 <b>기본공제를 받는 쪽</b>에서만 공제됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>계산기에 개인정보가 저장되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>조세특례제한법 제126조의2(신용카드 등 사용금액에 대한 소득공제), 같은 법 시행령 제121조의2 — 공제율·최저사용금액·한도</li>
+        <li>국세청 연말정산 안내(신용카드등 사용액 소득공제) — 차감 순서, 부양가족 요건</li>
+        <li>기획재정부 2025년 세제개편안 보도자료 — 자녀 수별 한도 상향, 적용기한 연장(2028년 12월 31일)</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지는 일반적인 정보이며 특정 카드사·상품과 제휴하지 않았습니다. 공제율과 한도는 개정될 수 있으니 신고 전 국세청 안내를 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="medical-tax.html">
+        <b>부부 의료비 몰아주기 계산기</b>
+        <span>의료비 세액공제를 누구에게 몰아줄지 3% 문턱까지 반영해 계산합니다.</span>
+      </a>
+      <a href="salary-net.html">
+        <b>연봉 실수령액 계산기</b>
+        <span>4대보험과 소득세를 빼고 월 실수령액을 계산합니다.</span>
+      </a>
+      <a href="guide-tax-refund.html">
+        <b>연말정산 경정청구 체크리스트</b>
+        <span>놓친 공제를 5년 안에 돌려받는 방법을 단계별로 정리했습니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CT-CORE-START */
+var CT_SALARY_CUT = 70000000;
+var CT_THRESHOLD_RATE = 0.25;
+var CT_BASE_LOW = 3000000;
+var CT_BASE_HIGH = 2500000;
+var CT_CHILD_PER_LOW = 500000;
+var CT_CHILD_PER_HIGH = 250000;
+var CT_CHILD_ADD_CAP_LOW = 1000000;
+var CT_CHILD_ADD_CAP_HIGH = 500000;
+var CT_RATE_CREDIT = 0.15;
+var CT_RATE_CHECK = 0.30;
+var CT_RATE_MARKET = 0.40;
+var CT_RATE_TRANSIT = 0.40;
+
+function ctLimit(salary, children){
+  var low = salary <= CT_SALARY_CUT;
+  var ch = Math.max(0, Math.min(5, Math.round(children || 0)));
+  var per = low ? CT_CHILD_PER_LOW : CT_CHILD_PER_HIGH;
+  var cap = low ? CT_CHILD_ADD_CAP_LOW : CT_CHILD_ADD_CAP_HIGH;
+  var counted = Math.min(ch, Math.floor(cap / per));
+  return {
+    total: (low ? CT_BASE_LOW : CT_BASE_HIGH) + counted * per,
+    base: low ? CT_BASE_LOW : CT_BASE_HIGH,
+    childAdd: counted * per,
+    perChild: per,
+    counted: counted,
+    low: low
+  };
+}
+
+function ctDeduct(cfg){
+  cfg = cfg || {};
+  function won(v){ return Math.max(0, Math.round(v || 0)); }
+  var salary = won(cfg.salary);
+  var credit = won(cfg.credit), check = won(cfg.check), cash = won(cfg.cash);
+  var market = won(cfg.market), transit = won(cfg.transit);
+  var threshold = Math.round(salary * CT_THRESHOLD_RATE);
+  var total = credit + check + cash + market + transit;
+  var lim = ctLimit(salary, cfg.children);
+
+  var remain = threshold;
+  var afterCredit = Math.max(0, credit - remain); remain = Math.max(0, remain - credit);
+  var afterCheck = Math.max(0, check - remain); remain = Math.max(0, remain - check);
+  var afterCash = Math.max(0, cash - remain); remain = Math.max(0, remain - cash);
+  var afterMarket = Math.max(0, market - remain); remain = Math.max(0, remain - market);
+  var afterTransit = Math.max(0, transit - remain); remain = Math.max(0, remain - transit);
+
+  var dCredit = afterCredit * CT_RATE_CREDIT;
+  var dCheck = (afterCheck + afterCash) * CT_RATE_CHECK;
+  var dMarket = afterMarket * CT_RATE_MARKET;
+  var dTransit = afterTransit * CT_RATE_TRANSIT;
+  var raw = dCredit + dCheck + dMarket + dTransit;
+  var deduction = Math.min(lim.total, raw);
+
+  var out = {
+    salary: salary, children: Math.max(0, Math.round(cfg.children || 0)),
+    threshold: threshold, total: total,
+    limit: lim.total, limitBase: lim.base, limitChild: lim.childAdd, perChild: lim.perChild, counted: lim.counted,
+    credit: credit, check: check, cash: cash, market: market, transit: transit,
+    afterCredit: afterCredit, afterCheck: afterCheck, afterCash: afterCash,
+    afterMarket: afterMarket, afterTransit: afterTransit,
+    dCredit: dCredit, dCheck: dCheck, dMarket: dMarket, dTransit: dTransit,
+    raw: raw, deduction: deduction,
+    headroom: Math.max(0, lim.total - deduction),
+    capped: raw > lim.total,
+    clipped: Math.max(0, raw - lim.total),
+    thresholdGap: Math.max(0, threshold - total),
+    overAmount: Math.max(0, total - threshold),
+    progress: threshold > 0 ? Math.min(1, total / threshold) : 0,
+    effectiveRate: total > 0 ? deduction / total : 0,
+    status: 'empty'
+  };
+  if (salary <= 0) return out;
+  if (deduction >= lim.total) out.status = 'capped';
+  else if (total <= threshold) out.status = 'below';
+  else out.status = 'open';
+  return out;
+}
+
+function ctMarginal(cfg, extra, type){
+  var base = ctDeduct(cfg);
+  var next = {};
+  for (var k in cfg) if (Object.prototype.hasOwnProperty.call(cfg, k)) next[k] = cfg[k];
+  next[type] = Math.max(0, Math.round(cfg[type] || 0)) + Math.max(0, Math.round(extra || 0));
+  var after = ctDeduct(next);
+  return { added: after.deduction - base.deduction, deduction: after.deduction };
+}
+
+function ctCompare(cfg, extra){
+  var creditGain = ctMarginal(cfg, extra, 'credit').added;
+  var checkGain = ctMarginal(cfg, extra, 'check').added;
+  var base = ctDeduct(cfg);
+  var gap = checkGain - creditGain;
+  var advice;
+  if (creditGain === 0 && checkGain === 0) advice = 'none';
+  else if (gap > 1) advice = 'check';
+  else if (gap < -1) advice = 'credit';
+  else advice = 'even';
+  return {
+    extra: extra, creditGain: creditGain, checkGain: checkGain, gap: gap,
+    advice: advice, status: base.status, deduction: base.deduction, headroom: base.headroom
+  };
+}
+
+function ctAssess(cfg, extra){
+  var base = ctDeduct(cfg);
+  var cmp = ctCompare(cfg, extra);
+  var key = 'empty';
+  if (base.status === 'capped') key = 'capped';
+  else if (base.status === 'below' && cmp.advice === 'none') key = 'below';
+  else if (base.status === 'empty') key = 'empty';
+  else if (cmp.advice === 'check') key = 'check';
+  else if (cmp.advice === 'credit') key = 'credit';
+  else if (cmp.advice === 'even') key = 'even';
+  else key = 'capped';
+  return { base: base, cmp: cmp, key: key };
+}
+
+function ctComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function ctWon(n){ return ctComma(Math.round(n || 0)) + '원'; }
+function ctMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + ctComma(whole) + (dec > 0 ? '.' + dec : '') + '만';
+}
+/* CT-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    salary: $('ct-salary'), children: $('ct-children'), credit: $('ct-credit'), check: $('ct-check'),
+    cash: $('ct-cash'), market: $('ct-market'), transit: $('ct-transit'), extra: $('ct-extra'),
+    verdict: $('ct-verdict'), resThreshold: $('ct-resThreshold'), resDeduct: $('ct-resDeduct'),
+    summary: $('ct-summary'), detailBody: $('ct-detailBody'), extraBody: $('ct-extraBody'), toast: $('ct-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function readCfg(){
+    return {
+      salary: Math.round(num(el.salary.value) * 10000),
+      children: Math.round(num(el.children.value)),
+      credit: Math.round(num(el.credit.value) * 10000),
+      check: Math.round(num(el.check.value) * 10000),
+      cash: Math.round(num(el.cash.value) * 10000),
+      market: Math.round(num(el.market.value) * 10000),
+      transit: Math.round(num(el.transit.value) * 10000)
+    };
+  }
+  function readExtra(){
+    var v = num(el.extra.value);
+    return Math.round((v > 0 ? v : 100) * 10000);
+  }
+
+  var VERDICT = {
+    check: ['is-good', '체크카드가 유리', '앞으로 쓸 돈은 체크카드·현금영수증으로'],
+    even: ['is-tight', '공제 효과는 같습니다', '포인트·할인이 큰 카드로 고르세요'],
+    credit: ['is-tight', '신용카드가 유리', '신용카드 공제율이 더 크게 작용합니다'],
+    below: ['is-bad', '문턱 미달', '지금은 추가 지출에 공제가 붙지 않습니다'],
+    capped: ['is-tight', '공제 한도 소진', '더 써도 공제는 늘지 않습니다'],
+    empty: ['is-empty', '입력 대기', '총급여를 입력하세요']
+  };
+
+  function render(){
+    var cfg = readCfg();
+    var extra = readExtra();
+    var res = ctAssess(cfg, extra);
+    var b = res.base, cmp = res.cmp, v = VERDICT[res.key];
+
+    el.verdict.className = 'calc-verdict ' + v[0];
+    if (res.key === 'empty'){
+      el.verdict.innerHTML = '<span class="v-tag">' + v[1] + '</span><span class="v-title">' + v[2] +
+        '</span><span class="v-desc">총급여와 카드 사용액을 넣으면 문턱·공제액·카드별 손익이 바로 계산됩니다.</span>';
+      el.resThreshold.className = 'calc-res';
+      el.resThreshold.innerHTML = '<div class="r-head">최저사용금액(총급여 25%)</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resDeduct.className = 'calc-res';
+      el.resDeduct.innerHTML = '<div class="r-head">예상 소득공제</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>공제 한도</dt><dd>' + ctWon(b.limit) + '</dd></div><div class="total"><dt>공제액</dt><dd>—</dd></div>';
+      el.detailBody.innerHTML = '<table class="calc-table"><tbody><tr><td>값을 입력하면 사용 수단별 내역이 만들어집니다.</td></tr></tbody></table>';
+      el.extraBody.innerHTML = '';
+      return;
+    }
+
+    var detail = '';
+    if (res.key === 'check'){
+      detail = '추가 ' + ctMan(cmp.extra) + '원을 쓰면 체크카드 공제가 ' + ctWon(cmp.checkGain) + ', 신용카드는 ' + ctWon(cmp.creditGain) +
+        ' 늘어 <b>' + ctWon(cmp.gap) + '</b> 차이입니다.';
+      if (b.overAmount > 0) detail += ' 지금 사용액이 문턱을 ' + ctWon(b.overAmount) + ' 넘었고 한도가 ' + ctWon(b.headroom) + ' 남아 있습니다.';
+    } else if (res.key === 'even'){
+      detail = '추가 ' + ctMan(cmp.extra) + '원을 쓰면 두 카드 모두 공제가 ' + ctWon(cmp.checkGain) + ' 늘어 차이가 없습니다. 최저사용금액이 신용카드에서 먼저 빠지는 구조 때문입니다.';
+    } else if (res.key === 'credit'){
+      detail = '추가 ' + ctMan(cmp.extra) + '원을 쓰면 신용카드 공제가 ' + ctWon(cmp.creditGain) + ', 체크카드는 ' + ctWon(cmp.checkGain) + ' 늘어납니다.';
+    } else if (res.key === 'below'){
+      detail = '총급여의 25%인 ' + ctWon(b.threshold) + '까지 ' + ctWon(b.thresholdGap) + ' 남았습니다. 이 구간의 지출에는 공제가 0원입니다. 공제를 위해 지출을 늘리지 마세요.';
+    } else {
+      detail = '공제액이 한도 ' + ctWon(b.limit) + '을 채워 초과분 ' + ctWon(b.clipped) + '은 반영되지 않았습니다. 남은 지출은 카드 혜택으로 고르세요.';
+    }
+    el.verdict.innerHTML = '<span class="v-tag">' + v[1] + '</span><span class="v-title">' + v[2] +
+      '</span><span class="v-desc">' + detail + '</span>';
+
+    el.resThreshold.className = 'calc-res';
+    el.resThreshold.innerHTML = '<div class="r-head">최저사용금액(총급여 25%)</div><dl>'
+      + '<div><dt>문턱</dt><dd class="big">' + ctWon(b.threshold) + '</dd></div>'
+      + '<div><dt>올해 사용액</dt><dd>' + ctWon(b.total) + '</dd></div>'
+      + '<div><dt>' + (b.thresholdGap > 0 ? '문턱까지' : '문턱 초과') + '</dt><dd class="' + (b.thresholdGap > 0 ? 'neg' : 'pos') + '">'
+      + ctWon(b.thresholdGap > 0 ? b.thresholdGap : b.overAmount) + '</dd></div>'
+      + '</dl>';
+
+    el.resDeduct.className = 'calc-res';
+    el.resDeduct.innerHTML = '<div class="r-head">예상 소득공제' + (b.capped ? ' · 한도 적용' : '') + '</div><dl>'
+      + '<div><dt>공제액</dt><dd class="big">' + ctWon(b.deduction) + '</dd></div>'
+      + '<div><dt>공제 한도</dt><dd>' + ctWon(b.limit) + '</dd></div>'
+      + '<div><dt>한도 잔여</dt><dd>' + ctWon(b.headroom) + '</dd></div>'
+      + '<div><dt>실효 공제율</dt><dd>' + (b.effectiveRate * 100).toFixed(1) + '%</dd></div>'
+      + '</dl>';
+
+    var sum = '';
+    sum += '<div><dt>총급여</dt><dd>' + ctWon(b.salary) + '</dd></div>';
+    sum += '<div><dt>공제 한도 (기본 ' + ctMan(b.limitBase) + ' + 자녀 ' + b.counted + '명 ' + ctMan(b.limitChild) + ')</dt><dd>' + ctWon(b.limit) + '</dd></div>';
+    sum += '<div><dt>사용액 합계</dt><dd>' + ctWon(b.total) + '</dd></div>';
+    sum += '<div><dt>문턱 초과분</dt><dd>' + ctWon(b.overAmount) + '</dd></div>';
+    sum += '<div><dt>계산상 공제액</dt><dd>' + ctWon(b.raw) + '</dd></div>';
+    sum += '<div class="total"><dt>반영되는 공제액</dt><dd class="pos">' + ctWon(b.deduction) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var tb = '<table class="calc-table"><thead><tr><th>수단</th><th>사용액</th><th>공제율</th><th>공제액</th></tr></thead><tbody>';
+    tb += '<tr><td>신용카드</td><td>' + ctWon(b.credit) + '</td><td>15%</td><td>' + ctWon(b.dCredit) + '</td></tr>';
+    tb += '<tr><td>체크카드·현금영수증</td><td>' + ctWon(b.check + b.cash) + '</td><td>30%</td><td>' + ctWon(b.dCheck) + '</td></tr>';
+    tb += '<tr><td>전통시장</td><td>' + ctWon(b.market) + '</td><td>40%</td><td>' + ctWon(b.dMarket) + '</td></tr>';
+    tb += '<tr><td>대중교통</td><td>' + ctWon(b.transit) + '</td><td>40%</td><td>' + ctWon(b.dTransit) + '</td></tr>';
+    tb += '</tbody></table>';
+    el.detailBody.innerHTML = tb;
+
+    var eb = '<table class="calc-table"><thead><tr><th>구분</th><th>체크카드</th><th>신용카드</th></tr></thead><tbody>';
+    eb += '<tr><td>추가 사용액</td><td colspan="2">' + ctWon(cmp.extra) + '</td></tr>';
+    eb += '<tr><td>공제 증가액</td><td><b>' + ctWon(cmp.checkGain) + '</b></td><td><b>' + ctWon(cmp.creditGain) + '</b></td></tr>';
+    eb += '<tr><td>차이</td><td colspan="2"><b>' + (cmp.gap > 0 ? '체크카드 +' : (cmp.gap < 0 ? '신용카드 +' : '차이 없음 ')) + ctWon(Math.abs(cmp.gap)) + '</b></td></tr>';
+    eb += '</tbody></table>';
+    el.extraBody.innerHTML = eb;
+  }
+
+  el.salary.addEventListener('input', render);
+  el.children.addEventListener('input', render);
+  el.credit.addEventListener('input', render);
+  el.check.addEventListener('input', render);
+  el.cash.addEventListener('input', render);
+  el.market.addEventListener('input', render);
+  el.transit.addEventListener('input', render);
+  el.extra.addEventListener('input', render);
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('ct-example').addEventListener('click', function(){
+    el.salary.value = '5000';
+    el.children.value = '1';
+    el.credit.value = '1200';
+    el.check.value = '600';
+    el.cash.value = '0';
+    el.market.value = '0';
+    el.transit.value = '0';
+    el.extra.value = '';
+    render();
+  });
+  $('ct-reset').addEventListener('click', function(){
+    el.salary.value = '';
+    el.children.value = '';
+    el.credit.value = '';
+    el.check.value = '';
+    el.cash.value = '';
+    el.market.value = '';
+    el.transit.value = '';
+    el.extra.value = '';
+    render();
+  });
+  $('ct-copy').addEventListener('click', function(){
+    var res = ctAssess(readCfg(), readExtra());
+    if (res.key === 'empty'){ toast('값을 먼저 입력하세요'); return; }
+    var b = res.base, cmp = res.cmp;
+    var text = '카드 소득공제 계산 (2026년 귀속)\n'
+      + '· 총급여 ' + ctWon(b.salary) + ' / 자녀 ' + b.children + '명 → 한도 ' + ctWon(b.limit) + ', 문턱 ' + ctWon(b.threshold) + '\n'
+      + '· 사용액 ' + ctWon(b.total) + ' → 예상 공제액 ' + ctWon(b.deduction) + (b.capped ? ' (한도 적용)' : '') + '\n'
+      + '· 한도 잔여 ' + ctWon(b.headroom) + ', 실효 공제율 ' + (b.effectiveRate * 100).toFixed(1) + '%\n'
+      + '· 추가 ' + ctWon(cmp.extra) + ': 체크 +' + ctWon(cmp.checkGain) + ' / 신용 +' + ctWon(cmp.creditGain) + '\n'
+      + '· 판정: ' + VERDICT[res.key][2] + '\n'
+      + '계산: usefulkit.kr/card-tax.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
