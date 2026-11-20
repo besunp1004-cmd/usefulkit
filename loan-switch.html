@@ -7,18 +7,117 @@
 <meta name="description" content="기존 대출 잔액·금리·남은 기간과 갈아탈 금리, 중도상환수수료·인지세 등을 넣으면 월 상환액 차이, 총 이자 절감액, 손익분기 개월 수, 갈아타기 추천 여부를 계산합니다.">
 <link rel="canonical" href="https://usefulkit.kr/loan-switch.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:site_name" content="UsefulKit">
 <meta property="og:title" content="주담대·전세 갈아타기(대환) 실익 계산기">
 <meta property="og:description" content="금리차만 보지 말고 중도상환수수료·부대비용까지 넣어 손익분기 개월 수를 계산하세요.">
 <meta property="og:url" content="https://usefulkit.kr/loan-switch.html">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="주담대·전세 갈아타기(대환) 실익 계산기">
+<meta name="twitter:description" content="금리차만 보지 말고 중도상환수수료·부대비용까지 넣어 손익분기 개월 수를 계산하세요.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="theme-color" content="#12305f">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"주담대·전세 갈아타기(대환) 실익 계산기","url":"https://usefulkit.kr/loan-switch.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"기존 대출 잔액·금리·남은 기간과 갈아탈 금리, 중도상환수수료·인지세 등을 반영해 월 상환액 차이, 총 이자 절감액, 손익분기 개월 수를 계산합니다."}
-</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "주담대·전세 갈아타기(대환) 실익 계산기",
+  "url": "https://usefulkit.kr/loan-switch.html",
+  "description": "기존 대출 잔액·금리·남은 기간과 갈아탈 금리, 중도상환수수료·인지세 등을 넣으면 월 상환액 차이, 총 이자 절감액, 손익분기 개월 수, 갈아타기 추천 여부를 계산합니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "UsefulKit",
+    "alternateName": "유용한 생활 도구함",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "유용한 생활 도구함",
+    "alternateName": "UsefulKit",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "중도상환수수료는 무조건 내나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 대출계약 성립일로부터 3년이 지난 뒤 갚으면 법령상 예외가 없는 한 부과할 수 없습니다. 또 갈아타기처럼 기존 계약을 바꿔 새 계약을 맺는 경우, 기존·신규 계약의 유지기간을 합쳐 3년을 넘겼는데도 수수료를 부과하는 것은 금지되어 있습니다. 다만 적용 판단은 상품·약정에 따라 달라질 수 있어 은행에 확인하는 것이 가장 정확합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "금리차가 몇 %p면 갈아탈 만한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정해진 기준은 없고 잔액과 남은 기간이 결정합니다. 잔액 3억원·남은 20년 기준으로는 0.5%p만 벌어져도 1,900만원 안팎 차이가 나고, 잔액 5천만원·남은 2년이라면 1%p가 벌어져도 겨우 3만 5천원이 남을 정도입니다. 금리차보다 손익분기 개월 수와 남은 기간의 비교를 먼저 보세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "기간을 늘려서 갈아타면 이득인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "월 부담은 줄지만 총이자는 늘어날 수 있습니다. 계산기에서 '갈아탈 기간'을 기존보다 길게 넣으면 총이자 절감액이 줄거나 마이너스가 되는 것을 볼 수 있습니다. 현금흐름이 급해서 기간을 늘려야 한다면, 그것은 '이자 절감'이 아니라 '월 부담 조정'이 목적이라는 점을 분명히 하고 결정하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전세대출도 갈아탈 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 전세대출은 보통 만기일시 상환이라 이자만 내다가 만기에 원금을 갚습니다. 이 계산기에서 상환 방식을 '만기일시'로 바꾸면 이 구조로 계산됩니다. 보증기관(HUG·HF·SGI서울보증)을 바꾸면 보증료율이 달라지므로, 보증료 차액을 기타비용에 넣어야 실제 비교가 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "대환하면 한도가 줄어들 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "그럴 수 있습니다. 갈아타기는 새 대출 심사이므로 소득·신용·기존 부채에 따라 한도가 달라지고, 스트레스 DSR 같은 규제가 적용되면 같은 잔액이라도 빌릴 수 있는 금액이 줄어들 수 있습니다. 잔액 전액을 옮기지 못하면 차액을 따로 마련해야 하므로, 금리보다 한도를 먼저 확인하는 것이 순서입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이 계산기에 개인정보가 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 모든 계산은 브라우저 안에서만 이루어지고 서버로 전송되거나 저장되지 않습니다. 페이지를 새로 고치면 입력값은 사라집니다."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>

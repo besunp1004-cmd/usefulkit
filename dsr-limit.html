@@ -7,26 +7,109 @@
 <meta name="description" content="연소득과 기존 대출 원리금을 넣으면 현재 DSR과 추가로 빌릴 수 있는 최대 금액을 계산합니다. 스트레스 금리와 상환 방식(원리금균등·원금균등)별 한도를 함께 비교합니다.">
 <link rel="canonical" href="https://usefulkit.kr/dsr-limit.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:site_name" content="UsefulKit">
 <meta property="og:title" content="DSR 대출 한도 계산기">
 <meta property="og:description" content="DSR 40% 규제와 스트레스 금리를 반영해 추가 대출 가능액을 계산합니다.">
 <meta property="og:url" content="https://usefulkit.kr/dsr-limit.html">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DSR 대출 한도 계산기">
+<meta name="twitter:description" content="DSR 40% 규제와 스트레스 금리를 반영해 추가 대출 가능액을 계산합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="theme-color" content="#12305f">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"DSR 대출 한도 계산기","url":"https://usefulkit.kr/dsr-limit.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"연소득, 기존 대출 원리금, DSR 규제비율, 스트레스 금리, 상환 방식을 넣어 현재 DSR과 최대 신규 대출액을 계산합니다."}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"DSR은 원금까지 포함하나요?","acceptedAnswer":{"@type":"Answer","text":"네. DSR(총부채원리금상환비율)은 모든 가계대출의 1년치 원금과 이자를 합쳐 연소득으로 나눈 값입니다. 이자만 보는 DTI보다 엄격합니다."}},
-{"@type":"Question","name":"스트레스 금리는 실제로 내는 이자인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 대출 심사에서 한도만 계산할 때 쓰는 가상의 가산금리입니다. 실제 대출 금리에는 붙지 않습니다."}},
-{"@type":"Question","name":"마이너스통장은 어떻게 반영하나요?","acceptedAnswer":{"@type":"Answer","text":"은행은 약정 한도 전체를 빚으로 보고 연간 이자를 산정하는 경우가 많습니다. 실제 사용액이 아니라 한도 기준으로 계산되므로, 쓰지 않는 통장은 해지하는 편이 한도에 유리합니다."}},
-{"@type":"Question","name":"DSR 40%를 넘으면 대출이 안 되나요?","acceptedAnswer":{"@type":"Answer","text":"은행권은 차주별 DSR 40%가 기준이지만, 예외 상품(정책대출·전세대출 일부)과 2금융권(50%) 기준이 따로 있습니다. 총량 규제와 담보 가치에 따라 실제 한도는 더 줄어들 수 있습니다."}}
-]}
-</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DSR 대출 한도 계산기",
+  "url": "https://usefulkit.kr/dsr-limit.html",
+  "description": "연소득과 기존 대출 원리금을 넣으면 현재 DSR과 추가로 빌릴 수 있는 최대 금액을 계산합니다. 스트레스 금리와 상환 방식(원리금균등·원금균등)별 한도를 함께 비교합니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "UsefulKit",
+    "alternateName": "유용한 생활 도구함",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "유용한 생활 도구함",
+    "alternateName": "UsefulKit",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "DSR은 원금까지 포함하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 1년치 원금과 이자를 모두 합쳐 연소득으로 나눕니다. 이자만 보는 DTI보다 엄격하고, 만기가 짧은 대출에 불리합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "스트레스 금리는 실제로 내는 이자인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 심사에서 한도만 계산할 때 쓰는 가상의 가산금리입니다. 실제 대출 금리에는 붙지 않으므로, 한도가 줄었다고 이자가 늘어나는 것은 아닙니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "마이너스통장은 어떻게 반영되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "은행은 약정 한도 전체를 빚으로 보고 연간 이자를 산정하는 경우가 많습니다. 실제로 쓰지 않아도 한도가 있으면 DSR이 올라갑니다. 쓰지 않는 통장은 한도를 줄이거나 해지하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전세대출도 DSR에 들어가나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전세대출은 상품·규제 시점에 따라 반영 방식이 다릅니다. 이자만 반영되던 시기와 원금 일부가 반영되는 시기가 있었으므로, 심사 전에 DSR 산정 내역을 은행에 요청해 확인하는 것이 정확합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산기에 개인정보가 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>

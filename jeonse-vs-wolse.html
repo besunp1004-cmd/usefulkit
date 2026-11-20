@@ -7,26 +7,109 @@
 <meta name="description" content="전세 보증금·대출이자·자기자본 기회비용과 월세·보증금 이자를 연 단위로 환산해 전세와 월세 중 어느 쪽이 실제로 저렴한지 계산합니다. 손익분기 전월세 전환율까지 보여 드립니다.">
 <link rel="canonical" href="https://usefulkit.kr/jeonse-vs-wolse.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:site_name" content="UsefulKit">
 <meta property="og:title" content="전세 vs 월세 주거비 손익 계산기">
 <meta property="og:description" content="보증금·대출이자·기회비용을 모두 넣어 전세와 월세의 연 실질 주거비를 비교합니다.">
 <meta property="og:url" content="https://usefulkit.kr/jeonse-vs-wolse.html">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="전세 vs 월세 주거비 손익 계산기">
+<meta name="twitter:description" content="보증금·대출이자·기회비용을 모두 넣어 전세와 월세의 연 실질 주거비를 비교합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="theme-color" content="#12305f">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"전세 vs 월세 주거비 손익 계산기","url":"https://usefulkit.kr/jeonse-vs-wolse.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"전세 보증금·대출이자·자기자본 기회비용과 월세·보증금 이자를 연 환산해 비교하고 손익분기 전월세 전환율을 계산합니다."}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"자기자본 기회비용도 주거비에 넣어야 하나요?","acceptedAnswer":{"@type":"Answer","text":"넣는 것이 비교에 맞습니다. 전세 보증금으로 묶인 내 돈은 예금·투자로 굴릴 수 없는 돈이고, 월세는 그 돈이 남아 있습니다. 기회비용을 빼면 보증금이 큰 전세가 항상 유리하게 나옵니다."}},
-{"@type":"Question","name":"전월세 전환율이란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"보증금을 월세로 바꿀 때 적용되는 연 이율입니다. 예를 들어 보증금 1억원을 월 30만원으로 바꾸면 연 360만원이므로 전환율은 3.6%입니다. 이 계산기는 두 조건의 비용이 같아지는 손익분기 전환율을 계산해 시장 전환율과 비교합니다."}},
-{"@type":"Question","name":"관리비가 다르면 어떻게 반영하나요?","acceptedAnswer":{"@type":"Answer","text":"전세와 월세의 월 관리비, 연 수선비를 각각 넣으면 연 주거비에 더해집니다. 월세 오피스텔처럼 관리비가 높은 경우 결과가 뒤집히는 일이 흔합니다."}},
-{"@type":"Question","name":"전세대출 이자는 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"전세대출 잔액에 연 금리를 곱한 단순 이자로 계산합니다. 만기일시 상환 전세대출은 이 방식과 거의 같고, 원리금균등 상환이라면 원금이 줄어드는 만큼 실제 이자가 조금 적습니다."}}
-]}
-</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "전세 vs 월세 주거비 손익 계산기",
+  "url": "https://usefulkit.kr/jeonse-vs-wolse.html",
+  "description": "전세 보증금·대출이자·자기자본 기회비용과 월세·보증금 이자를 연 단위로 환산해 전세와 월세 중 어느 쪽이 실제로 저렴한지 계산합니다. 손익분기 전월세 전환율까지 보여 드립니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "UsefulKit",
+    "alternateName": "유용한 생활 도구함",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "유용한 생활 도구함",
+    "alternateName": "UsefulKit",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "자기자본 기회비용도 주거비에 넣어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "넣는 것이 비교에 맞습니다. 전세 보증금으로 묶인 돈은 예금·투자로 굴릴 수 없는 돈이고, 월세는 그 돈이 남아 있습니다. 기회비용을 빼면 보증금이 큰 전세가 항상 유리하게 나와 판단이 왜곡됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전월세 전환율은 어떻게 계산하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "월세 × 12 ÷ (전세 보증금 − 월세 보증금)입니다. 보증금 5,000만원을 월 15만원으로 바꾼 경우 연 180만원 ÷ 5,000만원 = 3.6%입니다. 이 계산기는 두 조건의 비용이 같아지는 손익분기 전환율을 함께 보여 줍니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "관리비 차이가 크면 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "월 관리비 차이 × 12가 연 비용 차이에 그대로 더해집니다. 월 7만원 차이면 연 84만원으로, 위 사례처럼 차이가 작은 경우 결론을 뒤집을 수 있습니다. 수선비도 같은 방식으로 반영됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "보증금 대출은 어떻게 반영되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대출 금액 × 금리를 연 이자로 계산하고, 대출을 뺀 나머지에만 기회비용 수익률을 적용합니다. 월세 보증금도 대출로 마련했다면 그 이자를 넣어야 두 조건이 공정하게 비교됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산기에 개인정보가 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>

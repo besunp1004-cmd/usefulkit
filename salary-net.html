@@ -7,26 +7,109 @@
 <meta name="description" content="2026년 4대보험 요율(국민연금 4.75%, 건강보험 3.595%, 장기요양, 고용보험 0.9%)과 근로소득세를 반영해 연봉별 월 실수령액을 계산합니다. 공제 내역과 연봉 구간별 표를 함께 제공합니다.">
 <link rel="canonical" href="https://usefulkit.kr/salary-net.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:site_name" content="UsefulKit">
 <meta property="og:title" content="연봉 실수령액 계산기">
 <meta property="og:description" content="4대보험과 소득세를 빼고 월 실수령액과 공제 내역을 계산합니다.">
 <meta property="og:url" content="https://usefulkit.kr/salary-net.html">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="연봉 실수령액 계산기">
+<meta name="twitter:description" content="4대보험과 소득세를 빼고 월 실수령액과 공제 내역을 계산합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="theme-color" content="#12305f">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"연봉 실수령액 계산기","url":"https://usefulkit.kr/salary-net.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"2026년 4대보험 요율과 근로소득세·지방소득세를 반영해 월 실수령액과 연 실수령액을 계산합니다."}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"식대 20만원은 왜 비과세인가요?","acceptedAnswer":{"@type":"Answer","text":"현행 소득세법 시행령은 월 20만원 이하의 식대를 비과세 소득으로 정하고 있습니다. 비과세액은 소득세와 4대보험료 산정 기준에서 모두 빠지므로 실수령액이 늘어납니다."}},
-{"@type":"Question","name":"국민연금이 월급의 4.75%가 아닌 이유가 있나요?","acceptedAnswer":{"@type":"Answer","text":"국민연금은 실제 월급이 아니라 기준소득월액에 요율을 곱합니다. 2026년 7월부터 기준소득월액 상한은 659만원, 하한은 41만원이라 월급이 659만원을 넘어도 보험료는 313,020원에서 멈춥니다."}},
-{"@type":"Question","name":"부양가족 수는 어떻게 세나요?","acceptedAnswer":{"@type":"Answer","text":"본인을 포함해 세고, 배우자·자녀·부모처럼 실제로 부양하는 가족을 넣습니다. 1인당 150만원이 소득공제되므로 1명 차이로도 월 2만~3만원 실수령액이 달라집니다."}},
-{"@type":"Question","name":"계산 결과와 회사 명세서가 다른 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"상여·수당 지급 시점, 연말정산 중간 반영, 회사별 비과세 항목(차량보조금·연구보조비 등), 부양가족 요건에 따라 달라집니다. 명세서의 과세 항목을 확인하세요."}}
-]}
-</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "연봉 실수령액 계산기",
+  "url": "https://usefulkit.kr/salary-net.html",
+  "description": "2026년 4대보험 요율(국민연금 4.75%, 건강보험 3.595%, 장기요양, 고용보험 0.9%)과 근로소득세를 반영해 연봉별 월 실수령액을 계산합니다. 공제 내역과 연봉 구간별 표를 함께 제공합니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "UsefulKit",
+    "alternateName": "유용한 생활 도구함",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "유용한 생활 도구함",
+    "alternateName": "UsefulKit",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "식대 20만원은 왜 비과세인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "소득세법 시행령이 월 20만원 이하의 식대를 비과세 소득으로 정하고 있습니다. 비과세액은 소득세와 4대보험료 산정에서 모두 빠지므로, 같은 연봉이라도 비과세 항목이 많으면 실수령액이 늘어납니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "국민연금이 월급의 4.75%가 아닌 이유가 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "국민연금은 실제 월급이 아니라 기준소득월액에 요율을 곱합니다. 2026년 7월부터 상한은 659만원, 하한은 41만원이라 월급이 659만원을 넘어도 근로자 부담은 313,020원에서 멈춥니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "부양가족 수는 어떻게 세나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "본인을 포함해 세고, 배우자·자녀·부모처럼 실제로 부양하는 가족을 넣습니다. 연간소득금액 100만원(근로소득만 있으면 총급여 500만원) 이하 요건을 충족해야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산 결과와 회사 명세서가 다른 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "상여·수당 지급 시점, 연말정산 중간 반영, 회사별 비과세 항목, 부양가족 요건에 따라 달라집니다. 명세서의 과세 항목과 비과세 항목을 이 계산기의 입력값과 맞춰 보세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산기에 개인정보가 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>

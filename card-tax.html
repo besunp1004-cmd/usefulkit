@@ -7,26 +7,109 @@
 <meta name="description" content="총급여 25% 최저사용금액 문턱과 자녀 수에 따른 공제 한도를 반영해, 지금부터 체크카드(30%)와 신용카드(15%) 중 어느 쪽이 실제로 이득인지 계산합니다. 2026년 귀속 기준.">
 <link rel="canonical" href="https://usefulkit.kr/card-tax.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:site_name" content="UsefulKit">
 <meta property="og:title" content="신용카드 vs 체크카드 소득공제 문턱 계산기">
 <meta property="og:description" content="총급여 25% 문턱, 자녀 수 한도, 실제 공제액과 체크·신용 손익분기를 한 번에 계산합니다.">
 <meta property="og:url" content="https://usefulkit.kr/card-tax.html">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="신용카드 vs 체크카드 소득공제 문턱 계산기">
+<meta name="twitter:description" content="총급여 25% 문턱, 자녀 수 한도, 실제 공제액과 체크·신용 손익분기를 한 번에 계산합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="theme-color" content="#12305f">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"신용카드 vs 체크카드 소득공제 문턱 계산기","url":"https://usefulkit.kr/card-tax.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"총급여의 25% 최저사용금액과 자녀 수에 따른 공제 한도를 반영해 신용카드·체크카드 소득공제액과 추가 사용 시 실익을 계산합니다."}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"카드 소득공제는 세금을 얼마나 줄여 주나요?","acceptedAnswer":{"@type":"Answer","text":"소득공제는 소득에서 빼는 방식이므로 절세액은 공제액에 본인의 소득세율을 곱한 값입니다. 공제액 100만원이면 소득세 6% 구간은 6만 6천원, 24% 구간은 26만 4천원(지방소득세 포함) 정도 차이가 납니다."}},
-{"@type":"Question","name":"체크카드만 쓰면 무조건 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 최저사용금액(총급여의 25%)을 넘지 못하면 어떤 카드를 써도 공제가 0원이고, 한도를 다 채운 뒤에도 추가 사용에는 공제가 붙지 않습니다. 공제율 30%는 문턱을 넘고 한도가 남아 있을 때만 의미가 있습니다."}},
-{"@type":"Question","name":"최저사용금액은 어느 카드에서 먼저 빼나요?","acceptedAnswer":{"@type":"Answer","text":"공제율이 낮은 신용카드 사용분에서 먼저 차감하고, 신용카드 사용액이 최저사용금액에 못 미치면 그 차액을 체크카드·현금영수증 사용분에서 차감합니다. 이 계산기도 같은 순서로 계산합니다."}},
-{"@type":"Question","name":"자녀가 2명 이상이면 한도가 계속 늘어나나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 2026년 귀속 기준으로 총급여 7천만원 이하이면 자녀 1명 350만원, 2명 이상 400만원, 7천만원 초과이면 1명 275만원, 2명 이상 300만원이 한도입니다. 자녀가 셋 이상이어도 2명 기준 금액에서 더 늘지 않습니다."}}
-]}
-</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "신용카드 vs 체크카드 소득공제 문턱 계산기",
+  "url": "https://usefulkit.kr/card-tax.html",
+  "description": "총급여 25% 최저사용금액 문턱과 자녀 수에 따른 공제 한도를 반영해, 지금부터 체크카드(30%)와 신용카드(15%) 중 어느 쪽이 실제로 이득인지 계산합니다. 2026년 귀속 기준.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "UsefulKit",
+    "alternateName": "유용한 생활 도구함",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "유용한 생활 도구함",
+    "alternateName": "UsefulKit",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "카드 소득공제는 세금을 얼마나 줄여 주나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "공제액에 본인 소득세율을 곱한 만큼입니다. 예를 들어 공제액 300만원이라면 소득세 15% 구간은 약 49만 5천원, 24% 구간은 약 79만 2천원(지방소득세 포함)의 세금이 줄어듭니다. 공제액이 300만원이라고 300만원이 환급되는 것이 아닙니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "체크카드만 쓰면 무조건 유리한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 최저사용금액(총급여의 25%)을 넘지 못하면 어떤 카드를 써도 공제는 0원이고, 한도를 다 채운 뒤에도 추가 사용에는 공제가 붙지 않습니다. 공제율 30%는 문턱을 넘고 한도가 남아 있는 구간에서만 힘을 냅니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "최저사용금액은 어느 카드에서 먼저 빼나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "공제율이 낮은 신용카드 사용분에서 먼저 차감하고, 신용카드 사용액이 최저사용금액에 못 미치면 그 차액을 체크카드·현금영수증에서 차감합니다. 그래서 신용카드 사용액이 문턱보다 적을 때는 신용카드로 더 써도 체크카드로 더 써도 결과가 같아지는 구간이 생깁니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "배우자 카드 사용액을 합칠 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "배우자가 연간소득금액 100만원 이하(근로소득만 있으면 총급여 500만원 이하)인 경우에만 본인 공제에 합칠 수 있습니다. 맞벌이라면 각자 계산해야 하고, 자녀 카드 사용액은 기본공제를 받는 쪽에서만 공제됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산기에 개인정보가 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>

@@ -7,26 +7,109 @@
 <meta name="description" content="예금과 적금의 세전 이자, 세금, 세후 실수령액을 단리·월복리로 비교합니다. 일반과세 15.4%, 세금우대 9.5%, 비과세 세 가지를 나란히 계산해 드립니다.">
 <link rel="canonical" href="https://usefulkit.kr/deposit-interest.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:site_name" content="UsefulKit">
 <meta property="og:title" content="예·적금 실수령 이자 계산기">
 <meta property="og:description" content="예금·적금 이자를 세전·세후로 계산하고 과세 유형별 차이를 비교합니다.">
 <meta property="og:url" content="https://usefulkit.kr/deposit-interest.html">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="예·적금 실수령 이자 계산기">
+<meta name="twitter:description" content="예금·적금 이자를 세전·세후로 계산하고 과세 유형별 차이를 비교합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="theme-color" content="#12305f">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"예·적금 실수령 이자 계산기","url":"https://usefulkit.kr/deposit-interest.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"예금과 적금의 단리·월복리 이자를 계산하고 일반과세·세금우대·비과세 세후 수령액을 비교합니다."}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"적금 이자가 예금보다 적게 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"적금은 매달 나눠 넣기 때문에 마지막 달에 넣은 돈은 이자가 거의 붙지 않습니다. 같은 금리라면 1년 만기 적금의 실제 이자율은 예금의 절반 정도입니다."}},
-{"@type":"Question","name":"이자소득세는 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"일반과세는 이자소득세 14%와 지방소득세 1.4%를 합쳐 15.4%입니다. 비과세 종합저축이나 세금우대 상품은 이보다 낮습니다."}},
-{"@type":"Question","name":"월복리 상품이 무조건 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"같은 표시 금리라면 월복리가 유리하지만 차이는 1년 만기 3.5% 기준 약 5,700원(1,000만원) 수준입니다. 금리 차이가 0.1%p만 나도 월복리 이점보다 큽니다."}},
-{"@type":"Question","name":"금융소득이 많으면 세금이 달라지나요?","acceptedAnswer":{"@type":"Answer","text":"이자·배당 소득이 연 2,000만원을 넘으면 금융소득종합과세 대상이 되어 다른 소득과 합산됩니다. 이 계산기는 원천징수 기준만 반영합니다."}}
-]}
-</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "예·적금 실수령 이자 계산기",
+  "url": "https://usefulkit.kr/deposit-interest.html",
+  "description": "예금과 적금의 세전 이자, 세금, 세후 실수령액을 단리·월복리로 비교합니다. 일반과세 15.4%, 세금우대 9.5%, 비과세 세 가지를 나란히 계산해 드립니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "UsefulKit",
+    "alternateName": "유용한 생활 도구함",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "유용한 생활 도구함",
+    "alternateName": "UsefulKit",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "적금 이자가 예금보다 적게 나오는 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "적금은 매달 나눠 넣기 때문에 마지막 달 납입분에는 이자가 거의 붙지 않습니다. 12개월 적금의 평균 예치 기간은 약 6.5개월이라 실효 이자율이 표시 금리의 절반 수준이 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이자소득세는 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반과세는 이자소득세 14%와 지방소득세 1.4%를 합쳐 15.4%입니다. 비과세 종합저축은 0%, 세금우대 상품은 상품별로 9%대입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "월복리 상품이 무조건 유리한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "같은 표시 금리라면 유리하지만 1년 만기 3.5%에서는 차이가 5,670원(1,000만원)입니다. 금리 0.1%p 차이가 이보다 크므로 금리와 우대조건을 먼저 비교하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "만기 전에 해지하면 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "약정 금리가 아니라 중도해지 금리가 적용되어 이자가 크게 줄어듭니다. 이 계산기는 만기까지 유지하는 경우만 계산합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산기에 개인정보가 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>
