@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026 연말정산 부부 의료비 공제 계산기 (몰아주기) | 유용한 생활 도구함</title>
+<title>2026 연말정산 부부 의료비 공제 계산기 (몰아주기) | 킷랩 (KitLab)</title>
 <meta name="description" content="총급여 3% 문턱과 700만원 한도, 한도 없는 의료비 항목까지 반영해 남편·아내 중 누구에게 의료비를 몰아줄 때 환급이 큰지 계산합니다. 실손보험금 차감 원칙과 공제 규정도 함께 정리했습니다.">
 <link rel="canonical" href="https://usefulkit.kr/medical-tax.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="UsefulKit">
+<meta property="og:site_name" content="킷랩 (KitLab)">
 <meta property="og:title" content="2026 연말정산 부부 의료비 공제 계산기 (몰아주기)">
 <meta property="og:description" content="3% 문턱·700만원 한도·한도 없는 항목까지 반영해 부부 의료비 몰아주기를 계산합니다.">
 <meta property="og:url" content="https://usefulkit.kr/medical-tax.html">
@@ -15,13 +15,13 @@
 <meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta property="og:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="2026 연말정산 부부 의료비 공제 계산기 (몰아주기)">
 <meta name="twitter:description" content="3% 문턱·700만원 한도·한도 없는 항목까지 반영해 부부 의료비 몰아주기를 계산합니다.">
 <meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
-<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
-<meta name="theme-color" content="#12305f">
+<meta name="twitter:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="theme-color" content="#00C471">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <script type="application/ld+json">
@@ -42,14 +42,14 @@
   },
   "isPartOf": {
     "@type": "WebSite",
-    "name": "UsefulKit",
-    "alternateName": "유용한 생활 도구함",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
     "url": "https://usefulkit.kr/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "유용한 생활 도구함",
-    "alternateName": "UsefulKit",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
     "url": "https://usefulkit.kr/about.html",
     "logo": {
       "@type": "ImageObject",
@@ -124,10 +124,10 @@
 <header class="site-header">
   <div class="inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">UK</span>
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
       <span class="brand-text">
-        <span class="brand-name">유용한 생활 도구함</span>
-        <span class="brand-sub">UsefulKit</span>
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
       </span>
     </a>
         <nav class="site-nav" aria-label="주요 메뉴">
@@ -213,11 +213,11 @@
     <div id="calc" style="margin-top:18px;">
 <style id="mc-style">
 #med-calc-app{
-  --mc-ink:#111827; --mc-sub:#5b6577; --mc-line:#e5e9f2; --mc-brand:#2f6bff; --mc-brand-d:#1d4ed8;
-  --mc-soft:#eef3ff; --mc-good:#0b8a4f; --mc-good-bg:#e9f7f0; --mc-warn:#a15c00; --mc-warn-bg:#fff6e6;
-  --mc-red:#d92d20; --mc-red-bg:#fdecea; --mc-r:16px;
+  --mc-ink:#191F28; --mc-sub:#6B7684; --mc-line:#E5E8EB; --mc-brand:#00C471; --mc-brand-d:#00A85F;
+  --mc-soft:#E7F9F0; --mc-good:#00A85F; --mc-good-bg:#E7F9F0; --mc-warn:#B26A00; --mc-warn-bg:#FFF7E6;
+  --mc-red:#F04452; --mc-red-bg:#FFEEEF; --mc-r:16px;
   max-width:760px; margin:0 auto; padding:16px 14px 34px;
-  background:#f5f7fc; color:var(--mc-ink);
+  background:transparent; color:var(--mc-ink);
   font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,"Segoe UI",Roboto,sans-serif;
   font-size:15px; line-height:1.55; letter-spacing:-0.01em;
   -webkit-text-size-adjust:100%; word-break:keep-all;
@@ -231,23 +231,27 @@
 
 /* ---------- 상단 ---------- */
 #med-calc-app .mc-hero{
-  background:linear-gradient(135deg,#1b3a8f 0%,#2f6bff 62%,#5290ff 100%);
-  border-radius:20px; padding:22px 20px 20px; color:#fff;
-  box-shadow:0 12px 26px rgba(47,107,255,.22); margin-bottom:14px;
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(90% 130% at 96% -10%, #D6F7E7 0%, rgba(214,247,231,0) 58%),
+    linear-gradient(160deg,#F4FDF8 0%,#FFFFFF 66%);
+  border:1px solid #E1F2E9;
+  border-radius:20px; padding:22px 20px 20px; color:#191F28;
+  box-shadow:0 10px 26px rgba(0,166,95,.07); margin-bottom:14px;
 }
 #med-calc-app .mc-badge{
   display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.02em;
-  background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.28);
-  padding:4px 10px; border-radius:999px; margin-bottom:10px;
+  background:#E7F9F0; border:1px solid #C6F0DD; color:#00875A;
+  padding:5px 11px; border-radius:999px; margin-bottom:11px;
 }
-#med-calc-app .mc-title{font-size:22px; font-weight:800; line-height:1.32; letter-spacing:-0.02em;}
-#med-calc-app .mc-lead{margin-top:8px; font-size:13.5px; line-height:1.6; color:rgba(255,255,255,.88);}
-#med-calc-app .mc-lead b{color:#fff;}
+#med-calc-app .mc-title{font-size:22px; font-weight:800; line-height:1.34; letter-spacing:-0.035em; color:#191F28;}
+#med-calc-app .mc-lead{margin-top:9px; font-size:13.5px; line-height:1.66; color:#6B7684;}
+#med-calc-app .mc-lead b{color:#00875A;}
 
 /* ---------- 카드 ---------- */
 #med-calc-app .mc-card{
   background:#fff; border:1px solid var(--mc-line); border-radius:var(--mc-r);
-  padding:18px 16px; margin-bottom:12px; box-shadow:0 6px 18px rgba(23,43,99,.05);
+  padding:18px 16px; margin-bottom:12px; box-shadow:0 6px 18px rgba(25,31,40,.04);
 }
 #med-calc-app .mc-step{display:flex; align-items:center; gap:9px; margin-bottom:14px;}
 #med-calc-app .mc-num{
@@ -261,60 +265,60 @@
 #med-calc-app .mc-grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
 #med-calc-app .mc-field{margin-bottom:14px;}
 #med-calc-app .mc-field:last-child{margin-bottom:0;}
-#med-calc-app .mc-label{display:block; font-size:13px; font-weight:700; color:#333d52; margin-bottom:6px;}
+#med-calc-app .mc-label{display:block; font-size:13px; font-weight:700; color:#333D4B; margin-bottom:6px;}
 #med-calc-app .mc-input{
   display:flex; align-items:center; gap:8px; height:50px; padding:0 12px;
-  background:#f8fafe; border:1px solid #dfe5f1; border-radius:12px; transition:border-color .15s, box-shadow .15s, background .15s;
+  background:#F7F9FA; border:1px solid #E8EBEE; border-radius:12px; transition:border-color .15s, box-shadow .15s, background .15s;
 }
-#med-calc-app .mc-input:focus-within{border-color:var(--mc-brand); background:#fff; box-shadow:0 0 0 3px rgba(47,107,255,.13);}
+#med-calc-app .mc-input:focus-within{border-color:var(--mc-brand); background:#fff; box-shadow:0 0 0 3px rgba(0,196,113,.15);}
 #med-calc-app .mc-input input{
   flex:1 1 auto; min-width:0; width:100%; height:100%; border:0; background:transparent; outline:none;
   font-family:inherit; font-size:17px; font-weight:800; color:var(--mc-ink); text-align:right;
   font-variant-numeric:tabular-nums;
 }
-#med-calc-app .mc-input input::placeholder{color:#aeb6c6; font-weight:600;}
+#med-calc-app .mc-input input::placeholder{color:#AEB6BE; font-weight:600;}
 #med-calc-app .mc-input input::-webkit-outer-spin-button,
 #med-calc-app .mc-input input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
 #med-calc-app .mc-unit{flex:0 0 auto; font-size:12.5px; font-weight:700; color:var(--mc-sub);}
 #med-calc-app .mc-input-sm{height:42px; padding:0 10px;}
 #med-calc-app .mc-input-sm input{font-size:15px;}
-#med-calc-app .mc-tip{margin-top:6px; font-size:11.5px; line-height:1.5; color:#8a93a6;}
-#med-calc-app .mc-tip b{color:#6a7387;}
+#med-calc-app .mc-tip{margin-top:6px; font-size:11.5px; line-height:1.5; color:#6B7684;}
+#med-calc-app .mc-tip b{color:#6B7684;}
 #med-calc-app .mc-mt{margin-top:4px;}
 
 /* 결정세액 선택 */
-#med-calc-app .mc-seg{display:flex; gap:5px; background:#eef1f8; padding:4px; border-radius:12px;}
+#med-calc-app .mc-seg{display:flex; gap:5px; background:#F2F4F6; padding:4px; border-radius:12px;}
 #med-calc-app .mc-seg label{flex:1 1 0; position:relative; display:block; min-width:0;}
 #med-calc-app .mc-seg input{position:absolute; opacity:0; width:1px; height:1px; pointer-events:none;}
 #med-calc-app .mc-seg span{
   display:flex; align-items:center; justify-content:center; height:36px; padding:0 2px;
-  font-size:12.5px; font-weight:700; color:#616b80; border-radius:9px; white-space:nowrap; transition:.15s;
+  font-size:12.5px; font-weight:700; color:#6B7684; border-radius:9px; white-space:nowrap; transition:.15s;
 }
-#med-calc-app .mc-seg input:checked + span{background:#fff; color:var(--mc-brand); box-shadow:0 1px 4px rgba(23,43,99,.14);}
+#med-calc-app .mc-seg input:checked + span{background:#fff; color:var(--mc-brand); box-shadow:0 1px 4px rgba(25,31,40,.10);}
 #med-calc-app .mc-seg input:focus-visible + span{outline:2px solid var(--mc-brand); outline-offset:2px;}
 #med-calc-app .mc-cap{margin-top:8px; display:flex; align-items:center; gap:8px;}
-#med-calc-app .mc-cap label{flex:0 0 auto; font-size:12px; font-weight:700; color:#6a7387;}
+#med-calc-app .mc-cap label{flex:0 0 auto; font-size:12px; font-weight:700; color:#6B7684;}
 #med-calc-app .mc-cap .mc-input{flex:1 1 auto; height:38px;}
 
 /* 특수 의료비 접이식 */
-#med-calc-app .mc-adv{border:1px dashed #ccd5e8; background:#fbfcff; border-radius:14px; padding:0 14px; margin-top:2px;}
+#med-calc-app .mc-adv{border:1px dashed #E5E8EB; background:#FBFCFC; border-radius:14px; padding:0 14px; margin-top:2px;}
 #med-calc-app .mc-adv summary{
   list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px;
-  padding:14px 0; font-size:13.5px; font-weight:800; color:#2b3550;
+  padding:14px 0; font-size:13.5px; font-weight:800; color:#191F28;
 }
 #med-calc-app .mc-adv summary::-webkit-details-marker{display:none;}
-#med-calc-app .mc-adv summary em{display:block; font-style:normal; font-size:11.5px; font-weight:600; color:#8a93a6; margin-top:2px;}
-#med-calc-app .mc-adv summary::after{content:'+'; flex:0 0 auto; font-size:18px; font-weight:600; color:#8a93a6; line-height:1;}
+#med-calc-app .mc-adv summary em{display:block; font-style:normal; font-size:11.5px; font-weight:600; color:#6B7684; margin-top:2px;}
+#med-calc-app .mc-adv summary::after{content:'+'; flex:0 0 auto; font-size:18px; font-weight:600; color:#6B7684; line-height:1;}
 #med-calc-app .mc-adv[open] summary::after{content:'–';}
-#med-calc-app .mc-adv-body{padding:2px 0 12px; border-top:1px solid #e9eef8;}
-#med-calc-app .mc-adv-hint{font-size:11.5px; line-height:1.55; color:#8a93a6; padding:10px 0 4px;}
-#med-calc-app .mc-row{display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid #f0f3fa;}
+#med-calc-app .mc-adv-body{padding:2px 0 12px; border-top:1px solid #F1F3F5;}
+#med-calc-app .mc-adv-hint{font-size:11.5px; line-height:1.55; color:#6B7684; padding:10px 0 4px;}
+#med-calc-app .mc-row{display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid #F2F4F6;}
 #med-calc-app .mc-row:last-child{border-bottom:0;}
-#med-calc-app .mc-row.is-off .mc-input{background:#f2f4f9; opacity:.6;}
+#med-calc-app .mc-row.is-off .mc-input{background:#F7F9FA; opacity:.6;}
 #med-calc-app .mc-check{flex:1 1 auto; min-width:0; display:flex; align-items:flex-start; gap:8px; cursor:pointer;}
 #med-calc-app .mc-check input{position:absolute; opacity:0; width:1px; height:1px; pointer-events:none;}
 #med-calc-app .mc-box{
-  flex:0 0 auto; width:19px; height:19px; margin-top:2px; border-radius:6px; border:1.5px solid #c3ccdf; background:#fff;
+  flex:0 0 auto; width:19px; height:19px; margin-top:2px; border-radius:6px; border:1.5px solid #CBD2D9; background:#fff;
   position:relative; transition:.15s;
 }
 #med-calc-app .mc-check input:checked + .mc-box{background:var(--mc-brand); border-color:var(--mc-brand);}
@@ -324,15 +328,15 @@
 }
 #med-calc-app .mc-check input:focus-visible + .mc-box{outline:2px solid var(--mc-brand); outline-offset:2px;}
 #med-calc-app .mc-rowtext{display:block; min-width:0;}
-#med-calc-app .mc-rowtext b{display:block; font-size:12.5px; font-weight:800; color:#2b3550; line-height:1.4;}
-#med-calc-app .mc-rowtext em{display:block; font-style:normal; font-size:11px; font-weight:600; color:#8a93a6; margin-top:1px;}
+#med-calc-app .mc-rowtext b{display:block; font-size:12.5px; font-weight:800; color:#191F28; line-height:1.4;}
+#med-calc-app .mc-rowtext em{display:block; font-style:normal; font-size:11px; font-weight:600; color:#6B7684; margin-top:1px;}
 #med-calc-app .mc-row .mc-input{flex:0 0 96px; width:96px;}
 #med-calc-app .mc-owninputs{flex:0 0 auto; display:flex; flex-direction:column; gap:6px; width:104px;}
 #med-calc-app .mc-owninputs .mc-input{width:100%; flex:1 1 auto; height:38px;}
-#med-calc-app .mc-ownlabel{font-size:10.5px; font-weight:700; color:#8a93a6; margin-bottom:2px; display:block;}
+#med-calc-app .mc-ownlabel{font-size:10.5px; font-weight:700; color:#6B7684; margin-bottom:2px; display:block;}
 #med-calc-app .mc-split-line{
-  margin-top:12px; padding:10px 12px; background:#f3f6fd; border-radius:11px;
-  font-size:12.5px; color:#5b6577; display:flex; align-items:center; justify-content:space-between; gap:8px;
+  margin-top:12px; padding:10px 12px; background:#F3FCF8; border-radius:11px;
+  font-size:12.5px; color:#6B7684; display:flex; align-items:center; justify-content:space-between; gap:8px;
 }
 #med-calc-app .mc-split-line b{color:var(--mc-brand-d); font-size:13.5px;}
 
@@ -345,91 +349,91 @@
 #med-calc-app .mc-verdict-main b{font-size:19px; font-weight:800; letter-spacing:-0.02em;}
 #med-calc-app .mc-verdict-sub{margin-top:7px; font-size:12.5px; line-height:1.55; opacity:.82;}
 #med-calc-app .mc-verdict-why{margin-top:6px; font-size:12px; line-height:1.55; opacity:.75;}
-#med-calc-app .mc-v-win{background:var(--mc-good-bg); border-color:#c6ecd9; color:#085c36;}
-#med-calc-app .mc-v-tie{background:var(--mc-soft); border-color:#cfddff; color:#1b3a8f;}
-#med-calc-app .mc-v-none{background:var(--mc-warn-bg); border-color:#f3dfb8; color:#7a4600;}
-#med-calc-app .mc-v-empty{background:#f2f4f9; border-color:#e3e8f2; color:#6a7387;}
+#med-calc-app .mc-v-win{background:var(--mc-good-bg); border-color:#C6F0DD; color:#08603E;}
+#med-calc-app .mc-v-tie{background:var(--mc-soft); border-color:#C6F0DD; color:#00A85F;}
+#med-calc-app .mc-v-none{background:var(--mc-warn-bg); border-color:#F6E3B8; color:#7A5200;}
+#med-calc-app .mc-v-empty{background:#F7F9FA; border-color:#E5E8EB; color:#6B7684;}
 
 #med-calc-app .mc-resgrid{align-items:stretch;}
 #med-calc-app .mc-rescard{
-  border:1px solid var(--mc-line); border-radius:14px; padding:14px 13px; background:#fcfdff;
+  border:1px solid var(--mc-line); border-radius:14px; padding:14px 13px; background:#FBFCFC;
   display:flex; flex-direction:column; gap:8px; position:relative;
 }
-#med-calc-app .mc-rescard.mc-winner{border-color:#9edcbb; background:#f4fcf8; box-shadow:0 4px 14px rgba(11,138,79,.09);}
+#med-calc-app .mc-rescard.mc-winner{border-color:#9EE3C6; background:#F3FCF8; box-shadow:0 4px 14px rgba(0,166,95,.10);}
 #med-calc-app .mc-rescard-top{display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap;}
-#med-calc-app .mc-rescard-name{font-size:13.5px; font-weight:800; color:#2b3550;}
+#med-calc-app .mc-rescard-name{font-size:13.5px; font-weight:800; color:#191F28;}
 #med-calc-app .mc-chip{font-size:10.5px; font-weight:800; padding:3px 7px; border-radius:999px; white-space:nowrap;}
-#med-calc-app .mc-chip-win{background:#d8f3e4; color:#0b7040;}
-#med-calc-app .mc-chip-gray{background:#eceff6; color:#6a7387;}
+#med-calc-app .mc-chip-win{background:#D6F7E7; color:#00875A;}
+#med-calc-app .mc-chip-gray{background:#F2F4F6; color:#6B7684;}
 #med-calc-app .mc-chip-red{background:var(--mc-red-bg); color:var(--mc-red);}
 #med-calc-app .mc-chip-amber{background:var(--mc-warn-bg); color:var(--mc-warn);}
 #med-calc-app .mc-rescard-main{display:flex; flex-direction:column; gap:1px;}
-#med-calc-app .mc-rescard-label{font-size:11px; font-weight:700; color:#8a93a6;}
-#med-calc-app .mc-rescard-main strong{font-size:23px; font-weight:800; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; color:#111827;}
-#med-calc-app .mc-winner .mc-rescard-main strong{color:#0b7040;}
-#med-calc-app .mc-rescard-note{font-size:11px; color:#8a93a6; margin-top:-4px;}
-#med-calc-app .mc-rescard-kv{display:flex; flex-direction:column; gap:0; margin-top:2px; border-top:1px solid #eef1f8; padding-top:6px;}
+#med-calc-app .mc-rescard-label{font-size:11px; font-weight:700; color:#6B7684;}
+#med-calc-app .mc-rescard-main strong{font-size:23px; font-weight:800; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; color:#191F28;}
+#med-calc-app .mc-winner .mc-rescard-main strong{color:#00875A;}
+#med-calc-app .mc-rescard-note{font-size:11px; color:#6B7684; margin-top:-4px;}
+#med-calc-app .mc-rescard-kv{display:flex; flex-direction:column; gap:0; margin-top:2px; border-top:1px solid #F2F4F6; padding-top:6px;}
 #med-calc-app .mc-rescard-kv li{display:flex; align-items:baseline; justify-content:space-between; gap:8px; padding:3px 0; font-size:12px;}
-#med-calc-app .mc-rescard-kv span{color:#8a93a6; font-weight:600;}
-#med-calc-app .mc-rescard-kv b{color:#333d52; font-weight:800; font-variant-numeric:tabular-nums;}
-#med-calc-app .mc-mini{margin-top:2px; font-size:11px; line-height:1.5; color:#8a93a6;}
-#med-calc-app .mc-mini-warn{color:#a15c00; background:#fff8ea; border-radius:8px; padding:6px 8px;}
-#med-calc-app .mc-mini-red{color:#a3261c; background:#fdf0ef; border-radius:8px; padding:6px 8px;}
+#med-calc-app .mc-rescard-kv span{color:#6B7684; font-weight:600;}
+#med-calc-app .mc-rescard-kv b{color:#333D4B; font-weight:800; font-variant-numeric:tabular-nums;}
+#med-calc-app .mc-mini{margin-top:2px; font-size:11px; line-height:1.5; color:#6B7684;}
+#med-calc-app .mc-mini-warn{color:#B26A00; background:#FFF7E6; border-radius:8px; padding:6px 8px;}
+#med-calc-app .mc-mini-red{color:#A32B36; background:#FFEEEF; border-radius:8px; padding:6px 8px;}
 
 #med-calc-app .mc-split{
-  margin-top:12px; padding:12px 13px; border-radius:12px; background:#eef4ff; border:1px dashed #b9cdfb;
-  font-size:12.5px; line-height:1.6; color:#23406f;
+  margin-top:12px; padding:12px 13px; border-radius:12px; background:#E7F9F0; border:1px dashed #C6F0DD;
+  font-size:12.5px; line-height:1.6; color:#08603E;
 }
-#med-calc-app .mc-split b{color:#1d4ed8;}
+#med-calc-app .mc-split b{color:#00A85F;}
 
-#med-calc-app .mc-break{margin-top:12px; border-top:1px solid #eef1f8; padding-top:10px;}
-#med-calc-app .mc-break summary{list-style:none; cursor:pointer; font-size:12.5px; font-weight:800; color:#5b6577; display:flex; justify-content:space-between;}
+#med-calc-app .mc-break{margin-top:12px; border-top:1px solid #F2F4F6; padding-top:10px;}
+#med-calc-app .mc-break summary{list-style:none; cursor:pointer; font-size:12.5px; font-weight:800; color:#6B7684; display:flex; justify-content:space-between;}
 #med-calc-app .mc-break summary::-webkit-details-marker{display:none;}
-#med-calc-app .mc-break summary::after{content:'+'; color:#8a93a6; font-weight:600;}
+#med-calc-app .mc-break summary::after{content:'+'; color:#6B7684; font-weight:600;}
 #med-calc-app .mc-break[open] summary::after{content:'–';}
 #med-calc-app .mc-tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:8px;}
 #med-calc-app .mc-table{width:100%; min-width:320px; border-collapse:collapse; font-size:11.5px; font-variant-numeric:tabular-nums;}
-#med-calc-app .mc-table th,#med-calc-app .mc-table td{padding:7px 5px; border-bottom:1px solid #f0f3fa; text-align:right; white-space:nowrap;}
-#med-calc-app .mc-table th:first-child,#med-calc-app .mc-table td:first-child{text-align:left; white-space:normal; color:#5b6577; font-weight:600;}
-#med-calc-app .mc-table thead th{font-size:11px; color:#8a93a6; font-weight:800; border-bottom:1px solid #dfe5f1;}
-#med-calc-app .mc-table tr.mc-total td{border-bottom:0; padding-top:8px; font-weight:800; color:#111827;}
-#med-calc-app .mc-table tr.mc-sub td{color:#333d52; font-weight:700;}
+#med-calc-app .mc-table th,#med-calc-app .mc-table td{padding:7px 5px; border-bottom:1px solid #F2F4F6; text-align:right; white-space:nowrap;}
+#med-calc-app .mc-table th:first-child,#med-calc-app .mc-table td:first-child{text-align:left; white-space:normal; color:#6B7684; font-weight:600;}
+#med-calc-app .mc-table thead th{font-size:11px; color:#6B7684; font-weight:800; border-bottom:1px solid #E8EBEE;}
+#med-calc-app .mc-table tr.mc-total td{border-bottom:0; padding-top:8px; font-weight:800; color:#191F28;}
+#med-calc-app .mc-table tr.mc-sub td{color:#333D4B; font-weight:700;}
 
 /* 버튼 */
 #med-calc-app .mc-actions{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
 #med-calc-app .mc-btn{
   flex:1 1 auto; min-height:44px; padding:0 14px; border-radius:12px; border:1px solid var(--mc-line);
-  background:#fff; color:#333d52; font-size:13px; font-weight:800; letter-spacing:-0.01em; transition:.15s;
+  background:#fff; color:#333D4B; font-size:13px; font-weight:800; letter-spacing:-0.01em; transition:.15s;
 }
-#med-calc-app .mc-btn-primary{background:var(--mc-brand); border-color:var(--mc-brand); color:#fff; box-shadow:0 6px 14px rgba(47,107,255,.22);}
+#med-calc-app .mc-btn-primary{background:var(--mc-brand); border-color:var(--mc-brand); color:#fff; box-shadow:0 6px 14px rgba(0,196,113,.24);}
 #med-calc-app .mc-btn-primary:hover{background:var(--mc-brand-d);}
-#med-calc-app .mc-btn-ghost:hover{background:#f4f6fb;}
+#med-calc-app .mc-btn-ghost:hover{background:#F5F7F8;}
 #med-calc-app .mc-btn:active{transform:translateY(1px);}
 
 /* 주의사항 */
 #med-calc-app .mc-notes-list{display:flex; flex-direction:column; gap:11px;}
-#med-calc-app .mc-notes-list li{padding-left:11px; border-left:3px solid #dbe4f7;}
-#med-calc-app .mc-notes-list b{display:block; font-size:13px; font-weight:800; color:#2b3550; margin-bottom:3px;}
-#med-calc-app .mc-notes-list span{display:block; font-size:12px; line-height:1.6; color:#5b6577;}
+#med-calc-app .mc-notes-list li{padding-left:11px; border-left:3px solid #D9F0E4;}
+#med-calc-app .mc-notes-list b{display:block; font-size:13px; font-weight:800; color:#191F28; margin-bottom:3px;}
+#med-calc-app .mc-notes-list span{display:block; font-size:12px; line-height:1.6; color:#6B7684;}
 
 /* 계산 기준 */
 #med-calc-app .mc-basis{padding:0 16px;}
-#med-calc-app .mc-basis summary{list-style:none; display:flex; align-items:center; justify-content:space-between; padding:16px 0; font-size:13.5px; font-weight:800; color:#333d52; cursor:pointer;}
+#med-calc-app .mc-basis summary{list-style:none; display:flex; align-items:center; justify-content:space-between; padding:16px 0; font-size:13.5px; font-weight:800; color:#333D4B; cursor:pointer;}
 #med-calc-app .mc-basis summary::-webkit-details-marker{display:none;}
-#med-calc-app .mc-basis summary::after{content:'+'; color:#8a93a6; font-weight:600; font-size:17px;}
+#med-calc-app .mc-basis summary::after{content:'+'; color:#6B7684; font-weight:600; font-size:17px;}
 #med-calc-app .mc-basis[open] summary::after{content:'–';}
-#med-calc-app .mc-basis-body{border-top:1px solid #eef1f8; padding:12px 0 16px; font-size:11.5px; line-height:1.7; color:#5b6577;}
-#med-calc-app .mc-basis-body b{color:#333d52;}
+#med-calc-app .mc-basis-body{border-top:1px solid #F2F4F6; padding:12px 0 16px; font-size:11.5px; line-height:1.7; color:#6B7684;}
+#med-calc-app .mc-basis-body b{color:#333D4B;}
 #med-calc-app .mc-basis-body p + p{margin-top:8px;}
 #med-calc-app .mc-basis-body ul{margin-top:4px;}
 #med-calc-app .mc-basis-body li{padding-left:9px; position:relative;}
-#med-calc-app .mc-basis-body li::before{content:'·'; position:absolute; left:0; color:#a9b2c6;}
-#med-calc-app .mc-disclaimer{font-size:11px; line-height:1.6; color:#98a1b3; padding:2px 4px; text-align:center;}
+#med-calc-app .mc-basis-body li::before{content:'·'; position:absolute; left:0; color:#AEB6BE;}
+#med-calc-app .mc-disclaimer{font-size:11px; line-height:1.6; color:#8B95A1; padding:2px 4px; text-align:center;}
 
 /* 토스트 */
 #med-calc-app .mc-toast{
   position:absolute; left:50%; bottom:12px; transform:translateX(-50%);
-  background:#111827; color:#fff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px;
+  background:#191F28; color:#fff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px;
   opacity:0; pointer-events:none; transition:opacity .2s; white-space:nowrap; z-index:5;
 }
 #med-calc-app .mc-toast.show{opacity:1;}
@@ -449,7 +453,7 @@
 }
 </style>
 
-<noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+<noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 <div id="med-calc-app">
   <header class="mc-hero">
     <span class="mc-badge">2026년 귀속 · 2027년 2월 정산</span>
@@ -1170,7 +1174,7 @@ function mcDecide(A, B, gA, gB){
         <li>지방소득세 10% 가산 — 소득세 공제액의 10%를 지방소득세로 함께 감면</li>
         <li>실손의료보험금·본인부담상한제 환급금은 공제 대상에서 제외</li>
       </ul>
-      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지의 내용은 일반적인 정보이며 세무 자문이 아닙니다. 실제 공제액은 다른 소득·세액공제 항목과 부양가족 요건에 따라 달라질 수 있으니, 신고 전 국세청 홈택스 '연말정산 미리보기'로 확인하세요.</p>
+      <p style="margin-top:12px;font-size:13.5px;color:#6B7684;">※ 이 페이지의 내용은 일반적인 정보이며 세무 자문이 아닙니다. 실제 공제액은 다른 소득·세액공제 항목과 부양가족 요건에 따라 달라질 수 있으니, 신고 전 국세청 홈택스 '연말정산 미리보기'로 확인하세요.</p>
     </section>
 
     <div class="next-tools">
@@ -1191,8 +1195,8 @@ function mcDecide(A, B, gA, gB){
   <div class="inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="brand-name">유용한 생활 도구함</span>
-        <span class="brand-sub">UsefulKit</span>
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
         <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
       </div>
       <div class="footer-links">
@@ -1233,7 +1237,7 @@ function mcDecide(A, B, gA, gB){
     </div>
     <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
     <div class="footer-bottom">
-      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>© 2026 킷랩 (KitLab) · usefulkit.kr. All rights reserved.</span>
       <span>문의: besunp1004@gmail.com</span>
     </div>
   </div>

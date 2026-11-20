@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DSR 대출 한도 계산기 (2026년 기준·스트레스 금리 반영) | 유용한 생활 도구함</title>
+<title>DSR 대출 한도 계산기 (2026년 기준·스트레스 금리 반영) | 킷랩 (KitLab)</title>
 <meta name="description" content="연소득과 기존 대출 원리금을 넣으면 현재 DSR과 추가로 빌릴 수 있는 최대 금액을 계산합니다. 스트레스 금리와 상환 방식(원리금균등·원금균등)별 한도를 함께 비교합니다.">
 <link rel="canonical" href="https://usefulkit.kr/dsr-limit.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="UsefulKit">
+<meta property="og:site_name" content="킷랩 (KitLab)">
 <meta property="og:title" content="DSR 대출 한도 계산기">
 <meta property="og:description" content="DSR 40% 규제와 스트레스 금리를 반영해 추가 대출 가능액을 계산합니다.">
 <meta property="og:url" content="https://usefulkit.kr/dsr-limit.html">
@@ -15,13 +15,13 @@
 <meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta property="og:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 10종 + 실용 가이드 5종">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DSR 대출 한도 계산기">
 <meta name="twitter:description" content="DSR 40% 규제와 스트레스 금리를 반영해 추가 대출 가능액을 계산합니다.">
 <meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
-<meta name="twitter:image:alt" content="유용한 생활 도구함 — 생활·금융 계산기 10종 + 실용 가이드 5종">
-<meta name="theme-color" content="#12305f">
+<meta name="twitter:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 10종 + 실용 가이드 5종">
+<meta name="theme-color" content="#00C471">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
@@ -43,14 +43,14 @@
   },
   "isPartOf": {
     "@type": "WebSite",
-    "name": "UsefulKit",
-    "alternateName": "유용한 생활 도구함",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
     "url": "https://usefulkit.kr/"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "유용한 생활 도구함",
-    "alternateName": "UsefulKit",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
     "url": "https://usefulkit.kr/about.html",
     "logo": {
       "@type": "ImageObject",
@@ -117,10 +117,10 @@
 <header class="site-header">
   <div class="inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">UK</span>
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
       <span class="brand-text">
-        <span class="brand-name">유용한 생활 도구함</span>
-        <span class="brand-sub">UsefulKit</span>
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
       </span>
     </a>
     <nav class="site-nav" aria-label="주요 메뉴">
@@ -210,7 +210,7 @@
         <h2 class="calc-title">DSR 한도 계산기</h2>
         <p class="calc-lead">연소득과 기존 대출 원리금을 넣으면 <b>현재 DSR</b>, <b>추가 가능한 연간 원리금</b>, <b>최대 신규 대출액</b>과 월 상환액을 계산합니다.</p>
       </div>
-      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>소득</h2></div>
@@ -333,7 +333,7 @@
       </section>
 
       <details class="calc-card calc-basis">
-        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#2b3550;">계산 기준·한계</summary>
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#191F28;">계산 기준·한계</summary>
         <div style="margin-top:12px;">
           <p><b>계산 방식</b> — 추가 가능 원리금 = 연소득 × DSR 비율 − 기존 연간 원리금. 이 금액을 신규 대출 조건(금리 + 스트레스 금리, 만기, 상환 방식)의 연간 상환액으로 나눠 최대 대출액을 역산합니다.</p>
           <p><b>상환 방식</b> — 원리금균등은 월납입액 × 12, 원금균등은 1년차 원금분(대출액 ÷ 만기) + 이자로 계산합니다. 은행 실무와 같지는 않지만 방향은 일치합니다.</p>
@@ -429,7 +429,7 @@
         <li>은행권 여신심사 가이드라인 — 차주별 DSR 40%, 2금융권 50%</li>
         <li>금융감독원 소비자 안내 — 마이너스통장 한도 기준 산정, 원금균등 1년차 원리금 기준</li>
       </ul>
-      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지는 일반적인 정보이며 대출 자문이 아닙니다. 실제 한도는 금융기관 심사 결과이므로 실행 전 은행 안내를 확인하세요.</p>
+      <p style="margin-top:12px;font-size:13.5px;color:#6B7684;">※ 이 페이지는 일반적인 정보이며 대출 자문이 아닙니다. 실제 한도는 금융기관 심사 결과이므로 실행 전 은행 안내를 확인하세요.</p>
     </section>
 
     <div class="next-tools">
@@ -454,8 +454,8 @@
   <div class="inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="brand-name">유용한 생활 도구함</span>
-        <span class="brand-sub">UsefulKit</span>
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
         <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
       </div>
       <div class="footer-links">
@@ -496,7 +496,7 @@
     </div>
     <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
     <div class="footer-bottom">
-      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>© 2026 킷랩 (KitLab) · usefulkit.kr. All rights reserved.</span>
       <span>문의: besunp1004@gmail.com</span>
     </div>
   </div>
