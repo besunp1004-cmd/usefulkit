@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Google AdSense 광고 크롤러 (Mediapartners-Google) 포함 모든 크롤러에 전체 공개
+Sitemap: https://usefulkit.kr/sitemap.xml

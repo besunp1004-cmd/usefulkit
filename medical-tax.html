@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 연말정산 부부 의료비 공제 계산기 (몰아주기) | 유용한 생활 도구함</title>
+<meta name="description" content="총급여 3% 문턱과 700만원 한도, 한도 없는 의료비 항목까지 반영해 남편·아내 중 누구에게 의료비를 몰아줄 때 환급이 큰지 계산합니다. 실손보험금 차감 원칙과 공제 규정도 함께 정리했습니다.">
+<link rel="canonical" href="https://usefulkit.kr/medical-tax.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:title" content="2026 연말정산 부부 의료비 공제 계산기 (몰아주기)">
+<meta property="og:description" content="3% 문턱·700만원 한도·한도 없는 항목까지 반영해 부부 의료비 몰아주기를 계산합니다.">
+<meta property="og:url" content="https://usefulkit.kr/medical-tax.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="theme-color" content="#12305f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"부부 의료비 몰아주기 계산기","url":"https://usefulkit.kr/medical-tax.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"2026년 귀속 연말정산에서 부부의 총급여·결정세액·의료비를 입력해 3% 문턱과 700만원 한도를 반영한 환급액을 계산합니다."}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">UK</span>
+      <span class="brand-text">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="medical-tax.html" aria-current="page">의료비 몰아주기</a>
+      <a href="loan-switch.html">대환 실익</a>
+      <a href="costco-break-even.html">코스트코 손익분기</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">연말정산</span>
+      <h1>2026 연말정산 부부 의료비 공제 계산기</h1>
+      <p class="page-lead">의료비는 <b>누구에게 몰아주느냐</b>에 따라 돌려받는 금액이 달라집니다. 총급여 3% 문턱, 700만원 한도, 한도가 없는 항목까지 반영해 <b>남편과 아내 중 유리한 쪽</b>을 계산합니다.</p>
+      <div class="page-meta">
+        <span>2026년 귀속 · 2027년 2월 정산</span>
+        <span>소득세 + 지방소득세 반영</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">공제 규정 요약</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#cases">케이스 예시</a></li>
+        <li><a href="#checklist">12월 전 준비</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>의료비 세액공제, 세 줄로 요약하면</h2>
+      <p>의료비 공제는 '병원에 쓴 돈의 일정 비율을 <b>내가 낼 세금에서 빼주는</b>' 제도입니다. 근로소득자가 연말정산 때 자동으로 반영되지만, 아래 세 가지 원칙을 모르면 실제보다 많이 돌려받을 것으로 착각하기 쉽습니다.</p>
+      <ol>
+        <li><b>총급여의 3%를 넘는 금액만</b> 공제 대상입니다. 병원비를 200만원 썼어도 총급여가 5,000만원이면 150만원은 그냥 사라지고 50만원만 공제됩니다.</li>
+        <li><b>공제율은 항목별로 15·20·30%</b>이고, 여기에 지방소득세 10%가 붙어 실제 환급은 16.5·22·33%로 계산됩니다.</li>
+        <li><b>일반 의료비는 연 700만원 한도</b>가 있습니다. 다만 본인·6세 이하 자녀·만 65세 이상·장애인·중증질환·미숙아·난임시술비는 한도가 없습니다.</li>
+      </ol>
+      <div class="table-wrap">
+        <table>
+          <caption>2026년 귀속 의료비 세액공제 구조(소득세법 제59조의4 제2항, 같은 법 시행령 제118조의5)</caption>
+          <thead>
+            <tr><th>구분</th><th>공제율</th><th>한도</th><th>해당 항목</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>일반 의료비</td><td>15% (지방세 포함 16.5%)</td><td class="num">연 700만원</td><td>부양가족의 병원비, 약값, 보청기·휠체어 등</td></tr>
+            <tr><td>본인·6세 이하·만 65세 이상·장애인·중증질환</td><td>15% (16.5%)</td><td class="num">한도 없음</td><td>본인 의료비, 6세 이하 자녀, 경로·장애인, 중증질환자(산정특례)</td></tr>
+            <tr><td>미숙아·선천성이상아</td><td>20% (22%)</td><td class="num">한도 없음</td><td>미숙아·선천성이상아로 등록된 자녀</td></tr>
+            <tr><td>난임시술비</td><td>30% (33%)</td><td class="num">한도 없음</td><td>난임시술 및 보조생식술 관련 비용</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <span class="callout-title">3% 문턱은 사람마다 따로 계산됩니다</span>
+        맞벌이라면 남편의 3%와 아내의 3%가 <b>각각</b> 적용됩니다. 남편 총급여 8,000만원, 아내 3,000만원이면 문턱은 각각 240만원과 90만원입니다. 같은 600만원이라도 누구에게 몰아주느냐에 따라 공제 대상 금액이 달라지는 이유가 여기에 있습니다.
+      </div>
+
+      <h2>실손보험금은 반드시 빼고 계산합니다</h2>
+      <p>국세청 연말정산 간소화 자료의 의료비에는 <b>실손보험이 돌려준 돈이 반영되지 않습니다</b>. 의료비 공제 대상은 실제로 본인이 부담한 금액이므로, 실손의료보험금이나 본인부담상한제 초과 환급금을 받았다면 그만큼 빼야 합니다. 이 계산기의 '연간 의료비' 입력칸에 들어갈 값은 <strong>간소화 자료 총액 − 실손보험금 − 본인부담상한제 환급금</strong>입니다.</p>
+      <p>여기서 흔한 오해가 있습니다. 실손보험금을 받으면 의료비 공제가 줄어드니 손해라고 생각하기 쉽지만, 실손보험금은 <b>보험료를 낸 만큼 돌려받는 구조</b>이고 세액공제는 <b>남은 본인부담에 대한 세금 감면</b>입니다. 두 제도는 같은 지출을 두 번 돌려주는 장치가 아니라 서로 역할이 다릅니다. 다만 실손 청구를 미루고 있다면, 청구 시점과 연말정산 시점을 함께 보고 어느 쪽이 유리한지 따져볼 필요는 있습니다.</p>
+
+      <h2>몰아주기, 누구에게 몰아야 하나</h2>
+      <p>판단 기준은 세 가지입니다.</p>
+      <ul>
+        <li><b>결정세액이 남아 있는가</b> — 원천징수영수증의 결정세액이 0원이면, 공제를 아무리 받아도 돌려받을 세금이 없습니다. 이 계산기가 '면세자 함정'을 따로 표시하는 이유입니다.</li>
+        <li><b>총급여 3% 문턱이 낮은 쪽인가</b> — 소득이 적은 배우자에게 몰아주면 문턱이 낮아 공제 대상 금액이 커지는 경우가 많습니다.</li>
+        <li><b>700만원 한도를 다 쓰고 남았는가</b> — 둘 다 결정세액이 충분하고 일반 의료비가 700만원을 넘는다면, 한쪽에 몰아주기보다 <b>각자 700만원씩 나눠 받는 편</b>이 유리합니다.</li>
+      </ul>
+      <p>여기에 하나 더. <b>결제 명의</b>입니다. 소득이 있는 배우자의 의료비는 원칙적으로 <b>공제받는 사람 명의의 카드·현금영수증·계좌</b>로 결제한 것만 인정됩니다. 올해 이미 결제가 끝났다면 돌이킬 수 없지만, 12월에 남은 병원비가 있다면 몰아줄 사람 명의로 결제하세요.</p>
+
+      <h2>한도가 없는 의료비, 경계일을 확인하세요</h2>
+      <p>6세 이하 판정은 <b>과세기간 개시일(1월 1일)</b>, 만 65세 이상 판정은 <b>과세기간 종료일(12월 31일)</b> 기준입니다. 2026년 1월 1일에 만 6세였던 자녀가 2027년 1월에 7세가 되더라도, 2026년 귀속에서는 6세 이하로 봅니다. 반대로 2026년 12월 31일에 만 65세가 되는 부모님은 그해부터 경로우대 대상입니다.</p>
+      <p>별도 한도가 있는 항목도 있습니다. <b>산후조리원비(출산 1회 200만원)</b>와 <b>안경·콘택트렌즈(1인 50만원)</b>는 일반 의료비와 한도를 따로 계산합니다. 이 계산기는 두 항목을 구분하지 않으므로, 해당 금액은 일반 의료비에 포함해 넣되 결과가 조금 달라질 수 있다는 점을 감안하세요.</p>
+    </section>
+
+    <div id="calc" style="margin-top:18px;">
+<style id="mc-style">
+#med-calc-app{
+  --mc-ink:#111827; --mc-sub:#5b6577; --mc-line:#e5e9f2; --mc-brand:#2f6bff; --mc-brand-d:#1d4ed8;
+  --mc-soft:#eef3ff; --mc-good:#0b8a4f; --mc-good-bg:#e9f7f0; --mc-warn:#a15c00; --mc-warn-bg:#fff6e6;
+  --mc-red:#d92d20; --mc-red-bg:#fdecea; --mc-r:16px;
+  max-width:760px; margin:0 auto; padding:16px 14px 34px;
+  background:#f5f7fc; color:var(--mc-ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,"Segoe UI",Roboto,sans-serif;
+  font-size:15px; line-height:1.55; letter-spacing:-0.01em;
+  -webkit-text-size-adjust:100%; word-break:keep-all;
+}
+#med-calc-app *{box-sizing:border-box;}
+#med-calc-app h1,#med-calc-app h2,#med-calc-app h3,#med-calc-app p,#med-calc-app ul,#med-calc-app ol,#med-calc-app li,#med-calc-app dl,#med-calc-app dt,#med-calc-app dd,#med-calc-app em,#med-calc-app strong,#med-calc-app b,#med-calc-app small,#med-calc-app span{margin:0;padding:0;}
+#med-calc-app ul,#med-calc-app ol{list-style:none;}
+#med-calc-app button{font-family:inherit;cursor:pointer;}
+#med-calc-app [hidden]{display:none !important;}
+#med-calc-app input{-webkit-appearance:none;appearance:none;}
+
+/* ---------- 상단 ---------- */
+#med-calc-app .mc-hero{
+  background:linear-gradient(135deg,#1b3a8f 0%,#2f6bff 62%,#5290ff 100%);
+  border-radius:20px; padding:22px 20px 20px; color:#fff;
+  box-shadow:0 12px 26px rgba(47,107,255,.22); margin-bottom:14px;
+}
+#med-calc-app .mc-badge{
+  display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.02em;
+  background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.28);
+  padding:4px 10px; border-radius:999px; margin-bottom:10px;
+}
+#med-calc-app .mc-title{font-size:22px; font-weight:800; line-height:1.32; letter-spacing:-0.02em;}
+#med-calc-app .mc-lead{margin-top:8px; font-size:13.5px; line-height:1.6; color:rgba(255,255,255,.88);}
+#med-calc-app .mc-lead b{color:#fff;}
+
+/* ---------- 카드 ---------- */
+#med-calc-app .mc-card{
+  background:#fff; border:1px solid var(--mc-line); border-radius:var(--mc-r);
+  padding:18px 16px; margin-bottom:12px; box-shadow:0 6px 18px rgba(23,43,99,.05);
+}
+#med-calc-app .mc-step{display:flex; align-items:center; gap:9px; margin-bottom:14px;}
+#med-calc-app .mc-num{
+  flex:0 0 auto; width:24px; height:24px; border-radius:8px; background:var(--mc-soft); color:var(--mc-brand);
+  font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center;
+}
+#med-calc-app .mc-step h2{font-size:16px; font-weight:800; letter-spacing:-0.02em;}
+#med-calc-app .mc-h2{font-size:16px; font-weight:800; margin-bottom:10px; letter-spacing:-0.02em;}
+
+/* ---------- 입력 ---------- */
+#med-calc-app .mc-grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+#med-calc-app .mc-field{margin-bottom:14px;}
+#med-calc-app .mc-field:last-child{margin-bottom:0;}
+#med-calc-app .mc-label{display:block; font-size:13px; font-weight:700; color:#333d52; margin-bottom:6px;}
+#med-calc-app .mc-input{
+  display:flex; align-items:center; gap:8px; height:50px; padding:0 12px;
+  background:#f8fafe; border:1px solid #dfe5f1; border-radius:12px; transition:border-color .15s, box-shadow .15s, background .15s;
+}
+#med-calc-app .mc-input:focus-within{border-color:var(--mc-brand); background:#fff; box-shadow:0 0 0 3px rgba(47,107,255,.13);}
+#med-calc-app .mc-input input{
+  flex:1 1 auto; min-width:0; width:100%; height:100%; border:0; background:transparent; outline:none;
+  font-family:inherit; font-size:17px; font-weight:800; color:var(--mc-ink); text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+#med-calc-app .mc-input input::placeholder{color:#aeb6c6; font-weight:600;}
+#med-calc-app .mc-input input::-webkit-outer-spin-button,
+#med-calc-app .mc-input input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
+#med-calc-app .mc-unit{flex:0 0 auto; font-size:12.5px; font-weight:700; color:var(--mc-sub);}
+#med-calc-app .mc-input-sm{height:42px; padding:0 10px;}
+#med-calc-app .mc-input-sm input{font-size:15px;}
+#med-calc-app .mc-tip{margin-top:6px; font-size:11.5px; line-height:1.5; color:#8a93a6;}
+#med-calc-app .mc-tip b{color:#6a7387;}
+#med-calc-app .mc-mt{margin-top:4px;}
+
+/* 결정세액 선택 */
+#med-calc-app .mc-seg{display:flex; gap:5px; background:#eef1f8; padding:4px; border-radius:12px;}
+#med-calc-app .mc-seg label{flex:1 1 0; position:relative; display:block; min-width:0;}
+#med-calc-app .mc-seg input{position:absolute; opacity:0; width:1px; height:1px; pointer-events:none;}
+#med-calc-app .mc-seg span{
+  display:flex; align-items:center; justify-content:center; height:36px; padding:0 2px;
+  font-size:12.5px; font-weight:700; color:#616b80; border-radius:9px; white-space:nowrap; transition:.15s;
+}
+#med-calc-app .mc-seg input:checked + span{background:#fff; color:var(--mc-brand); box-shadow:0 1px 4px rgba(23,43,99,.14);}
+#med-calc-app .mc-seg input:focus-visible + span{outline:2px solid var(--mc-brand); outline-offset:2px;}
+#med-calc-app .mc-cap{margin-top:8px; display:flex; align-items:center; gap:8px;}
+#med-calc-app .mc-cap label{flex:0 0 auto; font-size:12px; font-weight:700; color:#6a7387;}
+#med-calc-app .mc-cap .mc-input{flex:1 1 auto; height:38px;}
+
+/* 특수 의료비 접이식 */
+#med-calc-app .mc-adv{border:1px dashed #ccd5e8; background:#fbfcff; border-radius:14px; padding:0 14px; margin-top:2px;}
+#med-calc-app .mc-adv summary{
+  list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:14px 0; font-size:13.5px; font-weight:800; color:#2b3550;
+}
+#med-calc-app .mc-adv summary::-webkit-details-marker{display:none;}
+#med-calc-app .mc-adv summary em{display:block; font-style:normal; font-size:11.5px; font-weight:600; color:#8a93a6; margin-top:2px;}
+#med-calc-app .mc-adv summary::after{content:'+'; flex:0 0 auto; font-size:18px; font-weight:600; color:#8a93a6; line-height:1;}
+#med-calc-app .mc-adv[open] summary::after{content:'–';}
+#med-calc-app .mc-adv-body{padding:2px 0 12px; border-top:1px solid #e9eef8;}
+#med-calc-app .mc-adv-hint{font-size:11.5px; line-height:1.55; color:#8a93a6; padding:10px 0 4px;}
+#med-calc-app .mc-row{display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid #f0f3fa;}
+#med-calc-app .mc-row:last-child{border-bottom:0;}
+#med-calc-app .mc-row.is-off .mc-input{background:#f2f4f9; opacity:.6;}
+#med-calc-app .mc-check{flex:1 1 auto; min-width:0; display:flex; align-items:flex-start; gap:8px; cursor:pointer;}
+#med-calc-app .mc-check input{position:absolute; opacity:0; width:1px; height:1px; pointer-events:none;}
+#med-calc-app .mc-box{
+  flex:0 0 auto; width:19px; height:19px; margin-top:2px; border-radius:6px; border:1.5px solid #c3ccdf; background:#fff;
+  position:relative; transition:.15s;
+}
+#med-calc-app .mc-check input:checked + .mc-box{background:var(--mc-brand); border-color:var(--mc-brand);}
+#med-calc-app .mc-check input:checked + .mc-box::after{
+  content:''; position:absolute; left:6px; top:2px; width:5px; height:10px;
+  border:2px solid #fff; border-top:0; border-left:0; transform:rotate(42deg);
+}
+#med-calc-app .mc-check input:focus-visible + .mc-box{outline:2px solid var(--mc-brand); outline-offset:2px;}
+#med-calc-app .mc-rowtext{display:block; min-width:0;}
+#med-calc-app .mc-rowtext b{display:block; font-size:12.5px; font-weight:800; color:#2b3550; line-height:1.4;}
+#med-calc-app .mc-rowtext em{display:block; font-style:normal; font-size:11px; font-weight:600; color:#8a93a6; margin-top:1px;}
+#med-calc-app .mc-row .mc-input{flex:0 0 96px; width:96px;}
+#med-calc-app .mc-owninputs{flex:0 0 auto; display:flex; flex-direction:column; gap:6px; width:104px;}
+#med-calc-app .mc-owninputs .mc-input{width:100%; flex:1 1 auto; height:38px;}
+#med-calc-app .mc-ownlabel{font-size:10.5px; font-weight:700; color:#8a93a6; margin-bottom:2px; display:block;}
+#med-calc-app .mc-split-line{
+  margin-top:12px; padding:10px 12px; background:#f3f6fd; border-radius:11px;
+  font-size:12.5px; color:#5b6577; display:flex; align-items:center; justify-content:space-between; gap:8px;
+}
+#med-calc-app .mc-split-line b{color:var(--mc-brand-d); font-size:13.5px;}
+
+/* ---------- 결과 ---------- */
+#med-calc-app .mc-verdict{
+  border-radius:14px; padding:16px; margin-bottom:14px; border:1px solid transparent;
+}
+#med-calc-app .mc-verdict-kicker{font-size:11px; font-weight:800; letter-spacing:.08em; opacity:.7; margin-bottom:5px;}
+#med-calc-app .mc-verdict-main{font-size:16.5px; font-weight:800; line-height:1.45; letter-spacing:-0.02em;}
+#med-calc-app .mc-verdict-main b{font-size:19px; font-weight:800; letter-spacing:-0.02em;}
+#med-calc-app .mc-verdict-sub{margin-top:7px; font-size:12.5px; line-height:1.55; opacity:.82;}
+#med-calc-app .mc-verdict-why{margin-top:6px; font-size:12px; line-height:1.55; opacity:.75;}
+#med-calc-app .mc-v-win{background:var(--mc-good-bg); border-color:#c6ecd9; color:#085c36;}
+#med-calc-app .mc-v-tie{background:var(--mc-soft); border-color:#cfddff; color:#1b3a8f;}
+#med-calc-app .mc-v-none{background:var(--mc-warn-bg); border-color:#f3dfb8; color:#7a4600;}
+#med-calc-app .mc-v-empty{background:#f2f4f9; border-color:#e3e8f2; color:#6a7387;}
+
+#med-calc-app .mc-resgrid{align-items:stretch;}
+#med-calc-app .mc-rescard{
+  border:1px solid var(--mc-line); border-radius:14px; padding:14px 13px; background:#fcfdff;
+  display:flex; flex-direction:column; gap:8px; position:relative;
+}
+#med-calc-app .mc-rescard.mc-winner{border-color:#9edcbb; background:#f4fcf8; box-shadow:0 4px 14px rgba(11,138,79,.09);}
+#med-calc-app .mc-rescard-top{display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap;}
+#med-calc-app .mc-rescard-name{font-size:13.5px; font-weight:800; color:#2b3550;}
+#med-calc-app .mc-chip{font-size:10.5px; font-weight:800; padding:3px 7px; border-radius:999px; white-space:nowrap;}
+#med-calc-app .mc-chip-win{background:#d8f3e4; color:#0b7040;}
+#med-calc-app .mc-chip-gray{background:#eceff6; color:#6a7387;}
+#med-calc-app .mc-chip-red{background:var(--mc-red-bg); color:var(--mc-red);}
+#med-calc-app .mc-chip-amber{background:var(--mc-warn-bg); color:var(--mc-warn);}
+#med-calc-app .mc-rescard-main{display:flex; flex-direction:column; gap:1px;}
+#med-calc-app .mc-rescard-label{font-size:11px; font-weight:700; color:#8a93a6;}
+#med-calc-app .mc-rescard-main strong{font-size:23px; font-weight:800; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; color:#111827;}
+#med-calc-app .mc-winner .mc-rescard-main strong{color:#0b7040;}
+#med-calc-app .mc-rescard-note{font-size:11px; color:#8a93a6; margin-top:-4px;}
+#med-calc-app .mc-rescard-kv{display:flex; flex-direction:column; gap:0; margin-top:2px; border-top:1px solid #eef1f8; padding-top:6px;}
+#med-calc-app .mc-rescard-kv li{display:flex; align-items:baseline; justify-content:space-between; gap:8px; padding:3px 0; font-size:12px;}
+#med-calc-app .mc-rescard-kv span{color:#8a93a6; font-weight:600;}
+#med-calc-app .mc-rescard-kv b{color:#333d52; font-weight:800; font-variant-numeric:tabular-nums;}
+#med-calc-app .mc-mini{margin-top:2px; font-size:11px; line-height:1.5; color:#8a93a6;}
+#med-calc-app .mc-mini-warn{color:#a15c00; background:#fff8ea; border-radius:8px; padding:6px 8px;}
+#med-calc-app .mc-mini-red{color:#a3261c; background:#fdf0ef; border-radius:8px; padding:6px 8px;}
+
+#med-calc-app .mc-split{
+  margin-top:12px; padding:12px 13px; border-radius:12px; background:#eef4ff; border:1px dashed #b9cdfb;
+  font-size:12.5px; line-height:1.6; color:#23406f;
+}
+#med-calc-app .mc-split b{color:#1d4ed8;}
+
+#med-calc-app .mc-break{margin-top:12px; border-top:1px solid #eef1f8; padding-top:10px;}
+#med-calc-app .mc-break summary{list-style:none; cursor:pointer; font-size:12.5px; font-weight:800; color:#5b6577; display:flex; justify-content:space-between;}
+#med-calc-app .mc-break summary::-webkit-details-marker{display:none;}
+#med-calc-app .mc-break summary::after{content:'+'; color:#8a93a6; font-weight:600;}
+#med-calc-app .mc-break[open] summary::after{content:'–';}
+#med-calc-app .mc-tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:8px;}
+#med-calc-app .mc-table{width:100%; min-width:320px; border-collapse:collapse; font-size:11.5px; font-variant-numeric:tabular-nums;}
+#med-calc-app .mc-table th,#med-calc-app .mc-table td{padding:7px 5px; border-bottom:1px solid #f0f3fa; text-align:right; white-space:nowrap;}
+#med-calc-app .mc-table th:first-child,#med-calc-app .mc-table td:first-child{text-align:left; white-space:normal; color:#5b6577; font-weight:600;}
+#med-calc-app .mc-table thead th{font-size:11px; color:#8a93a6; font-weight:800; border-bottom:1px solid #dfe5f1;}
+#med-calc-app .mc-table tr.mc-total td{border-bottom:0; padding-top:8px; font-weight:800; color:#111827;}
+#med-calc-app .mc-table tr.mc-sub td{color:#333d52; font-weight:700;}
+
+/* 버튼 */
+#med-calc-app .mc-actions{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
+#med-calc-app .mc-btn{
+  flex:1 1 auto; min-height:44px; padding:0 14px; border-radius:12px; border:1px solid var(--mc-line);
+  background:#fff; color:#333d52; font-size:13px; font-weight:800; letter-spacing:-0.01em; transition:.15s;
+}
+#med-calc-app .mc-btn-primary{background:var(--mc-brand); border-color:var(--mc-brand); color:#fff; box-shadow:0 6px 14px rgba(47,107,255,.22);}
+#med-calc-app .mc-btn-primary:hover{background:var(--mc-brand-d);}
+#med-calc-app .mc-btn-ghost:hover{background:#f4f6fb;}
+#med-calc-app .mc-btn:active{transform:translateY(1px);}
+
+/* 주의사항 */
+#med-calc-app .mc-notes-list{display:flex; flex-direction:column; gap:11px;}
+#med-calc-app .mc-notes-list li{padding-left:11px; border-left:3px solid #dbe4f7;}
+#med-calc-app .mc-notes-list b{display:block; font-size:13px; font-weight:800; color:#2b3550; margin-bottom:3px;}
+#med-calc-app .mc-notes-list span{display:block; font-size:12px; line-height:1.6; color:#5b6577;}
+
+/* 계산 기준 */
+#med-calc-app .mc-basis{padding:0 16px;}
+#med-calc-app .mc-basis summary{list-style:none; display:flex; align-items:center; justify-content:space-between; padding:16px 0; font-size:13.5px; font-weight:800; color:#333d52; cursor:pointer;}
+#med-calc-app .mc-basis summary::-webkit-details-marker{display:none;}
+#med-calc-app .mc-basis summary::after{content:'+'; color:#8a93a6; font-weight:600; font-size:17px;}
+#med-calc-app .mc-basis[open] summary::after{content:'–';}
+#med-calc-app .mc-basis-body{border-top:1px solid #eef1f8; padding:12px 0 16px; font-size:11.5px; line-height:1.7; color:#5b6577;}
+#med-calc-app .mc-basis-body b{color:#333d52;}
+#med-calc-app .mc-basis-body p + p{margin-top:8px;}
+#med-calc-app .mc-basis-body ul{margin-top:4px;}
+#med-calc-app .mc-basis-body li{padding-left:9px; position:relative;}
+#med-calc-app .mc-basis-body li::before{content:'·'; position:absolute; left:0; color:#a9b2c6;}
+#med-calc-app .mc-disclaimer{font-size:11px; line-height:1.6; color:#98a1b3; padding:2px 4px; text-align:center;}
+
+/* 토스트 */
+#med-calc-app .mc-toast{
+  position:absolute; left:50%; bottom:12px; transform:translateX(-50%);
+  background:#111827; color:#fff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px;
+  opacity:0; pointer-events:none; transition:opacity .2s; white-space:nowrap; z-index:5;
+}
+#med-calc-app .mc-toast.show{opacity:1;}
+#med-calc-app .mc-card-result{position:relative;}
+
+@media (max-width:560px){
+  #med-calc-app{padding:12px 10px 28px; font-size:14.5px;}
+  #med-calc-app .mc-title{font-size:20px;}
+  #med-calc-app .mc-grid2{grid-template-columns:1fr;}
+  #med-calc-app .mc-resgrid{grid-template-columns:1fr;}
+  #med-calc-app .mc-rescard-main strong{font-size:21px;}
+  #med-calc-app .mc-row{flex-wrap:wrap;}
+  #med-calc-app .mc-row .mc-input{flex:1 1 100%; width:100%;}
+  #med-calc-app .mc-owninputs{width:100%; flex-direction:row;}
+  #med-calc-app .mc-owninputs > div{flex:1 1 0;}
+  #med-calc-app .mc-btn{flex:1 1 45%;}
+}
+</style>
+
+<noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+<div id="med-calc-app">
+  <header class="mc-hero">
+    <span class="mc-badge">2026년 귀속 · 2027년 2월 정산</span>
+    <h2 class="mc-title">부부 의료비 몰아주기 계산기</h2>
+    <p class="mc-lead">남편과 아내 중 <b>누구에게 의료비를 몰아줄 때 환급이 큰지</b>, 3% 문턱과 700만원 한도까지 반영해 계산합니다. <b>12월 31일 결제분</b>까지가 2026년 귀속이에요.</p>
+  </header>
+
+  <!-- ① 소득 -->
+  <section class="mc-card">
+    <div class="mc-step"><span class="mc-num">1</span><h2>부부 총급여와 결정세액</h2></div>
+
+    <div class="mc-grid2">
+      <div class="mc-field">
+        <label class="mc-label" for="mc-grossA">남편 A 총급여</label>
+        <div class="mc-input"><input id="mc-grossA" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div>
+      </div>
+      <div class="mc-field">
+        <label class="mc-label" for="mc-grossB">아내 B 총급여</label>
+        <div class="mc-input"><input id="mc-grossB" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div>
+        <p class="mc-tip">소득이 없으면 0 (외벌이)</p>
+      </div>
+    </div>
+
+    <div class="mc-field mc-mt">
+      <span class="mc-label">남편 A 결정세액</span>
+      <div class="mc-seg" role="radiogroup" aria-label="남편 A 결정세액 상태">
+        <label><input type="radio" name="mc-taxA" value="unknown" checked><span>잘 모름</span></label>
+        <label><input type="radio" name="mc-taxA" value="yes"><span>세액 있음</span></label>
+        <label><input type="radio" name="mc-taxA" value="zero"><span>0원(면세)</span></label>
+      </div>
+      <div class="mc-cap" id="mc-capWrapA" hidden>
+        <label for="mc-capA">결정세액</label>
+        <div class="mc-input mc-input-sm"><input id="mc-capA" type="number" inputmode="numeric" min="0" step="10" placeholder="모르면 비워두세요"><span class="mc-unit">만원</span></div>
+      </div>
+    </div>
+
+    <div class="mc-field mc-mt">
+      <span class="mc-label">아내 B 결정세액</span>
+      <div class="mc-seg" role="radiogroup" aria-label="아내 B 결정세액 상태">
+        <label><input type="radio" name="mc-taxB" value="unknown" checked><span>잘 모름</span></label>
+        <label><input type="radio" name="mc-taxB" value="yes"><span>세액 있음</span></label>
+        <label><input type="radio" name="mc-taxB" value="zero"><span>0원(면세)</span></label>
+      </div>
+      <div class="mc-cap" id="mc-capWrapB" hidden>
+        <label for="mc-capB">결정세액</label>
+        <div class="mc-input mc-input-sm"><input id="mc-capB" type="number" inputmode="numeric" min="0" step="10" placeholder="모르면 비워두세요"><span class="mc-unit">만원</span></div>
+      </div>
+    </div>
+
+    <p class="mc-tip" style="margin-top:10px;">원천징수영수증의 <b>‘결정세액’</b>을 보면 바로 알 수 있어요. 0원이면 의료비를 넣어도 환급이 없습니다.</p>
+  </section>
+
+  <!-- ② 의료비 -->
+  <section class="mc-card">
+    <div class="mc-step"><span class="mc-num">2</span><h2>부부 합산 의료비</h2></div>
+
+    <div class="mc-field">
+      <label class="mc-label" for="mc-total">연간 의료비 (실손보험금 차감 후)</label>
+      <div class="mc-input"><input id="mc-total" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div>
+      <p class="mc-tip">국세청 간소화 자료의 의료비 총액에서 <b>실손보험금·본인부담상한제 환급금</b>을 뺀 순수 본인부담액으로 넣어 주세요.</p>
+    </div>
+
+    <details class="mc-adv" id="mc-adv">
+      <summary><span>특수 의료비가 있나요?<em>항목에 따라 한도와 공제율이 달라요</em></span></summary>
+      <div class="mc-adv-body">
+        <p class="mc-adv-hint">해당되는 항목만 금액을 적어 주세요. 적지 않은 금액은 자동으로 ‘일반 의료비(700만원 한도)’로 계산됩니다.</p>
+
+        <div class="mc-row is-off" id="mc-rowC">
+          <label class="mc-check"><input type="checkbox" id="mc-chkC"><span class="mc-box"></span><span class="mc-rowtext"><b>6세 이하 자녀 · 만 65세 이상 · 장애인 · 중증질환</b><em>한도 없음 · 15%</em></span></label>
+          <div class="mc-input mc-input-sm"><input id="mc-c" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div>
+        </div>
+
+        <div class="mc-row is-off" id="mc-rowB">
+          <label class="mc-check"><input type="checkbox" id="mc-chkB"><span class="mc-box"></span><span class="mc-rowtext"><b>미숙아 · 선천성이상아</b><em>한도 없음 · 20%</em></span></label>
+          <div class="mc-input mc-input-sm"><input id="mc-b" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div>
+        </div>
+
+        <div class="mc-row is-off" id="mc-rowA">
+          <label class="mc-check"><input type="checkbox" id="mc-chkA"><span class="mc-box"></span><span class="mc-rowtext"><b>난임시술비</b><em>한도 없음 · 30%</em></span></label>
+          <div class="mc-input mc-input-sm"><input id="mc-a" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div>
+        </div>
+
+        <div class="mc-row is-off" id="mc-rowOwn">
+          <label class="mc-check"><input type="checkbox" id="mc-chkOwn"><span class="mc-box"></span><span class="mc-rowtext"><b>남편 · 아내 본인 의료비</b><em>한도 없음 · 15% (공제받는 사람 본인일 때)</em></span></label>
+          <div class="mc-owninputs">
+            <div><span class="mc-ownlabel">남편</span><div class="mc-input mc-input-sm"><input id="mc-ownA" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div></div>
+            <div><span class="mc-ownlabel">아내</span><div class="mc-input mc-input-sm"><input id="mc-ownB" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="mc-unit">만원</span></div></div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <p class="mc-split-line"><span>일반 의료비 (700만원 한도 적용)</span><b><span id="mc-generalOut">0</span>만 원</b></p>
+    <p class="mc-tip" id="mc-scaleNote" hidden>특수 의료비 합계가 총 의료비보다 커서 비율에 맞춰 줄여 계산했습니다. 금액을 다시 확인해 주세요.</p>
+  </section>
+
+  <!-- ③ 결과 -->
+  <section class="mc-card mc-card-result">
+    <div class="mc-step"><span class="mc-num">3</span><h2>계산 결과</h2></div>
+    <div class="mc-verdict mc-v-empty" id="mc-verdict" aria-live="polite"></div>
+    <div class="mc-grid2 mc-resgrid">
+      <div class="mc-rescard" id="mc-resA"></div>
+      <div class="mc-rescard" id="mc-resB"></div>
+    </div>
+    <div class="mc-split" id="mc-split" hidden></div>
+
+    <details class="mc-break" id="mc-break">
+      <summary>항목별 계산 내역 보기</summary>
+      <div class="mc-tablewrap" id="mc-breakBody"></div>
+    </details>
+
+    <div class="mc-actions">
+      <button type="button" class="mc-btn mc-btn-ghost" id="mc-example">예시로 채우기</button>
+      <button type="button" class="mc-btn mc-btn-ghost" id="mc-reset">초기화</button>
+      <button type="button" class="mc-btn mc-btn-primary" id="mc-copy">결과 복사</button>
+    </div>
+    <div class="mc-toast" id="mc-toast">복사했어요</div>
+  </section>
+
+  <!-- 주의사항 -->
+  <section class="mc-card">
+    <h2 class="mc-h2">몰아주기 전에 꼭 확인하세요</h2>
+    <ul class="mc-notes-list">
+      <li><b>① 결정세액이 0원이면 환급도 0원</b><span>총급여가 3,000만원 안팎이거나 면세자라면, 3% 문턱을 넘겨 공제를 받아도 <b>돌려받을 세금이 없어</b> 몰아주기의 실익이 사라집니다. 원천징수영수증의 결정세액을 먼저 확인하세요.</span></li>
+      <li><b>② 실손보험금은 반드시 빼고 계산</b><span>간소화 자료의 의료비에는 실손보험금으로 돌려받은 금액이 반영되지 않습니다. 보험금·본인부담상한제 환급금을 뺀 <b>순수 본인부담액</b>만 공제 대상입니다.</span></li>
+      <li><b>③ 결제 명의 원칙</b><span>소득이 있는 배우자의 의료비는 <b>공제받는 사람 명의 카드·현금영수증·계좌</b>로 결제한 것만 원칙적으로 인정됩니다. 앞으로는 몰아줄 사람 명의로 결제하세요.</span></li>
+      <li><b>④ 700만원 한도</b><span>일반 부양가족 의료비는 연 700만원까지입니다. 다만 <b>본인·6세 이하·만 65세 이상·장애인·중증질환·미숙아·선천성이상아·난임시술비</b>는 한도가 없습니다.</span></li>
+      <li><b>⑤ 의료비는 이월되지 않습니다</b><span>쓰지 못한 의료비는 다음 해로 넘어가지 않습니다. 12월 31일까지 결제해야 2026년 귀속입니다.</span></li>
+      <li><b>⑥ 둘 다 세액이 남아 있다면</b><span>일반 의료비가 700만원을 넘고 두 사람 모두 결정세액이 충분하면, 한쪽에 몰아주기보다 <b>각자 700만원 한도씩 나눠 받는 편</b>이 유리할 수 있습니다(각자 3% 문턱은 따로 적용). 위 결과의 ‘나눠 받으면’ 안내를 확인하세요.</span></li>
+    </ul>
+  </section>
+
+  <!-- 계산 기준 -->
+  <details class="mc-card mc-basis">
+    <summary>계산 기준 · 근거 조문</summary>
+    <div class="mc-basis-body">
+      <p><b>적용 기준</b> — 2026년 귀속(2026.1.1.~12.31. 지출분, 2027년 2월 연말정산). 「소득세법」 제59조의4 제2항 및 같은 법 시행령 제118조의5.</p>
+      <p><b>공제 구조</b></p>
+      <ul>
+        <li>총급여의 3%를 넘는 의료비만 공제 대상 (부부가 각자 공제받으면 각자의 3%가 각각 적용)</li>
+        <li>① 일반 부양가족 의료비: 15%, 연 700만원 한도</li>
+        <li>② 본인·6세 이하·만 65세 이상·장애인·중증질환자: 15%, 한도 없음</li>
+        <li>③ 미숙아·선천성이상아: 20%, 한도 없음</li>
+        <li>④ 난임시술비: 30%, 한도 없음</li>
+        <li>3% 문턱은 공제율이 낮은 ①에서 먼저 차감하고, 모자라면 ②→③→④ 순으로 차감합니다(조문의 단서 순서).</li>
+        <li>6세 이하 판정은 과세기간 개시일(1월 1일) 기준, 만 65세 이상 판정은 과세기간 종료일(12월 31일) 기준입니다.</li>
+      </ul>
+      <p><b>표시 방식</b> — 소득세 세액공제에 지방소득세 10%를 더해 16.5%·22%·33%로 표시했습니다. 원 단위는 절사했습니다. 결정세액을 입력하면 그 금액까지만 환급되는 것으로 계산합니다(세액공제가 산출세액을 넘으면 초과분은 소멸).</p>
+      <p><b>포함하지 않은 것</b> — 산후조리원비(출산 1회 200만원 한도), 안경·콘택트렌즈(1인 50만원 한도)는 별도 한도가 있어 구분하지 않았습니다. 해당 금액은 일반 의료비에 포함해 입력하면 한도 계산이 조금 달라질 수 있습니다. 부양가족 요건(나이·소득), 다른 형제와의 중복 공제 여부는 직접 확인이 필요합니다.</p>
+      <p><b>주의</b> — 계산 결과는 예상치입니다. 세법이 개정되면 달라질 수 있으니, 실제 신고 전에는 국세청 홈택스 ‘연말정산 미리보기’로 확인하세요.</p>
+    </div>
+  </details>
+
+  <p class="mc-disclaimer">이 계산기는 참고용이며 세무 자문이 아닙니다. 실제 공제액은 개인별 공제 항목에 따라 달라질 수 있습니다.</p>
+</div>
+
+<script>
+/* MC-CORE-START */
+var MC_LIMIT = 7000000;
+
+function mcComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function mcToWon(v){
+  var n = parseFloat(v);
+  if (!isFinite(n) || n < 0) n = 0;
+  return Math.round(n * 10000);
+}
+function mcMan(won){
+  var v = Math.round(won / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return mcComma(whole) + (dec > 0 ? '.' + dec : '') + '만 원';
+}
+
+/* 한 사람이 몰아받았을 때의 계산.
+   parts: general(일반·700만 한도), unlimited15(본인·6세이하·65세이상·장애인·중증),
+          premature(미숙아 20%), infertility(난임 30%)  — 모두 원 단위
+   taxMode: 'unknown' | 'yes' | 'zero', capWon: 결정세액(원, 모르면 0) */
+function mcSide(grossWon, parts, taxMode, capWon){
+  var gross = Math.max(0, Math.round(grossWon || 0));
+  var threshold = Math.round(gross * 0.03);
+  var d = Math.max(0, Math.round(parts.general || 0));
+  var c = Math.max(0, Math.round(parts.unlimited15 || 0));
+  var b = Math.max(0, Math.round(parts.premature || 0));
+  var a = Math.max(0, Math.round(parts.infertility || 0));
+
+  var dD = 0, cD = 0, bD = 0, aD = 0;
+  if (gross > 0){
+    if (d >= threshold){
+      dD = Math.min(d - threshold, MC_LIMIT);
+      cD = c; bD = b; aD = a;
+    } else {
+      var deficit = threshold - d;
+      cD = Math.max(0, c - deficit);
+      deficit = Math.max(0, deficit - c);
+      bD = Math.max(0, b - deficit);
+      deficit = Math.max(0, deficit - b);
+      aD = Math.max(0, a - deficit);
+    }
+  }
+
+  var deduct = dD + cD + bD + aD;
+  var credit = Math.floor(dD * 0.15 + cD * 0.15 + bD * 0.20 + aD * 0.30);
+  var creditLocal = Math.floor(credit * 0.1);
+
+  var refundIncome = credit, capped = false;
+  if (taxMode === 'zero') refundIncome = 0;
+  else if (taxMode === 'yes' && capWon > 0 && capWon < credit){ refundIncome = capWon; capped = true; }
+  var refundLocal = Math.floor(refundIncome * 0.1);
+
+  return {
+    gross: gross, threshold: threshold,
+    d: d, c: c, b: b, a: a,
+    dD: dD, cD: cD, bD: bD, aD: aD,
+    deduct: deduct,
+    credit: credit, creditLocal: creditLocal,
+    refundIncome: refundIncome, refundLocal: refundLocal, refund: refundIncome + refundLocal,
+    capped: capped, taxMode: taxMode,
+    belowThreshold: gross > 0 && deduct === 0 && (d + c + b + a) > 0
+  };
+}
+
+/* 특수 의료비가 총액을 넘으면 비율로 줄이고, 나머지를 일반 의료비로 */
+function mcAllocate(totalWon, sp){
+  var total = Math.max(0, Math.round(totalWon || 0));
+  var c = Math.max(0, Math.round(sp.c || 0));
+  var b = Math.max(0, Math.round(sp.b || 0));
+  var a = Math.max(0, Math.round(sp.a || 0));
+  var ownA = Math.max(0, Math.round(sp.ownA || 0));
+  var ownB = Math.max(0, Math.round(sp.ownB || 0));
+  var sum = c + b + a + ownA + ownB;
+  var scaled = false;
+  if (sum > total && sum > 0){
+    scaled = true;
+    var k = total / sum;
+    c = Math.floor(c * k); b = Math.floor(b * k); a = Math.floor(a * k);
+    ownA = Math.floor(ownA * k); ownB = Math.floor(ownB * k);
+  }
+  var rest = c + b + a + ownA + ownB;
+  return { general: Math.max(0, total - rest), c: c, b: b, a: a, ownA: ownA, ownB: ownB, scaled: scaled };
+}
+
+/* 두 사람에게 나눠 받을 때의 참고 최적값 (일반 의료비 분할 + 특수항목 배분 비율 탐색) */
+function mcSplit(gA, gB, general, c, b, a, ownA, ownB, taxA, taxB){
+  general = Math.max(0, Math.round(general || 0));
+  var best = null;
+  var step = Math.max(10000, Math.ceil(general / 200));
+  var ratios = [0, 0.25, 0.5, 0.75, 1];
+  for (var x = 0; x <= general; x += step){
+    var xa = Math.min(x, general), xb = general - xa;
+    for (var i = 0; i < ratios.length; i++){
+      var s = ratios[i];
+      var ca = Math.round(c * s), cb = c - ca;
+      var ba = Math.round(b * s), bb = b - ba;
+      var aa = Math.round(a * s), ab = a - aa;
+      var sA = mcSide(gA, { general: xa, unlimited15: ca + ownA, premature: ba, infertility: aa }, taxA.mode, taxA.cap);
+      var sB = mcSide(gB, { general: xb, unlimited15: cb + ownB, premature: bb, infertility: ab }, taxB.mode, taxB.cap);
+      var t = sA.refund + sB.refund;
+      if (!best || t > best.total) best = { total: t, A: sA, B: sB, x: xa, share: s };
+    }
+  }
+  return best;
+}
+
+/* 결론 판정 */
+function mcDecide(A, B, gA, gB){
+  if (gA === 0 && gB === 0) return { winner: 'none', reason: 'nobody', diff: 0 };
+  if (gA === 0) return { winner: 'B', reason: 'single', diff: B.refund };
+  if (gB === 0) return { winner: 'A', reason: 'single', diff: A.refund };
+  if (A.refund === 0 && B.refund === 0){
+    var bothBelow = A.deduct === 0 && B.deduct === 0;
+    return { winner: 'none', reason: bothBelow ? 'bothBelow' : 'bothZero', diff: 0 };
+  }
+  if (A.refund === B.refund) return { winner: 'tie', reason: 'tie', diff: 0 };
+  if (A.refund > B.refund) return { winner: 'A', reason: 'win', diff: A.refund - B.refund };
+  return { winner: 'B', reason: 'win', diff: B.refund - A.refund };
+}
+/* MC-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('med-calc-app');
+  if (!ROOT) return;
+
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    grossA: $('mc-grossA'), grossB: $('mc-grossB'),
+    capA: $('mc-capA'), capB: $('mc-capB'),
+    capWrapA: $('mc-capWrapA'), capWrapB: $('mc-capWrapB'),
+    total: $('mc-total'),
+    c: $('mc-c'), b: $('mc-b'), a: $('mc-a'), ownA: $('mc-ownA'), ownB: $('mc-ownB'),
+    chkC: $('mc-chkC'), chkB: $('mc-chkB'), chkA: $('mc-chkA'), chkOwn: $('mc-chkOwn'),
+    rowC: $('mc-rowC'), rowB: $('mc-rowB'), rowA: $('mc-rowA'), rowOwn: $('mc-rowOwn'),
+    generalOut: $('mc-generalOut'), scaleNote: $('mc-scaleNote'),
+    verdict: $('mc-verdict'), resA: $('mc-resA'), resB: $('mc-resB'),
+    split: $('mc-split'), breakBody: $('mc-breakBody'), breakBox: $('mc-break'),
+    toast: $('mc-toast')
+  };
+
+  function radioVal(name){
+    var n = ROOT.querySelector('input[name="' + name + '"]:checked');
+    return n ? n.value : 'unknown';
+  }
+  function taxState(key){
+    var mode = radioVal('mc-tax' + key);
+    var capEl = key === 'A' ? el.capA : el.capB;
+    var cap = 0;
+    if (mode === 'yes' && String(capEl.value).trim() !== ''){
+      cap = mcToWon(capEl.value);
+      if (cap === 0) mode = 'zero';   // 결정세액을 0으로 적은 경우
+    }
+    return { mode: mode, cap: cap };
+  }
+  function amt(input, checked){
+    if (!checked) return 0;
+    return mcToWon(input.value);
+  }
+  function syncCap(key){
+    var mode = radioVal('mc-tax' + key);
+    var wrap = key === 'A' ? el.capWrapA : el.capWrapB;
+    wrap.hidden = (mode !== 'yes');
+  }
+  function syncRow(row, chk, inputs){
+    var on = chk.checked;
+    row.classList.toggle('is-off', !on);
+    if (!on){ for (var i = 0; i < inputs.length; i++) inputs[i].value = ''; }
+  }
+
+  // 금액 입력 → 자동 체크
+  function bindRow(chk, inputs, row){
+    for (var i = 0; i < inputs.length; i++){
+      (function(inp){
+        inp.addEventListener('input', function(){
+          if (parseFloat(inp.value) > 0 && !chk.checked) chk.checked = true;
+          var any = false;
+          for (var j = 0; j < inputs.length; j++) if (parseFloat(inputs[j].value) > 0) any = true;
+          if (!any) chk.checked = false;
+          row.classList.toggle('is-off', !any);
+          calc();
+        });
+      })(inputs[i]);
+    }
+    chk.addEventListener('change', function(){
+      syncRow(row, chk, inputs);
+      if (chk.checked) inputs[0].focus();
+      calc();
+    });
+  }
+
+  bindRow(el.chkC, [el.c], el.rowC);
+  bindRow(el.chkB, [el.b], el.rowB);
+  bindRow(el.chkA, [el.a], el.rowA);
+  bindRow(el.chkOwn, [el.ownA, el.ownB], el.rowOwn);
+
+  ['mc-taxA', 'mc-taxB'].forEach(function(name){
+    ROOT.querySelectorAll('input[name="' + name + '"]').forEach(function(r){
+      r.addEventListener('change', function(){
+        syncCap(name === 'mc-taxA' ? 'A' : 'B');
+        calc();
+      });
+    });
+  });
+
+  [el.grossA, el.grossB, el.total, el.capA, el.capB].forEach(function(inp){
+    inp.addEventListener('input', function(){ calc(); });
+  });
+
+  function chips(s, isWinner){
+    var out = '';
+    if (isWinner) out += '<span class="mc-chip mc-chip-win">유리</span>';
+    if (s.gross === 0) out += '<span class="mc-chip mc-chip-gray">소득 없음</span>';
+    else if (s.taxMode === 'zero') out += '<span class="mc-chip mc-chip-red">면세</span>';
+    else if (s.deduct === 0 && (s.d + s.c + s.b + s.a) > 0) out += '<span class="mc-chip mc-chip-amber">문턱 미달</span>';
+    return out;
+  }
+
+  function resCardHtml(name, s, isWinner){
+    var h = '';
+    h += '<div class="mc-rescard-top"><span class="mc-rescard-name">' + name + '</span><span>' + chips(s, isWinner) + '</span></div>';
+
+    if (s.gross === 0){
+      h += '<div class="mc-rescard-main"><span class="mc-rescard-label">예상 환급</span><strong>—</strong></div>';
+      h += '<p class="mc-rescard-note">소득이 없어 공제받을 수 없어요</p>';
+      return h + '<p class="mc-mini">총급여 0원</p>';
+    }
+
+    h += '<div class="mc-rescard-main"><span class="mc-rescard-label">예상 환급 (지방세 포함)</span><strong>' + mcComma(s.refund) + '원</strong></div>';
+    h += '<p class="mc-rescard-note">소득세 ' + mcComma(s.refundIncome) + ' + 지방소득세 ' + mcComma(s.refundLocal) + '</p>';
+
+    h += '<ul class="mc-rescard-kv">';
+    h += '<li><span>총급여</span><b>' + mcMan(s.gross) + '</b></li>';
+    h += '<li><span>3% 문턱</span><b>' + mcMan(s.threshold) + '</b></li>';
+    h += '<li><span>공제 대상 금액</span><b>' + mcMan(s.deduct) + '</b></li>';
+    h += '</ul>';
+
+    if (s.taxMode === 'zero'){
+      h += '<p class="mc-mini mc-mini-red">결정세액 0원 → 계산상 ' + mcComma(s.credit) + '원이어도 실제 환급은 0원</p>';
+    } else if (s.taxMode === 'unknown' && s.gross <= 30000000){
+      h += '<p class="mc-mini mc-mini-warn">총급여 3,000만원 이하 → 면세자라면 환급이 0원이에요</p>';
+    } else if (s.deduct === 0){
+      h += '<p class="mc-mini mc-mini-warn">의료비가 3% 문턱(' + mcMan(s.threshold) + ')을 넘지 못했어요</p>';
+    }
+    if (s.capped){
+      h += '<p class="mc-mini mc-mini-warn">결정세액 ' + mcMan(s.refundIncome) + ' 한도로 환급액이 잘렸어요</p>';
+    }
+    return h;
+  }
+
+  function verdictHtml(d, A, B, gA, gB, total){
+    if (gA === 0 && gB === 0){
+      return '<p class="mc-verdict-kicker">시작하기</p><p class="mc-verdict-main">남편·아내 총급여를 입력해 주세요</p>' +
+             '<p class="mc-verdict-sub">입력하는 즉시 자동으로 계산됩니다.</p>';
+    }
+    if (total === 0){
+      return '<p class="mc-verdict-kicker">한 단계만 더</p><p class="mc-verdict-main">연간 의료비를 입력해 주세요</p>' +
+             '<p class="mc-verdict-sub">실손보험금을 뺀 순수 본인부담액으로 넣으면 더 정확합니다.</p>';
+    }
+
+    if (d.reason === 'single'){
+      var onlyA = (gA > 0);
+      var s = onlyA ? A : B;
+      var other = onlyA ? '아내' : '남편';
+      var sub = s.refund > 0
+        ? ('예상 환급 <b>' + mcComma(s.refund) + '원</b>')
+        : (s.taxMode === 'zero' ? '결정세액이 0원이라 환급은 없어요' : '3% 문턱을 못 넘어 현재 환급은 0원이에요');
+      return '<p class="mc-verdict-kicker">결론</p>' +
+        '<p class="mc-verdict-main">' + (onlyA ? '남편 A' : '아내 B') + '에게 전부 넣으세요</p>' +
+        '<p class="mc-verdict-sub">' + other + '는 소득이 없어 공제받을 수 없어요 · ' + sub + '</p>';
+    }
+
+    if (d.reason === 'bothBelow'){
+      return '<p class="mc-verdict-kicker">결론</p>' +
+        '<p class="mc-verdict-main">둘 다 3% 문턱을 못 넘어 <b>공제 0원</b>이에요</p>' +
+        '<p class="mc-verdict-sub">남편 문턱 ' + mcMan(A.threshold) + ' · 아내 문턱 ' + mcMan(B.threshold) + '. 12월 31일까지 의료비를 더 쓰면 결과가 달라질 수 있어요(의료비는 이월되지 않습니다).</p>';
+    }
+
+    if (d.reason === 'bothZero'){
+      return '<p class="mc-verdict-kicker">결론</p>' +
+        '<p class="mc-verdict-main">어느 쪽도 돌려받을 세금이 없어요</p>' +
+        '<p class="mc-verdict-sub">결정세액이 0원(면세)이라 의료비를 몰아줘도 환급이 생기지 않습니다. 원천징수영수증의 결정세액을 확인해 보세요.</p>';
+    }
+
+    if (d.reason === 'tie'){
+      return '<p class="mc-verdict-kicker">결론</p>' +
+        '<p class="mc-verdict-main">두 사람에게 몰아줘도 결과가 같아요</p>' +
+        '<p class="mc-verdict-sub">각 ' + mcComma(A.refund) + '원 · 어느 쪽이든 결정세액이 충분한 사람에게 넣으세요.</p>';
+    }
+
+    var win = d.winner === 'A' ? A : B;
+    var lose = d.winner === 'A' ? B : A;
+    var winName = d.winner === 'A' ? '남편 A' : '아내 B';
+    var loseName = d.winner === 'A' ? '아내 B' : '남편 A';
+    var h = '<p class="mc-verdict-kicker">결론</p>';
+    h += '<p class="mc-verdict-main">' + winName + '에게 몰아주는 게 <b>' + mcComma(d.diff) + '원</b> 더 유리해요</p>';
+    h += '<p class="mc-verdict-sub">' + winName + ' ' + mcComma(win.refund) + '원 · ' + loseName + ' ' + mcComma(lose.refund) + '원 (지방소득세 포함)</p>';
+
+    var why = '';
+    if (win.threshold < lose.threshold && lose.deduct > 0){
+      why = '3% 문턱이 ' + mcMan(win.threshold) + '로 ' + loseName + '(' + mcMan(lose.threshold) + ')보다 ' +
+            mcMan(lose.threshold - win.threshold) + ' 낮아, 공제 대상이 그만큼 많이 남습니다.';
+    } else if (lose.deduct === 0){
+      why = loseName + '는 의료비가 3% 문턱(' + mcMan(lose.threshold) + ')을 넘지 못해 공제가 0원입니다.';
+    }
+    if (why) h += '<p class="mc-verdict-why">' + why + '</p>';
+
+    if (lose.taxMode === 'zero' && lose.credit > 0){
+      h += '<p class="mc-verdict-why">※ ' + loseName + '는 결정세액이 0원이라 계산상 ' + mcComma(lose.credit) + '원이어도 <b>실제 환급은 0원</b>입니다.</p>';
+    }
+    return h;
+  }
+
+  function breakdownHtml(A, B, taxA, taxB){
+    function row(label, av, bv, cls){
+      return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><td>' + label + '</td><td>' + av + '</td><td>' + bv + '</td></tr>';
+    }
+    function kw(s, v){
+      if (s.gross === 0) return '—';
+      return v > 0 ? mcMan(v) : '0원';
+    }
+    var h = '<table class="mc-table"><thead><tr><th>구분</th><th>남편 A에게</th><th>아내 B에게</th></tr></thead><tbody>';
+    h += row('총급여', kw(A, A.gross), kw(B, B.gross));
+    h += row('3% 문턱', kw(A, A.threshold), kw(B, B.threshold));
+    h += row('일반 의료비 (15%, 700만 한도)', kw(A, A.dD), kw(B, B.dD));
+    h += row('한도 없는 의료비 (15%)', kw(A, A.cD), kw(B, B.cD));
+    h += row('미숙아·선천성이상아 (20%)', kw(A, A.bD), kw(B, B.bD));
+    h += row('난임시술비 (30%)', kw(A, A.aD), kw(B, B.aD));
+    h += row('공제 대상 합계', kw(A, A.deduct), kw(B, B.deduct), 'mc-sub');
+    h += row('소득세 세액공제', A.gross === 0 ? '—' : mcComma(A.refundIncome) + '원', B.gross === 0 ? '—' : mcComma(B.refundIncome) + '원');
+    h += row('지방소득세 (10%)', A.gross === 0 ? '—' : mcComma(A.refundLocal) + '원', B.gross === 0 ? '—' : mcComma(B.refundLocal) + '원');
+    h += row('최종 환급', A.gross === 0 ? '—' : mcComma(A.refund) + '원', B.gross === 0 ? '—' : mcComma(B.refund) + '원', 'mc-total');
+    h += '</tbody></table>';
+    if (taxA.mode === 'yes' && taxA.cap > 0) h += '<p class="mc-mini" style="margin-top:6px;">남편 결정세액 ' + mcMan(taxA.cap) + ' 기준으로 환급 한도를 적용했습니다.</p>';
+    if (taxB.mode === 'yes' && taxB.cap > 0) h += '<p class="mc-mini" style="margin-top:6px;">아내 결정세액 ' + mcMan(taxB.cap) + ' 기준으로 환급 한도를 적용했습니다.</p>';
+    return h;
+  }
+
+  var last = null;
+
+  function calc(){
+    syncCap('A'); syncCap('B');
+    var gA = mcToWon(el.grossA.value);
+    var gB = mcToWon(el.grossB.value);
+    var total = mcToWon(el.total.value);
+    var taxA = taxState('A');
+    var taxB = taxState('B');
+
+    var alloc = mcAllocate(total, {
+      c: amt(el.c, el.chkC.checked),
+      b: amt(el.b, el.chkB.checked),
+      a: amt(el.a, el.chkA.checked),
+      ownA: amt(el.ownA, el.chkOwn.checked),
+      ownB: amt(el.ownB, el.chkOwn.checked)
+    });
+
+    var A = mcSide(gA, { general: alloc.general + alloc.ownB, unlimited15: alloc.c + alloc.ownA, premature: alloc.b, infertility: alloc.a }, taxA.mode, taxA.cap);
+    var B = mcSide(gB, { general: alloc.general + alloc.ownA, unlimited15: alloc.c + alloc.ownB, premature: alloc.b, infertility: alloc.a }, taxB.mode, taxB.cap);
+
+    el.generalOut.textContent = mcComma(Math.round(alloc.general / 10000));
+    el.scaleNote.hidden = !alloc.scaled;
+
+    var d = mcDecide(A, B, gA, gB);
+    el.verdict.className = 'mc-verdict ' + (
+      d.reason === 'win' ? 'mc-v-win' :
+      d.reason === 'tie' ? 'mc-v-tie' :
+      d.reason === 'single' ? 'mc-v-win' :
+      (d.reason === 'nobody' || d.reason === 'empty') ? 'mc-v-empty' : 'mc-v-none'
+    );
+    el.verdict.innerHTML = verdictHtml(d, A, B, gA, gB, total);
+
+    el.resA.className = 'mc-rescard' + (d.winner === 'A' && d.reason === 'win' ? ' mc-winner' : (d.reason === 'single' && gA > 0 ? ' mc-winner' : ''));
+    el.resB.className = 'mc-rescard' + (d.winner === 'B' && d.reason === 'win' ? ' mc-winner' : (d.reason === 'single' && gB > 0 ? ' mc-winner' : ''));
+    el.resA.innerHTML = resCardHtml('남편 A', A, d.winner === 'A' && (d.reason === 'win' || d.reason === 'single'));
+    el.resB.innerHTML = resCardHtml('아내 B', B, d.winner === 'B' && (d.reason === 'win' || d.reason === 'single'));
+
+    // 나눠 받기 참고
+    var splitHtml = '';
+    if (gA > 0 && gB > 0 && total > 0){
+      var bestSingle = Math.max(A.refund, B.refund);
+      var sp = mcSplit(gA, gB, alloc.general, alloc.c, alloc.b, alloc.a, alloc.ownA, alloc.ownB, taxA, taxB);
+      if (sp && sp.total > bestSingle + 10000){
+        splitHtml = '💡 <b>나눠 받으면 ' + mcComma(sp.total) + '원</b> — 한쪽에 몰아주는 것보다 <b>' +
+          mcComma(sp.total - bestSingle) + '원</b> 더 유리해요. 두 사람 모두 700만원 한도를 각각 쓸 수 있기 때문입니다. (일반 의료비를 나눠 배분한 참고값)';
+      }
+    }
+    el.split.hidden = !splitHtml;
+    el.split.innerHTML = splitHtml;
+
+    el.breakBody.innerHTML = breakdownHtml(A, B, taxA, taxB);
+
+    last = { A: A, B: B, d: d, gA: gA, gB: gB, total: total, split: splitHtml };
+  }
+
+  // 예시 / 초기화 / 복사
+  $('mc-example').addEventListener('click', function(){
+    el.grossA.value = 8000;
+    el.grossB.value = 3200;
+    el.total.value = 620;
+    el.chkC.checked = true;
+    el.c.value = 180;
+    el.rowC.classList.remove('is-off');
+    ROOT.querySelector('input[name="mc-taxA"][value="yes"]').checked = true;
+    ROOT.querySelector('input[name="mc-taxB"][value="yes"]').checked = true;
+    syncCap('A'); syncCap('B');
+    calc();
+    el.verdict.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  $('mc-reset').addEventListener('click', function(){
+    el.grossA.value = ''; el.grossB.value = ''; el.total.value = '';
+    el.capA.value = ''; el.capB.value = '';
+    el.c.value = ''; el.b.value = ''; el.a.value = ''; el.ownA.value = ''; el.ownB.value = '';
+    [el.chkC, el.chkB, el.chkA, el.chkOwn].forEach(function(c){ c.checked = false; });
+    [el.rowC, el.rowB, el.rowA, el.rowOwn].forEach(function(r){ r.classList.add('is-off'); });
+    ROOT.querySelector('input[name="mc-taxA"][value="unknown"]').checked = true;
+    ROOT.querySelector('input[name="mc-taxB"][value="unknown"]').checked = true;
+    syncCap('A'); syncCap('B');
+    el.breakBox.open = false;
+    calc();
+  });
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('mc-copy').addEventListener('click', function(){
+    if (!last) return;
+    var d = last.d, A = last.A, B = last.B;
+    var lines = ['[2026 연말정산 부부 의료비 몰아주기]'];
+    lines.push('· 남편 A 총급여 ' + mcMan(A.gross) + ' → 문턱 ' + mcMan(A.threshold) + ', 환급 ' + mcComma(A.refund) + '원');
+    if (B.gross > 0) lines.push('· 아내 B 총급여 ' + mcMan(B.gross) + ' → 문턱 ' + mcMan(B.threshold) + ', 환급 ' + mcComma(B.refund) + '원');
+    if (d.reason === 'win') lines.push('→ ' + (d.winner === 'A' ? '남편 A' : '아내 B') + '에게 몰아주는 게 ' + mcComma(d.diff) + '원 유리');
+    else if (d.reason === 'single') lines.push('→ 소득이 있는 ' + (last.gA > 0 ? '남편 A' : '아내 B') + '에게 전부 공제');
+    else if (d.reason === 'bothBelow') lines.push('→ 둘 다 3% 문턱 미달, 공제 0원');
+    else if (d.reason === 'tie') lines.push('→ 차이 없음 (각 ' + mcComma(A.refund) + '원)');
+    else lines.push('→ 환급 실익 없음');
+    var text = lines.join('\n');
+
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  calc();
+})();
+</script>
+    </div><!-- /계산기 -->
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법 — 결론은 네 가지</h2>
+      <p>계산기는 두 사람 각각의 환급액을 계산한 뒤, 큰 쪽을 결론으로 보여 줍니다. 결론 문구와 함께 <b>두 사람의 환급액 차이</b>를 보세요. 차이가 1만원 안쪽이면 어느 쪽으로 몰아도 사실상 같습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>결론</th><th>뜻</th><th>다음에 할 일</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>남편 A 단독</b></td><td>남편에게 몰아주는 쪽이 유리</td><td>남편 명의로 결제하고, 연말정산 때 남편 의료비로 제출</td></tr>
+            <tr><td><b>아내 B 단독</b></td><td>아내에게 몰아주는 쪽이 유리</td><td>아내 명의 결제분을 모아 아내 회사에 제출</td></tr>
+            <tr><td><b>둘 다 0원</b></td><td>3% 문턱을 못 넘거나 결정세액이 0원</td><td>지출을 더 모으거나, 내년에는 결제 명의를 바꿔 볼 것</td></tr>
+            <tr><td><b>나눠 받기 안내</b></td><td>각자 700만원 한도를 쓰는 게 유리</td><td>의료비를 두 사람에게 나눠 제출(각자 3% 문턱 적용)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">'나눠 받기'가 나왔다면</span>
+        일반 의료비가 700만원을 넘고 두 사람 모두 결정세액이 충분할 때입니다. 한쪽에 몰아주면 700만원까지만 공제되지만, 나눠 받으면 각자 700만원까지 공제받을 수 있습니다. 다만 실제로 나눠 제출하려면 <b>결제 명의도 나눠야</b> 하므로, 12월 결제 전에 계획을 세우세요.
+      </div>
+
+      <h2 id="cases">숫자로 보는 세 가지 케이스</h2>
+      <p>아래는 이해를 돕기 위한 가정입니다. 실제 환급액은 다른 공제 항목과 결정세액에 따라 달라집니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>상황</th><th class="num">남편 A</th><th class="num">아내 B</th><th class="num">결론</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>외벌이, 총급여 8,000만 / 의료비 500만</td><td class="num">환급 429,000원</td><td class="num">소득 없음</td><td class="num">A 단독</td></tr>
+            <tr><td>맞벌이, 8,000만 / 3,000만 / 의료비 600만</td><td class="num">594,000원</td><td class="num">841,500원</td><td class="num">B가 247,500원 유리</td></tr>
+            <tr><td>맞벌이인데 아내 결정세액 0원 / 의료비 600만</td><td class="num">594,000원</td><td class="num">계산상 765,000원 → 실제 0원</td><td class="num">A 단독(594,000원)</td></tr>
+            <tr><td>맞벌이 8,000만 / 7,000만 / 일반 의료비 2,000만</td><td class="num">1,155,000원</td><td class="num">1,155,000원</td><td class="num">나눠 받으면 2,310,000원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">두 번째와 세 번째 줄이 핵심입니다. 아내 소득이 3,000만원이면 3% 문턱이 90만원으로 낮아 공제 대상이 커지지만, <b>결정세액이 0원이면 그 공제는 아무 데도 쓰이지 않습니다</b>. 총급여가 3,000만원 안팎이거나 각종 소득공제로 세금이 이미 0원이 된 경우가 여기에 해당합니다. 배우자의 원천징수영수증에서 '결정세액'을 먼저 확인하세요.</p>
+
+      <h2 id="checklist">12월 전에 준비할 것</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><span class="t"><b>두 사람의 총급여와 결정세액 확인</b>근로자용 소득·세액공제 신고서나 원천징수영수증, 또는 홈택스 '연말정산 미리보기'에서 확인할 수 있습니다.</span></li>
+        <li><span class="n">2</span><span class="t"><b>실손보험금 정리</b>올해 받은 실손보험금과 본인부담상한제 환급금을 합산해 두세요. 이 금액을 빼야 실제 공제 대상이 나옵니다.</span></li>
+        <li><span class="n">3</span><span class="t"><b>한도 없는 항목 분리</b>본인·6세 이하 자녀·만 65세 이상·장애인·중증질환·미숙아·난임시술비를 따로 적어 두면 계산이 정확해집니다.</span></li>
+        <li><span class="n">4</span><span class="t"><b>12월 결제 명의 정하기</b>남은 병원비·약값은 몰아줄 사람 명의 카드나 현금영수증으로 결제하세요. 12월 31일 결제분까지 2026년 귀속입니다.</span></li>
+        <li><span class="n">5</span><span class="t"><b>나눠 받기 검토</b>일반 의료비가 700만원을 넘고 두 사람 모두 세액이 남아 있다면, 각자 700만원을 채우도록 금액을 나눠 보세요.</span></li>
+      </ol>
+
+      <h2 id="faq">자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>의료비를 남편에게 몰아주면 얼마나 더 받나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>부부의 총급여 차이와 결정세액에 따라 달라집니다. 두 사람 총급여가 8,000만원과 3,000만원이고 의료비가 600만원이라면, 소득이 적은 쪽에 몰아줄 때 24만원 이상 차이가 나는 경우가 있습니다. 계산기에 두 사람 총급여와 의료비를 넣으면 바로 비교됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>실손보험금을 받으면 의료비 공제를 못 받나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>못 받는 것이 아니라 <b>받은 만큼 공제 대상에서 빠집니다</b>. 예를 들어 의료비 500만원 중 실손보험금 300만원을 받았다면, 공제 대상은 200만원입니다. 이 200만원에서 다시 총급여의 3%를 뺀 금액에 15%를 적용합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>배우자 카드로 결제한 병원비도 공제되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>원칙적으로 <b>공제받는 사람 명의</b>로 결제해야 합니다. 다만 배우자에게 소득이 없는 경우(외벌이)에는 남편이 결제한 가족 의료비가 인정되는 등 예외가 있으므로, 소득 유무와 부양가족 요건을 함께 확인하세요. 명의가 엇갈리는 결제가 많다면 연말정산 상담 때 회사 담당자에게 확인하는 것이 안전합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>치과·한의원·약국 비용도 포함되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>진료·치료 목적의 지출은 포함됩니다. 치과 임플란트·교정(치료 목적), 한의원 진료비, 처방전에 따른 약값이 대표적입니다. 반면 미용 목적 시술, 건강기능식품, 처방 없는 보약, 다이어트 프로그램은 공제 대상이 아닙니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>부모님 병원비도 제가 공제받을 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>부양가족 요건(나이·소득)을 충족하면 가능합니다. 만 65세 이상이면 한도 없는 경로우대 의료비로 분류되어 700만원 한도의 영향을 받지 않습니다. 다만 형제자매가 함께 부양한다면 한 사람만 공제받아야 하므로 중복 여부를 확인해야 합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>계산기에 입력한 정보가 저장되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아니요. 모든 계산은 브라우저 안에서만 이루어지고 서버로 전송되거나 저장되지 않습니다. 페이지를 새로 고치면 입력값은 사라집니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>「소득세법」 제59조의4 제2항, 같은 법 시행령 제118조의5 — 의료비 세액공제 대상·공제율·한도</li>
+        <li>3% 문턱 차감 순서 — 공제율이 낮은 일반 의료비에서 먼저 차감하고, 모자라면 한도 없는 항목 순으로 차감</li>
+        <li>지방소득세 10% 가산 — 소득세 공제액의 10%를 지방소득세로 함께 감면</li>
+        <li>실손의료보험금·본인부담상한제 환급금은 공제 대상에서 제외</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지의 내용은 일반적인 정보이며 세무 자문이 아닙니다. 실제 공제액은 다른 소득·세액공제 항목과 부양가족 요건에 따라 달라질 수 있으니, 신고 전 국세청 홈택스 '연말정산 미리보기'로 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="loan-switch.html">
+        <b>주담대·전세 대환 실익 계산기</b>
+        <span>금리차와 중도상환수수료를 넣어 갈아타기 손익분기를 계산합니다.</span>
+      </a>
+      <a href="costco-break-even.html">
+        <b>코스트코 이그제큐티브 손익분기 계산기</b>
+        <span>연회비 43,000원 차액을 2% 리워드로 회수하는 기준을 계산합니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>계산기</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주담대·전세 갈아타기(대환) 실익 계산기 | 유용한 생활 도구함</title>
+<meta name="description" content="기존 대출 잔액·금리·남은 기간과 갈아탈 금리, 중도상환수수료·인지세 등을 넣으면 월 상환액 차이, 총 이자 절감액, 손익분기 개월 수, 갈아타기 추천 여부를 계산합니다.">
+<link rel="canonical" href="https://usefulkit.kr/loan-switch.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="유용한 생활 도구함">
+<meta property="og:title" content="주담대·전세 갈아타기(대환) 실익 계산기">
+<meta property="og:description" content="금리차만 보지 말고 중도상환수수료·부대비용까지 넣어 손익분기 개월 수를 계산하세요.">
+<meta property="og:url" content="https://usefulkit.kr/loan-switch.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="theme-color" content="#12305f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"주담대·전세 갈아타기(대환) 실익 계산기","url":"https://usefulkit.kr/loan-switch.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ko","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"기존 대출 잔액·금리·남은 기간과 갈아탈 금리, 중도상환수수료·인지세 등을 반영해 월 상환액 차이, 총 이자 절감액, 손익분기 개월 수를 계산합니다."}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">UK</span>
+      <span class="brand-text">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="medical-tax.html">의료비 몰아주기</a>
+      <a href="loan-switch.html" aria-current="page">대환 실익</a>
+      <a href="costco-break-even.html">코스트코 손익분기</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">대출 갈아타기</span>
+      <h1>주담대·전세 갈아타기(대환) 실익 계산기</h1>
+      <p class="page-lead">금리만 낮다고 갈아타면 손해일 수 있습니다. 중도상환수수료와 인지세·설정비까지 넣어 <b>몇 개월 만에 본전을 넘기는지</b>, 남은 기간 안에 회수되는지를 계산합니다.</p>
+      <div class="page-meta">
+        <span>2026년 11월 기준</span>
+        <span>기준금리·수수료율은 직접 입력</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">계산 원리</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#checklist">준비 서류·숫자</a></li>
+        <li><a href="#examples">예시</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>대환(갈아타기) 계산, 무엇을 비교해야 하나</h2>
+      <p>대환은 간단히 말해 <b>남아 있는 대출을 다른 금리·다른 조건의 대출로 바꿔치기하는 것</b>입니다. 판단 기준은 딱 하나입니다. <strong>바꿔서 아끼는 이자가, 바꾸는 데 드는 비용보다 큰가.</strong> 금리차가 1%p씩 벌어지면 대부분 이득이지만, 금리차가 0.2~0.3%p 수준이면 중도상환수수료와 부대비용이 절감액을 통째로 먹는 경우가 흔합니다.</p>
+      <p>이 계산기는 <b>지금 남은 기간</b>을 기준으로 두 가지 상환 스케줄을 각각 끝까지 굴려 총이자를 구하고, 여기서 갈아타기 비용을 뺍니다. 결과는 세 가지 숫자로 요약됩니다.</p>
+      <ul>
+        <li><b>월 상환액 차이</b> — 갈아탄 뒤 매달 얼마나 덜(또는 더) 내는지</li>
+        <li><b>총 이자 절감액</b> — 두 대출을 만기까지 갚았을 때 이자 총액의 차이</li>
+        <li><b>손익분기 개월 수</b> — 지출한 비용을 월 절감액으로 회수하는 데 걸리는 기간</li>
+      </ul>
+
+      <h2>비용은 세 덩어리로 나눠 봅니다</h2>
+      <p>갈아탈 때 드는 돈은 금리와 별개로 나갑니다. 이걸 빼고 계산하면 실제보다 이득이 크게 보입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>대환 시 발생하는 비용과 입력 방법</caption>
+          <thead>
+            <tr><th>비용 항목</th><th>어떻게 정해지나</th><th>계산기에 넣는 값</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>기존 대출 중도상환수수료</td>
+              <td>중도상환원금 × 수수료율 × (잔존일수 ÷ 대출기간). 대출기간이 3년을 넘으면 3년째 되는 날을 만기로 보고 계산하는 것이 일반적이라, 계약 후 3년이 지나면 통상 면제됩니다.</td>
+              <td>은행 공시 수수료율(%), 필요하면 잔존일수 비율</td>
+            </tr>
+            <tr>
+              <td>인지세</td>
+              <td>대출약정서에 붙는 국세. 5천만원 이하는 비과세, 5천만원 초과~1억원 이하 7만원, 1억원 초과~10억원 이하 15만원이고 <b>은행과 차주가 절반씩</b> 부담합니다.</td>
+              <td>기타비용에 포함(1억원 대출이면 약 7만 5천원)</td>
+            </tr>
+            <tr>
+              <td>근저당 설정·말소, 감정평가, 보증료 차액</td>
+              <td>담보 설정·말소 등기 비용은 채권최고액과 법무사 보수에 따라 달라지고, 전세대출은 보증기관(HUG·HF·SGI)을 바꾸면 보증료율이 달라집니다.</td>
+              <td>은행·보증기관 안내 금액을 기타비용에 합산</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <span class="callout-title">수수료는 '최대치'로 잡는 편이 안전합니다</span>
+        실제 중도상환수수료는 <b>잔존일수 ÷ 대출기간</b> 비율로 깎입니다. 만기를 몇 달 앞두고 갈아탄다면 수수료율이 0.8%여도 실제로는 그 절반도 안 될 수 있습니다. 그래서 이 계산기는 기본값을 <b>100%(=공시 수수료율 전액)</b>으로 두고, 정확히 알고 있을 때만 '잔존일수 비율'을 낮춰 넣도록 했습니다. 비용을 크게 잡으면 추천이 보수적으로 나오고, 손해를 이득으로 착각할 일은 없습니다.</div>
+
+      <h2>손익분기 개월 수 공식</h2>
+      <p>손익분기 개월 수는 <strong>총비용 ÷ 월 상환액 차이</strong>입니다. 예를 들어 총비용이 240만원이고 매달 10만원씩 덜 낸다면 24개월, 즉 2년 뒤에 본전을 넘습니다. 남은 기간이 3년이라면 그 뒤 1년은 순이익이고, 남은 기간이 1년 6개월이라면 회수하지 못하고 끝납니다.</p>
+      <p>여기서 한 가지 주의할 점. 월 상환액 차이는 <b>상환 방식</b>에 따라 의미가 달라집니다. 원리금균등은 매달 같은 금액이라 비교가 쉽지만, 원금균등은 첫 달이 가장 많고 갈수록 줄어들며, 만기일시(전세대출에서 흔함)는 이자만 내다가 만기에 원금을 한 번에 갚습니다. 이 계산기는 선택한 방식을 그대로 시뮬레이션해 <b>첫 달 납입액</b>과 <b>월 평균 납입액</b>을 함께 보여 줍니다.</p>
+
+      <h2>이런 경우 특히 계산해 볼 만합니다</h2>
+      <ul>
+        <li><b>주담대 금리차가 0.5%p 이상 벌어졌을 때</b> — 잔액이 크면 월 차이가 수십만원까지 벌어집니다.</li>
+        <li><b>전세대출 만기를 앞두고 보증기관·은행을 바꿀 때</b> — 만기일시 상환 구조라 총이자 차이가 곧 절감액입니다.</li>
+        <li><b>고정금리로 바꾸면서 금리도 낮출 때</b> — 절감액에 '금리 변동 위험을 없앤 값'이 더해집니다. 다만 고정금리 상품은 중도상환수수료율이 더 높은 경우가 있습니다.</li>
+        <li><b>대환대출 인프라(온라인·원스톱)로 견적을 받았을 때</b> — 실제 적용 금리와 한도를 확인한 뒤 이 계산기에 넣으면 상담 전에 대략적인 결론을 잡을 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">2026년 기준 · 원 단위 시뮬레이션</span>
+        <h2 class="calc-title">대환 실익 계산기</h2>
+        <p class="calc-lead">기존 대출과 갈아탈 대출을 <b>만기까지 각각 갚아 보며</b> 총이자를 비교합니다. 수수료는 최대치로 잡혀 있으니, 실제보다 불리하게 나오는 것이 정상입니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#fff6e5;border:1px solid #f0dfbb;color:#6d4a06;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+
+      <!-- 1. 기존 대출 -->
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>지금 대출</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ln-balance">남은 대출 잔액</label>
+            <div class="calc-input"><input id="ln-balance" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ln-oldRate">현재 금리 (연)</label>
+            <div class="calc-input"><input id="ln-oldRate" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="0"><span class="calc-unit">%</span></div>
+          </div>
+        </div>
+        <div class="calc-grid2 calc-mt">
+          <div class="calc-field">
+            <label class="calc-label" for="ln-months">남은 기간</label>
+            <div class="calc-input"><input id="ln-months" type="number" inputmode="numeric" min="1" max="600" step="1" placeholder="0"><span class="calc-unit">개월</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ln-method">상환 방식</label>
+            <div class="calc-input calc-input-sm"><select id="ln-method">
+              <option value="annuity" selected>원리금균등분할</option>
+              <option value="equal">원금균등분할</option>
+              <option value="bullet">만기일시(이자만)</option>
+            </select></div>
+          </div>
+        </div>
+        <p class="calc-tip">금리는 <b>체증식·변동금리라면 현재 적용 금리</b>를 넣으세요. 남은 기간은 만기일까지 개월 수입니다(예: 2년 6개월 → 30).</p>
+      </section>
+
+      <!-- 2. 갈아탈 대출 -->
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>갈아탈 대출</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ln-newRate">갈아탈 금리 (연)</label>
+            <div class="calc-input"><input id="ln-newRate" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="0"><span class="calc-unit">%</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ln-newMonths">갈아탈 기간 <small style="font-weight:600;color:#8a93a6;">(비우면 동일)</small></label>
+            <div class="calc-input"><input id="ln-newMonths" type="number" inputmode="numeric" min="1" max="600" step="1" placeholder="같음"><span class="calc-unit">개월</span></div>
+          </div>
+        </div>
+        <p class="calc-tip">기간을 늘리면 월 부담은 줄지만 <b>총이자는 늘어날 수</b> 있습니다. 계산기가 그 차이까지 반영합니다.</p>
+      </section>
+
+      <!-- 3. 비용 -->
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">3</span><h2>갈아타는 비용</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ln-feeRate">중도상환수수료율</label>
+            <div class="calc-input"><input id="ln-feeRate" type="number" inputmode="decimal" min="0" max="10" step="0.01" placeholder="0"><span class="calc-unit">%</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ln-otherCost">인지세·설정비·보증료 등</label>
+            <div class="calc-input"><input id="ln-otherCost" type="number" inputmode="numeric" min="0" step="1" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-check"><input type="checkbox" id="ln-feeWaived"><span class="calc-box"></span>
+            <span class="calc-rowtext"><b>중도상환수수료 면제</b><em>계약 후 3년 경과, 또는 은행 면제 상품</em></span></label>
+        </div>
+
+        <details class="calc-adv">
+          <summary><span>정확한 수수료를 알고 있나요?<em>잔존일수 비례로 실제 부담액을 낮춰 계산</em></span></summary>
+          <div class="calc-adv-body">
+            <div class="calc-field" style="margin-top:10px;">
+              <label class="calc-label" for="ln-feeRatio">수수료 적용 비율 (잔존일수 ÷ 대출기간)</label>
+              <div class="calc-input calc-input-sm"><input id="ln-feeRatio" type="number" inputmode="numeric" min="0" max="100" step="1" placeholder="100"><span class="calc-unit">%</span></div>
+              <p class="calc-tip">예: 3년 만기 대출을 1년 남기고 갚으면 약 <b>33%</b>. 100%로 두면 수수료율 전액, 즉 가장 불리한 경우입니다.</p>
+            </div>
+          </div>
+        </details>
+        <p class="calc-tip" style="margin-top:10px;">인지세는 1억원 초과~10억원 이하 대출이면 총 15만원 중 <b>차주 부담 7만 5천원</b>입니다. 근저당 말소·설정비는 은행 안내를 확인하세요.</p>
+      </section>
+
+      <!-- 4. 결과 -->
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">4</span><h2>계산 결과</h2></div>
+        <div id="ln-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid" id="ln-resGrid">
+          <div class="calc-res" id="ln-resOld"></div>
+          <div class="calc-res" id="ln-resNew"></div>
+        </div>
+
+        <dl class="calc-summary" id="ln-summary"></dl>
+
+        <details class="calc-break" id="ln-break">
+          <summary>상세 비교표 보기</summary>
+          <div class="calc-tablewrap" id="ln-breakBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="ln-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="ln-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ln-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="ln-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">갈아타기 전에 꼭 확인하세요</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span>금리차가 <b>0.2~0.3%p</b> 안쪽이면 수수료·부대비용 때문에 손해인 경우가 많습니다. 계산기 판정이 '손해'로 나오면 그대로 두는 편이 낫습니다.</span></li>
+          <li><b>②</b><span>갈아타기는 <b>새 대출 심사</b>입니다. 소득·기존 대출·DSR 규제에 따라 <b>한도가 줄거나 거절</b>될 수 있으니, 금리표보다 '내가 얼마까지 빌릴 수 있는지'를 먼저 확인하세요.</span></li>
+          <li><b>③</b><span>변동금리에서 고정금리로 옮기면 금리차가 작아도 <b>위험을 없앤 값</b>이 있습니다. 숫자만으로는 안 잡히는 부분입니다.</span></li>
+          <li><b>④</b><span>전세대출은 <b>보증기관을 바꾸면 보증료율</b>이 달라집니다. 보증료 차액을 기타비용에 넣어야 비교가 맞습니다.</span></li>
+          <li><b>⑤</b><span>숨은 비용: <b>근저당 말소비용·감정평가·중도금 환급 이자</b> 등이 있습니다. 은행에 "총 부대비용이 얼마인지" 서면으로 물어보세요.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#2b3550;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>계산 방식</b> — 잔액에 대해 선택한 상환 방식으로 매달 이자를 계산해 <b>만기까지 시뮬레이션</b>합니다. 원리금균등은 매달 납입액을 원 단위로 반올림하며, 마지막 달에 잔액을 정리합니다.</p>
+          <p><b>중도상환수수료</b> — 잔액 × 수수료율 × 적용 비율로 계산합니다. 실제 산식은 <b>중도상환원금 × 수수료율 × (잔존일수 ÷ 대출기간)</b>이고, 대출기간이 3년을 초과하면 3년째 되는 날을 만기로 간주합니다(2025년 1월 제도개선 이후 은행 공시 기준).</p>
+          <p><b>포함하지 않은 것</b> — 금리 변동, 중도 일부 상환, 거치기간, 대출 부대수수료(취급수수료), 보증료의 연도별 변동, 세금 효과(이자비용 필요경비)는 반영하지 않았습니다. 실제 조건은 은행 상품설명서를 기준으로 확인하세요.</p>
+          <p><b>주의</b> — 이 계산기는 참고용이며 금융 자문이 아닙니다. 대출 실행 전 은행의 <b>실질유효금리</b>와 총 부대비용 안내를 확인하시기 바랍니다.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 금리·수수료·한도는 금융기관 심사 결과에 따라 달라집니다.</p>
+    </div>
+
+    <!-- ================= 결과 읽는 법 ================= -->
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법 — 판정 네 가지</h2>
+      <p>계산기는 결론을 네 가지로 나눠 보여 줍니다. 숫자가 좋아도 판정이 나쁠 수 있으니, 판정 문구를 먼저 보고 세부 숫자를 확인하세요.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>판정</th><th>조건</th><th>해석</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>갈아타는 게 유리</b></td><td>순절감 &gt; 0, 손익분기 ≤ 남은 기간의 60%</td><td>비용을 회수하고도 남는 기간이 충분합니다. 대체로 진행할 만합니다.</td></tr>
+            <tr><td><b>아슬아슬</b></td><td>순절감 &gt; 0, 손익분기 &gt; 남은 기간의 60%</td><td>이득은 맞지만 여유가 적습니다. 금리 변동·중도 상환 계획이 생기면 이득이 사라질 수 있습니다.</td></tr>
+            <tr><td><b>회수 못 함</b></td><td>순절감 &gt; 0이지만 손익분기 &gt; 남은 기간</td><td>만기까지 갚아도 비용을 다 못 건집니다. 기간을 늘려 회수 기간을 확보할 수 있는지 검토하세요.</td></tr>
+            <tr><td><b>손해 / 이득 없음</b></td><td>순절감 ≤ 0 또는 금리차 ≤ 0</td><td>지금 대출을 그대로 두는 편이 낫습니다. 금리가 더 낮아지거나 수수료 면제 시점이 오면 다시 계산하세요.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">'아슬아슬'은 나쁜 결과가 아닙니다</span>
+        남은 기간이 길고 금리차가 확실하다면 아슬아슬해도 진행할 이유가 됩니다. 반대로 <b>이사를 앞두고 1~2년 안에 대출을 정리할 계획</b>이라면, 아슬아슬한 이득은 의미가 없습니다. 갈아탄 뒤 언제까지 이 대출을 들고 있을지를 먼저 정하고 결과를 보세요.
+      </div>
+
+      <h2 id="checklist">은행 가기 전 준비할 숫자 다섯 가지</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><span class="t"><b>남은 원금과 만기일</b>은행 앱 '대출 조회'에서 확인합니다. 상환 예정일이 아니라 <b>만기일</b> 기준으로 남은 개월을 세세요.</span></li>
+        <li><span class="n">2</span><span class="t"><b>내 대출의 중도상환수수료율</b>대출 약정서와 은행 공시에서 확인합니다. 2025년 1월 제도개선 이후 취급분과 그 이전 취급분의 요율이 크게 다릅니다.</span></li>
+        <li><span class="n">3</span><span class="t"><b>대출 실행일</b>실행일로부터 3년이 지났는지가 수수료 면제를 가릅니다. 갈아타기로 새 계약을 맺으면 <b>기존·신규 계약 기간을 합산</b>해 3년을 넘기면 수수료를 부과할 수 없도록 되어 있는데, 적용 여부는 은행에 직접 확인하는 편이 정확합니다.</span></li>
+        <li><span class="n">4</span><span class="t"><b>갈아탈 상품의 실제 금리</b>금리표의 최저금리가 아니라 <b>내 조건(소득·담보·신용)에 적용되는 금리</b>를 받아 적습니다. 우대조건이 '급여이체 3개월 유지' 같은 것이면 그 조건이 깨질 때 금리가 오른다는 점도 함께 봅니다.</span></li>
+        <li><span class="n">5</span><span class="t"><b>총 부대비용</b>인지세, 근저당 설정·말소, 감정평가, 보증료, 취급수수료를 모두 더한 금액을 은행에 물어봅니다. 이 값이 기타비용 입력칸에 들어갑니다.</span></li>
+      </ol>
+
+      <h2 id="examples">숫자로 보는 세 가지 예시</h2>
+      <p>아래는 설명을 위한 가정입니다. 실제 금리·수수료와 다르니 참고만 하세요.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>잔액 3억원, 원리금균등, 남은 20년, 중도상환수수료율 0.7%, 기타비용 30만원 가정</caption>
+          <thead>
+            <tr><th>갈아탈 금리</th><th class="num">금리차</th><th class="num">총이자 절감</th><th class="num">총비용</th><th class="num">순절감</th><th class="num">손익분기</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>기존 4.6% → 3.6%</td><td class="num">1.0%p</td><td class="num">약 3,810만원</td><td class="num">약 240만원</td><td class="num">약 3,570만원</td><td class="num">약 16개월</td></tr>
+            <tr><td>기존 4.6% → 4.1%</td><td class="num">0.5%p</td><td class="num">약 1,930만원</td><td class="num">약 240만원</td><td class="num">약 1,690만원</td><td class="num">약 30개월</td></tr>
+            <tr><td>기존 4.6% → 4.4%</td><td class="num">0.2%p</td><td class="num">약 780만원</td><td class="num">약 240만원</td><td class="num">약 540만원</td><td class="num">약 75개월</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">같은 3억원이라도 금리차가 0.2%p로 줄면 손익분기가 6년을 넘어갑니다. 이때는 <b>앞으로 그 대출을 6년 이상 들고 있을지</b>가 결정적입니다. 잔액이 크고 기간이 길수록 작은 금리차도 의미가 커지고, 반대로 만기가 코앞이면 큰 금리차도 무의미해질 수 있습니다.</p>
+
+      <h2 id="faq">자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>중도상환수수료는 무조건 내나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아닙니다. 대출계약 성립일로부터 <b>3년이 지난 뒤</b> 갚으면 법령상 예외가 없는 한 부과할 수 없습니다. 또 갈아타기처럼 기존 계약을 바꿔 새 계약을 맺는 경우, 기존·신규 계약의 유지기간을 합쳐 3년을 넘겼는데도 수수료를 부과하는 것은 금지되어 있습니다. 다만 적용 판단은 상품·약정에 따라 달라질 수 있어 은행에 확인하는 것이 가장 정확합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>금리차가 몇 %p면 갈아탈 만한가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>정해진 기준은 없고 <b>잔액과 남은 기간</b>이 결정합니다. 잔액 3억원·남은 20년 기준으로는 0.5%p만 벌어져도 1,900만원 안팎 차이가 나고, 잔액 5천만원·남은 2년이라면 1%p가 벌어져도 겨우 3만 5천원이 남을 정도입니다. 금리차보다 <b>손익분기 개월 수와 남은 기간의 비교</b>를 먼저 보세요.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>기간을 늘려서 갈아타면 이득인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>월 부담은 줄지만 <b>총이자는 늘어날 수 있습니다</b>. 계산기에서 '갈아탈 기간'을 기존보다 길게 넣으면 총이자 절감액이 줄거나 마이너스가 되는 것을 볼 수 있습니다. 현금흐름이 급해서 기간을 늘려야 한다면, 그것은 '이자 절감'이 아니라 '월 부담 조정'이 목적이라는 점을 분명히 하고 결정하세요.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>전세대출도 갈아탈 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>가능합니다. 전세대출은 보통 <b>만기일시 상환</b>이라 이자만 내다가 만기에 원금을 갚습니다. 이 계산기에서 상환 방식을 '만기일시'로 바꾸면 이 구조로 계산됩니다. 보증기관(HUG·HF·SGI서울보증)을 바꾸면 보증료율이 달라지므로, 보증료 차액을 기타비용에 넣어야 실제 비교가 됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>대환하면 한도가 줄어들 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>그럴 수 있습니다. 갈아타기는 새 대출 심사이므로 소득·신용·기존 부채에 따라 한도가 달라지고, 스트레스 DSR 같은 규제가 적용되면 같은 잔액이라도 빌릴 수 있는 금액이 줄어들 수 있습니다. 잔액 전액을 옮기지 못하면 <b>차액을 따로 마련해야 하므로</b>, 금리보다 한도를 먼저 확인하는 것이 순서입니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>이 계산기에 개인정보가 저장되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아니요. 모든 계산은 브라우저 안에서만 이루어지고 서버로 전송되거나 저장되지 않습니다. 페이지를 새로 고치면 입력값은 사라집니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>중도상환수수료 산식·3년 기준: 은행 공시(2026년 1월 이후 취급분 요율은 은행별 0.55~0.95% 수준) 및 2025년 1월 금융위원회 제도개선(실비용 범위 내 부과)</li>
+        <li>인지세: 인지세법상 구간별 세액, 은행과 50% 부담</li>
+        <li>상환 방식별 이자 계산: 원리금균등·원금균등·만기일시 표준 산식</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#8a93a6;">※ 이 페이지의 내용은 일반적인 정보이며, 금융 상품 가입 권유나 자문이 아닙니다. 금리와 수수료는 수시로 바뀌므로 실행 직전에 금융기관 공시를 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="medical-tax.html">
+        <b>부부 의료비 몰아주기 계산기</b>
+        <span>연말정산 때 남편·아내 중 누구에게 의료비를 몰아줄지 3% 문턱과 700만원 한도까지 계산합니다.</span>
+      </a>
+      <a href="costco-break-even.html">
+        <b>코스트코 이그제큐티브 손익분기 계산기</b>
+        <span>연회비 43,000원 차액을 2% 리워드로 회수하려면 얼마를 써야 하는지 계산합니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">유용한 생활 도구함</span>
+        <span class="brand-sub">UsefulKit</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>계산기</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 유용한 생활 도구함 (usefulkit.kr). All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* LN-CORE-START */
+function lnComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function lnWon(won){ return lnComma(Math.round(won || 0)) + '원'; }
+function lnMoney(won){
+  var v = Math.round(won || 0);
+  var neg = v < 0 ? '-' : '';
+  v = Math.abs(v);
+  var eok = Math.floor(v / 100000000);
+  var man = Math.floor((v % 100000000) / 10000);
+  var rest = v % 10000;
+  var out = '';
+  if (eok > 0) out += lnComma(eok) + '억 ';
+  if (man > 0 || eok > 0) out += lnComma(man) + '만 ';
+  if (rest > 0) out += lnComma(rest);
+  if (out === '') out = '0';
+  return neg + out.replace(/\s+$/, '') + '원';
+}
+function lnMonthsText(m){
+  m = Math.max(0, Math.round(m || 0));
+  if (m === 0) return '0개월';
+  var y = Math.floor(m / 12), r = m % 12;
+  if (y === 0) return m + '개월';
+  return y + '년' + (r > 0 ? ' ' + r + '개월' : '');
+}
+
+/* 한 대출을 만기까지 갚는 스케줄.
+   method: 'annuity'(원리금균등) | 'equal'(원금균등) | 'bullet'(만기일시) */
+function lnSchedule(P, ratePct, months, method){
+  P = Math.max(0, Math.round(P || 0));
+  var n = Math.max(1, Math.round(months || 0));
+  var r = Math.max(0, ratePct || 0) / 1200;
+  var pay = 0;
+  if (method === 'annuity') pay = r === 0 ? P / n : P * r / (1 - Math.pow(1 + r, -n));
+  var bal = P, interestSum = 0, principalSum = 0, first = 0, last = 0, run = 0;
+  for (var k = 1; k <= n; k++){
+    if (bal <= 0) break;
+    var interest = Math.round(bal * r);
+    var principal, payment;
+    if (method === 'annuity'){
+      if (k === n || Math.round(pay) >= bal + interest){ payment = bal + interest; principal = bal; }
+      else { payment = Math.round(pay); principal = payment - interest; }
+    } else if (method === 'equal'){
+      principal = (k === n) ? bal : Math.min(bal, Math.round(P / n));
+      payment = principal + interest;
+    } else {
+      principal = (k === n) ? bal : 0;
+      payment = principal + interest;
+    }
+    bal -= principal;
+    interestSum += interest;
+    principalSum += principal;
+    if (k === 1) first = payment;
+    last = payment;
+    run = k;
+  }
+  return {
+    principal: P, months: n, rate: Math.max(0, ratePct || 0), method: method,
+    monthly: first, monthlyLast: last,
+    monthlyAvg: Math.round((principalSum + interestSum) / Math.max(1, run)),
+    monthlyInterest: Math.round(P * r),
+    totalInterest: interestSum,
+    totalPayment: principalSum + interestSum
+  };
+}
+
+/* 입력값(원 단위)을 받아 대환 실익을 평가 */
+function lnEvaluate(cfg){
+  cfg = cfg || {};
+  var balance = Math.max(0, Math.round(cfg.balance || 0));
+  var oldRate = Math.max(0, cfg.oldRate || 0);
+  var newRate = Math.max(0, cfg.newRate || 0);
+  var nOld = Math.max(0, Math.round(cfg.months || 0));
+  var nNew = Math.max(0, Math.round(cfg.newMonths || 0)) || nOld;
+  var method = cfg.method || 'annuity';
+  var ratio = cfg.feeRatio === undefined || cfg.feeRatio === null || cfg.feeRatio === '' ? 100 : cfg.feeRatio;
+  ratio = Math.min(100, Math.max(0, ratio));
+
+  var out = {
+    balance: balance, oldRate: oldRate, newRate: newRate,
+    rateGap: Math.round((oldRate - newRate) * 100) / 100,
+    months: nOld, newMonths: nNew, method: method,
+    fee: 0, otherCost: 0, cost: 0,
+    interestSaving: 0, net: 0, monthlyDiff: 0,
+    breakeven: null, breakevenYears: 0,
+    verdict: 'empty', paymentUp: false,
+    oldSchedule: null, newSchedule: null
+  };
+  if (balance <= 0 || nOld <= 0 || oldRate <= 0) return out;
+
+  out.oldSchedule = lnSchedule(balance, oldRate, nOld, method);
+  out.newSchedule = lnSchedule(balance, newRate, nNew, method);
+  out.fee = cfg.feeWaived ? 0 : Math.round(balance * (Math.max(0, cfg.feeRate || 0) / 100) * (ratio / 100));
+  out.otherCost = Math.max(0, Math.round(cfg.otherCost || 0));
+  out.cost = out.fee + out.otherCost;
+  out.interestSaving = out.oldSchedule.totalInterest - out.newSchedule.totalInterest;
+  out.net = out.interestSaving - out.cost;
+  out.monthlyDiff = out.oldSchedule.monthly - out.newSchedule.monthly;
+  out.breakeven = out.monthlyDiff > 0 ? Math.ceil(out.cost / out.monthlyDiff) : null;
+  out.breakevenYears = out.breakeven === null ? 0 : Math.round(out.breakeven / 12 * 10) / 10;
+  out.paymentUp = out.newSchedule.monthly > out.oldSchedule.monthly;
+
+  if (out.rateGap <= 0) out.verdict = 'worse';
+  else if (out.net <= 0) out.verdict = 'loss';
+  else if (out.breakeven === null) out.verdict = 'paymentUp';
+  else if (out.breakeven > nOld) out.verdict = 'late';
+  else if (out.breakeven > Math.round(nOld * 0.6)) out.verdict = 'tight';
+  else out.verdict = 'good';
+  return out;
+}
+/* LN-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    balance: $('ln-balance'), oldRate: $('ln-oldRate'), months: $('ln-months'), method: $('ln-method'),
+    newRate: $('ln-newRate'), newMonths: $('ln-newMonths'),
+    feeRate: $('ln-feeRate'), otherCost: $('ln-otherCost'), feeWaived: $('ln-feeWaived'), feeRatio: $('ln-feeRatio'),
+    verdict: $('ln-verdict'), resOld: $('ln-resOld'), resNew: $('ln-resNew'),
+    summary: $('ln-summary'), breakBody: $('ln-breakBody'), toast: $('ln-toast')
+  };
+  var METHOD_NAME = { annuity: '원리금균등', equal: '원금균등', bullet: '만기일시' };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function man(v){ return Math.round(num(v) * 10000); }
+  function readCfg(){
+    return {
+      balance: man(el.balance.value),
+      oldRate: num(el.oldRate.value),
+      months: Math.round(num(el.months.value)),
+      method: el.method.value || 'annuity',
+      newRate: num(el.newRate.value),
+      newMonths: Math.round(num(el.newMonths.value)),
+      feeRate: num(el.feeRate.value),
+      feeWaived: el.feeWaived.checked,
+      feeRatio: el.feeRatio.value === '' ? 100 : num(el.feeRatio.value),
+      otherCost: man(el.otherCost.value)
+    };
+  }
+
+  function renderSide(node, title, s, cls){
+    var rows = '';
+    rows += '<div><dt>월 납입액</dt><dd class="big">' + lnWon(s.monthly) + '</dd></div>';
+    rows += '<div><dt>월 평균</dt><dd>' + lnWon(s.monthlyAvg) + '</dd></div>';
+    rows += '<div><dt>총 이자</dt><dd>' + lnMoney(s.totalInterest) + '</dd></div>';
+    rows += '<div><dt>총 상환액</dt><dd>' + lnMoney(s.totalPayment) + '</dd></div>';
+    node.className = 'calc-res' + (cls ? ' ' + cls : '');
+    node.innerHTML = '<div class="r-head">' + title + ' · ' + (METHOD_NAME[s.method] || '') + ' · ' + lnMonthsText(s.months) + '</div><dl>' + rows + '</dl>';
+  }
+
+  function renderEmpty(){
+    el.verdict.className = 'calc-verdict is-empty';
+    el.verdict.innerHTML = '<span class="v-tag">입력 대기</span><span class="v-title">잔액·금리·남은 기간을 입력하세요</span><span class="v-desc">기존 대출의 남은 원금과 금리, 만기까지 남은 개월 수를 넣으면 바로 계산됩니다.</span>';
+    el.resOld.className = 'calc-res';
+    el.resOld.innerHTML = '<div class="r-head">기존 대출</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+    el.resNew.className = 'calc-res';
+    el.resNew.innerHTML = '<div class="r-head">갈아탈 대출</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+    el.summary.innerHTML = '<div><dt>총 이자 절감액</dt><dd>—</dd></div><div><dt>갈아타는 비용</dt><dd>—</dd></div><div class="total"><dt>순 절감액</dt><dd>—</dd></div>';
+    el.breakBody.innerHTML = '<table class="calc-table"><tbody><tr><td>값을 입력하면 표가 만들어집니다.</td></tr></tbody></table>';
+  }
+
+  var VERDICT = {
+    good: ['is-good', '이득', '갈아타는 게 유리합니다', '비용을 회수하고도 남는 기간이 충분합니다.'],
+    tight: ['is-tight', '아슬아슬', '이득이지만 여유가 적습니다', '남은 기간의 절반 이상을 비용 회수에 써야 합니다. 중도 상환 계획이 있다면 다시 생각해 보세요.'],
+    late: ['is-bad', '회수 못 함', '남은 기간 안에 비용을 못 건집니다', '기간을 늘리거나 수수료 면제 시점까지 기다리는 편이 낫습니다.'],
+    loss: ['is-bad', '손해', '지금 대출을 두는 게 낫습니다', '아끼는 이자보다 갈아타는 비용이 큽니다.'],
+    worse: ['is-bad', '이득 없음', '갈아탈 금리가 더 높거나 같습니다', '금리 조건을 다시 확인하세요.'],
+    paymentUp: ['is-tight', '월 부담 증가', '총이자는 줄지만 매달 내는 돈이 늘어납니다', '기간을 줄여 갈아타는 경우입니다. 현금흐름이 감당되는지 확인하세요.']
+  };
+
+  function render(){
+    var cfg = readCfg();
+    var r = lnEvaluate(cfg);
+    if (r.verdict === 'empty'){ renderEmpty(); return; }
+
+    renderSide(el.resOld, '기존 대출', r.oldSchedule);
+    renderSide(el.resNew, '갈아탈 대출', r.newSchedule);
+
+    var v = VERDICT[r.verdict] || VERDICT.loss;
+    var desc = v[3];
+    if (r.verdict === 'good' || r.verdict === 'tight'){
+      desc += ' 손익분기 ' + r.breakeven + '개월(약 ' + r.breakevenYears + '년)';
+    }
+    el.verdict.className = 'calc-verdict ' + v[0];
+    el.verdict.innerHTML = '<span class="v-tag">' + v[1] + '</span><span class="v-title">' + v[2] + '</span><span class="v-desc">' + desc + '</span>';
+
+    var netCls = r.net >= 0 ? 'pos' : 'neg';
+    var diffCls = r.monthlyDiff >= 0 ? 'pos' : 'neg';
+    var sum = '';
+    sum += '<div><dt>금리차</dt><dd>' + (r.rateGap > 0 ? '−' : '') + Math.abs(r.rateGap).toFixed(2) + '%p</dd></div>';
+    sum += '<div><dt>월 납입액 차이</dt><dd class="' + diffCls + '">' + (r.monthlyDiff >= 0 ? '−' : '+') + lnWon(Math.abs(r.monthlyDiff)) + '</dd></div>';
+    sum += '<div><dt>총 이자 절감액</dt><dd class="' + (r.interestSaving >= 0 ? 'pos' : 'neg') + '">' + (r.interestSaving >= 0 ? '−' : '+') + lnMoney(Math.abs(r.interestSaving)) + '</dd></div>';
+    sum += '<div><dt>중도상환수수료</dt><dd>' + (r.fee > 0 ? lnWon(r.fee) : '면제') + '</dd></div>';
+    sum += '<div><dt>인지세·기타비용</dt><dd>' + (r.otherCost > 0 ? lnWon(r.otherCost) : '0원') + '</dd></div>';
+    sum += '<div class="total"><dt>순 절감액 (절감 − 비용)</dt><dd class="' + netCls + '">' + (r.net >= 0 ? '' : '−') + lnMoney(Math.abs(r.net)) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var t = '<table class="calc-table"><thead><tr><th>구분</th><th>기존 대출</th><th>갈아탈 대출</th><th>차이</th></tr></thead><tbody>';
+    t += '<tr><td>적용 금리</td><td>' + r.oldRate.toFixed(2) + '%</td><td>' + r.newRate.toFixed(2) + '%</td><td>' + (r.rateGap >= 0 ? '−' : '+') + Math.abs(r.rateGap).toFixed(2) + '%p</td></tr>';
+    t += '<tr><td>기간</td><td>' + lnMonthsText(r.months) + '</td><td>' + lnMonthsText(r.newMonths) + '</td><td>' + (r.newMonths === r.months ? '동일' : (r.newMonths > r.months ? '+' : '−') + lnMonthsText(Math.abs(r.newMonths - r.months))) + '</td></tr>';
+    t += '<tr><td>월 납입액(첫 달)</td><td>' + lnWon(r.oldSchedule.monthly) + '</td><td>' + lnWon(r.newSchedule.monthly) + '</td><td>' + (r.monthlyDiff >= 0 ? '−' : '+') + lnWon(Math.abs(r.monthlyDiff)) + '</td></tr>';
+    t += '<tr><td>월 평균 납입액</td><td>' + lnWon(r.oldSchedule.monthlyAvg) + '</td><td>' + lnWon(r.newSchedule.monthlyAvg) + '</td><td>' + (r.oldSchedule.monthlyAvg - r.newSchedule.monthlyAvg >= 0 ? '−' : '+') + lnWon(Math.abs(r.oldSchedule.monthlyAvg - r.newSchedule.monthlyAvg)) + '</td></tr>';
+    t += '<tr><td>총 이자</td><td>' + lnMoney(r.oldSchedule.totalInterest) + '</td><td>' + lnMoney(r.newSchedule.totalInterest) + '</td><td>' + (r.interestSaving >= 0 ? '−' : '+') + lnMoney(Math.abs(r.interestSaving)) + '</td></tr>';
+    t += '<tr><td>총 상환액</td><td>' + lnMoney(r.oldSchedule.totalPayment) + '</td><td>' + lnMoney(r.newSchedule.totalPayment) + '</td><td>' + (r.oldSchedule.totalPayment - r.newSchedule.totalPayment >= 0 ? '−' : '+') + lnMoney(Math.abs(r.oldSchedule.totalPayment - r.newSchedule.totalPayment)) + '</td></tr>';
+    t += '</tbody></table>';
+    el.breakBody.innerHTML = t;
+  }
+
+  var inputs = [el.balance, el.oldRate, el.months, el.newRate, el.newMonths, el.feeRate, el.otherCost, el.feeRatio];
+  for (var i = 0; i < inputs.length; i++){
+    inputs[i].addEventListener('input', render);
+    inputs[i].addEventListener('change', render);
+  }
+  el.method.addEventListener('change', render);
+  el.feeWaived.addEventListener('change', function(){
+    el.feeRate.disabled = el.feeWaived.checked;
+    render();
+  });
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('ln-example').addEventListener('click', function(){
+    el.balance.value = '30000';
+    el.oldRate.value = '4.60';
+    el.months.value = '240';
+    el.method.value = 'annuity';
+    el.newRate.value = '3.80';
+    el.newMonths.value = '';
+    el.feeRate.value = '0.70';
+    el.feeWaived.checked = false;
+    el.feeRate.disabled = false;
+    el.feeRatio.value = '100';
+    el.otherCost.value = '30';
+    render();
+  });
+  $('ln-reset').addEventListener('click', function(){
+    for (var k = 0; k < inputs.length; k++) inputs[k].value = '';
+    el.feeWaived.checked = false;
+    el.feeRate.disabled = false;
+    el.method.value = 'annuity';
+    render();
+  });
+  $('ln-copy').addEventListener('click', function(){
+    var cfg = readCfg(), r = lnEvaluate(cfg);
+    if (r.verdict === 'empty'){ toast('값을 먼저 입력하세요'); return; }
+    var label = (VERDICT[r.verdict] || VERDICT.loss)[2];
+    var text = '대환 실익 계산 결과\n'
+      + '· 잔액 ' + lnMoney(r.balance) + ' / ' + r.oldRate.toFixed(2) + '% → ' + r.newRate.toFixed(2) + '% (' + lnMonthsText(r.months) + ', ' + (METHOD_NAME[r.method] || '') + ')\n'
+      + '· 월 납입액 ' + lnWon(r.oldSchedule.monthly) + ' → ' + lnWon(r.newSchedule.monthly) + ' (' + (r.monthlyDiff >= 0 ? '−' : '+') + lnWon(Math.abs(r.monthlyDiff)) + ')\n'
+      + '· 총 이자 ' + lnMoney(r.oldSchedule.totalInterest) + ' → ' + lnMoney(r.newSchedule.totalInterest) + ' (절감 ' + lnMoney(r.interestSaving) + ')\n'
+      + '· 갈아타는 비용 ' + lnMoney(r.cost) + ' (수수료 ' + lnWon(r.fee) + ' + 기타 ' + lnWon(r.otherCost) + ')\n'
+      + '· 순 절감 ' + lnMoney(r.net) + (r.breakeven !== null ? ' / 손익분기 ' + r.breakeven + '개월' : '') + '\n'
+      + '· 판정: ' + label + '\n'
+      + '계산: usefulkit.kr/loan-switch.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
