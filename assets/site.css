@@ -108,6 +108,10 @@ main{padding:22px 0 64px;}
   border:1px solid #E1F2E9; border-radius:26px; padding:42px 38px 38px;
   box-shadow:0 10px 30px rgba(0,166,95,.07);
 }
+.hero::before{
+  content:""; position:absolute; right:78px; top:50%; width:196px; height:196px; margin-top:-98px;
+  background:url(logo-mark.svg) center/contain no-repeat; opacity:.12; pointer-events:none;
+}
 .hero::after{
   content:""; position:absolute; right:-100px; bottom:-140px; width:340px; height:340px; border-radius:50%;
   background:radial-gradient(circle,rgba(0,196,113,.15),rgba(0,196,113,0) 68%); pointer-events:none;
@@ -336,6 +340,7 @@ main{padding:22px 0 64px;}
 /* ---------- 반응형 ---------- */
 @media (max-width:900px){
   .tool-grid{grid-template-columns:1fr 1fr;}
+  .hero::before{display:none;}
   .hero{padding:32px 26px 30px; border-radius:22px;}
   .hero h1{font-size:27px;}
   .prose{padding:28px 24px;}
