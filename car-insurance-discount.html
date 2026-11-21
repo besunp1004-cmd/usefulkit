@@ -346,9 +346,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="ci-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="ci-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="ci-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ci-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="ci-toast">복사했어요</div>
+        <div class="calc-toast" id="ci-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -467,16 +467,16 @@
 
     <div class="next-tools">
       <a href="guide-insurance-check.html">
-        <b>자동차보험·실손보험 갱신 점검</b>
-        <span>다이렉트와 설계사를 같은 담보로 비교하는 법을 정리했습니다.</span>
+        <b>보험 갱신 점검</b>
+        <span>자동차보험·실손보험 갱신 전에 확인할 항목입니다.</span>
       </a>
       <a href="silson-switch.html">
-        <b>실손보험 세대 전환 손익</b>
-        <span>1~3세대 유지와 4세대 전환을 5년·10년 누적으로 비교합니다.</span>
+        <b>실손보험 전환 손익 계산기</b>
+        <span>1~3세대와 4세대 실손의 5년 누적 부담을 비교합니다.</span>
       </a>
-      <a href="car-insurance-discount.html">
-        <b>자동차보험 할인 계산기</b>
-        <span>지금 보고 있는 페이지에서 특약을 바꿔 다시 계산할 수 있습니다.</span>
+      <a href="guide-car-insurance.html">
+        <b>자동차보험 갱신 전 10분 점검표</b>
+        <span>특약과 할인 항목을 빠르게 점검합니다.</span>
       </a>
     </div>
 
@@ -794,17 +794,17 @@ function ciMan(n){
       lines += '· ' + r.steps[i].label + ' ' + pct(r.steps[i].rate) + ' → ' + ciWon(r.steps[i].after) + '\n';
     }
     lines += '· 최종 보험료 ' + ciWon(r.final) + ' (절감 ' + ciWon(r.saved) + ', ' + pct(r.rate) + ')\n';
-    lines += '계산: usefulkit.kr/car-insurance-discount.html';
+    lines += '결과 링크: https://usefulkit.kr/car-insurance-discount.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = lines;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(lines).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(lines).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 

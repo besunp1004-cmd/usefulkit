@@ -65,8 +65,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
@@ -110,10 +109,25 @@
         "@type": "Answer",
         "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "연봉 4,000만원 실수령액은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "식대 20만원 비과세, 부양가족 1명(본인), 자녀 0명 기준으로 월 2,847,997원(연 34,175,962원)입니다. 4대보험 304,430원과 소득세·지방세 2,170,878원을 뺀 금액이며 실수령률은 85.4%입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "부양가족이 늘면 실수령액이 얼마나 오르나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "연봉 5,000만원 기준으로 부양가족 1명(자녀 0명)이면 월 3,493,295원, 부양가족 3명·자녀 1명이면 월 3,557,462원입니다. 1인당 150만원 인적공제와 자녀세액공제 덕분에 월 약 64,167원 차이가 납니다."
+      }
     }
   ]
-}
-</script>
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJC17GTT1C"></script>
 <script>
@@ -220,6 +234,21 @@
       </div>
       <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 
+            <!-- GROWTH:PRESET-START -->
+      <div class="calc-preset">
+        <p class="calc-preset-label">인기 조건으로 바로 계산</p>
+        <div class="calc-preset-row">
+        <button type="button" class="calc-chip" data-uk-preset='{"sn-unitYear":true,"sn-unitMonth":false,"sn-nonTax":"20","sn-family":"1","sn-children":"0","sn-salary":"3000"}'>연봉 3,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"sn-unitYear":true,"sn-unitMonth":false,"sn-nonTax":"20","sn-family":"1","sn-children":"0","sn-salary":"4000"}'>연봉 4,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"sn-unitYear":true,"sn-unitMonth":false,"sn-nonTax":"20","sn-family":"1","sn-children":"0","sn-salary":"5000"}'>연봉 5,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"sn-unitYear":true,"sn-unitMonth":false,"sn-nonTax":"20","sn-family":"1","sn-children":"0","sn-salary":"6000"}'>연봉 6,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"sn-unitYear":true,"sn-unitMonth":false,"sn-nonTax":"20","sn-family":"1","sn-children":"0","sn-salary":"8000"}'>연봉 8,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"sn-unitYear":true,"sn-unitMonth":false,"sn-nonTax":"20","sn-family":"1","sn-children":"0","sn-salary":"10000"}'>연봉 1억원</button>
+        </div>
+        <p class="calc-preset-tip">버튼을 누르면 입력값이 채워지고 결과가 바로 계산됩니다. 값을 바꿔 내 조건으로 다시 계산해 보세요.</p>
+      </div>
+      <!-- GROWTH:PRESET-END -->
+
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>급여</h2></div>
         <div class="calc-seg" style="margin-bottom:14px;">
@@ -278,9 +307,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="sn-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="sn-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="sn-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="sn-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="sn-toast">복사했어요</div>
+        <div class="calc-toast" id="sn-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -307,6 +336,27 @@
       <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 금액은 회사 급여 규정과 연말정산 결과에 따라 달라집니다.</p>
     </div>
 
+<!-- GROWTH:SCENARIO-START -->
+    <section class="prose" id="scenarios" style="margin-top:20px;">
+      <h2>같은 연봉, 부양가족·자녀 수에 따른 월 실수령액 (2026년)</h2>
+      <p>연봉이 같아도 부양가족과 자녀 수에 따라 실수령액은 달라집니다. 표는 2026년 요율 기준으로 이 계산기가 계산한 값입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>2026년 4대보험 요율 · 월 비과세 20만원(식대) 기준</caption>
+          <thead>
+            <tr><th>연봉(세전)</th><th class="num">부양가족 1명·자녀 0</th><th class="num">부양가족 3명·자녀 1</th><th class="num">부양가족 4명·자녀 2</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>4,000만원</td><td class="num">2,847,997원 (85.4%)</td><td class="num">2,912,164원 (87.4%)</td><td class="num">2,960,289원 (88.8%)</td></tr>
+            <tr><td>5,000만원</td><td class="num">3,493,295원 (83.8%)</td><td class="num">3,557,462원 (85.4%)</td><td class="num">3,605,587원 (86.5%)</td></tr>
+            <tr><td>6,000만원</td><td class="num">4,128,319원 (82.6%)</td><td class="num">4,192,485원 (83.8%)</td><td class="num">4,240,610원 (84.8%)</td></tr>
+            <tr><td>8,000만원</td><td class="num">5,357,891원 (80.4%)</td><td class="num">5,446,807원 (81.7%)</td><td class="num">5,507,307원 (82.6%)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>부양가족은 본인을 포함해 셉니다. 같은 연봉이라도 인적공제와 자녀세액공제 때문에 월 실수령액이 6만~15만원 달라집니다. 위 입력창에서 부양가족·자녀 수를 바꾸면 내 조건의 금액을 바로 확인할 수 있습니다.</p>
+    </section>
+<!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="table" style="margin-top:20px;">
       <h2>연봉 구간별 월 실수령액 (2026년)</h2>
       <p>부양가족 1명(본인), 자녀 0명, 월 비과세 20만원(식대) 기준입니다. 부양가족이 늘면 1명당 월 2만~3만원 정도 늘어납니다.</p>
@@ -386,6 +436,20 @@
             <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
           </div>
         </details>
+      <!-- GROWTH:FAQ-START -->
+        <details>
+          <summary><span class="q">Q</span>연봉 4,000만원 실수령액은 얼마인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>식대 20만원 비과세, 부양가족 1명(본인), 자녀 0명 기준으로 <b>월 2,847,997원</b>(연 34,175,962원)입니다. 4대보험 304,430원과 소득세·지방세 2,170,878원을 뺀 금액이며 실수령률은 85.4%입니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>부양가족이 늘면 실수령액이 얼마나 오르나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>연봉 5,000만원 기준으로 부양가족 1명(자녀 0명)이면 월 3,493,295원, 부양가족 3명·자녀 1명이면 월 3,557,462원입니다. 1인당 150만원 인적공제와 자녀세액공제 덕분에 월 약 64,167원 차이가 납니다.</p>
+          </div>
+        </details>
+<!-- GROWTH:FAQ-END -->
       </div>
 
       <h2>참고한 기준</h2>
@@ -407,8 +471,8 @@
         <span>총급여 25% 문턱과 자녀 수 한도로 공제액을 계산합니다.</span>
       </a>
       <a href="guide-tax-refund.html">
-        <b>연말정산 경정청구 체크리스트</b>
-        <span>놓친 공제를 5년 안에 돌려받는 방법입니다.</span>
+        <b>연말정산 누락·경정청구 체크리스트</b>
+        <span>놓친 공제를 5년 안에 돌려받는 순서를 정리했습니다.</span>
       </a>
     </div>
 
@@ -743,22 +807,62 @@ function snMan(n){
       + '· 4대보험 월 ' + snWon(r.insurance) + ' (연 ' + snWon(r.insuranceAnnual) + ')\n'
       + '· 소득세+지방세 연 ' + snWon(r.taxTotal) + '\n'
       + '· 월 실수령액 ' + snWon(r.netMonthly) + ' / 연 ' + snWon(r.netAnnual) + ' (' + r.takeHomeRate.toFixed(1) + '%)\n'
-      + '계산: usefulkit.kr/salary-net.html';
+      + '결과 링크: https://usefulkit.kr/salary-net.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 
   render();
 })();
 </script>
+
+<script>
+/* 인기 조건 프리셋 — data-uk-preset 의 값을 입력 요소에 채우고 계산을 다시 돌린다. */
+(function(){
+  'use strict';
+  var wrap = document.querySelector('.calc-preset');
+  if (!wrap) return;
+  function fire(node){
+    var types = ['input', 'change'];
+    for (var t = 0; t < types.length; t++){
+      var ev;
+      try { ev = new Event(types[t], { bubbles: true }); }
+      catch (e) { ev = document.createEvent('Event'); ev.initEvent(types[t], true, true); }
+      node.dispatchEvent(ev);
+    }
+  }
+  var buttons = wrap.querySelectorAll('button[data-uk-preset]');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var cfg;
+      try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      for (var id in cfg){
+        if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
+        var node = document.getElementById(id);
+        if (!node) continue;
+        var v = cfg[id];
+        if (node.type === 'checkbox' || node.type === 'radio') node.checked = !!v;
+        else node.value = v;
+        fire(node);
+      }
+      var all = wrap.querySelectorAll('button[data-uk-preset]');
+      for (var j = 0; j < all.length; j++){
+        if (all[j] === this) all[j].className = 'calc-chip is-active';
+        else all[j].className = 'calc-chip';
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

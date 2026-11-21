@@ -65,8 +65,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
@@ -110,10 +109,25 @@
         "@type": "Answer",
         "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "연소득 5,000만원이면 대출을 얼마나 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "기존 대출이 없고 금리 4.0%, 30년 원리금균등, 스트레스 3.0%p, DSR 40% 기준으로 최대 250,512,613원까지 가능합니다. 심사 금리는 7.0%로 계산되고 월 상환액은 1,666,667원입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "기존 대출이 1,000만원 있으면 한도가 얼마나 줄어드나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "연소득 6,000만원 기준으로 기존 대출이 없으면 최대 300,615,136원이지만, 연 원리금 1,000만원이 있으면 175,358,829원로 줄어듭니다. 약 125,256,307원 감소하는 셈입니다."
+      }
     }
   ]
-}
-</script>
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJC17GTT1C"></script>
 <script>
@@ -231,6 +245,21 @@
       </div>
       <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 
+            <!-- GROWTH:PRESET-START -->
+      <div class="calc-preset">
+        <p class="calc-preset-label">인기 조건으로 바로 계산</p>
+        <div class="calc-preset-row">
+        <button type="button" class="calc-chip" data-uk-preset='{"ds-income":"4000"}'>연소득 4,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"ds-income":"5000"}'>연소득 5,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"ds-income":"6000"}'>연소득 6,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"ds-income":"8000"}'>연소득 8,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"ds-income":"10000"}'>연소득 1억원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"ds-income":"6000","ds-mortgage":"1200","ds-credit":"300","ds-overdraft":"60","ds-jeonse":""}'>6,000·기존 1,560만원</button>
+        </div>
+        <p class="calc-preset-tip">버튼을 누르면 입력값이 채워지고 결과가 바로 계산됩니다. 값을 바꿔 내 조건으로 다시 계산해 보세요.</p>
+      </div>
+      <!-- GROWTH:PRESET-END -->
+
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>소득</h2></div>
         <div class="calc-field">
@@ -336,9 +365,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="ds-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="ds-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="ds-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ds-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="ds-toast">복사했어요</div>
+        <div class="calc-toast" id="ds-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -364,6 +393,28 @@
       <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 한도는 금융기관 심사·규제·담보 가치에 따라 달라집니다.</p>
     </div>
 
+<!-- GROWTH:SCENARIO-START -->
+    <section class="prose" id="scenarios" style="margin-top:20px;">
+      <h2>연소득별 최대 대출액 (2026년 DSR 40% · 스트레스 3.0%p)</h2>
+      <p>연소득만 바꿔도 한도가 얼마나 달라지는지 이 계산기로 계산한 표입니다. 기존 대출이 있으면 위 입력창에 넣어 보세요.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>기존 대출 없음 · 신규 금리 4.0% · 30년 원리금균등 · 스트레스 3.0%p · DSR 40% 기준</caption>
+          <thead>
+            <tr><th>연소득</th><th class="num">허용 연간 원리금</th><th class="num">최대 대출액</th><th class="num">월 상환액</th><th class="num">30년 총이자</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>4,000만원</td><td class="num">16,000,000원</td><td class="num">2억 41만원</td><td class="num">1,333,333원</td><td class="num">2억 7,959만원</td></tr>
+            <tr><td>5,000만원</td><td class="num">20,000,000원</td><td class="num">2억 5,051만원</td><td class="num">1,666,667원</td><td class="num">3억 4,949만원</td></tr>
+            <tr><td>6,000만원</td><td class="num">24,000,000원</td><td class="num">3억 62만원</td><td class="num">2,000,000원</td><td class="num">4억 1,938만원</td></tr>
+            <tr><td>8,000만원</td><td class="num">32,000,000원</td><td class="num">4억 82만원</td><td class="num">2,666,667원</td><td class="num">5억 5,918만원</td></tr>
+            <tr><td>1억원</td><td class="num">40,000,000원</td><td class="num">5억 103만원</td><td class="num">3,333,333원</td><td class="num">6억 9,897만원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>스트레스 금리 3.0%p가 붙으면 심사 금리는 7.0%가 되고, 월 상환액은 4.0%로 실제 갚는 금액입니다. 기존 대출이 1,000만원만 있어도 최대 한도는 약 1억 2,500만원 줄어듭니다(연소득 6,000만원 기준).</p>
+    </section>
+<!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="read-result" style="margin-top:20px;">
       <h2>결과 읽는 법</h2>
       <div class="table-wrap">
@@ -440,6 +491,20 @@
             <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
           </div>
         </details>
+      <!-- GROWTH:FAQ-START -->
+        <details>
+          <summary><span class="q">Q</span>연소득 5,000만원이면 대출을 얼마나 받을 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>기존 대출이 없고 금리 4.0%, 30년 원리금균등, 스트레스 3.0%p, DSR 40% 기준으로 최대 <b>250,512,613원</b>까지 가능합니다. 심사 금리는 7.0%로 계산되고 월 상환액은 1,666,667원입니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>기존 대출이 1,000만원 있으면 한도가 얼마나 줄어드나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>연소득 6,000만원 기준으로 기존 대출이 없으면 최대 300,615,136원이지만, 연 원리금 1,000만원이 있으면 <b>175,358,829원</b>로 줄어듭니다. 약 125,256,307원 감소하는 셈입니다.</p>
+          </div>
+        </details>
+<!-- GROWTH:FAQ-END -->
       </div>
 
       <h2>참고한 기준</h2>
@@ -454,16 +519,16 @@
 
     <div class="next-tools">
       <a href="loan-switch.html">
-        <b>주담대·전세 대환 실익 계산기</b>
-        <span>금리차와 수수료를 넣어 갈아탈지 판단합니다.</span>
+        <b>대환 실익 계산기</b>
+        <span>금리를 낮출 때 수수료를 빼고 실제로 남는 금액을 계산합니다.</span>
       </a>
       <a href="prepay-vs-invest.html">
-        <b>중도상환 vs 예치 비교기</b>
-        <span>여유자금으로 대출을 갚을지 예금할지 계산합니다.</span>
+        <b>중도상환 vs 예치 계산기</b>
+        <span>대출을 갚는 것과 예금에 넣는 것 중 유리한 쪽을 계산합니다.</span>
       </a>
       <a href="guide-jeonse-loan.html">
-        <b>전세 이사·대출 갈아타기 체크리스트</b>
-        <span>부채와 소득을 동시에 보는 순서를 정리했습니다.</span>
+        <b>전세 이사·대출 갈아타기</b>
+        <span>1주택자의 전세대출 이동과 반환 조건을 정리했습니다.</span>
       </a>
     </div>
 
@@ -776,22 +841,62 @@ function dsMan(n){
       + '· 규제 ' + r.ratio + '%, 허용 원리금 ' + dsWon(r.allowed) + '\n'
       + '· 금리 ' + r.rate.toFixed(2) + '%(' + r.stress.toFixed(2) + '%p 가산) ' + r.years + '년 → 최대 ' + dsWon(r.maxLoan) + ', 월 ' + dsWon(r.monthly) + '\n'
       + '· 판정: ' + VERDICT[r.verdict][2] + '\n'
-      + '계산: usefulkit.kr/dsr-limit.html';
+      + '결과 링크: https://usefulkit.kr/dsr-limit.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 
   render();
 })();
 </script>
+
+<script>
+/* 인기 조건 프리셋 — data-uk-preset 의 값을 입력 요소에 채우고 계산을 다시 돌린다. */
+(function(){
+  'use strict';
+  var wrap = document.querySelector('.calc-preset');
+  if (!wrap) return;
+  function fire(node){
+    var types = ['input', 'change'];
+    for (var t = 0; t < types.length; t++){
+      var ev;
+      try { ev = new Event(types[t], { bubbles: true }); }
+      catch (e) { ev = document.createEvent('Event'); ev.initEvent(types[t], true, true); }
+      node.dispatchEvent(ev);
+    }
+  }
+  var buttons = wrap.querySelectorAll('button[data-uk-preset]');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var cfg;
+      try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      for (var id in cfg){
+        if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
+        var node = document.getElementById(id);
+        if (!node) continue;
+        var v = cfg[id];
+        if (node.type === 'checkbox' || node.type === 'radio') node.checked = !!v;
+        else node.value = v;
+        fire(node);
+      }
+      var all = wrap.querySelectorAll('button[data-uk-preset]');
+      for (var j = 0; j < all.length; j++){
+        if (all[j] === this) all[j].className = 'calc-chip is-active';
+        else all[j].className = 'calc-chip';
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

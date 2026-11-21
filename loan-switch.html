@@ -346,9 +346,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="ln-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="ln-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="ln-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ln-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="ln-toast">복사했어요</div>
+        <div class="calc-toast" id="ln-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -473,13 +473,17 @@
     </section>
 
     <div class="next-tools">
-      <a href="medical-tax.html">
-        <b>부부 의료비 몰아주기 계산기</b>
-        <span>연말정산 때 남편·아내 중 누구에게 의료비를 몰아줄지 3% 문턱과 700만원 한도까지 계산합니다.</span>
+      <a href="dsr-limit.html">
+        <b>DSR 대출 한도 계산기</b>
+        <span>스트레스 금리를 반영해 추가 대출 한도를 계산합니다.</span>
       </a>
-      <a href="costco-break-even.html">
-        <b>코스트코 이그제큐티브 손익분기 계산기</b>
-        <span>연회비 43,000원 차액을 2% 리워드로 회수하려면 얼마를 써야 하는지 계산합니다.</span>
+      <a href="prepay-vs-invest.html">
+        <b>중도상환 vs 예치 계산기</b>
+        <span>대출을 갚는 것과 예금에 넣는 것 중 유리한 쪽을 계산합니다.</span>
+      </a>
+      <a href="guide-jeonse-loan.html">
+        <b>전세 이사·대출 갈아타기</b>
+        <span>1주택자의 전세대출 이동과 반환 조건을 정리했습니다.</span>
       </a>
     </div>
 
@@ -826,17 +830,17 @@ function lnEvaluate(cfg){
       + '· 갈아타는 비용 ' + lnMoney(r.cost) + ' (수수료 ' + lnWon(r.fee) + ' + 기타 ' + lnWon(r.otherCost) + ')\n'
       + '· 순 절감 ' + lnMoney(r.net) + (r.breakeven !== null ? ' / 손익분기 ' + r.breakeven + '개월' : '') + '\n'
       + '· 판정: ' + label + '\n'
-      + '계산: usefulkit.kr/loan-switch.html';
+      + '결과 링크: https://usefulkit.kr/loan-switch.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 

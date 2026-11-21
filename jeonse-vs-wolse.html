@@ -65,8 +65,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
@@ -110,10 +109,25 @@
         "@type": "Answer",
         "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "전세 3억원을 월세로 바꾸면 월세 얼마까지가 손익분기인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전세대출 70%(2억 1,000만원, 연 3.4%), 기회비용 3.5%, 월세 보증금 1,000만원 기준으로 손익분기 월세는 828,333원입니다. 손익분기 전환율은 3.43%입니다. 이보다 월세가 낮으면 월세가 유리합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전환율이 높으면 전세가 유리한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "시장 전환율이 손익분기 전환율보다 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산하므로, 같은 보증금이라면 월세가 높을수록 전환율이 올라갑니다. 다만 대출 금리와 기회비용 수익률을 실제 조건으로 넣어야 결론이 정확해집니다."
+      }
     }
   ]
-}
-</script>
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJC17GTT1C"></script>
 <script>
@@ -216,6 +230,19 @@
       </div>
       <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 
+            <!-- GROWTH:PRESET-START -->
+      <div class="calc-preset">
+        <p class="calc-preset-label">인기 조건으로 바로 계산</p>
+        <div class="calc-preset-row">
+        <button type="button" class="calc-chip" data-uk-preset='{"jw-jDeposit":"30000","jw-jLoan":"21000","jw-jRate":"3.4","jw-jYield":"3.5","jw-wDeposit":"1000","jw-wRent":"85","jw-wLoan":"","jw-wRate":""}'>전세 3억 vs 월세 85만</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"jw-jDeposit":"40000","jw-jLoan":"28000","jw-jRate":"3.4","jw-jYield":"3.5","jw-wDeposit":"2000","jw-wRent":"105","jw-wLoan":"","jw-wRate":""}'>전세 4억 vs 월세 105만</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"jw-jDeposit":"50000","jw-jLoan":"35000","jw-jRate":"3.4","jw-jYield":"3.5","jw-wDeposit":"3000","jw-wRent":"135","jw-wLoan":"","jw-wRate":""}'>전세 5억 vs 월세 135만</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"jw-jDeposit":"60000","jw-jLoan":"42000","jw-jRate":"3.4","jw-jYield":"3.5","jw-wDeposit":"5000","jw-wRent":"160","jw-wLoan":"","jw-wRate":""}'>전세 6억 vs 월세 160만</button>
+        </div>
+        <p class="calc-preset-tip">버튼을 누르면 입력값이 채워지고 결과가 바로 계산됩니다. 값을 바꿔 내 조건으로 다시 계산해 보세요.</p>
+      </div>
+      <!-- GROWTH:PRESET-END -->
+
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>전세 조건</h2></div>
         <div class="calc-grid2">
@@ -310,9 +337,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="jw-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="jw-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="jw-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="jw-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="jw-toast">복사했어요</div>
+        <div class="calc-toast" id="jw-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -338,6 +365,27 @@
       <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 비용은 계약 조건·금리·세금에 따라 달라집니다.</p>
     </div>
 
+<!-- GROWTH:SCENARIO-START -->
+    <section class="prose" id="scenarios" style="margin-top:20px;">
+      <h2>전세 보증금별 손익분기 월세 (2026년 11월 금리 기준)</h2>
+      <p>전세를 월세로 바꿀 때 '월세 얼마까지면 전세와 같아지는지'를 보증금 규모별로 계산했습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>전세대출 70% · 금리 3.4% · 기회비용 3.5% · 월세 보증금은 전세의 10% 가정</caption>
+          <thead>
+            <tr><th>전세 보증금</th><th class="num">전세대출</th><th class="num">월세 보증금</th><th class="num">손익분기 월세</th><th class="num">손익분기 전환율</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>3억원</td><td class="num">2억 1,000만원 (70%)</td><td class="num">3,000만원</td><td class="num">77만원</td><td class="num">3.42%</td></tr>
+            <tr><td>4억원</td><td class="num">2억 8,000만원 (70%)</td><td class="num">4,000만원</td><td class="num">102.7만원</td><td class="num">3.42%</td></tr>
+            <tr><td>5억원</td><td class="num">3억 5,000만원 (70%)</td><td class="num">5,000만원</td><td class="num">128.3만원</td><td class="num">3.42%</td></tr>
+            <tr><td>6억원</td><td class="num">4억 2,000만원 (70%)</td><td class="num">6,000만원</td><td class="num">154만원</td><td class="num">3.42%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>손익분기 월세보다 실제 월세가 낮으면 월세가, 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산합니다. 2026년 11월 기준 시장 전환율은 4%대 중반입니다.</p>
+    </section>
+<!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="read-result" style="margin-top:20px;">
       <h2>결과 읽는 법</h2>
       <p>판정은 네 가지입니다. 차이가 작을 때는 계산보다 계약 조건을 보는 편이 낫습니다.</p>
@@ -416,6 +464,20 @@
             <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
           </div>
         </details>
+      <!-- GROWTH:FAQ-START -->
+        <details>
+          <summary><span class="q">Q</span>전세 3억원을 월세로 바꾸면 월세 얼마까지가 손익분기인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>전세대출 70%(2억 1,000만원, 연 3.4%), 기회비용 3.5%, 월세 보증금 1,000만원 기준으로 손익분기 월세는 <b>828,333원</b>입니다. 손익분기 전환율은 3.43%입니다. 이보다 월세가 낮으면 월세가 유리합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>전환율이 높으면 전세가 유리한가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>시장 전환율이 손익분기 전환율보다 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산하므로, 같은 보증금이라면 월세가 높을수록 전환율이 올라갑니다. 다만 대출 금리와 기회비용 수익률을 실제 조건으로 넣어야 결론이 정확해집니다.</p>
+          </div>
+        </details>
+<!-- GROWTH:FAQ-END -->
       </div>
 
       <h2>참고한 기준</h2>
@@ -430,15 +492,15 @@
     <div class="next-tools">
       <a href="dsr-limit.html">
         <b>DSR 대출 한도 계산기</b>
-        <span>전세대출을 더 받을 수 있는지 소득과 기존 부채로 계산합니다.</span>
+        <span>스트레스 금리를 반영해 추가 대출 한도를 계산합니다.</span>
       </a>
       <a href="loan-switch.html">
-        <b>주담대·전세 대환 실익 계산기</b>
-        <span>금리차와 중도상환수수료를 넣어 갈아탈지 판단합니다.</span>
+        <b>대환 실익 계산기</b>
+        <span>금리를 낮출 때 수수료를 빼고 실제로 남는 금액을 계산합니다.</span>
       </a>
       <a href="guide-jeonse-loan.html">
-        <b>전세 이사·대출 갈아타기 체크리스트</b>
-        <span>1주택자가 전세로 옮길 때 확인할 순서를 정리했습니다.</span>
+        <b>전세 이사·대출 갈아타기</b>
+        <span>1주택자의 전세대출 이동과 반환 조건을 정리했습니다.</span>
       </a>
     </div>
 
@@ -744,22 +806,62 @@ function jwMan(n){
       + '· 차이 ' + (r.diff >= 0 ? '+' : '−') + jwWon(Math.abs(r.diff)) + (r.beRent !== null ? ' / 손익분기 월세 ' + jwWon(r.beRent) : '') + '\n'
       + (r.marketRate !== null ? '· 전환율 시장 ' + r.marketRate.toFixed(2) + '% / 손익분기 ' + r.beRate.toFixed(2) + '%\n' : '')
       + '· 판정: ' + VERDICT[r.verdict][2] + '\n'
-      + '계산: usefulkit.kr/jeonse-vs-wolse.html';
+      + '결과 링크: https://usefulkit.kr/jeonse-vs-wolse.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 
   render();
 })();
 </script>
+
+<script>
+/* 인기 조건 프리셋 — data-uk-preset 의 값을 입력 요소에 채우고 계산을 다시 돌린다. */
+(function(){
+  'use strict';
+  var wrap = document.querySelector('.calc-preset');
+  if (!wrap) return;
+  function fire(node){
+    var types = ['input', 'change'];
+    for (var t = 0; t < types.length; t++){
+      var ev;
+      try { ev = new Event(types[t], { bubbles: true }); }
+      catch (e) { ev = document.createEvent('Event'); ev.initEvent(types[t], true, true); }
+      node.dispatchEvent(ev);
+    }
+  }
+  var buttons = wrap.querySelectorAll('button[data-uk-preset]');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var cfg;
+      try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      for (var id in cfg){
+        if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
+        var node = document.getElementById(id);
+        if (!node) continue;
+        var v = cfg[id];
+        if (node.type === 'checkbox' || node.type === 'radio') node.checked = !!v;
+        else node.value = v;
+        fire(node);
+      }
+      var all = wrap.querySelectorAll('button[data-uk-preset]');
+      for (var j = 0; j < all.length; j++){
+        if (all[j] === this) all[j].className = 'calc-chip is-active';
+        else all[j].className = 'calc-chip';
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

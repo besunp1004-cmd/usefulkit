@@ -306,9 +306,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="ss-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="ss-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="ss-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ss-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="ss-toast">복사했어요</div>
+        <div class="calc-toast" id="ss-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -426,16 +426,16 @@
 
     <div class="next-tools">
       <a href="guide-insurance-check.html">
-        <b>보험 갱신 점검 가이드</b>
-        <span>실손 세대별 자기부담률과 비급여 청구 팁을 정리했습니다.</span>
+        <b>보험 갱신 점검</b>
+        <span>자동차보험·실손보험 갱신 전에 확인할 항목입니다.</span>
       </a>
       <a href="car-insurance-discount.html">
         <b>자동차보험 할인 계산기</b>
-        <span>마일리지·블랙박스 특약으로 보험료를 줄이는 계산입니다.</span>
+        <span>마일리지·특약 할인을 순서대로 적용해 보험료를 계산합니다.</span>
       </a>
       <a href="medical-tax.html">
         <b>부부 의료비 몰아주기</b>
-        <span>병원비가 많다면 연말정산 의료비 공제도 함께 확인하세요.</span>
+        <span>총급여 3% 문턱과 유리한 배분을 계산합니다.</span>
       </a>
     </div>
 
@@ -741,17 +741,17 @@ function ssMan(n){
       + '· 10년 유지 ' + ssMan(r.keep.total) + ' (보험료 ' + ssMan(r.keep.prem) + ' + 자기부담 ' + ssMan(r.keep.oop) + ')\n'
       + '· 10년 전환 ' + ssMan(r.fresh.total) + ' (보험료 ' + ssMan(r.fresh.prem) + ' + 자기부담 ' + ssMan(r.fresh.oop) + ')\n'
       + '· ' + (r.winner === 'switch' ? '전환이 ' : '유지가 ') + ssMan(Math.abs(r.diff)) + ' 유리 (10년)\n'
-      + '계산: usefulkit.kr/silson-switch.html';
+      + '결과 링크: https://usefulkit.kr/silson-switch.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 

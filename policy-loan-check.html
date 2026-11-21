@@ -332,9 +332,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="pl-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="pl-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="pl-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="pl-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="pl-toast">복사했어요</div>
+        <div class="calc-toast" id="pl-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -451,15 +451,15 @@
     <div class="next-tools">
       <a href="dsr-limit.html">
         <b>DSR 대출 한도 계산기</b>
-        <span>기존 대출이 있으면 추가 한도가 얼마나 줄어드는지 계산합니다.</span>
+        <span>스트레스 금리를 반영해 추가 대출 한도를 계산합니다.</span>
       </a>
       <a href="real-estate-fee.html">
         <b>복비·취득세 계산기</b>
-        <span>구입 시 중개보수와 취득세를 함께 확인합니다.</span>
+        <span>중개보수 상한과 취득세를 한 번에 계산합니다.</span>
       </a>
       <a href="guide-jeonse-loan.html">
-        <b>전세 이사·대출 갈아타기 가이드</b>
-        <span>부채 합산과 상환 순서를 3주 체크리스트로 정리했습니다.</span>
+        <b>전세 이사·대출 갈아타기</b>
+        <span>1주택자의 전세대출 이동과 반환 조건을 정리했습니다.</span>
       </a>
     </div>
 
@@ -961,17 +961,17 @@ function plMan(n){
       var x = r.list[i];
       text += '· ' + x.name + ': ' + (x.ok && x.limit > 0 ? '가능 ' + plMan(x.limit) : '불가(' + (x.reasons[0] || '한도 0') + ')') + '\n';
     }
-    text += '계산: usefulkit.kr/policy-loan-check.html';
+    text += '결과 링크: https://usefulkit.kr/policy-loan-check.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 

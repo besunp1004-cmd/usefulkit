@@ -65,8 +65,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
@@ -118,10 +117,25 @@
         "@type": "Answer",
         "text": "아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "한 달에 30만원 쓰면 이그제큐티브가 이득인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "영수증 금액(부가세 포함) 월 30만원이면 부가세 제외 연 구매액은 3,272,727원이고 2% 리워드는 65,455원입니다. 연회비 차액 43,000원을 빼면 순이익 22,455원으로 본전을 넘습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "손익분기 매장 구매액은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "부가세 제외 연 215만원, 영수증 금액으로는 연 236만 5,000원(월 약 19만 7,000원)입니다. 월 20만원이면 리워드 43,637원으로 연회비 차액을 겨우 넘습니다. 주류·골드바·푸드코트 등 적립 제외 품목은 빼고 계산하세요."
+      }
     }
   ]
-}
-</script>
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJC17GTT1C"></script>
 <script>
@@ -246,6 +260,19 @@
       <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 
 
+            <!-- GROWTH:PRESET-START -->
+      <div class="calc-preset">
+        <p class="calc-preset-label">인기 조건으로 바로 계산</p>
+        <div class="calc-preset-row">
+        <button type="button" class="calc-chip" data-uk-preset='{"cc-monthly":"15","cc-vat":true,"cc-hyundai":false,"cc-hyMet":true,"cc-onlineShare":""}'>월 15만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"cc-monthly":"25","cc-vat":true,"cc-hyundai":false,"cc-hyMet":true,"cc-onlineShare":""}'>월 25만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"cc-monthly":"40","cc-vat":true,"cc-hyundai":false,"cc-hyMet":true,"cc-onlineShare":""}'>월 40만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"cc-monthly":"60","cc-vat":true,"cc-hyundai":false,"cc-hyMet":true,"cc-onlineShare":""}'>월 60만원</button>
+        </div>
+        <p class="calc-preset-tip">버튼을 누르면 입력값이 채워지고 결과가 바로 계산됩니다. 값을 바꿔 내 조건으로 다시 계산해 보세요.</p>
+      </div>
+      <!-- GROWTH:PRESET-END -->
+
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>코스트코 지출</h2></div>
         <div class="calc-field">
@@ -302,9 +329,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="cc-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="cc-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="cc-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="cc-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="cc-toast">복사했어요</div>
+        <div class="calc-toast" id="cc-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -331,6 +358,29 @@
       <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 리워드는 적립 제외 품목과 코스트코 정책에 따라 달라집니다.</p>
     </div>
 
+<!-- GROWTH:SCENARIO-START -->
+    <section class="prose" id="scenarios" style="margin-top:20px;">
+      <h2>월 구매액별 1년 리워드·순이익 (2026년 11월 연회비 기준)</h2>
+      <p>한 달에 얼마를 쓰면 이그제큐티브가 이득인지 이 계산기로 계산한 표입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>골드스타 43,000원 · 이그제큐티브 86,000원 · 2% 리워드(부가세 제외 구매액) 기준</caption>
+          <thead>
+            <tr><th>월 구매액</th><th class="num">연 구매액(부가세 제외)</th><th class="num">1년 리워드</th><th class="num">연회비 차액</th><th class="num">순이익</th><th class="num">판정</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>15만원</td><td class="num">1,636,364원</td><td class="num">32,728원</td><td class="num">43,000원</td><td class="num">−10,272원</td><td class="num">거의 본전</td></tr>
+            <tr><td>20만원</td><td class="num">2,181,818원</td><td class="num">43,637원</td><td class="num">43,000원</td><td class="num">+637원</td><td class="num">본전 넘김</td></tr>
+            <tr><td>25만원</td><td class="num">2,727,273원</td><td class="num">54,546원</td><td class="num">43,000원</td><td class="num">+11,546원</td><td class="num">본전 넘김</td></tr>
+            <tr><td>30만원</td><td class="num">3,272,727원</td><td class="num">65,455원</td><td class="num">43,000원</td><td class="num">+22,455원</td><td class="num">본전 넘김</td></tr>
+            <tr><td>40만원</td><td class="num">4,363,636원</td><td class="num">87,273원</td><td class="num">43,000원</td><td class="num">+44,273원</td><td class="num">확실히 이득</td></tr>
+            <tr><td>60만원</td><td class="num">6,545,455원</td><td class="num">130,910원</td><td class="num">43,000원</td><td class="num">+87,910원</td><td class="num">확실히 이득</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>손익분기점은 부가세 제외 연 215만원, 영수증 금액(부가세 포함)으로는 연 236만 5,000원 · 월 약 19만 7,000원입니다. 주류·골드바·푸드코트·상품권은 적립에서 빠지므로 실제 구매액에서 빼고 계산하세요.</p>
+    </section>
+<!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="how-to" style="margin-top:20px;">
       <h2>결과 읽는 법</h2>
       <p>계산기는 네 가지 상태로 답합니다. 숫자보다 상태를 먼저 보세요.</p>
@@ -402,6 +452,20 @@
             <p>아니요. 입력값은 브라우저 안에서만 계산되고 서버로 전송되지 않습니다. 페이지를 새로 고치면 사라집니다.</p>
           </div>
         </details>
+      <!-- GROWTH:FAQ-START -->
+        <details>
+          <summary><span class="q">Q</span>한 달에 30만원 쓰면 이그제큐티브가 이득인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>영수증 금액(부가세 포함) 월 30만원이면 부가세 제외 연 구매액은 3,272,727원이고 2% 리워드는 <b>65,455원</b>입니다. 연회비 차액 43,000원을 빼면 순이익 22,455원으로 본전을 넘습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>손익분기 매장 구매액은 얼마인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>부가세 제외 연 215만원, 영수증 금액으로는 연 236만 5,000원(<b>월 약 19만 7,000원</b>)입니다. 월 20만원이면 리워드 43,637원으로 연회비 차액을 겨우 넘습니다. 주류·골드바·푸드코트 등 적립 제외 품목은 빼고 계산하세요.</p>
+          </div>
+        </details>
+<!-- GROWTH:FAQ-END -->
       </div>
 
       <h2>참고한 기준</h2>
@@ -414,13 +478,17 @@
     </section>
 
     <div class="next-tools">
-      <a href="medical-tax.html">
-        <b>부부 의료비 몰아주기 계산기</b>
-        <span>연말정산 의료비를 남편·아내 중 누구에게 몰아줄지 계산합니다.</span>
+      <a href="guide-hidden-money.html">
+        <b>숨은 돈·고정지출 점검</b>
+        <span>구독·수수료·미청구 환급금을 찾는 루틴입니다.</span>
       </a>
-      <a href="loan-switch.html">
-        <b>주담대·전세 대환 실익 계산기</b>
-        <span>금리차와 중도상환수수료를 넣어 손익분기를 계산합니다.</span>
+      <a href="card-tax.html">
+        <b>카드 공제 문턱 계산기</b>
+        <span>총급여 25% 문턱과 자녀 수 한도로 공제액을 계산합니다.</span>
+      </a>
+      <a href="deposit-interest.html">
+        <b>예·적금 이자 계산기</b>
+        <span>단리·월복리와 이자소득세를 반영한 실수령 이자를 계산합니다.</span>
       </a>
     </div>
 
@@ -720,22 +788,62 @@ function ccEvaluate(cfg){
       + '· 연회비 차액 ' + ccWon(r.feeDiff) + ' → 순이익 ' + (r.net >= 0 ? '+' : '−') + ccWon(Math.abs(r.net)) + '\n'
       + '· 손익분기 연 ' + ccWon(r.beBaseAnnual) + ' / 월 ' + ccWon(r.beBaseMonthly) + ' (부가세 제외)\n'
       + '· 판정: ' + VERDICT[r.verdict][2] + '\n'
-      + '계산: usefulkit.kr/costco-break-even.html';
+      + '결과 링크: https://usefulkit.kr/costco-break-even.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 
   render();
 })();
 </script>
+
+<script>
+/* 인기 조건 프리셋 — data-uk-preset 의 값을 입력 요소에 채우고 계산을 다시 돌린다. */
+(function(){
+  'use strict';
+  var wrap = document.querySelector('.calc-preset');
+  if (!wrap) return;
+  function fire(node){
+    var types = ['input', 'change'];
+    for (var t = 0; t < types.length; t++){
+      var ev;
+      try { ev = new Event(types[t], { bubbles: true }); }
+      catch (e) { ev = document.createEvent('Event'); ev.initEvent(types[t], true, true); }
+      node.dispatchEvent(ev);
+    }
+  }
+  var buttons = wrap.querySelectorAll('button[data-uk-preset]');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var cfg;
+      try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      for (var id in cfg){
+        if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
+        var node = document.getElementById(id);
+        if (!node) continue;
+        var v = cfg[id];
+        if (node.type === 'checkbox' || node.type === 'radio') node.checked = !!v;
+        else node.value = v;
+        fire(node);
+      }
+      var all = wrap.querySelectorAll('button[data-uk-preset]');
+      for (var j = 0; j < all.length; j++){
+        if (all[j] === this) all[j].className = 'calc-chip is-active';
+        else all[j].className = 'calc-chip';
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

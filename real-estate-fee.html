@@ -65,8 +65,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
@@ -110,10 +109,25 @@
         "@type": "Answer",
         "text": "받을 수 있습니다. 생애최초 주택 구입 취득세 감면은 2028년 12월 31일까지 적용되며, 취득가액 12억원 이하 주택에 최대 200만원(전용 60㎡ 이하이면서 6억원 이하인 비아파트 주택이나 인구감소지역 주택은 300만원)을 감면합니다. 본인과 배우자가 주택을 소유한 적이 없어야 하고, 취득일부터 3년 안에 팔거나 임대하면 감면분을 다시 내야 합니다."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "9억원 아파트를 사면 복비와 취득세를 얼마나 내나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주택 9억원 매매, 일반과세 중개사, 1주택, 전용 85㎡ 이하 기준으로 중개보수는 상한요율 0.5%인 4,500,000원(부가세 포함 4,950,000원)이고 취득세는 29,700,000원입니다. 둘을 합치면 34,650,000원입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전세 5억원 중개보수는 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주택 전세 5억원 기준 상한요율은 0.3%로 중개보수는 1,500,000원(부가세 포함 1,650,000원)입니다. 전세는 취득세가 없습니다. 계약 전 중개사에 부가세 포함 여부와 실제 청구액을 확인하세요."
+      }
     }
   ]
-}
-</script>
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJC17GTT1C"></script>
 <script>
@@ -238,6 +252,22 @@
       </div>
       <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
 
+            <!-- GROWTH:PRESET-START -->
+      <div class="calc-preset">
+        <p class="calc-preset-label">인기 조건으로 바로 계산</p>
+        <div class="calc-preset-row">
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":true,"rf-modeJeonse":false,"rf-modeWolse":false,"rf-price":"60000","rf-monthly":"","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>매매 6억</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":true,"rf-modeJeonse":false,"rf-modeWolse":false,"rf-price":"90000","rf-monthly":"","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>매매 9억</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":true,"rf-modeJeonse":false,"rf-modeWolse":false,"rf-price":"120000","rf-monthly":"","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>매매 12억</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":true,"rf-modeJeonse":false,"rf-modeWolse":false,"rf-price":"150000","rf-monthly":"","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>매매 15억</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":false,"rf-modeJeonse":true,"rf-modeWolse":false,"rf-price":"30000","rf-monthly":"","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>전세 3억</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":false,"rf-modeJeonse":true,"rf-modeWolse":false,"rf-price":"50000","rf-monthly":"","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>전세 5억</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"rf-modeSale":false,"rf-modeJeonse":false,"rf-modeWolse":true,"rf-price":"10000","rf-monthly":"100","rf-kind":"house","rf-kind2":"house","rf-vat":"10","rf-count":"1","rf-area":"85","rf-adjusted":true,"rf-first":false}'>월세 1억·100만</button>
+        </div>
+        <p class="calc-preset-tip">버튼을 누르면 입력값이 채워지고 결과가 바로 계산됩니다. 값을 바꿔 내 조건으로 다시 계산해 보세요.</p>
+      </div>
+      <!-- GROWTH:PRESET-END -->
+
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>거래 종류와 금액</h2></div>
         <div class="calc-seg" style="margin-bottom:14px;">
@@ -349,9 +379,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="rf-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="rf-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="rf-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="rf-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="rf-toast">복사했어요</div>
+        <div class="calc-toast" id="rf-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -377,6 +407,30 @@
       <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 중개보수는 협의로, 취득세는 관할 지자체 고지로 확정됩니다.</p>
     </div>
 
+<!-- GROWTH:SCENARIO-START -->
+    <section class="prose" id="scenarios" style="margin-top:20px;">
+      <h2>대표 거래 시나리오 — 복비와 취득세 한눈에</h2>
+      <p>매매·전세·월세에서 가장 많이 찾는 금액대의 중개보수와 취득세를 이 계산기로 계산해 정리했습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>주택 · 일반과세 중개사(부가세 10%) · 1주택 · 전용 85㎡ 이하 기준</caption>
+          <thead>
+            <tr><th>거래</th><th class="num">거래금액(환산)</th><th class="num">상한요율</th><th class="num">중개보수(부가세 포함)</th><th class="num">취득세 합계</th><th class="num">합계</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>매매 6억원</td><td class="num">6억원</td><td class="num">0.4%</td><td class="num">2,640,000원</td><td class="num">6,600,000원</td><td class="num">9,240,000원</td></tr>
+            <tr><td>매매 9억원</td><td class="num">9억원</td><td class="num">0.5%</td><td class="num">4,950,000원</td><td class="num">29,700,000원</td><td class="num">34,650,000원</td></tr>
+            <tr><td>매매 12억원</td><td class="num">12억원</td><td class="num">0.6%</td><td class="num">7,920,000원</td><td class="num">39,600,000원</td><td class="num">47,520,000원</td></tr>
+            <tr><td>매매 15억원</td><td class="num">15억원</td><td class="num">0.7%</td><td class="num">11,550,000원</td><td class="num">49,500,000원</td><td class="num">61,050,000원</td></tr>
+            <tr><td>전세 3억원</td><td class="num">3억원</td><td class="num">0.3%</td><td class="num">990,000원</td><td class="num">—</td><td class="num">990,000원</td></tr>
+            <tr><td>전세 5억원</td><td class="num">5억원</td><td class="num">0.3%</td><td class="num">1,650,000원</td><td class="num">—</td><td class="num">1,650,000원</td></tr>
+            <tr><td>월세 1억원 · 월 100만원</td><td class="num">2억원 (환산)</td><td class="num">0.3%</td><td class="num">660,000원</td><td class="num">—</td><td class="num">660,000원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>중개보수는 법정 상한요율로 계산한 최댓값입니다. 실제 계약에서는 이보다 낮게 협의할 수 있습니다. 취득세는 1주택 기준이며, 85㎡를 넘으면 농어촌특별세 0.2%가 더 붙습니다.</p>
+    </section>
+<!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="read-result" style="margin-top:20px;">
       <h2>결과 읽는 법</h2>
       <p>중개보수는 <b>상한선</b>이고, 취득세는 <b>정해진 세율</b>입니다. 그래서 이 계산기에서 실제로 협상할 수 있는 숫자는 왼쪽(중개보수)뿐입니다.</p>
@@ -454,6 +508,20 @@
             <p>받을 수 있습니다. 생애최초 주택 구입 취득세 감면은 2028년 12월 31일까지 적용되며, 취득가액 12억원 이하 주택에 최대 200만원(전용 60㎡ 이하이면서 6억원 이하인 비아파트 주택이나 인구감소지역 주택은 300만원)을 감면합니다. 본인과 배우자가 주택을 소유한 적이 없어야 하고, 취득일부터 3년 안에 팔거나 임대하면 감면분을 다시 내야 합니다.</p>
           </div>
         </details>
+      <!-- GROWTH:FAQ-START -->
+        <details>
+          <summary><span class="q">Q</span>9억원 아파트를 사면 복비와 취득세를 얼마나 내나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>주택 9억원 매매, 일반과세 중개사, 1주택, 전용 85㎡ 이하 기준으로 중개보수는 상한요율 0.5%인 <b>4,500,000원</b>(부가세 포함 4,950,000원)이고 취득세는 <b>29,700,000원</b>입니다. 둘을 합치면 34,650,000원입니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>전세 5억원 중개보수는 얼마인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>주택 전세 5억원 기준 상한요율은 0.3%로 중개보수는 <b>1,500,000원</b>(부가세 포함 1,650,000원)입니다. 전세는 취득세가 없습니다. 계약 전 중개사에 부가세 포함 여부와 실제 청구액을 확인하세요.</p>
+          </div>
+        </details>
+<!-- GROWTH:FAQ-END -->
       </div>
 
       <h2>참고한 기준</h2>
@@ -468,16 +536,16 @@
 
     <div class="next-tools">
       <a href="jeonse-vs-wolse.html">
-        <b>전세 vs 월세 주거비 비교</b>
-        <span>보증금 기회비용과 대출 이자까지 넣어 연 주거비를 비교합니다.</span>
+        <b>전세 vs 월세 손익 계산기</b>
+        <span>연 실질 주거비와 손익분기 월세·전환율을 계산합니다.</span>
       </a>
       <a href="policy-loan-check.html">
-        <b>정책대출 자격 판독기</b>
-        <span>신생아 특례·신혼부부·버팀목·보금자리론 중 받을 수 있는 대출을 찾습니다.</span>
+        <b>정책대출 자격 판단</b>
+        <span>청년·신혼·출산 정책대출 8종의 자격과 한도를 확인합니다.</span>
       </a>
       <a href="guide-jeonse-loan.html">
-        <b>전세 이사·대출 갈아타기 가이드</b>
-        <span>DSR 반영과 부채 합산, 상환과 이사 순서를 정리했습니다.</span>
+        <b>전세 이사·대출 갈아타기</b>
+        <span>1주택자의 전세대출 이동과 반환 조건을 정리했습니다.</span>
       </a>
     </div>
 
@@ -890,22 +958,62 @@ function rfMan(n){
       + '· 중개보수 상한 ' + rfWon(r.fee.fee) + ' (요율 ' + rateLabel(r.fee.rate) + ')' + (r.fee.vat > 0 ? ' + 부가세 ' + rfWon(r.fee.vat) : '') + '\n'
       + (r.isSale ? '· 취득세 ' + rfWon(r.acq.total) + ' (본세 ' + rfWon(r.acq.acq) + ' + 지방교육세 ' + rfWon(r.acq.edu) + ' + 농특세 ' + rfWon(r.acq.rnn) + ')\n' : '· 취득세 없음\n')
       + '· 합계 ' + rfWon(r.total) + '\n'
-      + '계산: usefulkit.kr/real-estate-fee.html';
+      + '결과 링크: https://usefulkit.kr/real-estate-fee.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 
   render();
 })();
 </script>
+
+<script>
+/* 인기 조건 프리셋 — data-uk-preset 의 값을 입력 요소에 채우고 계산을 다시 돌린다. */
+(function(){
+  'use strict';
+  var wrap = document.querySelector('.calc-preset');
+  if (!wrap) return;
+  function fire(node){
+    var types = ['input', 'change'];
+    for (var t = 0; t < types.length; t++){
+      var ev;
+      try { ev = new Event(types[t], { bubbles: true }); }
+      catch (e) { ev = document.createEvent('Event'); ev.initEvent(types[t], true, true); }
+      node.dispatchEvent(ev);
+    }
+  }
+  var buttons = wrap.querySelectorAll('button[data-uk-preset]');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var cfg;
+      try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      for (var id in cfg){
+        if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
+        var node = document.getElementById(id);
+        if (!node) continue;
+        var v = cfg[id];
+        if (node.type === 'checkbox' || node.type === 'radio') node.checked = !!v;
+        else node.value = v;
+        fire(node);
+      }
+      var all = wrap.querySelectorAll('button[data-uk-preset]');
+      for (var j = 0; j < all.length; j++){
+        if (all[j] === this) all[j].className = 'calc-chip is-active';
+        else all[j].className = 'calc-chip';
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

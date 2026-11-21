@@ -292,9 +292,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="dp-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="dp-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="dp-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="dp-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="dp-toast">복사했어요</div>
+        <div class="calc-toast" id="dp-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -410,16 +410,16 @@
 
     <div class="next-tools">
       <a href="prepay-vs-invest.html">
-        <b>중도상환 vs 예치 비교기</b>
-        <span>여유자금으로 대출을 갚을지 예금할지 계산합니다.</span>
+        <b>중도상환 vs 예치 계산기</b>
+        <span>대출을 갚는 것과 예금에 넣는 것 중 유리한 쪽을 계산합니다.</span>
       </a>
       <a href="costco-break-even.html">
         <b>코스트코 손익분기 계산기</b>
-        <span>연회비 대비 리워드가 남는지 계산합니다.</span>
+        <span>이그제큐티브 2% 리워드로 연회비를 회수하는 지점을 계산합니다.</span>
       </a>
       <a href="guide-tax-saving.html">
-        <b>연금저축·ISA·고향사랑기부금 비교</b>
-        <span>세액공제와 비과세 혜택을 한 번에 정리했습니다.</span>
+        <b>고향사랑기부금·연금저축·ISA 비교</b>
+        <span>절세 상품 세 가지의 한도와 효과를 비교합니다.</span>
       </a>
     </div>
 
@@ -721,17 +721,17 @@ function dpMan(n){
       + '· 원금 합계 ' + dpWon(r.principal) + ', 세전 이자 ' + dpWon(m.gross) + '\n'
       + '· 세금 ' + dpWon(m.tax) + ' (' + DP_TAX_NAME[r.tax] + ') → 세후 이자 ' + dpWon(m.net) + '\n'
       + '· 만기 수령액 ' + dpWon(m.maturity) + '\n'
-      + '계산: usefulkit.kr/deposit-interest.html';
+      + '결과 링크: https://usefulkit.kr/deposit-interest.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 

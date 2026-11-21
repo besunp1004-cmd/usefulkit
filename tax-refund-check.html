@@ -65,8 +65,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
@@ -110,10 +109,25 @@
         "@type": "Answer",
         "text": "홈택스에 로그인해 세금신고, 종합소득세 신고, 근로소득 신고로 들어간 뒤 경정청구를 선택하고 귀속연도를 고릅니다. 지급명세서 내용이 자동으로 채워지면 빠진 공제 항목만 수정하고, 계산된 환급세액을 확인해 제출합니다. 세무서는 접수 후 2개월 안에 결과를 알려 줍니다."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "총급여 5,000만원이면 경정청구로 얼마 돌려받나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "미성년 자녀 1명, 안경 40만원, 월세 연 660만원, 기부금 50만원을 놓쳤다면 항목 합계는 1,482,000원입니다. 결정세액이 210만원이면 그 전액을 환급받을 수 있습니다. 결정세액이 더 작으면 환급은 결정세액에서 멈춥니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5년이 지난 해의 세금도 돌려받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "경정청구는 법정신고기한(다음 해 3월 10일)부터 5년 이내에만 가능합니다. 2026년 11월 기준으로 2021년 귀속분은 2027년 3월 10일까지 청구할 수 있습니다. 기한이 지나면 원칙적으로 환급받을 수 없으므로 귀속연도를 바꿔 기한을 먼저 확인하세요."
+      }
     }
   ]
-}
-</script>
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJC17GTT1C"></script>
 <script>
@@ -227,6 +241,19 @@
         <p class="calc-lead">귀속연도와 소득을 넣고 <b>놓친 항목</b>을 체크하면, 항목별 환급액과 합계를 계산합니다. 결정세액을 넘는 금액은 돌려받을 수 없으므로 한도도 함께 보여 드립니다.</p>
       </div>
       <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+            <!-- GROWTH:PRESET-START -->
+      <div class="calc-preset">
+        <p class="calc-preset-label">인기 조건으로 바로 계산</p>
+        <div class="calc-preset-row">
+        <button type="button" class="calc-chip" data-uk-preset='{"tr-year":"2025","tr-gross":"4000","tr-decided":"120","tr-taxBase":"","tr-rate":"15","tr-childOn":true,"tr-childN":"1","tr-eduOn":false,"tr-edu":"","tr-glassOn":true,"tr-glass":"40","tr-glassN":"1","tr-threshold":true,"tr-rentOn":true,"tr-rent":"660","tr-donOn":true,"tr-donation":"50","tr-depOn":false,"tr-depN":"","tr-depOld":"","tr-smeOn":false,"tr-sme":"90","tr-calcTax":""}'>총급여 4,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"tr-year":"2025","tr-gross":"5000","tr-decided":"210","tr-taxBase":"","tr-rate":"15","tr-childOn":true,"tr-childN":"1","tr-eduOn":false,"tr-edu":"","tr-glassOn":true,"tr-glass":"40","tr-glassN":"1","tr-threshold":true,"tr-rentOn":true,"tr-rent":"660","tr-donOn":true,"tr-donation":"50","tr-depOn":false,"tr-depN":"","tr-depOld":"","tr-smeOn":false,"tr-sme":"90","tr-calcTax":""}'>총급여 5,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"tr-year":"2025","tr-gross":"6000","tr-decided":"300","tr-taxBase":"","tr-rate":"15","tr-childOn":true,"tr-childN":"1","tr-eduOn":false,"tr-edu":"","tr-glassOn":true,"tr-glass":"40","tr-glassN":"1","tr-threshold":true,"tr-rentOn":true,"tr-rent":"660","tr-donOn":true,"tr-donation":"50","tr-depOn":false,"tr-depN":"","tr-depOld":"","tr-smeOn":false,"tr-sme":"90","tr-calcTax":""}'>총급여 6,000만원</button>
+        <button type="button" class="calc-chip" data-uk-preset='{"tr-year":"2025","tr-gross":"8000","tr-decided":"520","tr-taxBase":"","tr-rate":"24","tr-childOn":true,"tr-childN":"1","tr-eduOn":false,"tr-edu":"","tr-glassOn":true,"tr-glass":"40","tr-glassN":"1","tr-threshold":true,"tr-rentOn":true,"tr-rent":"660","tr-donOn":true,"tr-donation":"50","tr-depOn":false,"tr-depN":"","tr-depOld":"","tr-smeOn":false,"tr-sme":"90","tr-calcTax":""}'>총급여 8,000만원</button>
+        </div>
+        <p class="calc-preset-tip">버튼을 누르면 입력값이 채워지고 결과가 바로 계산됩니다. 값을 바꿔 내 조건으로 다시 계산해 보세요.</p>
+      </div>
+      <!-- GROWTH:PRESET-END -->
 
       <section class="calc-card">
         <div class="calc-step"><span class="calc-num">1</span><h2>귀속연도와 소득</h2></div>
@@ -414,9 +441,9 @@
         <div class="calc-actions">
           <button type="button" class="calc-btn" id="tr-example">예시로 채우기</button>
           <button type="button" class="calc-btn" id="tr-reset">초기화</button>
-          <button type="button" class="calc-btn calc-btn-primary" id="tr-copy">결과 복사</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="tr-copy">결과 요약·링크 복사</button>
         </div>
-        <div class="calc-toast" id="tr-toast">복사했어요</div>
+        <div class="calc-toast" id="tr-toast">복사됨</div>
       </section>
 
       <section class="calc-card">
@@ -444,6 +471,27 @@
       <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 환급액은 세무서 결정과 그해 조문에 따라 달라집니다.</p>
     </div>
 
+<!-- GROWTH:SCENARIO-START -->
+    <section class="prose" id="scenarios" style="margin-top:20px;">
+      <h2>총급여별 흔한 누락 4항목 환급액 (2025년 귀속)</h2>
+      <p>경정청구에서 가장 자주 빠지는 4개 항목을 총급여 구간별로 계산했습니다. 내 총급여에 가까운 줄을 보세요.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>미성년 자녀 1명 · 안경 40만원 · 월세 연 660만원 · 기부금 50만원 · 결정세액 200만원 가정</caption>
+          <thead>
+            <tr><th>총급여</th><th class="num">월세 공제율</th><th class="num">누락 항목 합계</th><th class="num">환급액</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>4,000만원</td><td class="num">17%</td><td class="num">1,482,000원</td><td class="num">1,482,000원</td></tr>
+            <tr><td>5,000만원</td><td class="num">17%</td><td class="num">1,482,000원</td><td class="num">1,482,000원</td></tr>
+            <tr><td>6,000만원</td><td class="num">15%</td><td class="num">1,350,000원</td><td class="num">1,350,000원</td></tr>
+            <tr><td>8,000만원</td><td class="num">15%</td><td class="num">1,485,000원</td><td class="num">1,485,000원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>총급여 5,500만원 이하는 월세 17%, 5,500만~8,000만원은 15%가 적용됩니다. 총급여 8,000만원을 넘으면 월세 세액공제 대상에서 빠집니다. 결정세액이 항목 합계보다 작으면 환급은 결정세액에서 멈춥니다.</p>
+    </section>
+<!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="read-result" style="margin-top:20px;">
       <h2>결과 읽는 법</h2>
       <p>표에서 <b>환급액</b>이 0원으로 나오는 항목은 조건이 맞지 않는 것입니다. 대표적으로 총급여 8,000만원을 넘는 월세, 3% 문턱을 넘지 못한 안경, 이미 결정세액이 0원인 해가 그렇습니다.</p>
@@ -520,6 +568,20 @@
             <p>홈택스에 로그인해 세금신고, 종합소득세 신고, 근로소득 신고로 들어간 뒤 경정청구를 선택하고 귀속연도를 고릅니다. 지급명세서 내용이 자동으로 채워지면 빠진 공제 항목만 수정하고, 계산된 환급세액을 확인해 제출합니다. 세무서는 접수 후 2개월 안에 결과를 알려 줍니다.</p>
           </div>
         </details>
+      <!-- GROWTH:FAQ-START -->
+        <details>
+          <summary><span class="q">Q</span>총급여 5,000만원이면 경정청구로 얼마 돌려받나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>미성년 자녀 1명, 안경 40만원, 월세 연 660만원, 기부금 50만원을 놓쳤다면 항목 합계는 <b>1,482,000원</b>입니다. 결정세액이 210만원이면 그 전액을 환급받을 수 있습니다. 결정세액이 더 작으면 환급은 결정세액에서 멈춥니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>5년이 지난 해의 세금도 돌려받을 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>경정청구는 법정신고기한(다음 해 3월 10일)부터 5년 이내에만 가능합니다. 2026년 11월 기준으로 2021년 귀속분은 2027년 3월 10일까지 청구할 수 있습니다. 기한이 지나면 원칙적으로 환급받을 수 없으므로 귀속연도를 바꿔 기한을 먼저 확인하세요.</p>
+          </div>
+        </details>
+<!-- GROWTH:FAQ-END -->
       </div>
 
       <h2>참고한 기준</h2>
@@ -535,16 +597,16 @@
 
     <div class="next-tools">
       <a href="medical-tax.html">
-        <b>부부 의료비 몰아주기 계산기</b>
-        <span>의료비 3% 문턱과 700만원 한도를 반영해 유리한 쪽을 찾습니다.</span>
+        <b>부부 의료비 몰아주기</b>
+        <span>총급여 3% 문턱과 유리한 배분을 계산합니다.</span>
       </a>
       <a href="guide-tax-refund.html">
-        <b>연말정산 누락·경정청구 가이드</b>
-        <span>5년 치를 돌려받는 절차를 단계별로 정리했습니다.</span>
+        <b>연말정산 누락·경정청구 체크리스트</b>
+        <span>놓친 공제를 5년 안에 돌려받는 순서를 정리했습니다.</span>
       </a>
       <a href="salary-net.html">
         <b>연봉 실수령액 계산기</b>
-        <span>공제 내역과 월 실수령액을 확인합니다.</span>
+        <span>4대보험과 소득세를 빼고 월 실수령액을 보여 드립니다.</span>
       </a>
     </div>
 
@@ -931,22 +993,62 @@ function trMan(n){
     }
     text += '· 예상 환급 ' + trWon(r.refund) + ' (항목 합계 ' + trWon(r.raw) + ')\n'
       + '· 청구 기한 ' + trDateText(r.deadline) + ' (' + (r.eligible ? '청구 가능' : '기한 경과') + ')\n'
-      + '계산: usefulkit.kr/tax-refund-check.html';
+      + '결과 링크: https://usefulkit.kr/tax-refund-check.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
       ta.style.position = 'fixed'; ta.style.top = '-1000px';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      try { document.execCommand('copy'); toast('복사됨'); } catch (e) { toast('복사가 안 됐어요'); }
       document.body.removeChild(ta);
     }
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+      navigator.clipboard.writeText(text).then(function(){ toast('복사됨'); }, fallback);
     } else fallback();
   });
 
   render();
 })();
 </script>
+
+<script>
+/* 인기 조건 프리셋 — data-uk-preset 의 값을 입력 요소에 채우고 계산을 다시 돌린다. */
+(function(){
+  'use strict';
+  var wrap = document.querySelector('.calc-preset');
+  if (!wrap) return;
+  function fire(node){
+    var types = ['input', 'change'];
+    for (var t = 0; t < types.length; t++){
+      var ev;
+      try { ev = new Event(types[t], { bubbles: true }); }
+      catch (e) { ev = document.createEvent('Event'); ev.initEvent(types[t], true, true); }
+      node.dispatchEvent(ev);
+    }
+  }
+  var buttons = wrap.querySelectorAll('button[data-uk-preset]');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var cfg;
+      try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      for (var id in cfg){
+        if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
+        var node = document.getElementById(id);
+        if (!node) continue;
+        var v = cfg[id];
+        if (node.type === 'checkbox' || node.type === 'radio') node.checked = !!v;
+        else node.value = v;
+        fire(node);
+      }
+      var all = wrap.querySelectorAll('button[data-uk-preset]');
+      for (var j = 0; j < all.length; j++){
+        if (all[j] === this) all[j].className = 'calc-chip is-active';
+        else all[j].className = 'calc-chip';
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
