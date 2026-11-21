@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자동차보험 할인 특약·마일리지 환급 계산기 | 킷랩 (KitLab)</title>
+<meta name="description" content="주행거리·블랙박스·안전운전·자녀·첨단안전장치·대중교통 특약을 체크해 예상 할인액과 최종 보험료를 계산합니다. 2026년 다이렉트 할인 특약 구간 기준입니다.">
+<link rel="canonical" href="https://usefulkit.kr/car-insurance-discount.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="킷랩 (KitLab)">
+<meta property="og:title" content="자동차보험 할인 특약·마일리지 계산기">
+<meta property="og:description" content="받을 수 있는 특약을 체크하면 최종 보험료가 얼마인지 계산합니다.">
+<meta property="og:url" content="https://usefulkit.kr/car-insurance-discount.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="자동차보험 할인 특약·마일리지 계산기">
+<meta name="twitter:description" content="받을 수 있는 특약을 체크하면 최종 보험료가 얼마인지 계산합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="theme-color" content="#00C471">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "자동차보험 할인 특약·마일리지 계산기",
+  "url": "https://usefulkit.kr/car-insurance-discount.html",
+  "description": "주행거리·블랙박스·안전운전·자녀·첨단안전장치·대중교통 특약을 체크해 예상 할인액과 최종 보험료를 계산합니다. 2026년 다이렉트 할인 특약 구간 기준입니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "마일리지 특약은 가입할 때 깎이나요, 나중에 돌려받나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "보험사마다 다릅니다. 가입할 때 예상 주행거리로 할인해 두고 만기에 실제 주행거리를 신고해 정산하는 방식과, 가입 시 할인 없이 만기 후 실제 주행거리로 환급하는 방식이 있습니다. 이 계산기의 절감액은 두 방식 모두에 같은 금액으로 적용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "특약을 여러 개 넣으면 할인율이 그냥 더해지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 보험사는 특약마다 정해진 순서로 남은 보험료에 할인율을 차례로 적용합니다. 그래서 30%와 20%를 단순히 더한 50%가 아니라 1에서 0.7과 0.8을 곱한 44%가 됩니다. 이 계산기도 같은 방식으로 순차 적용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "주행거리는 어떻게 증명하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가입할 때와 만기 무렵에 계기판 주행거리 사진을 찍어 보험사에 등록합니다. 보통 가입 후 7일 안에 시작 주행거리를, 보험 기간 종료 전후 30일 안에 최종 주행거리를 올려야 하며, 기한을 넘기면 특약이 적용되지 않을 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "자녀 할인은 몇 살까지 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "보험사별로 기준이 다르지만 최근에는 태아나 만 11세 이하 자녀를 둔 경우에 1.6%에서 20% 안팎의 할인을 주는 상품이 많습니다. 자녀가 둘 이상이면 추가 할인이 붙는 상품도 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "할인 특약을 많이 넣으면 사고 때 보험금이 줄어드나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 할인 특약은 보험료를 깎아 주는 조건일 뿐 보장 내용과는 별개입니다. 다만 주행거리를 실제보다 적게 신고하면 특약이 취소되거나 환급이 사라지고, 고의로 주행거리를 조작하면 보험사가 계약을 해지할 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
+      <span class="brand-text">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 15종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">자동차보험</span>
+      <h1>자동차보험 할인 특약·마일리지 계산기</h1>
+      <p class="page-lead">같은 차, 같은 담보라도 <b>특약을 무엇까지 챙겼는지</b>에 따라 보험료가 30~50% 달라집니다. 주행거리와 장착 장치, 가족 상황을 체크해 <b>최종 체감 보험료</b>가 얼마인지 확인하세요.</p>
+      <div class="page-meta">
+        <span>2026년 11월 기준</span>
+        <span>다이렉트 할인 특약</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <figure class="article-hero-illu">
+      <img src="assets/illustrations/car-insurance-discount.webp"
+           srcset="assets/illustrations/car-insurance-discount-480.webp 480w, assets/illustrations/car-insurance-discount.webp 960w"
+           sizes="(max-width: 820px) 100vw, 760px"
+           alt="자동차와 방패, 주행거리 계기판, 블랙박스, 동전이 돌아오는 지갑으로 표현한 자동차보험 할인 특약 일러스트" width="960" height="540" decoding="async">
+    </figure>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">할인 특약의 구조</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#examples">사례</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>보험료를 결정하는 것은 '차'보다 '운전 습관'입니다</h2>
+      <p>자동차보험은 차량 가격과 운전자 연령·경력으로 기본 보험료가 정해지고, 여기에 <b>가입자가 선택한 특약</b>이 붙습니다. 특약은 크게 두 종류입니다. 하나는 <b>할인 특약</b>(주행거리·블랙박스·안전운전 점수·자녀·첨단안전장치)이고, 다른 하나는 <b>보장 특약</b>(자기부담금 축소·긴급출동 확대)입니다. 보험료를 줄이는 것은 첫 번째입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>대표 할인 특약과 업계 할인 폭 (2026년 기준)</caption>
+          <thead>
+            <tr><th>특약</th><th>조건</th><th class="num">할인 폭</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>주행거리(마일리지)</td><td>연간 주행거리 2,000~15,000km 구간별</td><td class="num">최대 47%</td></tr>
+            <tr><td>블랙박스</td><td>차종·연식에 따라 장착 확인</td><td class="num">0.7~4%</td></tr>
+            <tr><td>안전운전(커넥티드·티맵)</td><td>안전운전 점수 70점 이상</td><td class="num">10~24%</td></tr>
+            <tr><td>자녀(Baby in Car)</td><td>태아 또는 만 11세 이하 자녀</td><td class="num">1.6~20%</td></tr>
+            <tr><td>첨단안전장치</td><td>차선이탈·전방충돌·후측방·SCC 등</td><td class="num">장치당 1.4~7.7%</td></tr>
+            <tr><td>대중교통 이용</td><td>직전 2개월 대중교통 이용 25일 이상</td><td class="num">8%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>표의 할인 폭은 <b>보험사가 정한 범위</b>입니다. 같은 특약이라도 삼성화재·DB손해보험·현대해상·KB손해보험의 적용률이 다르고, 가입 시점의 요율 개정에 따라 바뀝니다. 그래서 비교할 때는 "어느 보험사가 싼가"보다 <b>같은 조건에서 특약을 똑같이 넣었는가</b>를 먼저 맞춰야 합니다.</p>
+
+      <h2>마일리지 특약 — 가장 크고, 가장 자주 놓칩니다</h2>
+      <p>연간 2,000km 이하로 타는 차는 보험료의 30% 이상이 깎입니다. 재택근무자나 주말 차주에게는 사실상 최대 절감 수단입니다. 문제는 <b>증빙</b>입니다. 가입할 때 계기판 사진으로 시작 주행거리를 등록하고, 보험 기간이 끝날 무렵 최종 주행거리를 다시 올려야 정산이 됩니다. 이 등록을 빠뜨리면 할인이나 환급이 사라집니다.</p>
+      <div class="callout warn">
+        <span class="callout-title">'예상 주행거리'를 낮게 적으면 나중에 정산됩니다</span>
+        가입 시 주행거리를 실제보다 낮게 적으면 만기 정산에서 할인이 줄거나 환급액이 깎입니다. 반대로 여유 있게 적으면 당장의 보험료가 조금 높아집니다. 1년간 실제로 탈 거리를 기준으로 잡는 편이 안전합니다.
+      </div>
+
+      <h2>할인은 '더하기'가 아니라 '곱하기'입니다</h2>
+      <p>30% 할인과 20% 할인을 함께 받으면 50%가 아니라 <b>44%</b>입니다. 남은 보험료에 차례로 곱하기 때문입니다. 특약이 많아질수록 체감 할인 폭이 줄어드는 구조이므로, 이미 큰 할인(마일리지 30% 이상)을 받고 있다면 작은 특약 몇 개를 더 넣는 것보다 <b>기본 보험료 자체를 비교</b>하는 편이 효과가 큽니다.</p>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">마일리지 최대 37% · 순차 적용</span>
+        <h2 class="calc-title">자동차보험 할인 계산기</h2>
+        <p class="calc-lead">기본 보험료와 주행거리를 넣고 받을 특약을 체크하면 <b>특약별 할인액과 최종 보험료</b>를 순서대로 계산합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>기본 보험료와 주행거리</h2></div>
+        <div class="calc-field">
+          <label class="calc-label" for="ci-premium">기본 보험료 (특약 적용 전)</label>
+          <div class="calc-input"><input id="ci-premium" type="number" inputmode="numeric" min="0" step="1" placeholder="0"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip">견적서에 나온 <b>할인 전</b> 보험료를 넣으세요. 특약이 이미 반영된 금액이라면 계산이 두 번 깎이게 됩니다.</p>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="ci-km">연간 주행거리</label>
+          <div class="calc-input"><input id="ci-km" type="number" inputmode="numeric" min="0" step="500" placeholder="0"><span class="calc-unit">km</span></div>
+          <p class="calc-tip">비워 두면 마일리지 특약을 <b>가입하지 않은 것</b>으로 계산합니다.</p>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>안전운전·가족</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ci-ubi">안전운전 점수 특약</label>
+            <div class="calc-input calc-input-sm"><select id="ci-ubi">
+              <option value="none" selected>미가입</option>
+              <option value="s70">70점대</option>
+              <option value="s80">80점대</option>
+              <option value="s90">90점 이상</option>
+            </select></div>
+            <p class="calc-tip">티맵·커넥티드 안전운전 점수 기준입니다.</p>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ci-child">자녀 할인</label>
+            <div class="calc-input calc-input-sm"><select id="ci-child">
+              <option value="none" selected>없음</option>
+              <option value="one">태아·1명</option>
+              <option value="two">2명 이상</option>
+            </select></div>
+            <p class="calc-tip">만 11세 이하 자녀 기준입니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">3</span><h2>장착 장치와 생활 특약</h2></div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-blackbox">
+            <input id="ci-blackbox" type="checkbox" checked>
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>블랙박스</b><em>차종·연식에 따라 0.7~4%. 여기서는 3%로 계산합니다.</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-ldws">
+            <input id="ci-ldws" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>차선이탈경고장치 (LDWS)</b><em>2.0%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-fcws">
+            <input id="ci-fcws" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>전방충돌방지장치 (FCWS·AEB)</b><em>3.0%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-bsw">
+            <input id="ci-bsw" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>후측방충돌경고장치 (BSW)</b><em>2.0%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-scc">
+            <input id="ci-scc" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>스마트크루즈컨트롤 (SCC)</b><em>1.5%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-avm">
+            <input id="ci-avm" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>어라운드뷰 (AVM)</b><em>1.5%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-hud">
+            <input id="ci-hud" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>헤드업 디스플레이 (HUD)</b><em>1.5%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-transit">
+            <input id="ci-transit" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>대중교통 이용</b><em>직전 2개월 25일 이상 이용 시 8%</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ci-steps">
+            <input id="ci-steps" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>걸음수·건강관리 특약</b><em>일부 보험사만 운영, 2%로 계산합니다.</em></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">4</span><h2>계산 결과</h2></div>
+        <div id="ci-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="ci-resFinal"></div>
+          <div class="calc-res" id="ci-resSave"></div>
+        </div>
+
+        <dl class="calc-summary" id="ci-summary"></dl>
+
+        <details class="calc-break" id="ci-stepBox" open>
+          <summary>특약별 순차 적용 내역</summary>
+          <div class="calc-tablewrap" id="ci-stepBody"></div>
+        </details>
+
+        <details class="calc-break" id="ci-mileBox">
+          <summary>주행거리 구간별 할인</summary>
+          <div class="calc-tablewrap" id="ci-mileBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="ci-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="ci-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ci-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="ci-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">특약을 고를 때 순서</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span><b>주행거리</b>를 먼저 확정하세요. 할인 폭이 가장 크고, 나머지 특약의 효과를 좌우합니다.</span></li>
+          <li><b>②</b><span>이미 차에 달려 있는 장치는 <b>증빙만 있으면</b> 할인됩니다. 설명서나 정비 이력으로 확인하세요.</span></li>
+          <li><b>③</b><span>할인 특약은 <b>보장 내용을 바꾸지 않습니다</b>. 자기부담금을 낮추는 특약과 헷갈리지 마세요.</span></li>
+          <li><b>④</b><span>비교할 때는 <b>같은 담보·같은 특약</b>으로 견적을 받아야 합니다. 특약이 다르면 보험료 차이는 비교가 아닙니다.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#191F28;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>계산 방식</b> — 기본 보험료에 특약을 정해진 순서(마일리지 → 블랙박스 → 안전운전 → 자녀 → 첨단안전장치 → 대중교통 → 걸음수)로 적용합니다. 각 단계는 <b>남은 보험료 × (1 − 할인율)</b>이고 원 단위로 반올림합니다.</p>
+          <p><b>할인율</b> — 업계 공시 범위 안의 대표값입니다. 마일리지는 2,000km 이하 37%, 4,000km 이하 30%, 10,000km 이하 22%, 15,000km 이하 8%. 블랙박스 3%, 안전운전 70점대 10%·80점대 18%·90점 이상 24%, 자녀 1명 10%·2명 이상 15%, 첨단안전장치 장치당 1.5~3%, 대중교통 8%, 걸음수 2%입니다.</p>
+          <p><b>포함하지 않은 것</b> — 보험사별 실제 적용률과 상한, 특약별 대상 보험료(긴급출동·자기부담금 특약 제외 등), 연령·경력·사고 이력 할인, 차량 가격 변동, 보장 특약 추가 요금, 납입 방식(일시납·분납) 할인은 반영하지 않았습니다.</p>
+          <p><b>주의</b> — 실제 견적은 보험사가 산출한 금액이 기준입니다. 이 계산기는 특약을 바꿨을 때 얼마나 달라지는지 비교하는 용도로 쓰세요.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 보험료는 보험사 심사와 특약 요율 개정에 따라 달라집니다.</p>
+    </div>
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법</h2>
+      <p>표의 마지막 열 <b>남은 보험료</b>가 그 특약까지 적용한 뒤의 금액입니다. 마지막 줄이 실제로 낼 금액이고, 첫 줄과의 차이가 절감액입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>지표</th><th>의미</th><th>확인할 점</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>기본 보험료</td><td>특약 전 금액</td><td>견적서의 할인 전 금액인지</td></tr>
+            <tr><td>총 할인율</td><td>1 − 최종 ÷ 기본</td><td>특약을 다 넣었을 때의 실제 체감</td></tr>
+            <tr><td>절감액</td><td>기본 − 최종</td><td>마일리지 환급액과 같은 금액</td></tr>
+            <tr><td>최종 보험료</td><td>실제 납입액</td><td>분납 시 월 납입액으로 환산</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">작은 특약은 큰 할인 뒤에서 힘을 잃습니다</span>
+        마일리지 37%를 받는 차에 블랙박스 3%를 더하면 추가 절감은 기본 보험료의 1.9% 수준입니다. 반대로 마일리지 할인이 없는 차라면 같은 3%가 그대로 3%가 됩니다. 특약은 <b>큰 것부터</b> 챙기세요.
+      </div>
+    </section>
+
+    <section class="prose" id="examples" style="margin-top:16px;">
+      <h2>사례 — 기본 보험료 100만원, 연 3,000km</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>블랙박스 + 안전운전 80점대 + 자녀 1명 + 차선이탈·전방충돌 + 대중교통</caption>
+          <thead>
+            <tr><th>단계</th><th class="num">할인율</th><th class="num">남은 보험료</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>기본</td><td class="num">—</td><td class="num">1,000,000원</td></tr>
+            <tr><td>마일리지 (4,000km 이하)</td><td class="num">30%</td><td class="num">700,000원</td></tr>
+            <tr><td>블랙박스</td><td class="num">3%</td><td class="num">679,000원</td></tr>
+            <tr><td>안전운전 80점대</td><td class="num">18%</td><td class="num">556,780원</td></tr>
+            <tr><td>자녀 1명</td><td class="num">10%</td><td class="num">501,102원</td></tr>
+            <tr><td>차선이탈</td><td class="num">2%</td><td class="num">491,080원</td></tr>
+            <tr><td>전방충돌</td><td class="num">3%</td><td class="num">476,348원</td></tr>
+            <tr><td>대중교통</td><td class="num">8%</td><td class="num">438,240원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>할인율을 단순히 더하면 74%지만 실제로는 <b>56.2%</b>가 깎여 43만 8,240원이 됩니다. 같은 조건에서 마일리지만 빼면 최종 보험료는 62만 6,057원이 되어 <b>18만 7,817원</b> 차이가 납니다. 주행거리 특약 하나가 나머지 특약 다섯 개를 합친 것보다 큰 셈입니다.</p>
+      <p>반대로 연 1만 2,000km를 타는 차라면 마일리지 할인은 8%로 줄어 최종 보험료가 58만원 안팎이 됩니다. 이 경우에는 <b>보험사 간 기본 보험료 차이(10~20만원)</b>가 특약보다 큰 변수이므로, 특약을 늘리기보다 견적을 두세 곳 비교하는 편이 낫습니다.</p>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>마일리지 특약은 가입할 때 깎이나요, 나중에 돌려받나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>보험사마다 다릅니다. 가입할 때 예상 주행거리로 할인해 두고 만기에 실제 주행거리를 신고해 정산하는 방식과, 가입 시 할인 없이 만기 후 실제 주행거리로 환급하는 방식이 있습니다. 이 계산기의 절감액은 두 방식 모두에 같은 금액으로 적용됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>특약을 여러 개 넣으면 할인율이 그냥 더해지나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아닙니다. 보험사는 특약마다 정해진 순서로 남은 보험료에 할인율을 차례로 적용합니다. 그래서 30%와 20%를 단순히 더한 50%가 아니라 1에서 0.7과 0.8을 곱한 44%가 됩니다. 이 계산기도 같은 방식으로 순차 적용합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>주행거리는 어떻게 증명하나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>가입할 때와 만기 무렵에 계기판 주행거리 사진을 찍어 보험사에 등록합니다. 보통 가입 후 7일 안에 시작 주행거리를, 보험 기간 종료 전후 30일 안에 최종 주행거리를 올려야 하며, 기한을 넘기면 특약이 적용되지 않을 수 있습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>자녀 할인은 몇 살까지 받을 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>보험사별로 기준이 다르지만 최근에는 태아나 만 11세 이하 자녀를 둔 경우에 1.6%에서 20% 안팎의 할인을 주는 상품이 많습니다. 자녀가 둘 이상이면 추가 할인이 붙는 상품도 있습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>할인 특약을 많이 넣으면 사고 때 보험금이 줄어드나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아닙니다. 할인 특약은 보험료를 깎아 주는 조건일 뿐 보장 내용과는 별개입니다. 다만 주행거리를 실제보다 적게 신고하면 특약이 취소되거나 환급이 사라지고, 고의로 주행거리를 조작하면 보험사가 계약을 해지할 수 있습니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>손해보험협회 소비자포털 — 마일리지특약의 정의와 주행거리 증빙 안내</li>
+        <li>보험사 다이렉트 상품 안내(2026년) — 주행거리·블랙박스·커넥티드·자녀·첨단안전장치 할인율 범위</li>
+        <li>보험신보(2025.1) — 대중교통 이용 할인특약, 첨단안정장치 할인 확대 보도</li>
+        <li>자동차손해배상 보장법 및 보험업감독규정 — 특약 운영 기준</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#6B7684;">※ 이 페이지는 일반적인 정보이며 특정 보험사나 상품을 추천하지 않습니다. 가입 전 보험사 상품설명서와 특약 약관을 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="guide-insurance-check.html">
+        <b>자동차보험·실손보험 갱신 점검</b>
+        <span>다이렉트와 설계사를 같은 담보로 비교하는 법을 정리했습니다.</span>
+      </a>
+      <a href="silson-switch.html">
+        <b>실손보험 세대 전환 손익</b>
+        <span>1~3세대 유지와 4세대 전환을 5년·10년 누적으로 비교합니다.</span>
+      </a>
+      <a href="car-insurance-discount.html">
+        <b>자동차보험 할인 계산기</b>
+        <span>지금 보고 있는 페이지에서 특약을 바꿔 다시 계산할 수 있습니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-mark" src="assets/logo-mark.svg" alt="" width="30" height="30">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+          <a href="tax-refund-check.html">경정청구 환급 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+          <a href="real-estate-fee.html">복비·취득세</a>
+          <a href="policy-loan-check.html">정책대출 자격</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+          <a href="car-insurance-discount.html">자동차보험 할인</a>
+          <a href="silson-switch.html">실손 세대 전환</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 킷랩 (KitLab) · usefulkit.kr. All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CI-CORE-START */
+var CI_MILEAGE = [
+  { max: 2000, rate: 0.37, label: '2,000km 이하' },
+  { max: 4000, rate: 0.30, label: '2,000~4,000km' },
+  { max: 10000, rate: 0.22, label: '4,000~10,000km' },
+  { max: 15000, rate: 0.08, label: '10,000~15,000km' },
+  { max: Infinity, rate: 0, label: '15,000km 초과' }
+];
+var CI_UBI = { none: { rate: 0, label: '미가입' }, s70: { rate: 0.10, label: '안전운전 70점대' }, s80: { rate: 0.18, label: '안전운전 80점대' }, s90: { rate: 0.24, label: '안전운전 90점 이상' } };
+var CI_CHILD = { none: { rate: 0, label: '자녀 없음' }, one: { rate: 0.10, label: '태아·자녀 1명' }, two: { rate: 0.15, label: '자녀 2명 이상' } };
+var CI_DEVICE = {
+  ldws: { rate: 0.020, label: '차선이탈경고장치' },
+  fcws: { rate: 0.030, label: '전방충돌방지장치' },
+  bsw: { rate: 0.020, label: '후측방충돌경고장치' },
+  scc: { rate: 0.015, label: '스마트크루즈컨트롤' },
+  avm: { rate: 0.015, label: '어라운드뷰' },
+  hud: { rate: 0.015, label: '헤드업 디스플레이' }
+};
+var CI_BLACKBOX = 0.03;
+var CI_TRANSIT = 0.08;
+var CI_STEPS = 0.02;
+
+function ciMileage(km){
+  var d = Math.max(0, km || 0);
+  if (d <= 0) return { rate: 0, label: '미가입', km: 0, joined: false };
+  for (var i = 0; i < CI_MILEAGE.length; i++){
+    if (d <= CI_MILEAGE[i].max) return { rate: CI_MILEAGE[i].rate, label: CI_MILEAGE[i].label, km: d, joined: true };
+  }
+  return { rate: 0, label: '15,000km 초과', km: d, joined: true };
+}
+
+function ciEvaluate(cfg){
+  cfg = cfg || {};
+  var base = Math.max(0, Math.round((cfg.premium || 0) * 10000));
+  var steps = [];
+  var remain = base;
+  function push(label, rate){
+    if (!(rate > 0)) return;
+    var before = remain;
+    remain = Math.round(remain * (1 - rate));
+    steps.push({ label: label, rate: rate, before: before, after: remain, saved: before - remain });
+  }
+  var mile = ciMileage(cfg.km);
+  push('마일리지 (' + mile.label + ')', mile.rate);
+  if (cfg.blackbox) push('블랙박스', CI_BLACKBOX);
+  var ubi = CI_UBI[cfg.ubi] || CI_UBI.none;
+  push(ubi.label, ubi.rate);
+  var child = CI_CHILD[cfg.child] || CI_CHILD.none;
+  push(child.label, child.rate);
+  ['ldws', 'fcws', 'bsw', 'scc', 'avm', 'hud'].forEach(function(k){
+    if (cfg[k]) push(CI_DEVICE[k].label, CI_DEVICE[k].rate);
+  });
+  if (cfg.transit) push('대중교통 이용', CI_TRANSIT);
+  if (cfg.steps) push('걸음수·건강관리', CI_STEPS);
+
+  var finalPremium = remain;
+  var saved = base - finalPremium;
+  var mileSaved = (steps.length && steps[0].label.indexOf('마일리지') === 0) ? steps[0].saved : 0;
+  return {
+    base: base, final: finalPremium, saved: saved, mileSaved: mileSaved,
+    rate: base > 0 ? saved / base : 0,
+    steps: steps, mile: mile,
+    refund: saved,
+    empty: base <= 0
+  };
+}
+
+function ciComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function ciWon(n){ return ciComma(Math.round(n || 0)) + '원'; }
+function ciMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + ciComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
+}
+/* CI-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    premium: $('ci-premium'), km: $('ci-km'), ubi: $('ci-ubi'), child: $('ci-child'),
+    blackbox: $('ci-blackbox'), ldws: $('ci-ldws'), fcws: $('ci-fcws'), bsw: $('ci-bsw'),
+    scc: $('ci-scc'), avm: $('ci-avm'), hud: $('ci-hud'), transit: $('ci-transit'), steps: $('ci-steps'),
+    verdict: $('ci-verdict'), resFinal: $('ci-resFinal'), resSave: $('ci-resSave'),
+    summary: $('ci-summary'), stepBody: $('ci-stepBody'), mileBody: $('ci-mileBody'), toast: $('ci-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function readCfg(){
+    return {
+      premium: num(el.premium.value),
+      km: num(el.km.value),
+      ubi: el.ubi.value,
+      child: el.child.value,
+      blackbox: el.blackbox.checked,
+      ldws: el.ldws.checked,
+      fcws: el.fcws.checked,
+      bsw: el.bsw.checked,
+      scc: el.scc.checked,
+      avm: el.avm.checked,
+      hud: el.hud.checked,
+      transit: el.transit.checked,
+      steps: el.steps.checked
+    };
+  }
+  function pct(r){ return (r * 100).toFixed(r * 100 % 1 === 0 ? 0 : 1) + '%'; }
+
+  function render(){
+    var cfg = readCfg();
+    var r = ciEvaluate(cfg);
+
+    if (r.empty){
+      el.verdict.className = 'calc-verdict is-empty';
+      el.verdict.innerHTML = '<span class="v-tag">입력 대기</span><span class="v-title">기본 보험료를 입력하세요</span>'
+        + '<span class="v-desc">견적서의 할인 전 보험료와 주행거리를 넣으면 특약별 할인액이 순서대로 계산됩니다.</span>';
+      el.resFinal.className = 'calc-res';
+      el.resFinal.innerHTML = '<div class="r-head">최종 보험료</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resSave.className = 'calc-res';
+      el.resSave.innerHTML = '<div class="r-head">절감액</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>기본 보험료</dt><dd>—</dd></div><div class="total"><dt>최종 보험료</dt><dd>—</dd></div>';
+      el.stepBody.innerHTML = '<table class="calc-table"><tbody><tr><td>보험료를 입력하면 내역이 만들어집니다.</td></tr></tbody></table>';
+      el.mileBody.innerHTML = '';
+      return;
+    }
+
+    el.verdict.className = 'calc-verdict is-good';
+    el.verdict.innerHTML = '<span class="v-tag">특약 ' + r.steps.length + '단계 적용</span>'
+      + '<span class="v-title">최종 보험료 ' + ciWon(r.final) + ' — ' + pct(r.rate) + ' 절감</span>'
+      + '<span class="v-desc">기본 ' + ciMan(r.base) + '에서 ' + ciWon(r.saved) + '이 줄었습니다.'
+      + (r.mile.joined ? ' 주행거리 ' + ciComma(r.mile.km) + 'km는 ' + r.mile.label + ' 구간(' + pct(r.mile.rate) + ')입니다.' : ' 주행거리를 넣으면 마일리지 할인까지 반영됩니다.')
+      + ' 마일리지를 만기 후 환급받는 방식이라면 같은 금액을 돌려받습니다.</span>';
+
+    el.resFinal.className = 'calc-res';
+    el.resFinal.innerHTML = '<div class="r-head">최종 보험료</div><dl>'
+      + '<div><dt>기본 보험료</dt><dd>' + ciWon(r.base) + '</dd></div>'
+      + '<div><dt>총 할인율</dt><dd>' + pct(r.rate) + '</dd></div>'
+      + '<div><dt>월 환산 (12분납)</dt><dd>' + ciWon(Math.round(r.final / 12)) + '</dd></div>'
+      + '<div><dt>최종 보험료</dt><dd class="big">' + ciWon(r.final) + '</dd></div>'
+      + '</dl>';
+
+    el.resSave.className = 'calc-res';
+    el.resSave.innerHTML = '<div class="r-head">절감액</div><dl>'
+      + '<div><dt>마일리지</dt><dd>' + ciWon(r.mileSaved) + '</dd></div>'
+      + '<div><dt>나머지 특약</dt><dd>' + ciWon(r.saved - r.mileSaved) + '</dd></div>'
+      + '<div><dt>절감률</dt><dd>' + pct(r.rate) + '</dd></div>'
+      + '<div><dt>절감액</dt><dd class="big pos">' + ciWon(r.saved) + '</dd></div>'
+      + '</dl>';
+
+    var sum = '';
+    sum += '<div><dt>기본 보험료</dt><dd>' + ciWon(r.base) + '</dd></div>';
+    sum += '<div><dt>주행거리</dt><dd>' + (r.mile.joined ? ciComma(r.mile.km) + 'km · ' + r.mile.label : '미입력') + '</dd></div>';
+    sum += '<div><dt>적용 특약</dt><dd>' + r.steps.length + '개</dd></div>';
+    sum += '<div><dt>총 할인액</dt><dd class="neg">−' + ciWon(r.saved) + '</dd></div>';
+    sum += '<div class="total"><dt>최종 보험료</dt><dd class="pos">' + ciWon(r.final) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var tb = '<table class="calc-table"><thead><tr><th>단계</th><th>할인율</th><th>적용 전</th><th>남은 보험료</th></tr></thead><tbody>';
+    for (var i = 0; i < r.steps.length; i++){
+      var s = r.steps[i];
+      tb += '<tr><td>' + s.label + '</td><td>' + pct(s.rate) + '</td><td>' + ciWon(s.before) + '</td><td>' + ciWon(s.after) + '</td></tr>';
+    }
+    if (!r.steps.length) tb += '<tr><td>적용된 할인 특약이 없습니다.</td><td>—</td><td>' + ciWon(r.base) + '</td><td>' + ciWon(r.base) + '</td></tr>';
+    tb += '</tbody></table>';
+    el.stepBody.innerHTML = tb;
+
+    var mb = '<table class="calc-table"><thead><tr><th>연간 주행거리</th><th>할인율</th><th>적용 금액</th><th>이번</th></tr></thead><tbody>';
+    for (var j = 0; j < CI_MILEAGE.length; j++){
+      var m = CI_MILEAGE[j];
+      mb += '<tr><td>' + m.label + '</td><td>' + pct(m.rate) + '</td><td>' + ciWon(Math.round(r.base * m.rate)) + '</td><td>'
+        + (r.mile.joined && r.mile.rate === m.rate ? '●' : '') + '</td></tr>';
+    }
+    mb += '</tbody></table>';
+    el.mileBody.innerHTML = mb;
+  }
+
+  ['ci-premium', 'ci-km'].forEach(function(id){ $(id).addEventListener('input', render); });
+  ['ci-ubi', 'ci-child'].forEach(function(id){ $(id).addEventListener('change', render); });
+  ['ci-blackbox', 'ci-ldws', 'ci-fcws', 'ci-bsw', 'ci-scc', 'ci-avm', 'ci-hud', 'ci-transit', 'ci-steps'].forEach(function(id){
+    $(id).addEventListener('change', render);
+  });
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('ci-example').addEventListener('click', function(){
+    el.premium.value = '100';
+    el.km.value = '3000';
+    el.ubi.value = 's80';
+    el.child.value = 'one';
+    el.blackbox.checked = true;
+    el.ldws.checked = true;
+    el.fcws.checked = true;
+    el.bsw.checked = false;
+    el.scc.checked = false;
+    el.avm.checked = false;
+    el.hud.checked = false;
+    el.transit.checked = true;
+    el.steps.checked = false;
+    render();
+  });
+  $('ci-reset').addEventListener('click', function(){
+    el.premium.value = '';
+    el.km.value = '';
+    el.ubi.value = 'none';
+    el.child.value = 'none';
+    el.blackbox.checked = false;
+    el.ldws.checked = false;
+    el.fcws.checked = false;
+    el.bsw.checked = false;
+    el.scc.checked = false;
+    el.avm.checked = false;
+    el.hud.checked = false;
+    el.transit.checked = false;
+    el.steps.checked = false;
+    render();
+  });
+  $('ci-copy').addEventListener('click', function(){
+    var r = ciEvaluate(readCfg());
+    if (r.empty){ toast('기본 보험료를 먼저 입력하세요'); return; }
+    var lines = '자동차보험 할인 계산\n· 기본 보험료 ' + ciWon(r.base) + ' / 주행거리 ' + (r.mile.joined ? ciComma(r.mile.km) + 'km' : '미입력') + '\n';
+    for (var i = 0; i < r.steps.length; i++){
+      lines += '· ' + r.steps[i].label + ' ' + pct(r.steps[i].rate) + ' → ' + ciWon(r.steps[i].after) + '\n';
+    }
+    lines += '· 최종 보험료 ' + ciWon(r.final) + ' (절감 ' + ciWon(r.saved) + ', ' + pct(r.rate) + ')\n';
+    lines += '계산: usefulkit.kr/car-insurance-discount.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = lines;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lines).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

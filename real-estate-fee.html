@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부동산 복비·취득세 계산기 (중개보수 상한 + 취득세) | 킷랩 (KitLab)</title>
+<meta name="description" content="매매·전세·월세 거래금액으로 법정 중개보수 상한과 부가세를 계산하고, 취득세·지방교육세·농어촌특별세까지 한 번에 확인하세요. 2021년 10월 개정 요율표 기준입니다.">
+<link rel="canonical" href="https://usefulkit.kr/real-estate-fee.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="킷랩 (KitLab)">
+<meta property="og:title" content="부동산 복비·취득세 계산기">
+<meta property="og:description" content="중개보수 상한요율과 취득세를 한 화면에서 계산합니다. 매매·전세·월세 모두.">
+<meta property="og:url" content="https://usefulkit.kr/real-estate-fee.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="부동산 복비·취득세 계산기">
+<meta name="twitter:description" content="중개보수 상한요율과 취득세를 한 화면에서 계산합니다. 매매·전세·월세 모두.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="theme-color" content="#00C471">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "부동산 복비·취득세 계산기",
+  "url": "https://usefulkit.kr/real-estate-fee.html",
+  "description": "매매·전세·월세 거래금액으로 법정 중개보수 상한과 부가세를 계산하고, 취득세·지방교육세·농어촌특별세까지 한 번에 확인하세요. 2021년 10월 개정 요율표 기준입니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "중개보수를 꼭 상한요율까지 내야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 상한요율은 법이 정한 최대치이고, 실제 금액은 중개의뢰인과 중개사가 협의해 정합니다. 다만 상한을 넘겨 받을 수는 없습니다. 이 계산기는 넘을 수 없는 선을 보여 주는 도구입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "월세 계약의 거래금액은 어떻게 계산하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "보증금에 월세의 100배를 더합니다. 그렇게 계산한 금액이 5천만원 미만이면 다시 보증금에 월세의 70배를 더한 금액을 거래금액으로 씁니다. 이 계산기는 두 단계를 자동으로 적용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "중개보수에 부가세가 붙나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "중개사의 과세 유형과 거래 종류에 따라 다릅니다. 일반과세 사업자와의 거래는 중개보수의 10%, 간이과세자는 4% 수준이 붙습니다. 개인 간 주택 임대차처럼 세금계산서를 발행하지 않는 거래는 부가세를 따로 받지 않는 경우가 많습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "취득세는 집값에 몇 퍼센트인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1주택 기준으로 6억원 이하는 1%, 6억원 초과 9억원 이하는 1~3% 누진, 9억원 초과는 3%입니다. 여기에 지방교육세가 취득세의 10%, 전용면적 85제곱미터 초과 주택은 농어촌특별세 0.2%가 더 붙습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "생애최초 취득세 감면은 지금도 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "생애최초 주택 구입 취득세 감면은 2025년 12월 31일까지 적용되는 한시 제도였고, 취득가액 12억원 이하 주택에 최대 200만원까지 감면합니다. 연장 여부와 세부 요건은 신청 전 관할 시·군·구 세무 부서에서 확인해야 합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
+      <span class="brand-text">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 15종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">부동산 거래</span>
+      <h1>부동산 복비·취득세 계산기</h1>
+      <p class="page-lead">집을 사고팔거나 전세·월세로 들어갈 때 나가는 돈은 <b>중개보수</b>와 <b>취득세</b> 두 덩어리입니다. 중개보수는 법이 정한 상한이 있고, 취득세는 집값 구간과 주택 수에 따라 1%에서 12%까지 벌어집니다. 두 금액을 한 화면에서 계산하세요.</p>
+      <div class="page-meta">
+        <span>2026년 11월 기준</span>
+        <span>2021.10 개정 요율표</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <figure class="article-hero-illu">
+      <img src="assets/illustrations/real-estate-fee.webp"
+           srcset="assets/illustrations/real-estate-fee-480.webp 480w, assets/illustrations/real-estate-fee.webp 960w"
+           sizes="(max-width: 820px) 100vw, 760px"
+           alt="집과 가격표, 열쇠를 받는 손과 동전으로 표현한 부동산 중개보수·취득세 일러스트" width="960" height="540" decoding="async">
+    </figure>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">중개보수와 취득세 구조</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#examples">사례</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>중개보수는 협상 대상이지만, 상한은 넘을 수 없습니다</h2>
+      <p>2021년 10월 19일부터 공인중개사법 시행규칙 별표가 바뀌면서 6억원 이상 고가 주택의 요율이 내려갔습니다. 지금의 상한요율은 아래 표와 같습니다. 중개사는 이 요율과 한도 안에서 <b>의뢰인과 협의해</b> 금액을 정하고, 매도인과 매수인 <b>양쪽에서 각각</b> 받습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>주택 중개보수 상한요율 (2021.10.19 시행)</caption>
+          <thead>
+            <tr><th>거래</th><th>거래금액</th><th class="num">상한요율</th><th class="num">한도액</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>매매·교환</td><td>5천만원 미만</td><td class="num">0.6%</td><td class="num">25만원</td></tr>
+            <tr><td>매매·교환</td><td>5천만원 이상 ~ 2억원 미만</td><td class="num">0.5%</td><td class="num">80만원</td></tr>
+            <tr><td>매매·교환</td><td>2억원 이상 ~ 9억원 미만</td><td class="num">0.4%</td><td class="num">—</td></tr>
+            <tr><td>매매·교환</td><td>9억원 이상 ~ 12억원 미만</td><td class="num">0.5%</td><td class="num">—</td></tr>
+            <tr><td>매매·교환</td><td>12억원 이상 ~ 15억원 미만</td><td class="num">0.6%</td><td class="num">—</td></tr>
+            <tr><td>매매·교환</td><td>15억원 이상</td><td class="num">0.7%</td><td class="num">—</td></tr>
+            <tr><td>임대차 등</td><td>5천만원 미만</td><td class="num">0.5%</td><td class="num">20만원</td></tr>
+            <tr><td>임대차 등</td><td>5천만원 이상 ~ 1억원 미만</td><td class="num">0.4%</td><td class="num">30만원</td></tr>
+            <tr><td>임대차 등</td><td>1억원 이상 ~ 6억원 미만</td><td class="num">0.3%</td><td class="num">—</td></tr>
+            <tr><td>임대차 등</td><td>6억원 이상 ~ 12억원 미만</td><td class="num">0.4%</td><td class="num">—</td></tr>
+            <tr><td>임대차 등</td><td>12억원 이상 ~ 15억원 미만</td><td class="num">0.5%</td><td class="num">—</td></tr>
+            <tr><td>임대차 등</td><td>15억원 이상</td><td class="num">0.6%</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>한도액이 붙은 구간이 중요합니다. 4천만원짜리 원룸을 매매하면 0.6%인 24만원이라 한도(25만원) 안이지만, 5천만원 미만 거래는 금액이 조금만 커져도 한도 25만원에 걸립니다. 반대로 2억원 이상 구간부터는 한도가 없어 요율이 그대로 적용됩니다.</p>
+
+      <h2>월세는 '보증금 + 월세 × 100'으로 환산합니다</h2>
+      <p>전세는 보증금이 곧 거래금액이지만, 월세는 다릅니다. 법은 <b>보증금 + (월차임 × 100)</b>을 거래금액으로 봅니다. 이렇게 계산한 금액이 5천만원 미만이면 <b>보증금 + (월차임 × 70)</b>으로 다시 계산합니다. 보증금 1억원에 월세 100만원이면 거래금액은 2억원이 되어 임대차 0.3% 구간에 들어갑니다.</p>
+      <div class="callout warn">
+        <span class="callout-title">주거용 오피스텔은 요율이 다릅니다</span>
+        전용면적 85㎡ 이하이면서 입식 부엌·화장실·목욕시설을 갖춘 <b>주거용 오피스텔</b>은 주택이 아니라 별도 요율(매매·교환 0.5%, 임대차 0.4%)이 적용됩니다. 상가·토지·사무실은 0.9% 이내에서 협의로 정합니다. 계산기에서 거래 종류를 바꾸면 이 요율로 계산됩니다.
+      </div>
+
+      <h2>취득세 — 1주택 1~3%, 다주택은 8~12%</h2>
+      <p>취득세는 지방세라서 매수자가 취득한 날부터 60일 안에 신고·납부합니다. 1주택 기준 세율은 6억원 이하 1%, 6억원 초과 9억원 이하 <b>(취득가액 × 2/3억 − 3)%</b> 누진, 9억원 초과 3%입니다. 여기에 지방교육세가 취득세액의 10%로 붙고, 전용면적 85㎡를 넘는 주택은 농어촌특별세 0.2%가 더해집니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>주택 취득 시 총 부담률 (85㎡ 이하 / 초과)</caption>
+          <thead>
+            <tr><th>구분</th><th class="num">취득세</th><th class="num">지방교육세</th><th class="num">농특세</th><th class="num">합계</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>6억원 이하</td><td class="num">1%</td><td class="num">0.1%</td><td class="num">0 / 0.2%</td><td class="num">1.1 / 1.3%</td></tr>
+            <tr><td>6억원 초과 ~ 9억원 이하</td><td class="num">1~3%</td><td class="num">0.1~0.3%</td><td class="num">0 / 0.2%</td><td class="num">1.1~3.5%</td></tr>
+            <tr><td>9억원 초과</td><td class="num">3%</td><td class="num">0.3%</td><td class="num">0 / 0.2%</td><td class="num">3.3 / 3.5%</td></tr>
+            <tr><td>조정대상지역 2주택</td><td class="num">8%</td><td class="num">0.4%</td><td class="num">0 / 0.6%</td><td class="num">8.4 / 9.0%</td></tr>
+            <tr><td>3주택 이상</td><td class="num">8~12%</td><td class="num">0.4%</td><td class="num">0 / 0.6~1.0%</td><td class="num">8.4~13.4%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>다주택 중과는 <b>조정대상지역 여부</b>로 갈립니다. 2025년 10월 15일 대책 이후 서울 25개 자치구 전역과 경기 일부가 다시 조정대상지역으로 묶였으므로, 서울에서 두 번째 집을 사는 경우 8%가 적용될 가능성이 큽니다. 정확한 지역 지정은 계약 전에 확인해야 합니다.</p>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">2021.10 요율표 · 취득세 1~12%</span>
+        <h2 class="calc-title">복비·취득세 계산기</h2>
+        <p class="calc-lead">거래 종류와 금액을 넣으면 <b>중개보수 상한</b>과 <b>취득세·지방교육세·농어촌특별세</b>를 함께 계산합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>거래 종류와 금액</h2></div>
+        <div class="calc-seg" style="margin-bottom:14px;">
+          <label><input type="radio" name="rf-mode" id="rf-modeSale" value="sale" checked><span>매매</span></label>
+          <label><input type="radio" name="rf-mode" id="rf-modeJeonse" value="jeonse"><span>전세</span></label>
+          <label><input type="radio" name="rf-mode" id="rf-modeWolse" value="wolse"><span>월세</span></label>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="rf-price" id="rf-priceLabel">매매 금액</label>
+          <div class="calc-input"><input id="rf-price" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip" id="rf-priceTip">실제 거래된 금액(또는 매매 예정가)을 넣으세요.</p>
+        </div>
+        <div class="calc-grid2" id="rf-rentWrap" hidden>
+          <div class="calc-field">
+            <label class="calc-label" for="rf-monthly">월세</label>
+            <div class="calc-input calc-input-sm"><input id="rf-monthly" type="number" inputmode="numeric" min="0" step="5" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">월세가 없으면 0으로 두세요.</p>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="rf-kind">거래 대상</label>
+            <div class="calc-input calc-input-sm"><select id="rf-kind">
+              <option value="house" selected>주택</option>
+              <option value="officetel">주거용 오피스텔</option>
+              <option value="etc">상가·토지</option>
+            </select></div>
+            <p class="calc-tip">오피스텔은 전용 85㎡ 이하 주거용 기준입니다.</p>
+          </div>
+        </div>
+        <div class="calc-field" id="rf-kindWrap">
+          <label class="calc-label" for="rf-kind2">거래 대상</label>
+          <div class="calc-input calc-input-sm"><select id="rf-kind2">
+            <option value="house" selected>주택</option>
+            <option value="officetel">주거용 오피스텔</option>
+            <option value="etc">상가·토지</option>
+          </select></div>
+          <p class="calc-tip">주택이 아니면 취득세율도 달라집니다.</p>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>중개사 과세 유형</h2></div>
+        <div class="calc-field">
+          <label class="calc-label" for="rf-vat">중개보수 부가세</label>
+          <div class="calc-input calc-input-sm"><select id="rf-vat">
+            <option value="10" selected>일반과세 10%</option>
+            <option value="4">간이과세 4%</option>
+            <option value="0">면세·미발행 0%</option>
+          </select></div>
+          <p class="calc-tip">개인 간 주택 임대차는 세금계산서를 발행하지 않아 부가세를 따로 받지 않는 경우가 많습니다. 계약 전 중개사에 확인하세요.</p>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">3</span><h2>취득세 조건 (매매만)</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="rf-count">취득 후 주택 수</label>
+            <div class="calc-input calc-input-sm"><select id="rf-count">
+              <option value="1" selected>1주택</option>
+              <option value="2">2주택</option>
+              <option value="3">3주택 이상</option>
+            </select></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="rf-area">전용면적</label>
+            <div class="calc-input calc-input-sm"><select id="rf-area">
+              <option value="85" selected>85㎡ 이하</option>
+              <option value="over">85㎡ 초과</option>
+            </select></div>
+          </div>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="rf-adjusted">
+            <input id="rf-adjusted" type="checkbox" checked>
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>조정대상지역</b><em>서울 전역 등. 2주택부터 8~12% 중과가 적용됩니다.</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="rf-first">
+            <input id="rf-first" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>생애최초 취득세 감면</b><em>12억원 이하 주택, 최대 200만원. 2025.12.31까지 한시 제도였습니다.</em></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">4</span><h2>계산 결과</h2></div>
+        <div id="rf-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="rf-resFee"></div>
+          <div class="calc-res" id="rf-resTax"></div>
+        </div>
+
+        <dl class="calc-summary" id="rf-summary"></dl>
+
+        <details class="calc-break" id="rf-taxBox" open>
+          <summary>취득세 계산 내역</summary>
+          <div class="calc-tablewrap" id="rf-taxBody"></div>
+        </details>
+
+        <details class="calc-break" id="rf-rateBox">
+          <summary>중개보수 요율 구간 비교</summary>
+          <div class="calc-tablewrap" id="rf-rateBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="rf-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="rf-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="rf-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="rf-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">계약 전에 확인할 것</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span><b>부가세 포함 금액</b>으로 협의하세요. 10%가 붙으면 중개보수가 10% 커집니다.</span></li>
+          <li><b>②</b><span>매매와 임대차를 <b>동시에</b> 중개한 경우 매매 보수만 받는 것이 원칙입니다.</span></li>
+          <li><b>③</b><span>취득세는 <b>60일 이내</b> 신고·납부해야 합니다. 잔금일과 등기일을 함께 확인하세요.</span></li>
+          <li><b>④</b><span>다주택 중과는 지역 지정이 바뀌면 금액이 두 배 이상 달라집니다. 계약 전 <b>조정대상지역 여부</b>를 확인하세요.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#191F28;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>중개보수</b> — 공인중개사법 시행규칙 별표1(2021.10.19 시행)의 주택 상한요율과 한도액. 월세 거래금액 = 보증금 + 월세×100, 그 합이 5천만원 미만이면 보증금 + 월세×70으로 재계산. 주거용 오피스텔은 매매 0.5%·임대차 0.4%, 상가·토지는 0.9% 이내 협의로 계산했습니다.</p>
+          <p><b>취득세</b> — 1주택 6억원 이하 1%, 6억~9억원 (취득가액×2/3억−3)%, 9억원 초과 3%. 조정대상지역 2주택 8%, 3주택 이상 12%(비조정지역 3주택 8%). 지방교육세는 일반 1~3% 구간에서 취득세액의 10%, 중과 구간은 0.4%. 농어촌특별세는 85㎡ 초과 시 일반 0.2%, 중과 (세율−2%)×10%입니다.</p>
+          <p><b>포함하지 않은 것</b> — 법무사 비용, 등기 비용, 국민주택채권 매입·할인, 중도금·잔금 일정에 따른 가산세, 일시적 2주택 특례, 상속·증여 취득, 토지·상가의 개별 세율, 지자체별 조례 차이는 반영하지 않았습니다.</p>
+          <p><b>주의</b> — 생애최초 감면은 2025년 12월 31일까지 적용된 한시 제도이고, 조정대상지역 지정은 수시로 바뀝니다. 실제 금액은 관할 시·군·구 세무 부서와 중개사가 확인한 금액이 기준입니다.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 중개보수는 협의로, 취득세는 관할 지자체 고지로 확정됩니다.</p>
+    </div>
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법</h2>
+      <p>중개보수는 <b>상한선</b>이고, 취득세는 <b>정해진 세율</b>입니다. 그래서 이 계산기에서 실제로 협상할 수 있는 숫자는 왼쪽(중개보수)뿐입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>지표</th><th>의미</th><th>활용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>중개보수 상한</td><td>법이 허용하는 최대 금액</td><td>협의의 출발점</td></tr>
+            <tr><td>부가세</td><td>중개사 과세 유형에 따른 추가액</td><td>계약서에 포함인지 확인</td></tr>
+            <tr><td>취득세 본세</td><td>집값 × 세율</td><td>잔금일에 준비할 현금</td></tr>
+            <tr><td>지방교육세·농특세</td><td>취득세에 딸려 붙는 세금</td><td>총 취득 비용 산정</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">잔금일 현금 준비는 취득세까지 포함해</span>
+        6억원 주택을 매수하면 중개보수 약 264만원(부가세 포함)과 취득세 660만원을 합쳐 <b>900만원 안팎</b>이 거래 자체로 나갑니다. 여기에 법무사·등기 비용이 붙으므로, 잔금일 자금 계획에는 매매가의 <b>1.5%</b> 정도를 별도로 잡아 두는 편이 안전합니다.
+      </div>
+    </section>
+
+    <section class="prose" id="examples" style="margin-top:16px;">
+      <h2>사례 — 6억 매매 / 3억 전세 / 보증금 1억 + 월세 100만</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>주택, 일반과세 중개사, 85㎡ 이하 기준</caption>
+          <thead>
+            <tr><th>항목</th><th class="num">매매 6억</th><th class="num">전세 3억</th><th class="num">월세 1억/100만</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>거래금액</td><td class="num">6억원</td><td class="num">3억원</td><td class="num">2억원 (환산)</td></tr>
+            <tr><td>상한요율</td><td class="num">0.4%</td><td class="num">0.3%</td><td class="num">0.3%</td></tr>
+            <tr><td><b>중개보수</b></td><td class="num"><b>240만원</b></td><td class="num"><b>90만원</b></td><td class="num"><b>60만원</b></td></tr>
+            <tr><td>부가세 10% 포함</td><td class="num">264만원</td><td class="num">99만원</td><td class="num">66만원</td></tr>
+            <tr><td>취득세 (1주택)</td><td class="num">660만원</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td><b>거래 비용 합계</b></td><td class="num"><b>924만원</b></td><td class="num"><b>99만원</b></td><td class="num"><b>66만원</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>전세와 월세는 취득세가 없습니다. 대신 <b>전입신고와 확정일자</b>를 받아야 보증금을 지킬 수 있고, 월세는 중개보수 외에 보증금 반환 보증료가 따로 들 수 있습니다. 매매에서 6억원 주택의 취득세 660만원은 <b>1% + 지방교육세 0.1%</b>이고, 전용면적이 85㎡를 넘으면 농어촌특별세 0.2%(120만원)가 더 붙어 780만원이 됩니다.</p>
+      <p>9억원 주택이라면 중개보수는 0.5%인 450만원(부가세 포함 495만원), 취득세는 3%로 2,700만원, 지방교육세 270만원, 농특세 180만원(85㎡ 초과)까지 <b>3,150만원</b>입니다. 같은 서울의 아파트라도 6억원과 9억원 사이에서 취득세가 5배 가까이 벌어집니다.</p>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>중개보수를 꼭 상한요율까지 내야 하나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>아니요. 상한요율은 법이 정한 최대치이고, 실제 금액은 중개의뢰인과 중개사가 협의해 정합니다. 다만 상한을 넘겨 받을 수는 없습니다. 이 계산기는 넘을 수 없는 선을 보여 주는 도구입니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>월세 계약의 거래금액은 어떻게 계산하나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>보증금에 월세의 100배를 더합니다. 그렇게 계산한 금액이 5천만원 미만이면 다시 보증금에 월세의 70배를 더한 금액을 거래금액으로 씁니다. 이 계산기는 두 단계를 자동으로 적용합니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>중개보수에 부가세가 붙나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>중개사의 과세 유형과 거래 종류에 따라 다릅니다. 일반과세 사업자와의 거래는 중개보수의 10%, 간이과세자는 4% 수준이 붙습니다. 개인 간 주택 임대차처럼 세금계산서를 발행하지 않는 거래는 부가세를 따로 받지 않는 경우가 많습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>취득세는 집값에 몇 퍼센트인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>1주택 기준으로 6억원 이하는 1%, 6억원 초과 9억원 이하는 1~3% 누진, 9억원 초과는 3%입니다. 여기에 지방교육세가 취득세의 10%, 전용면적 85제곱미터 초과 주택은 농어촌특별세 0.2%가 더 붙습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>생애최초 취득세 감면은 지금도 받을 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>생애최초 주택 구입 취득세 감면은 2025년 12월 31일까지 적용되는 한시 제도였고, 취득가액 12억원 이하 주택에 최대 200만원까지 감면합니다. 연장 여부와 세부 요건은 신청 전 관할 시·군·구 세무 부서에서 확인해야 합니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>공인중개사법 제32조, 같은 법 시행규칙 제20조 및 별표1(주택 중개보수 상한요율, 2021.10.19 시행)</li>
+        <li>지방세법 제11조(부동산 취득세율), 제151조(지방교육세), 농어촌특별세법 제5조</li>
+        <li>지방세특례제한법 — 생애최초 주택 구입 취득세 감면(2025.12.31까지)</li>
+        <li>국토교통부 조정대상지역 지정 고시(2025.10.15 대책 반영)</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#6B7684;">※ 이 페이지는 일반적인 정보이며 특정 중개사나 상품을 추천하지 않습니다. 계약 전 중개보수 약정서와 지자체 취득세 안내를 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="jeonse-vs-wolse.html">
+        <b>전세 vs 월세 주거비 비교</b>
+        <span>보증금 기회비용과 대출 이자까지 넣어 연 주거비를 비교합니다.</span>
+      </a>
+      <a href="policy-loan-check.html">
+        <b>정책대출 자격 판독기</b>
+        <span>신생아 특례·신혼부부·버팀목·보금자리론 중 받을 수 있는 대출을 찾습니다.</span>
+      </a>
+      <a href="guide-jeonse-loan.html">
+        <b>전세 이사·대출 갈아타기 가이드</b>
+        <span>DSR 반영과 부채 합산, 상환과 이사 순서를 정리했습니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-mark" src="assets/logo-mark.svg" alt="" width="30" height="30">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+          <a href="tax-refund-check.html">경정청구 환급 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+          <a href="real-estate-fee.html">복비·취득세</a>
+          <a href="policy-loan-check.html">정책대출 자격</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+          <a href="car-insurance-discount.html">자동차보험 할인</a>
+          <a href="silson-switch.html">실손 세대 전환</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 킷랩 (KitLab) · usefulkit.kr. All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* RF-CORE-START */
+var RF_SALE = [
+  { max: 5000, rate: 0.006, cap: 250000 },
+  { max: 20000, rate: 0.005, cap: 800000 },
+  { max: 90000, rate: 0.004, cap: 0 },
+  { max: 120000, rate: 0.005, cap: 0 },
+  { max: 150000, rate: 0.006, cap: 0 },
+  { max: Infinity, rate: 0.007, cap: 0 }
+];
+var RF_LEASE = [
+  { max: 5000, rate: 0.005, cap: 200000 },
+  { max: 10000, rate: 0.004, cap: 300000 },
+  { max: 60000, rate: 0.003, cap: 0 },
+  { max: 120000, rate: 0.004, cap: 0 },
+  { max: 150000, rate: 0.005, cap: 0 },
+  { max: Infinity, rate: 0.006, cap: 0 }
+];
+var RF_OFT = { sale: 0.005, lease: 0.004 };
+var RF_ETC = { sale: 0.009, lease: 0.009 };
+
+function rfBracket(table, amountMan){
+  for (var i = 0; i < table.length; i++){
+    if (amountMan < table[i].max) return table[i];
+  }
+  return table[table.length - 1];
+}
+
+/* 월세 거래금액: 보증금 + 월세×100, 5천만원 미만이면 월세×70으로 재계산 */
+function rfDealAmount(depositMan, monthlyMan){
+  var d = Math.max(0, depositMan || 0);
+  var m = Math.max(0, monthlyMan || 0);
+  var first = d + m * 100;
+  if (first < 5000) return { amount: d + m * 70, factor: 70, recomputed: true };
+  return { amount: first, factor: 100, recomputed: false };
+}
+
+function rfBrokerFee(amountMan, mode, kind, vatRate){
+  var table = mode === 'sale' ? RF_SALE : RF_LEASE;
+  var rate, cap = 0;
+  if (kind === 'etc'){
+    rate = mode === 'sale' ? RF_ETC.sale : RF_ETC.lease;
+  } else if (kind === 'officetel'){
+    rate = mode === 'sale' ? RF_OFT.sale : RF_OFT.lease;
+  } else {
+    var b = rfBracket(table, amountMan);
+    rate = b.rate;
+    cap = b.cap || 0;
+  }
+  var raw = Math.floor(amountMan * 10000 * rate);
+  var limited = cap > 0 && raw > cap;
+  var fee = limited ? cap : raw;
+  var vat = Math.round(fee * (vatRate || 0));
+  return {
+    rate: rate, cap: cap, raw: raw, fee: fee, limited: limited,
+    vat: vat, total: fee + vat, vatRate: vatRate || 0
+  };
+}
+
+/* 취득세: 1주택 기본세율 */
+function rfBaseRate(priceWon){
+  if (priceWon <= 600000000) return 0.01;
+  if (priceWon <= 900000000) return (priceWon / 100000000 * 2 / 3 - 3) / 100;
+  return 0.03;
+}
+
+function rfAcquisition(priceWon, count, over85, adjusted, firstBuy, kind){
+  var out = { rate: 0, acq: 0, edu: 0, rnn: 0, discount: 0, total: 0, heavy: false, base: 0 };
+  if (!(priceWon > 0)) return out;
+  if (kind === 'etc'){
+    out.base = 0.04;
+    out.acq = Math.round(priceWon * 0.04);
+    out.edu = Math.round(priceWon * 0.004);
+    out.rnn = Math.round(priceWon * 0.002);
+    out.rate = 0.046;
+    out.total = out.acq + out.edu + out.rnn;
+    return out;
+  }
+  var n = Math.max(1, Math.round(count || 1));
+  var rate = rfBaseRate(priceWon);
+  var heavy = false;
+  if (n === 2 && adjusted){ rate = 0.08; heavy = true; }
+  if (n >= 3){ rate = adjusted ? 0.12 : 0.08; heavy = true; }
+  out.base = rate;
+  out.heavy = heavy;
+  out.rate = rate;
+  out.acq = Math.round(priceWon * rate);
+  out.edu = heavy ? Math.round(priceWon * 0.004) : Math.round(out.acq * 0.1);
+  out.rnn = over85 ? (heavy ? Math.round(priceWon * (rate - 0.02) * 0.1) : Math.round(priceWon * 0.002)) : 0;
+  if (firstBuy && !heavy && priceWon <= 1200000000){
+    out.discount = Math.min(2000000, out.acq);
+  }
+  out.total = out.acq - out.discount + out.edu + out.rnn;
+  return out;
+}
+
+function rfEvaluate(cfg){
+  cfg = cfg || {};
+  var mode = cfg.mode === 'jeonse' ? 'jeonse' : (cfg.mode === 'wolse' ? 'wolse' : 'sale');
+  var kind = cfg.kind || 'house';
+  var price = Math.max(0, cfg.priceMan || 0);
+  var monthly = Math.max(0, cfg.monthlyMan || 0);
+  var deal = rfDealAmount(price, mode === 'wolse' ? monthly : 0);
+  var isSale = mode === 'sale';
+  var feeCfg = isSale ? { amount: price, mode: 'sale' } : { amount: deal.amount, mode: 'lease' };
+  var fee = rfBrokerFee(feeCfg.amount, feeCfg.mode, kind, cfg.vatRate);
+  var acq = isSale ? rfAcquisition(price * 10000, cfg.count, cfg.over85, cfg.adjusted, cfg.firstBuy, kind) : rfAcquisition(0);
+  return {
+    mode: mode, kind: kind, price: price, monthly: monthly, deal: deal, isSale: isSale,
+    fee: fee, acq: acq, total: fee.total + acq.total,
+    empty: price <= 0 && !(mode === 'wolse' && monthly > 0)
+  };
+}
+
+function rfComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function rfWon(n){ return rfComma(Math.round(n || 0)) + '원'; }
+function rfMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + rfComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
+}
+/* RF-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    modeSale: $('rf-modeSale'), modeJeonse: $('rf-modeJeonse'), modeWolse: $('rf-modeWolse'),
+    price: $('rf-price'), priceLabel: $('rf-priceLabel'), priceTip: $('rf-priceTip'),
+    monthly: $('rf-monthly'), rentWrap: $('rf-rentWrap'), kind: $('rf-kind'), kind2: $('rf-kind2'), kindWrap: $('rf-kindWrap'),
+    vat: $('rf-vat'), count: $('rf-count'), area: $('rf-area'),
+    adjusted: $('rf-adjusted'), first: $('rf-first'),
+    verdict: $('rf-verdict'), resFee: $('rf-resFee'), resTax: $('rf-resTax'),
+    summary: $('rf-summary'), taxBody: $('rf-taxBody'), rateBody: $('rf-rateBody'), toast: $('rf-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function modeOf(){
+    if (el.modeWolse.checked) return 'wolse';
+    if (el.modeJeonse.checked) return 'jeonse';
+    return 'sale';
+  }
+  function kindOf(){
+    return modeOf() === 'sale' ? el.kind2.value : el.kind.value;
+  }
+  function readCfg(){
+    var mode = modeOf();
+    return {
+      mode: mode,
+      priceMan: num(el.price.value),
+      monthlyMan: mode === 'wolse' ? num(el.monthly.value) : 0,
+      kind: kindOf(),
+      vatRate: parseFloat(el.vat.value) / 100,
+      count: parseInt(el.count.value, 10),
+      over85: el.area.value === 'over',
+      adjusted: el.adjusted.checked,
+      firstBuy: el.first.checked
+    };
+  }
+  function modeLabel(m){
+    return m === 'sale' ? '매매' : (m === 'jeonse' ? '전세' : '월세');
+  }
+  function rateLabel(rate){ return (rate * 100).toFixed(rate * 100 % 1 === 0 ? 0 : 1) + '%'; }
+
+  function render(){
+    var mode = modeOf();
+    el.rentWrap.hidden = mode !== 'wolse';
+    el.kindWrap.hidden = mode === 'wolse';
+    el.priceLabel.textContent = mode === 'sale' ? '매매 금액' : '보증금';
+    el.priceTip.textContent = mode === 'sale'
+      ? '실제 거래된 금액(또는 매매 예정가)을 넣으세요.'
+      : '보증금을 넣으세요. 월세가 있으면 아래에 함께 적습니다.';
+
+    var cfg = readCfg();
+    var r = rfEvaluate(cfg);
+
+    if (r.empty){
+      el.verdict.className = 'calc-verdict is-empty';
+      el.verdict.innerHTML = '<span class="v-tag">입력 대기</span><span class="v-title">거래 금액을 입력하세요</span>'
+        + '<span class="v-desc">매매·전세·월세를 고르고 금액을 넣으면 중개보수 상한과 취득세가 바로 계산됩니다.</span>';
+      el.resFee.className = 'calc-res';
+      el.resFee.innerHTML = '<div class="r-head">중개보수</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resTax.className = 'calc-res';
+      el.resTax.innerHTML = '<div class="r-head">취득세</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>거래금액</dt><dd>—</dd></div><div class="total"><dt>합계</dt><dd>—</dd></div>';
+      el.taxBody.innerHTML = '<table class="calc-table"><tbody><tr><td>금액을 입력하면 내역이 만들어집니다.</td></tr></tbody></table>';
+      el.rateBody.innerHTML = '';
+      return;
+    }
+
+    var fee = r.fee;
+    var dealLabel = r.isSale ? rfMan(r.price * 10000) : rfMan(r.deal.amount * 10000);
+
+    el.verdict.className = 'calc-verdict is-good';
+    el.verdict.innerHTML = '<span class="v-tag">' + modeLabel(r.mode) + ' · ' + (r.kind === 'house' ? '주택' : r.kind === 'officetel' ? '주거용 오피스텔' : '상가·토지') + '</span>'
+      + '<span class="v-title">중개보수 상한 ' + rfWon(fee.total) + (r.isSale ? ' · 취득세 ' + rfWon(r.acq.total) : '') + '</span>'
+      + '<span class="v-desc">' + dealLabel + ' 기준 상한요율 ' + rateLabel(fee.rate)
+      + (fee.limited ? '(한도액 적용)' : '') + '로 계산한 중개보수 ' + rfWon(fee.fee)
+      + (fee.vat > 0 ? ' + 부가세 ' + rfWon(fee.vat) : ' (부가세 없음)')
+      + (r.isSale ? '. 취득세는 ' + rateLabel(r.acq.rate) + '로 ' + rfWon(r.acq.total) + '입니다.' : '입니다. 전세·월세는 취득세가 없습니다.') + '</span>';
+
+    el.resFee.className = 'calc-res';
+    el.resFee.innerHTML = '<div class="r-head">중개보수 (상한)</div><dl>'
+      + '<div><dt>상한요율</dt><dd>' + rateLabel(fee.rate) + '</dd></div>'
+      + '<div><dt>기준 금액</dt><dd>' + dealLabel + '</dd></div>'
+      + '<div><dt>요율 계산액</dt><dd>' + rfWon(fee.raw) + '</dd></div>'
+      + (fee.cap > 0 ? '<div><dt>한도액</dt><dd>' + rfWon(fee.cap) + '</dd></div>' : '')
+      + '<div><dt>부가세</dt><dd>' + rfWon(fee.vat) + '</dd></div>'
+      + '<div><dt>합계</dt><dd class="big">' + rfWon(fee.total) + '</dd></div>'
+      + '</dl>';
+
+    el.resTax.className = 'calc-res';
+    if (r.isSale){
+      el.resTax.innerHTML = '<div class="r-head">취득세</div><dl>'
+        + '<div><dt>취득세 본세</dt><dd>' + rfWon(r.acq.acq) + '</dd></div>'
+        + '<div><dt>지방교육세</dt><dd>' + rfWon(r.acq.edu) + '</dd></div>'
+        + '<div><dt>농어촌특별세</dt><dd>' + rfWon(r.acq.rnn) + '</dd></div>'
+        + (r.acq.discount > 0 ? '<div><dt>생애최초 감면</dt><dd class="neg">−' + rfWon(r.acq.discount) + '</dd></div>' : '')
+        + '<div><dt>합계</dt><dd class="big">' + rfWon(r.acq.total) + '</dd></div>'
+        + '</dl>';
+    } else {
+      el.resTax.innerHTML = '<div class="r-head">취득세</div><dl>'
+        + '<div><dt>취득세</dt><dd>해당 없음</dd></div>'
+        + '<div><dt>이유</dt><dd>임대차</dd></div>'
+        + '<div><dt>합계</dt><dd class="big">0원</dd></div>'
+        + '</dl>';
+    }
+
+    var sum = '';
+    sum += '<div><dt>거래 종류</dt><dd>' + modeLabel(r.mode) + ' · ' + (r.kind === 'house' ? '주택' : r.kind === 'officetel' ? '오피스텔' : '상가·토지') + '</dd></div>';
+    if (r.mode === 'wolse'){
+      sum += '<div><dt>보증금 / 월세</dt><dd>' + rfWon(r.price * 10000) + ' / ' + rfWon(r.monthly * 10000) + '</dd></div>';
+      sum += '<div><dt>환산 거래금액</dt><dd>' + rfMan(r.deal.amount * 10000) + ' (월세×' + r.deal.factor + ')</dd></div>';
+    } else {
+      sum += '<div><dt>거래금액</dt><dd>' + rfMan(r.price * 10000) + '</dd></div>';
+    }
+    sum += '<div><dt>중개보수</dt><dd>' + rfWon(fee.fee) + '</dd></div>';
+    if (fee.vat > 0) sum += '<div><dt>부가세 ' + (fee.vatRate * 100) + '%</dt><dd>' + rfWon(fee.vat) + '</dd></div>';
+    if (r.isSale) sum += '<div><dt>취득세 외 부담</dt><dd>' + rfWon(r.acq.edu + r.acq.rnn - (r.acq.discount || 0)) + '</dd></div>';
+    sum += '<div class="total"><dt>거래 비용 합계</dt><dd class="pos">' + rfWon(r.total) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var tb = '<table class="calc-table"><thead><tr><th>항목</th><th>세율</th><th>금액</th></tr></thead><tbody>';
+    tb += '<tr><td>중개보수</td><td>' + rateLabel(fee.rate) + '</td><td>' + rfWon(fee.fee) + '</td></tr>';
+    tb += '<tr><td>부가세</td><td>' + (fee.vatRate * 100) + '%</td><td>' + rfWon(fee.vat) + '</td></tr>';
+    if (r.isSale){
+      tb += '<tr><td>취득세 본세</td><td>' + rateLabel(r.acq.rate) + '</td><td>' + rfWon(r.acq.acq) + '</td></tr>';
+      tb += '<tr><td>지방교육세</td><td>' + rateLabel(r.acq.edu / (r.price * 10000)) + '</td><td>' + rfWon(r.acq.edu) + '</td></tr>';
+      tb += '<tr><td>농어촌특별세</td><td>' + (r.acq.rnn > 0 ? rateLabel(r.acq.rnn / (r.price * 10000)) : '해당 없음') + '</td><td>' + rfWon(r.acq.rnn) + '</td></tr>';
+      if (r.acq.discount > 0) tb += '<tr><td>생애최초 감면</td><td>최대 200만원</td><td>−' + rfWon(r.acq.discount) + '</td></tr>';
+      tb += '<tr><td><b>취득세 합계</b></td><td></td><td><b>' + rfWon(r.acq.total) + '</b></td></tr>';
+    } else {
+      tb += '<tr><td>취득세</td><td>임대차는 비과세</td><td>0원</td></tr>';
+    }
+    tb += '</tbody></table>';
+    el.taxBody.innerHTML = tb;
+
+    var table = r.mode === 'sale' ? RF_SALE : RF_LEASE;
+    var bounds = ['5천만원 미만', '5천만원~2억원', '2억~9억원', '9억~12억원', '12억~15억원', '15억원 이상'];
+    if (r.mode !== 'sale') bounds = ['5천만원 미만', '5천만원~1억원', '1억~6억원', '6억~12억원', '12억~15억원', '15억원 이상'];
+    var cur = rfBracket(table, r.deal.amount);
+    var rb = '<table class="calc-table"><thead><tr><th>구간</th><th>상한요율</th><th>한도액</th><th>이번 거래</th></tr></thead><tbody>';
+    for (var i = 0; i < table.length; i++){
+      var b = table[i];
+      rb += '<tr><td>' + bounds[i] + '</td><td>' + rateLabel(b.rate) + '</td><td>' + (b.cap ? rfWon(b.cap) : '—') + '</td><td>' + (b === cur ? '●' : '') + '</td></tr>';
+    }
+    rb += '</tbody></table>';
+    el.rateBody.innerHTML = rb;
+  }
+
+  ['rf-modeSale', 'rf-modeJeonse', 'rf-modeWolse'].forEach(function(id){
+    $(id).addEventListener('change', render);
+  });
+  ['rf-price', 'rf-monthly'].forEach(function(id){ $(id).addEventListener('input', render); });
+  ['rf-kind', 'rf-kind2', 'rf-vat', 'rf-count', 'rf-area'].forEach(function(id){ $(id).addEventListener('change', render); });
+  el.adjusted.addEventListener('change', render);
+  el.first.addEventListener('change', render);
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('rf-example').addEventListener('click', function(){
+    el.modeSale.checked = true;
+    el.price.value = '60000';
+    el.monthly.value = '';
+    el.kind2.value = 'house';
+    el.vat.value = '10';
+    el.count.value = '1';
+    el.area.value = '85';
+    el.adjusted.checked = true;
+    el.first.checked = false;
+    render();
+  });
+  $('rf-reset').addEventListener('click', function(){
+    el.modeSale.checked = true;
+    el.price.value = '';
+    el.monthly.value = '';
+    el.kind2.value = 'house';
+    el.kind.value = 'house';
+    el.vat.value = '10';
+    el.count.value = '1';
+    el.area.value = '85';
+    el.adjusted.checked = true;
+    el.first.checked = false;
+    render();
+  });
+  $('rf-copy').addEventListener('click', function(){
+    var r = rfEvaluate(readCfg());
+    if (r.empty){ toast('거래 금액을 먼저 입력하세요'); return; }
+    var text = modeLabel(r.mode) + ' 비용 계산\n'
+      + '· 거래금액 ' + (r.mode === 'wolse' ? rfMan(r.deal.amount * 10000) + ' (보증금 ' + rfWon(r.price * 10000) + ' + 월세 ' + rfWon(r.monthly * 10000) + ')' : rfMan(r.price * 10000)) + '\n'
+      + '· 중개보수 상한 ' + rfWon(r.fee.fee) + ' (요율 ' + rateLabel(r.fee.rate) + ')' + (r.fee.vat > 0 ? ' + 부가세 ' + rfWon(r.fee.vat) : '') + '\n'
+      + (r.isSale ? '· 취득세 ' + rfWon(r.acq.total) + ' (본세 ' + rfWon(r.acq.acq) + ' + 지방교육세 ' + rfWon(r.acq.edu) + ' + 농특세 ' + rfWon(r.acq.rnn) + ')\n' : '· 취득세 없음\n')
+      + '· 합계 ' + rfWon(r.total) + '\n'
+      + '계산: usefulkit.kr/real-estate-fee.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

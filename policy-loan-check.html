@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>청년·신혼·출산 가구 정책대출 자격 판독기 | 킷랩 (KitLab)</title>
+<meta name="description" content="혼인·출산·소득·순자산·주택 보유와 대상 집값을 넣으면 신생아 특례, 신혼부부 전용, 버팀목, 디딤돌, 보금자리론 중 받을 수 있는 대출과 한도·금리를 찾아 줍니다.">
+<link rel="canonical" href="https://usefulkit.kr/policy-loan-check.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="킷랩 (KitLab)">
+<meta property="og:title" content="정책대출 자격 판독기">
+<meta property="og:description" content="신생아 특례·신혼부부·버팀목·디딤돌·보금자리론 중 내가 받을 수 있는 대출을 찾습니다.">
+<meta property="og:url" content="https://usefulkit.kr/policy-loan-check.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="정책대출 자격 판독기">
+<meta name="twitter:description" content="신생아 특례·신혼부부·버팀목·디딤돌·보금자리론 중 내가 받을 수 있는 대출을 찾습니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="theme-color" content="#00C471">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "정책대출 자격 판독기",
+  "url": "https://usefulkit.kr/policy-loan-check.html",
+  "description": "혼인·출산·소득·순자산·주택 보유와 대상 집값을 넣으면 신생아 특례, 신혼부부 전용, 버팀목, 디딤돌, 보금자리론 중 받을 수 있는 대출과 한도·금리를 찾아 줍니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "신생아 특례는 아이가 만 2세를 넘으면 못 받나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대출 접수일 기준 2년 안에 출산했거나 만 2세 미만 아이를 입양한 가구가 대상입니다. 아이가 만 2세를 넘으면 일반 디딤돌이나 버팀목으로 바뀝니다. 다만 신생아 특별공급이나 우선공급에 당첨된 경우에는 자녀가 만 2세를 넘어도 구입자금을 받을 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "부부 합산 소득이 기준을 넘으면 아예 안 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "상품마다 다릅니다. 신생아 특례는 맞벌이면 합산 2억원까지 인정하지만 각자의 소득이 1억3,000만원 이하여야 합니다. 신혼부부 전용과 일반 버팀목은 합산 기준을 넘어도 신청인 한 사람의 소득이 기준 이하이면 검토되는 예외가 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "특례금리가 끝나면 금리는 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "특례금리는 구입 5년, 전세 4년이 기본이고 추가 출산 시 1명당 같은 기간씩 늘어납니다. 기간이 끝나면 대출 당시 소득 구간으로 다시 금리가 정해지고, 소득이 높으면 시중 주택담보대출·전세대출 금리 중 가장 낮은 값이 적용됩니다. 그래서 만기 전에 보금자리론이나 은행 대출로 갈아탈지 비교하게 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전세대출을 이미 쓰고 있으면 갈아탈 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "기금 전세대출을 쓰고 있다면 같은 상품의 갱신이나 대환은 가능하지만, 다른 기금 상품과 은행 전세대출을 중복으로 받을 수는 없습니다. 신생아 특례 버팀목으로 갈아탈 때는 기존 대출 잔액을 넘지 않는 범위에서 승인됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "여러 상품을 동시에 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "한 주택에 여러 정책대출을 겹쳐 받을 수 없습니다. 기금 대출이나 은행 주택담보대출을 이미 이용 중이면 원칙적으로 신규 신청이 막힙니다. 다만 기금 전세대출을 쓰던 사람이 구입자금을 받을 때는 실행일 당일 기존 대출을 상환하는 조건으로 가능합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
+      <span class="brand-text">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 15종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">정책대출</span>
+      <h1>청년·신혼·출산 가구 정책대출 판독기</h1>
+      <p class="page-lead">정책대출은 <b>소득·자산·혼인·출산·집값</b> 다섯 가지 조건이 동시에 맞아야 합니다. 하나만 넘어도 탈락하고, 상품마다 기준이 다릅니다. 내 조건으로 <b>받을 수 있는 대출</b>과 대략의 한도·금리를 한 번에 확인하세요.</p>
+      <div class="page-meta">
+        <span>2026년 11월 기준</span>
+        <span>주택도시기금·보금자리론</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <figure class="article-hero-illu">
+      <img src="assets/illustrations/policy-loan-check.webp"
+           srcset="assets/illustrations/policy-loan-check-480.webp 480w, assets/illustrations/policy-loan-check.webp 960w"
+           sizes="(max-width: 820px) 100vw, 760px"
+           alt="집 앞에 선 부부와 유모차, 열쇠와 인증 문서로 표현한 정책대출 자격 일러스트" width="960" height="540" decoding="async">
+    </figure>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">정책대출 지도</a></li>
+        <li><a href="#calc">자격 판독기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#examples">사례</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>대출 이름보다 '내 조건'이 먼저입니다</h2>
+      <p>정책대출은 크게 <b>전세자금</b>과 <b>구입자금</b>으로 나뉘고, 다시 <b>신생아 특례</b>·<b>신혼부부 전용</b>·<b>일반</b>로 갈립니다. 특례 상품은 소득 문턱이 높은 대신 금리 적용 기간이 정해져 있고, 일반 상품은 문턱이 낮은 대신 한도가 작습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>2026년 11월 기준 주요 상품</caption>
+          <thead>
+            <tr><th>상품</th><th>용도</th><th class="num">소득(부부합산)</th><th class="num">한도</th><th class="num">금리</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>신생아 특례 디딤돌</td><td>구입</td><td class="num">1.3억(맞벌이 2억)</td><td class="num">4억원</td><td class="num">1.80~4.50%</td></tr>
+            <tr><td>신생아 특례 버팀목</td><td>전세</td><td class="num">1.3억(맞벌이 2억)</td><td class="num">2.4억원</td><td class="num">1.30~4.30%</td></tr>
+            <tr><td>신혼부부 전용 전세</td><td>전세</td><td class="num">7,500만원</td><td class="num">2.5억원(수도권)</td><td class="num">1.90~3.30%</td></tr>
+            <tr><td>신혼부부 전용 구입</td><td>구입</td><td class="num">8,500만원</td><td class="num">3.2억원</td><td class="num">2.55~3.85%</td></tr>
+            <tr><td>내집마련 디딤돌(신혼)</td><td>구입</td><td class="num">8,500만원</td><td class="num">3.2억원</td><td class="num">2.85~4.15%</td></tr>
+            <tr><td>일반 버팀목</td><td>전세</td><td class="num">5,000만원</td><td class="num">1.2억원(수도권)</td><td class="num">2.50~3.50%</td></tr>
+            <tr><td>청년 버팀목</td><td>전세</td><td class="num">5,000만원</td><td class="num">1.5억원</td><td class="num">2.20~3.30%</td></tr>
+            <tr><td>보금자리론</td><td>구입</td><td class="num">7,000만~1억원</td><td class="num">3.6억원(생애최초 4.2억)</td><td class="num">4.90~5.20%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>표의 소득 기준은 <b>부부합산</b>입니다. 신생아 특례는 맞벌이면 합산 2억원까지 인정하지만, 부부 각자의 소득이 1억 3,000만원을 넘으면 안 됩니다. 반대로 일반 버팀목은 합산 5,000만원이 기준이지만 신청인 한 사람의 소득이 기준 이하이면 예외로 검토되는 경우가 있습니다.</p>
+
+      <h2>2026년에 달라진 것</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>항목</th><th>변경 내용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>신생아 특례 한도</td><td>2025년 6월 27일 이후 계약분부터 구입 5억→4억원, 전세 3억→2.4억원</td></tr>
+            <tr><td>신생아 특례 순자산</td><td>구입 5억 1,100만원, 전세 3억 4,500만원(2026년 기준)</td></tr>
+            <tr><td>특례금리 기간</td><td>추가 출산 시 구입 최장 20년, 전세 최장 12년까지 연장</td></tr>
+            <tr><td>신혼부부 문턱</td><td>부부 중 한 명만 소득 기준을 충족해도 신청 가능한 선택제 도입(2026.8 대책)</td></tr>
+            <tr><td>보금자리론</td><td>합산 소득 초과 시에도 본인 소득 7,000만원 이하면 신청 가능(2026.10.19)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <span class="callout-title">정책대출은 '예상'이지 '확정'이 아닙니다</span>
+        소득·자산 심사는 건강보험료, 소득금액증명원, HUG 자산심사로 다시 계산됩니다. 프리랜서·사업소득·휴직자는 계산이 달라지고, 기존 대출이 있으면 중복 대출 금지에 걸립니다. 이 판독기는 <b>가능성이 있는 상품을 추리는 용도</b>로 쓰고, 신청 전 기금e든든과 수탁은행에서 확정 조건을 확인하세요.
+      </div>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">8개 상품 자동 필터 · 2026년 기준</span>
+        <h2 class="calc-title">정책대출 자격 판독기</h2>
+        <p class="calc-lead">조건을 넣으면 <b>받을 수 있는 상품</b>과 <b>탈락 사유</b>를 함께 보여 드립니다. 가능한 상품은 금리가 낮은 순서로 정렬합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>가구 조건</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="pl-age">신청인 나이</label>
+            <div class="calc-input calc-input-sm"><input id="pl-age" type="number" inputmode="numeric" min="19" max="80" step="1" placeholder="34"><span class="calc-unit">세</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="pl-married">혼인 상태</label>
+            <div class="calc-input calc-input-sm"><select id="pl-married">
+              <option value="single" selected>미혼</option>
+              <option value="newlywed">혼인 7년 이내</option>
+              <option value="married">혼인 7년 초과</option>
+            </select></div>
+          </div>
+        </div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="pl-birth">2년 내 출산·입양</label>
+            <div class="calc-input calc-input-sm"><select id="pl-birth">
+              <option value="no" selected>없음</option>
+              <option value="yes">있음</option>
+            </select></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="pl-children">미성년 자녀 수</label>
+            <div class="calc-input calc-input-sm"><input id="pl-children" type="number" inputmode="numeric" min="0" max="6" step="1" placeholder="0"><span class="calc-unit">명</span></div>
+          </div>
+        </div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="pl-home">주택 보유</label>
+            <div class="calc-input calc-input-sm"><select id="pl-home">
+              <option value="none" selected>무주택</option>
+              <option value="one">1주택</option>
+            </select></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="pl-purpose">자금 용도</label>
+            <div class="calc-input calc-input-sm"><select id="pl-purpose">
+              <option value="jeonse" selected>전세자금</option>
+              <option value="buy">구입자금</option>
+            </select></div>
+          </div>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="pl-metro">
+            <input id="pl-metro" type="checkbox" checked>
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>수도권</b><em>서울·경기·인천. 한도와 보증금 상한이 달라집니다.</em></span>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="pl-first">
+            <input id="pl-first" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>생애최초 주택 구입</b><em>LTV 80%와 보금자리론 한도 4.2억원이 적용됩니다.</em></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>소득·자산·집값</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="pl-income">부부합산 연소득</label>
+            <div class="calc-input calc-input-sm"><input id="pl-income" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="pl-networth">부부합산 순자산</label>
+            <div class="calc-input calc-input-sm"><input id="pl-networth" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
+          </div>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="pl-price" id="pl-priceLabel">전세보증금</label>
+          <div class="calc-input"><input id="pl-price" type="number" inputmode="numeric" min="0" step="1000" placeholder="0"><span class="calc-unit">만원</span></div>
+          <p class="calc-tip" id="pl-priceTip">전세는 보증금, 구입은 매매가(평가액)를 넣으세요.</p>
+        </div>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">3</span><h2>판독 결과</h2></div>
+        <div id="pl-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="pl-resBest"></div>
+          <div class="calc-res" id="pl-resCount"></div>
+        </div>
+
+        <dl class="calc-summary" id="pl-summary"></dl>
+
+        <details class="calc-break" id="pl-listBox" open>
+          <summary>상품별 판정</summary>
+          <div class="calc-tablewrap" id="pl-listBody"></div>
+        </details>
+
+        <details class="calc-break" id="pl-condBox">
+          <summary>입력한 조건</summary>
+          <div class="calc-tablewrap" id="pl-condBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="pl-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="pl-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="pl-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="pl-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">신청 전에 확인할 서류</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span><b>소득</b> — 원천징수영수증·소득금액증명원. 세전 기준이고 사업소득도 합산됩니다.</span></li>
+          <li><b>②</b><span><b>자산</b> — HUG 자산심사 결과. 부부 합산 순자산으로 봅니다.</span></li>
+          <li><b>③</b><span><b>혼인·출산</b> — 혼인관계증명서 상세, 가족관계증명서, 출생증명서.</span></li>
+          <li><b>④</b><span><b>주택</b> — 임대차계약서(보증금 5% 이상 납입), 건축물대장, 등기사항전부증명서.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#191F28;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>기준</b> — 2026년 11월 주택도시기금 상품 안내와 한국주택금융공사 보금자리론 안내를 기준으로 했습니다. 소득은 부부합산 연소득(세전), 순자산은 부부합산입니다.</p>
+          <p><b>한도</b> — 상품 한도, 대상 가격의 LTV(전세는 보증금의 80%), 보증기관 한도 중 가장 작은 값을 계산합니다. 실제 승인액은 신용도·기존 대출·담보평가에 따라 줄어듭니다.</p>
+          <p><b>금리</b> — 소득 구간별 금리표의 하한~상한을 보여 주고, 월 이자는 하한 금리 기준 단순 이자(원금 × 금리 ÷ 12)로 계산합니다. 원리금균등 상환의 실제 월 납입액은 이보다 큽니다.</p>
+          <p><b>포함하지 않은 것</b> — DSR·DTI 심사, 기존 대출의 중복 제한, 보증기관(HF·HUG) 보증 한도와 심사, 주택 면적(85㎡)·주거용 오피스텔 세부 요건, 지방 0.2%p 인하, 우대금리(자녀·전자계약·청약저축), 5세대 실손 등 다른 제도, 상품별 특례금리 종료 후 금리는 반영하지 않았습니다.</p>
+          <p><b>주의</b> — 정책대출 조건은 예산과 대책에 따라 수시로 바뀝니다. 신청 직전 기금e든든과 수탁은행에서 확인하세요.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">판독 결과는 참고용이며, 실제 대출 가능 여부와 금액은 금융기관 심사로 결정됩니다.</p>
+    </div>
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법</h2>
+      <p>초록색으로 표시된 상품이 <b>조건을 모두 넘은 후보</b>입니다. 빨간색은 하나 이상 걸린 상품이고, 표의 '걸린 조건' 열에 이유가 나옵니다. 조건을 만족해도 한도가 0이면 대상 집값이 기준을 넘은 것입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>지표</th><th>의미</th><th>확인할 점</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>가능 상품</td><td>모든 조건을 넘은 상품</td><td>금리·한도 순으로 비교</td></tr>
+            <tr><td>예상 한도</td><td>상품 한도와 LTV 중 작은 값</td><td>보증금의 20%는 자기자금</td></tr>
+            <tr><td>금리 구간</td><td>소득 구간별 하한~상한</td><td>우대 전 기본금리</td></tr>
+            <tr><td>월 이자</td><td>한도 × 하한 금리 ÷ 12</td><td>원금 상환은 별도</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">특례 상품은 '지금의 금리'만 보면 안 됩니다</span>
+        신생아 특례 전세금리 1.3%는 <b>4년</b>만 유지됩니다. 그 뒤에는 소득 구간에 따라 다시 정해지고, 시중 금리 수준으로 올라갈 수 있습니다. 10년을 살 계획이라면 특례 기간이 끝난 뒤의 금리까지 계산해 비교해야 합니다.
+      </div>
+    </section>
+
+    <section class="prose" id="examples" style="margin-top:16px;">
+      <h2>사례 — 신혼 3년 차, 맞벌이 합산 7,000만원</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>무주택, 순자산 1억 5,000만원, 수도권 전세 3억원</caption>
+          <thead>
+            <tr><th>상품</th><th>판정</th><th class="num">한도</th><th class="num">금리</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>신혼부부 전용 전세</td><td>가능</td><td class="num">2억 4,000만원</td><td class="num">3.3%</td></tr>
+            <tr><td>일반 버팀목</td><td>불가 (소득 초과)</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>신생아 특례 버팀목</td><td>불가 (출산 요건)</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>청년 버팀목</td><td>불가 (나이)</td><td class="num">—</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>이 경우 신혼부부 전용 전세가 사실상 유일한 답입니다. 보증금 3억원의 80%인 2억 4,000만원이 상품 한도(2억 5,000만원)보다 작아 <b>2억 4,000만원</b>까지 가능하고, 나머지 6,000만원은 자기자금입니다. 금리 3.3%로 계산하면 월 이자는 약 <b>66만원</b>입니다.</p>
+      <p>같은 조건에서 아이가 태어났다면 신생아 특례 버팀목으로 바꿀 수 있습니다. 소득 기준이 1억 3,000만원으로 올라가고 금리는 소득 7,000만원 구간에서 <b>2.2~2.5%</b>, 한도는 2억 4,000만원으로 같지만 특례금리가 4년만 유지된다는 점을 함께 봐야 합니다.</p>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>신생아 특례는 아이가 만 2세를 넘으면 못 받나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>대출 접수일 기준 2년 안에 출산했거나 만 2세 미만 아이를 입양한 가구가 대상입니다. 아이가 만 2세를 넘으면 일반 디딤돌이나 버팀목으로 바뀝니다. 다만 신생아 특별공급이나 우선공급에 당첨된 경우에는 자녀가 만 2세를 넘어도 구입자금을 받을 수 있습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>부부 합산 소득이 기준을 넘으면 아예 안 되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>상품마다 다릅니다. 신생아 특례는 맞벌이면 합산 2억원까지 인정하지만 각자의 소득이 1억3,000만원 이하여야 합니다. 신혼부부 전용과 일반 버팀목은 합산 기준을 넘어도 신청인 한 사람의 소득이 기준 이하이면 검토되는 예외가 있습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>특례금리가 끝나면 금리는 어떻게 되나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>특례금리는 구입 5년, 전세 4년이 기본이고 추가 출산 시 1명당 같은 기간씩 늘어납니다. 기간이 끝나면 대출 당시 소득 구간으로 다시 금리가 정해지고, 소득이 높으면 시중 주택담보대출·전세대출 금리 중 가장 낮은 값이 적용됩니다. 그래서 만기 전에 보금자리론이나 은행 대출로 갈아탈지 비교하게 됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>전세대출을 이미 쓰고 있으면 갈아탈 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>기금 전세대출을 쓰고 있다면 같은 상품의 갱신이나 대환은 가능하지만, 다른 기금 상품과 은행 전세대출을 중복으로 받을 수는 없습니다. 신생아 특례 버팀목으로 갈아탈 때는 기존 대출 잔액을 넘지 않는 범위에서 승인됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>여러 상품을 동시에 받을 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>한 주택에 여러 정책대출을 겹쳐 받을 수 없습니다. 기금 대출이나 은행 주택담보대출을 이미 이용 중이면 원칙적으로 신규 신청이 막힙니다. 다만 기금 전세대출을 쓰던 사람이 구입자금을 받을 때는 실행일 당일 기존 대출을 상환하는 조건으로 가능합니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>주택도시기금 상품 안내(2026.11) — 신생아 특례 디딤돌·버팀목, 신혼부부 전용, 버팀목, 청년 버팀목</li>
+        <li>한국주택금융공사 보금자리론 안내(2026.10) — 소득 요건과 한도·금리</li>
+        <li>주택도시기금 기금e든든 신청 안내 — 소득·자산 심사, 필요 서류</li>
+        <li>금융위원회·국토교통부 2026.8 부동산 시장 안정 금융 종합대책 — 신혼부부 소득 선택제</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#6B7684;">※ 이 페이지는 일반적인 정보이며 특정 상품을 추천하지 않습니다. 신청 전 기금e든든과 수탁은행에서 조건을 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="dsr-limit.html">
+        <b>DSR 대출 한도 계산기</b>
+        <span>기존 대출이 있으면 추가 한도가 얼마나 줄어드는지 계산합니다.</span>
+      </a>
+      <a href="real-estate-fee.html">
+        <b>복비·취득세 계산기</b>
+        <span>구입 시 중개보수와 취득세를 함께 확인합니다.</span>
+      </a>
+      <a href="guide-jeonse-loan.html">
+        <b>전세 이사·대출 갈아타기 가이드</b>
+        <span>부채 합산과 상환 순서를 3주 체크리스트로 정리했습니다.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-mark" src="assets/logo-mark.svg" alt="" width="30" height="30">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+          <a href="tax-refund-check.html">경정청구 환급 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+          <a href="real-estate-fee.html">복비·취득세</a>
+          <a href="policy-loan-check.html">정책대출 자격</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+          <a href="car-insurance-discount.html">자동차보험 할인</a>
+          <a href="silson-switch.html">실손 세대 전환</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 킷랩 (KitLab) · usefulkit.kr. All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* PL-CORE-START */
+var PL_RATES = {
+  newbornBuy: [
+    { max: 2000, min: 1.80, max2: 2.05 }, { max: 4000, min: 2.15, max2: 2.40 },
+    { max: 6000, min: 2.40, max2: 2.65 }, { max: 8500, min: 2.65, max2: 2.90 },
+    { max: 10000, min: 2.90, max2: 3.20 }, { max: 13000, min: 3.20, max2: 3.50 },
+    { max: 15000, min: 3.50, max2: 3.80 }, { max: 17000, min: 3.85, max2: 4.15 },
+    { max: Infinity, min: 4.20, max2: 4.50 }
+  ],
+  newbornLease: [
+    { max: 2000, min: 1.30, max2: 1.60 }, { max: 4000, min: 1.60, max2: 1.90 },
+    { max: 6000, min: 1.90, max2: 2.20 }, { max: 7500, min: 2.20, max2: 2.50 },
+    { max: 10000, min: 2.55, max2: 2.85 }, { max: 13000, min: 2.90, max2: 3.20 },
+    { max: 15000, min: 3.25, max2: 3.55 }, { max: 17000, min: 3.60, max2: 3.90 },
+    { max: Infinity, min: 4.00, max2: 4.30 }
+  ],
+  newlywedLease: [
+    [1.9, 2.0, 2.1, 2.2],
+    [2.2, 2.3, 2.4, 2.5],
+    [2.6, 2.7, 2.8, 2.9],
+    [3.0, 3.1, 3.2, 3.3]
+  ],
+  band: { steotmok: [2.50, 3.50], youthSteotmok: [2.20, 3.30], newbornSteotmok: [1.30, 4.30],
+          newlywedBuy: [2.55, 3.85], didimdol: [2.85, 4.15], bogeumjari: [4.90, 5.20] }
+};
+
+function plBand(pair){ return { min: pair[0], max: pair[1], text: pair[0].toFixed(2) + '~' + pair[1].toFixed(2) + '%' }; }
+function plBandByIncome(table, income){
+  for (var i = 0; i < table.length; i++){
+    if (income <= table[i].max) return plBand([table[i].min, table[i].max2]);
+  }
+  var last = table[table.length - 1];
+  return plBand([last.min, last.max2]);
+}
+function plNewlywedRate(income, deposit){
+  var rows = PL_RATES.newlywedLease;
+  var ri = income <= 2000 ? 0 : (income <= 4000 ? 1 : (income <= 6000 ? 2 : 3));
+  var ci = deposit <= 5000 ? 0 : (deposit <= 10000 ? 1 : (deposit <= 15000 ? 2 : 3));
+  var v = rows[ri][ci];
+  return { min: v, max: v, text: v.toFixed(1) + '%' };
+}
+
+function plHomePriceCap(price, metro, purpose){
+  return price;
+}
+
+var PL_PRODUCTS = [
+  {
+    key: 'newborn-buy', name: '신생아 특례 디딤돌 (구입)', purpose: 'buy',
+    check: function(c){
+      var r = [];
+      if (!c.birth) r.push('2년 내 출산·입양 아님');
+      if (c.home !== 'none') r.push('무주택 아님(대환만 가능)');
+      if (c.income > 13000) r.push('소득 1억3,000만원 초과');
+      if (c.networth > 51100) r.push('순자산 5억1,100만원 초과');
+      if (c.price > 90000) r.push('주택가격 9억원 초과');
+      return r;
+    },
+    calc: function(c){
+      var ltv = c.firstBuy ? 0.8 : 0.7;
+      var limit = Math.min(40000, Math.round(c.price * ltv));
+      var rate = plBandByIncome(PL_RATES.newbornBuy, c.income);
+      return { limit: limit, rate: rate, ltv: ltv, note: '특례 5년' };
+    }
+  },
+  {
+    key: 'newborn-lease', name: '신생아 특례 버팀목 (전세)', purpose: 'jeonse',
+    check: function(c){
+      var r = [];
+      if (!c.birth) r.push('2년 내 출산·입양 아님');
+      if (c.home !== 'none') r.push('무주택 아님');
+      if (c.income > 13000) r.push('소득 1억3,000만원 초과');
+      if (c.networth > 34500) r.push('순자산 3억4,500만원 초과');
+      if (c.price > (c.metro ? 50000 : 40000)) r.push('보증금 상한 초과');
+      return r;
+    },
+    calc: function(c){
+      var limit = Math.min(24000, Math.round(c.price * 0.8));
+      var rate = plBandByIncome(PL_RATES.newbornLease, c.income);
+      return { limit: limit, rate: rate, ltv: 0.8, note: '특례 4년' };
+    }
+  },
+  {
+    key: 'newlywed-lease', name: '신혼부부 전용 전세', purpose: 'jeonse',
+    check: function(c){
+      var r = [];
+      if (c.married !== 'newlywed') r.push('혼인 7년 초과·미혼');
+      if (c.home !== 'none') r.push('무주택 아님');
+      if (c.income > 7500) r.push('소득 7,500만원 초과');
+      if (c.networth > 34500) r.push('순자산 3억4,500만원 초과');
+      if (c.price > (c.metro ? 40000 : 30000)) r.push('보증금 상한 초과');
+      return r;
+    },
+    calc: function(c){
+      var cap = c.metro ? 25000 : 16000;
+      var limit = Math.min(cap, Math.round(c.price * 0.8));
+      var rate = plNewlywedRate(c.income, c.price);
+      return { limit: limit, rate: rate, ltv: 0.8, note: '변동금리' };
+    }
+  },
+  {
+    key: 'newlywed-buy', name: '신혼부부 전용 구입', purpose: 'buy',
+    check: function(c){
+      var r = [];
+      if (c.married !== 'newlywed') r.push('혼인 7년 초과·미혼');
+      if (!c.firstBuy) r.push('생애최초 아님');
+      if (c.home !== 'none') r.push('무주택 아님');
+      if (c.income > 8500) r.push('소득 8,500만원 초과');
+      if (c.networth > 51100) r.push('순자산 5억1,100만원 초과');
+      if (c.price > 60000) r.push('주택가격 6억원 초과');
+      return r;
+    },
+    calc: function(c){
+      var ltv = c.metro ? 0.7 : 0.8;
+      var limit = Math.min(32000, Math.round(c.price * ltv));
+      return { limit: limit, rate: plBand(PL_RATES.band.newlywedBuy), ltv: ltv, note: '생애최초' };
+    }
+  },
+  {
+    key: 'didimdol', name: '내집마련 디딤돌 (신혼)', purpose: 'buy',
+    check: function(c){
+      var r = [];
+      if (c.married !== 'newlywed') r.push('혼인 7년 초과·미혼');
+      if (c.home !== 'none') r.push('무주택 아님');
+      if (c.income > 8500) r.push('소득 8,500만원 초과');
+      if (c.networth > 51100) r.push('순자산 5억1,100만원 초과');
+      if (c.price > 60000) r.push('주택가격 6억원 초과');
+      return r;
+    },
+    calc: function(c){
+      var limit = Math.min(32000, Math.round(c.price * 0.7));
+      return { limit: limit, rate: plBand(PL_RATES.band.didimdol), ltv: 0.7, note: '신혼 0.2%p 우대' };
+    }
+  },
+  {
+    key: 'steotmok', name: '일반 버팀목 전세', purpose: 'jeonse',
+    check: function(c){
+      var r = [];
+      if (c.home !== 'none') r.push('무주택 아님');
+      if (c.income > 5000) r.push('소득 5,000만원 초과');
+      if (c.networth > 34500) r.push('순자산 3억4,500만원 초과');
+      if (c.price > (c.metro ? 30000 : 20000)) r.push('보증금 상한 초과');
+      return r;
+    },
+    calc: function(c){
+      var cap = c.metro ? 12000 : 8000;
+      var limit = Math.min(cap, Math.round(c.price * 0.8));
+      return { limit: limit, rate: plBand(PL_RATES.band.steotmok), ltv: 0.8, note: '2년 단위' };
+    }
+  },
+  {
+    key: 'youth-steotmok', name: '청년 버팀목 전세', purpose: 'jeonse',
+    check: function(c){
+      var r = [];
+      if (c.age > 34) r.push('만 34세 초과');
+      if (c.married !== 'single') r.push('단독 세대주 아님');
+      if (c.home !== 'none') r.push('무주택 아님');
+      if (c.income > 5000) r.push('소득 5,000만원 초과');
+      if (c.networth > 34500) r.push('순자산 3억4,500만원 초과');
+      return r;
+    },
+    calc: function(c){
+      var limit = Math.min(15000, Math.round(c.price * 0.8));
+      return { limit: limit, rate: plBand(PL_RATES.band.youthSteotmok), ltv: 0.8, note: '만 19~34세' };
+    }
+  },
+  {
+    key: 'bogeumjari', name: '보금자리론', purpose: 'buy',
+    check: function(c){
+      var r = [];
+      var cap = c.children >= 2 ? 10000 : (c.children === 1 ? 9000 : (c.married === 'newlywed' ? 8500 : 7000));
+      if (c.income > cap) r.push('소득 ' + (cap / 10000) + '억원 초과');
+      if (c.home === 'one' && !c.firstBuy) r.push('1주택(대환 외)');
+      if (c.price > 60000) r.push('주택가격 6억원 초과');
+      return r;
+    },
+    calc: function(c){
+      var cap = c.firstBuy ? 42000 : 36000;
+      var limit = Math.min(cap, Math.round(c.price * 0.7));
+      return { limit: limit, rate: plBand(PL_RATES.band.bogeumjari), ltv: 0.7, note: '아낌e 기준' };
+    }
+  }
+];
+
+function plEvaluate(cfg){
+  cfg = cfg || {};
+  var c = {
+    age: Math.max(19, Math.round(cfg.age || 34)),
+    married: cfg.married || 'single',
+    birth: cfg.birth === 'yes',
+    children: Math.max(0, Math.round(cfg.children || 0)),
+    home: cfg.home || 'none',
+    purpose: cfg.purpose === 'buy' ? 'buy' : 'jeonse',
+    metro: cfg.metro !== false,
+    firstBuy: !!cfg.firstBuy,
+    income: Math.max(0, cfg.income || 0),
+    networth: Math.max(0, cfg.networth || 0),
+    price: Math.max(0, cfg.price || 0)
+  };
+  var out = [];
+  for (var i = 0; i < PL_PRODUCTS.length; i++){
+    var p = PL_PRODUCTS[i];
+    var samePurpose = p.purpose === c.purpose;
+    var reasons = p.check(c);
+    if (!samePurpose) reasons = ['용도 불일치(' + (p.purpose === 'buy' ? '구입' : '전세') + ')'].concat(reasons);
+    var ok = reasons.length === 0;
+    var detail = p.calc(c);
+    var limit = ok && detail.limit > 0 ? detail.limit : 0;
+    out.push({
+      key: p.key, name: p.name, purpose: p.purpose, ok: ok, reasons: reasons,
+      limit: limit, rate: detail.rate, ltv: detail.ltv, note: detail.note,
+      monthly: limit > 0 ? Math.round(limit * 10000 * (detail.rate.min / 100) / 12) : 0,
+      samePurpose: samePurpose
+    });
+  }
+  var okList = out.filter(function(x){ return x.ok && x.limit > 0; });
+  okList.sort(function(a, b){ return a.rate.min - b.rate.min; });
+  return {
+    cond: c, list: out, ok: okList,
+    best: okList.length ? okList[0] : null,
+    empty: !(cfg.income > 0 || cfg.price > 0)
+  };
+}
+
+function plComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function plWon(n){ return plComma(Math.round(n || 0)) + '원'; }
+function plManWon(man){
+  var v = Math.round(Math.abs(man || 0));
+  var out = '';
+  if (v >= 10000){
+    out = Math.floor(v / 10000) + '억';
+    out += (v % 10000) ? ' ' + plComma(v % 10000) + '만원' : '원';
+  } else {
+    out = plComma(v) + '만원';
+  }
+  return (man < 0 ? '-' : '') + out;
+}
+function plMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + plComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
+}
+/* PL-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    age: $('pl-age'), married: $('pl-married'), birth: $('pl-birth'), children: $('pl-children'),
+    home: $('pl-home'), purpose: $('pl-purpose'), metro: $('pl-metro'), first: $('pl-first'),
+    income: $('pl-income'), networth: $('pl-networth'), price: $('pl-price'),
+    priceLabel: $('pl-priceLabel'), priceTip: $('pl-priceTip'),
+    verdict: $('pl-verdict'), resBest: $('pl-resBest'), resCount: $('pl-resCount'),
+    summary: $('pl-summary'), listBody: $('pl-listBody'), condBody: $('pl-condBody'), toast: $('pl-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function readCfg(){
+    return {
+      age: num(el.age.value) || 34,
+      married: el.married.value,
+      birth: el.birth.value,
+      children: num(el.children.value),
+      home: el.home.value,
+      purpose: el.purpose.value,
+      metro: el.metro.checked,
+      firstBuy: el.first.checked,
+      income: num(el.income.value),
+      networth: num(el.networth.value),
+      price: num(el.price.value)
+    };
+  }
+
+  function render(){
+    var cfg = readCfg();
+    el.priceLabel.textContent = cfg.purpose === 'buy' ? '매매가(평가액)' : '전세보증금';
+    el.priceTip.textContent = cfg.purpose === 'buy'
+      ? '주택 가격(시세·감정가·매매가 중 하나)을 넣으세요.'
+      : '전세는 보증금, 구입은 매매가(평가액)를 넣으면 됩니다.';
+
+    var r = plEvaluate(cfg);
+
+    if (r.empty){
+      el.verdict.className = 'calc-verdict is-empty';
+      el.verdict.innerHTML = '<span class="v-tag">입력 대기</span><span class="v-title">소득과 집값을 입력하세요</span>'
+        + '<span class="v-desc">부부합산 소득·순자산과 대상 주택 가격을 넣으면 받을 수 있는 상품이 정리됩니다.</span>';
+      el.resBest.className = 'calc-res';
+      el.resBest.innerHTML = '<div class="r-head">가장 유리한 상품</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resCount.className = 'calc-res';
+      el.resCount.innerHTML = '<div class="r-head">가능 상품</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>용도</dt><dd>' + (cfg.purpose === 'buy' ? '구입' : '전세') + '</dd></div><div class="total"><dt>가능 상품</dt><dd>—</dd></div>';
+      el.listBody.innerHTML = '<table class="calc-table"><tbody><tr><td>조건을 입력하면 판정표가 만들어집니다.</td></tr></tbody></table>';
+      el.condBody.innerHTML = '';
+      return;
+    }
+
+    var best = r.best;
+    el.verdict.className = 'calc-verdict ' + (best ? 'is-good' : 'is-bad');
+    if (best){
+      el.verdict.innerHTML = '<span class="v-tag">가능 ' + r.ok.length + '개 · ' + (cfg.purpose === 'buy' ? '구입' : '전세') + '</span>'
+        + '<span class="v-title">' + best.name + ' — 최대 ' + plManWon(best.limit) + '</span>'
+        + '<span class="v-desc">금리 ' + best.rate.text + ' 기준으로 월 이자 약 ' + plWon(best.monthly) + '. '
+        + '보증금·매매가의 ' + Math.round(best.ltv * 100) + '%와 상품 한도 중 작은 금액입니다. 나머지는 자기자금으로 준비해야 합니다.</span>';
+    } else {
+      el.verdict.innerHTML = '<span class="v-tag">가능 0개</span><span class="v-title">지금 조건으로 맞는 상품이 없습니다</span>'
+        + '<span class="v-desc">아래 판정표에서 걸린 조건을 확인하세요. 소득·순자산이 기준을 넘거나, 대상 집값이 상한을 넘은 경우가 대부분입니다. 조건을 바꿔 다시 계산해 볼 수 있습니다.</span>';
+    }
+
+    el.resBest.className = 'calc-res';
+    el.resBest.innerHTML = '<div class="r-head">가장 유리한 상품</div><dl>'
+      + '<div><dt>상품</dt><dd>' + (best ? best.name.replace(/ \(.*\)/, '') : '없음') + '</dd></div>'
+      + '<div><dt>예상 한도</dt><dd class="big">' + (best ? plManWon(best.limit) : '—') + '</dd></div>'
+      + '<div><dt>금리</dt><dd>' + (best ? best.rate.text : '—') + '</dd></div>'
+      + '<div><dt>월 이자(하한)</dt><dd>' + (best ? plWon(best.monthly) : '—') + '</dd></div>'
+      + '</dl>';
+
+    el.resCount.className = 'calc-res';
+    var totals = r.ok.map(function(x){ return x.limit; });
+    el.resCount.innerHTML = '<div class="r-head">가능 상품</div><dl>'
+      + '<div><dt>가능</dt><dd>' + r.ok.length + '개</dd></div>'
+      + '<div><dt>검토 상품</dt><dd>' + r.list.length + '개</dd></div>'
+      + '<div><dt>최대 한도</dt><dd>' + (totals.length ? plManWon(Math.max.apply(null, totals)) : '—') + '</dd></div>'
+      + '<div><dt>용도</dt><dd>' + (cfg.purpose === 'buy' ? '구입' : '전세') + '</dd></div>'
+      + '</dl>';
+
+    var sum = '';
+    sum += '<div><dt>부부합산 소득</dt><dd>' + plManWon(r.cond.income) + '</dd></div>';
+    sum += '<div><dt>부부합산 순자산</dt><dd>' + plManWon(r.cond.networth) + '</dd></div>';
+    sum += '<div><dt>대상 금액</dt><dd>' + plManWon(r.cond.price) + '</dd></div>';
+    sum += '<div><dt>가구 조건</dt><dd>' + (r.cond.married === 'newlywed' ? '신혼' : r.cond.married === 'married' ? '기혼' : '미혼') + (r.cond.birth ? ' · 출산' : '') + '</dd></div>';
+    sum += '<div class="total"><dt>가능한 상품</dt><dd class="pos">' + r.ok.length + '개</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var tb = '<table class="calc-table"><thead><tr><th>상품</th><th>판정</th><th>한도</th><th>금리</th></tr></thead><tbody>';
+    for (var i = 0; i < r.list.length; i++){
+      var x = r.list[i];
+      tb += '<tr><td>' + x.name + '</td><td>' + (x.ok && x.limit > 0 ? '가능' : (x.reasons[0] || '한도 0')) + '</td><td>'
+        + (x.ok && x.limit > 0 ? plManWon(x.limit) : '—') + '</td><td>'
+        + (x.ok ? x.rate.text : '—') + '</td></tr>';
+    }
+    tb += '</tbody></table>';
+    el.listBody.innerHTML = tb;
+
+    var cb = '<table class="calc-table"><thead><tr><th>항목</th><th>입력값</th></tr></thead><tbody>';
+    cb += '<tr><td>나이</td><td>' + r.cond.age + '세</td></tr>';
+    cb += '<tr><td>혼인</td><td>' + (r.cond.married === 'newlywed' ? '혼인 7년 이내' : r.cond.married === 'married' ? '혼인 7년 초과' : '미혼') + '</td></tr>';
+    cb += '<tr><td>2년 내 출산·입양</td><td>' + (r.cond.birth ? '있음' : '없음') + '</td></tr>';
+    cb += '<tr><td>미성년 자녀</td><td>' + r.cond.children + '명</td></tr>';
+    cb += '<tr><td>주택 보유</td><td>' + (r.cond.home === 'none' ? '무주택' : '1주택') + '</td></tr>';
+    cb += '<tr><td>지역</td><td>' + (r.cond.metro ? '수도권' : '수도권 외') + '</td></tr>';
+    cb += '<tr><td>생애최초</td><td>' + (r.cond.firstBuy ? '해당' : '아니오') + '</td></tr>';
+    cb += '</tbody></table>';
+    el.condBody.innerHTML = cb;
+  }
+
+  ['pl-income', 'pl-networth', 'pl-price', 'pl-age', 'pl-children'].forEach(function(id){
+    $(id).addEventListener('input', render);
+  });
+  ['pl-married', 'pl-birth', 'pl-home', 'pl-purpose'].forEach(function(id){
+    $(id).addEventListener('change', render);
+  });
+  el.metro.addEventListener('change', render);
+  el.first.addEventListener('change', render);
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('pl-example').addEventListener('click', function(){
+    el.age.value = '35';
+    el.married.value = 'newlywed';
+    el.birth.value = 'no';
+    el.children.value = '0';
+    el.home.value = 'none';
+    el.purpose.value = 'jeonse';
+    el.metro.checked = true;
+    el.first.checked = false;
+    el.income.value = '7000';
+    el.networth.value = '15000';
+    el.price.value = '30000';
+    render();
+  });
+  $('pl-reset').addEventListener('click', function(){
+    el.age.value = '';
+    el.married.value = 'single';
+    el.birth.value = 'no';
+    el.children.value = '';
+    el.home.value = 'none';
+    el.purpose.value = 'jeonse';
+    el.metro.checked = true;
+    el.first.checked = false;
+    el.income.value = '';
+    el.networth.value = '';
+    el.price.value = '';
+    render();
+  });
+  $('pl-copy').addEventListener('click', function(){
+    var r = plEvaluate(readCfg());
+    var text = '정책대출 자격 판정\n'
+      + '· 소득 ' + plManWon(r.cond.income) + ' / 순자산 ' + plManWon(r.cond.networth) + ' / 대상 ' + plManWon(r.cond.price) + ' / ' + (r.cond.purpose === 'buy' ? '구입' : '전세') + '\n';
+    if (r.best){
+      text += '· 가장 유리: ' + r.best.name + ' (한도 ' + plManWon(r.best.limit) + ', 금리 ' + r.best.rate.text + ')\n';
+    } else {
+      text += '· 조건에 맞는 상품이 없습니다.\n';
+    }
+    for (var i = 0; i < r.list.length; i++){
+      var x = r.list[i];
+      text += '· ' + x.name + ': ' + (x.ok && x.limit > 0 ? '가능 ' + plMan(x.limit) : '불가(' + (x.reasons[0] || '한도 0') + ')') + '\n';
+    }
+    text += '계산: usefulkit.kr/policy-loan-check.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

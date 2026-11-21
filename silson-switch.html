@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실손보험 세대 전환 손익 계산기 (1~3세대 vs 4세대) | 킷랩 (KitLab)</title>
+<meta name="description" content="지금 실손보험을 유지할지 4세대로 갈아탈지 5년·10년 누적 비용으로 비교합니다. 보험료 차이와 자기부담금, 비급여 할인·할증까지 반영해 계산합니다.">
+<link rel="canonical" href="https://usefulkit.kr/silson-switch.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="킷랩 (KitLab)">
+<meta property="og:title" content="실손보험 세대 전환 손익 계산기">
+<meta property="og:description" content="기존 세대 유지와 4세대 전환을 10년 누적 비용으로 비교합니다.">
+<meta property="og:url" content="https://usefulkit.kr/silson-switch.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="실손보험 세대 전환 손익 계산기">
+<meta name="twitter:description" content="기존 세대 유지와 4세대 전환을 10년 누적 비용으로 비교합니다.">
+<meta name="twitter:image" content="https://usefulkit.kr/assets/og-image.png">
+<meta name="twitter:image:alt" content="킷랩 (KitLab) — 생활·금융 계산기 15종 + 실용 가이드 5종">
+<meta name="theme-color" content="#00C471">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calc.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "실손보험 세대 전환 손익 계산기",
+  "url": "https://usefulkit.kr/silson-switch.html",
+  "description": "지금 실손보험을 유지할지 4세대로 갈아탈지 5년·10년 누적 비용으로 비교합니다. 보험료 차이와 자기부담금, 비급여 할인·할증까지 반영해 계산합니다.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "킷랩 (KitLab)",
+    "alternateName": "KitLab",
+    "url": "https://usefulkit.kr/about.html",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usefulkit.kr/assets/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1세대 실손은 무조건 유지하는 게 좋나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "무조건은 아닙니다. 1세대는 자기부담금이 거의 없어 병원을 자주 이용하면 유리하지만, 보험료가 4세대의 네 배에 이르는 경우도 있습니다. 최근 3년간 비급여 지출이 거의 없었다면 4세대 전환이 누적 비용에서 유리해지는 경우가 많습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4세대 실손의 자기부담률은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "급여는 20%, 비급여는 30%입니다. 3세대까지는 급여 10~20%, 비급여 20% 수준이었으므로 비급여를 많이 쓰는 사람은 전환 후 본인 부담이 늘어납니다. 대신 보험료 자체가 크게 낮아집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4세대 보험료 할인·할증은 어떻게 정해지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "직전 1년간 받은 비급여 보험금을 기준으로 비급여 특약 보험료를 조정합니다. 지급액이 없으면 5% 안팎 할인, 100만원 미만이면 그대로, 100만~150만원은 두 배, 150만~300만원은 세 배, 300만원 이상은 네 배까지 오릅니다. 매년 다시 계산됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전환 후 마음에 안 들면 되돌릴 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전환 청약 후 6개월 안에 철회할 수 있습니다. 다만 전환 후 보험금을 받은 이력이 있으면 제한되고, 3개월 안에 철회하면 보험금 지급 사유가 있어도 철회가 가능합니다. 철회는 계약자별로 한 번만 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5세대 실손이 나왔다는데 4세대와 뭐가 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5세대는 비급여를 중증과 비중증으로 나눠 특약으로 만들고 보험료를 더 낮춘 상품입니다. 4세대 신규 판매는 2026년 5월에 끝난 것으로 공시되어 있어, 지금 전환을 고민한다면 실제 가입 가능한 상품이 4세대인지 5세대인지 보험사에 먼저 확인해야 합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
+      <span class="brand-text">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">홈</a>
+      <a href="index.html#tools">계산기 15종</a>
+      <a href="index.html#guides">실용 가이드 5종</a>
+      <a href="about.html">사이트 소개</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="read">
+
+    <div class="page-head">
+      <span class="eyebrow">실손보험</span>
+      <h1>실손보험 세대 전환 손익 계산기</h1>
+      <p class="page-lead">1세대 실손은 자기부담금이 없지만 보험료가 4세대의 <b>네 배</b>에 이르기도 합니다. 유지가 답인지 전환이 답인지는 <b>내 병원비</b>가 정합니다. 보험료와 자기부담금을 5년·10년 누적으로 비교하세요.</p>
+      <div class="page-meta">
+        <span>2026년 11월 기준</span>
+        <span>1~3세대 vs 4세대</span>
+        <span>개인정보 저장 없음</span>
+      </div>
+    </div>
+
+    <figure class="article-hero-illu">
+      <img src="assets/illustrations/silson-switch.webp"
+           srcset="assets/illustrations/silson-switch-480.webp 480w, assets/illustrations/silson-switch.webp 960w"
+           sizes="(max-width: 820px) 100vw, 760px"
+           alt="크기가 다른 두 방패를 저울에 올린 모습과 병원, 교차하는 화살표로 표현한 실손보험 세대 전환 일러스트" width="960" height="540" decoding="async">
+    </figure>
+
+    <nav class="toc" aria-label="이 페이지 목차">
+      <b>이 페이지에서</b>
+      <ol>
+        <li><a href="#guide-top">세대별 차이</a></li>
+        <li><a href="#calc">계산기</a></li>
+        <li><a href="#read-result">결과 읽는 법</a></li>
+        <li><a href="#examples">사례</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" id="guide-top" style="margin-top:18px;">
+      <h2>세대는 '가입 시기'이고, 차이는 '누가 얼마를 내는가'입니다</h2>
+      <p>실손의료보험은 판매 시점에 따라 1세대부터 4세대까지 나뉩니다. 세대가 바뀔 때마다 자기부담률이 올라가고 보험료는 내려갔습니다. 즉 <b>보험료를 적게 내고 병원비를 더 내는 방향</b>으로 개편이 진행된 것입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>세대별 자기부담률과 갱신주기</caption>
+          <thead>
+            <tr><th>구분</th><th>판매 시기</th><th class="num">급여 자기부담</th><th class="num">비급여 자기부담</th><th class="num">갱신주기</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1세대</td><td>2009년 9월 이전</td><td class="num">0~20%</td><td class="num">0%</td><td class="num">1~5년</td></tr>
+            <tr><td>2세대</td><td>2009.10~2017.3</td><td class="num">10%</td><td class="num">20%</td><td class="num">1·3년</td></tr>
+            <tr><td>3세대</td><td>2017.4~2021.6</td><td class="num">10~20%</td><td class="num">20~30%</td><td class="num">1년</td></tr>
+            <tr><td>4세대</td><td>2021.7~2026.5</td><td class="num">20%</td><td class="num">30%</td><td class="num">1년</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>보험료 차이는 상상 이상입니다. 40대 남성 기준으로 1세대 월 5만 4,300원, 2세대 3만 3,700원, 4세대 1만 4,600원 수준으로 알려져 있습니다. 1세대 가입자가 4세대로 가면 <b>월 4만원 가까이</b> 줄어드는 셈입니다.</p>
+
+      <h2>4세대가 싼 이유 — 비급여를 떼어냈기 때문입니다</h2>
+      <p>4세대는 보장을 급여(주계약)와 비급여(특약)로 분리하고, <b>비급여 이용량에 따라 다음 해 보험료를 할인·할증</b>합니다. 직전 1년 비급여 지급액이 없으면 비급여 특약 보험료를 5% 안팎 깎고, 300만원을 넘으면 최대 네 배까지 올립니다. 병원을 거의 가지 않는 사람에게 유리하고, 도수치료·비급여 주사를 자주 맞는 사람에게 불리한 구조입니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>직전 1년 비급여 지급액</th><th>비급여 특약 보험료</th><th>전체 보험료 영향</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>없음</td><td>5% 할인</td><td>약 2% 인하</td></tr>
+            <tr><td>100만원 미만</td><td>그대로</td><td>변동 없음</td></tr>
+            <tr><td>100만~150만원</td><td>2배</td><td>약 40% 인상</td></tr>
+            <tr><td>150만~300만원</td><td>3배</td><td>약 80% 인상</td></tr>
+            <tr><td>300만원 이상</td><td>4배</td><td>약 120% 인상</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <span class="callout-title">2026년 5월 이후 4세대 신규 판매가 끝났습니다</span>
+        생명보험협회 공시에는 4세대 실손의 판매 시기가 2021년 7월부터 <b>2026년 5월 5일</b>까지로 적혀 있습니다. 지금 전환을 고민한다면 실제로 가입 가능한 상품이 4세대인지 5세대인지, 전환 시 보장과 보험료가 어떻게 되는지 보험사에 먼저 확인해야 합니다. 이 계산기는 4세대 구조를 기준으로 손익의 <b>방향</b>을 보여 줍니다.
+      </div>
+    </section>
+
+    <!-- ================= 계산기 ================= -->
+    <div class="calc" id="calc">
+      <div class="calc-hero">
+        <span class="calc-badge">5년·10년 누적 · 자기부담금 포함</span>
+        <h2 class="calc-title">실손 전환 손익 계산기</h2>
+        <p class="calc-lead">현재 세대와 월 보험료, 1년 병원비를 넣으면 <b>유지 vs 4세대 전환</b>의 누적 총비용(보험료 + 자기부담금)을 비교합니다.</p>
+      </div>
+      <noscript><p style="margin:0 0 12px;padding:12px 14px;background:#FFF7E6;border:1px solid #F5E3BC;color:#7A5200;border-radius:12px;font-size:13.5px;line-height:1.65;">이 계산기는 브라우저의 JavaScript를 사용합니다. JavaScript를 켜면 바로 계산됩니다. (입력값은 서버로 전송되지 않습니다)</p></noscript>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">1</span><h2>지금 가입한 실손</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ss-gen">현재 세대</label>
+            <div class="calc-input calc-input-sm"><select id="ss-gen">
+              <option value="1">1세대 (2009.9 이전)</option>
+              <option value="2">2세대 (2009.10~2017.3)</option>
+              <option value="3" selected>3세대 (2017.4~2021.6)</option>
+            </select></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ss-premium">현재 월 보험료</label>
+            <div class="calc-input calc-input-sm"><input id="ss-premium" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">원</span></div>
+          </div>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="ss-premium4">4세대 예상 월 보험료</label>
+          <div class="calc-input"><input id="ss-premium4" type="number" inputmode="numeric" min="0" step="100" placeholder="비우면 자동 추정"><span class="calc-unit">원</span></div>
+          <p class="calc-tip">비워 두면 세대별 평균 비율(1세대 27%, 2세대 43%, 3세대 81%)로 추정합니다. 보험사 견적을 받았다면 그 금액을 넣으세요.</p>
+        </div>
+      </section>
+
+      <section class="calc-card">
+        <div class="calc-step"><span class="calc-num">2</span><h2>최근 1년 병원비</h2></div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ss-pay">급여 의료비</label>
+            <div class="calc-input calc-input-sm"><input id="ss-pay" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">건강보험이 적용되는 진료비의 본인부담 총액입니다.</p>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ss-nonpay">비급여 의료비</label>
+            <div class="calc-input calc-input-sm"><input id="ss-nonpay" type="number" inputmode="numeric" min="0" step="10" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">도수치료·주사·MRI 등 비급여 항목 합계입니다.</p>
+          </div>
+        </div>
+        <div class="calc-grid2">
+          <div class="calc-field">
+            <label class="calc-label" for="ss-growth">보험료 인상률 (연)</label>
+            <div class="calc-input calc-input-sm"><input id="ss-growth" type="number" inputmode="decimal" min="0" max="20" step="0.5" placeholder="5"><span class="calc-unit">%</span></div>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label" for="ss-medGrowth">의료비 증가율 (연)</label>
+            <div class="calc-input calc-input-sm"><input id="ss-medGrowth" type="number" inputmode="decimal" min="0" max="20" step="0.5" placeholder="3"><span class="calc-unit">%</span></div>
+          </div>
+        </div>
+        <div class="calc-row">
+          <label class="calc-check" for="ss-noClaim">
+            <input id="ss-noClaim" type="checkbox">
+            <span class="calc-box"></span>
+            <span class="calc-rowtext"><b>최근 2년 무사고</b><em>4세대는 무사고 2년이면 다음 해 보험료 10%를 할인합니다.</em></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="calc-card calc-card-result">
+        <div class="calc-step"><span class="calc-num">3</span><h2>계산 결과</h2></div>
+        <div id="ss-verdict" class="calc-verdict is-empty" aria-live="polite"></div>
+
+        <div class="calc-res-grid">
+          <div class="calc-res" id="ss-resKeep"></div>
+          <div class="calc-res" id="ss-resNew"></div>
+        </div>
+
+        <dl class="calc-summary" id="ss-summary"></dl>
+
+        <details class="calc-break" id="ss-yearBox" open>
+          <summary>연도별 비용 비교</summary>
+          <div class="calc-tablewrap" id="ss-yearBody"></div>
+        </details>
+
+        <details class="calc-break" id="ss-genBox">
+          <summary>세대별 자기부담률</summary>
+          <div class="calc-tablewrap" id="ss-genBody"></div>
+        </details>
+
+        <div class="calc-actions">
+          <button type="button" class="calc-btn" id="ss-example">예시로 채우기</button>
+          <button type="button" class="calc-btn" id="ss-reset">초기화</button>
+          <button type="button" class="calc-btn calc-btn-primary" id="ss-copy">결과 복사</button>
+        </div>
+        <div class="calc-toast" id="ss-toast">복사했어요</div>
+      </section>
+
+      <section class="calc-card">
+        <h2 class="calc-h2">전환 판단의 세 가지 기준</h2>
+        <ul class="calc-notes">
+          <li><b>①</b><span><b>최근 3년 병원비</b>를 보세요. 한 해가 아니라 3년 평균이 전환 판단의 기준입니다.</span></li>
+          <li><b>②</b><span><b>비급여 비중</b>이 높으면 유지가 유리합니다. 4세대는 비급여 자기부담이 30%입니다.</span></li>
+          <li><b>③</b><span>보험료 인상률은 세대별로 다릅니다. 1세대는 손해율이 높아 인상 폭이 큰 편입니다.</span></li>
+          <li><b>④</b><span>전환 후 <b>6개월 안에 철회</b>할 수 있으니, 확신이 없으면 철회 기한을 달력에 적어 두세요.</span></li>
+        </ul>
+      </section>
+
+      <details class="calc-card calc-basis">
+        <summary style="cursor:pointer;font-weight:800;font-size:14px;color:#191F28;">계산 기준·한계</summary>
+        <div style="margin-top:12px;">
+          <p><b>자기부담률</b> — 1세대 급여 0%·비급여 0%(손해보험사 기준), 2세대 급여 10%·비급여 20%, 3세대 급여 20%·비급여 20%, 4세대 급여 20%·비급여 30%. 실제 상품은 선택형에 따라 다를 수 있습니다.</p>
+          <p><b>4세대 보험료</b> — 입력하지 않으면 현재 보험료 × 세대별 평균 비율(1세대 27%, 2세대 43%, 3세대 81%)로 추정합니다. 비급여 특약이 보험료의 40%라고 가정하고, 비급여 지급액에 따른 할인·할증(없음 −5%, 100만원 미만 0%, 100~150만원 2배, 150~300만원 3배, 300만원 이상 4배)을 그 부분에만 적용합니다. 무사고 2년 할인은 10%로 계산합니다.</p>
+          <p><b>누적 비용</b> — (연 보험료 + 연 자기부담금)을 1년 차부터 더합니다. 보험료는 입력한 인상률, 의료비는 입력한 증가율로 매년 올린다고 가정합니다.</p>
+          <p><b>포함하지 않은 것</b> — 보장 한도(급여·비급여 연간 한도), 4세대의 도수치료 10회마다 확인 절차, 재가입주기(5년)에 따른 인수 거절, 전환 시 보장 축소 항목, 보험사별 실제 인상률, 가입 심사, 5세대 상품 구조는 반영하지 않았습니다.</p>
+          <p><b>주의</b> — 이 계산기는 방향을 보는 도구입니다. 실제 전환 전에는 보험협회 '실손의료보험 계약전환 간편계산기'와 보험사 상담을 함께 이용하세요.</p>
+        </div>
+      </details>
+
+      <p class="calc-disclaimer">계산 결과는 예상치이며, 실제 보험료와 보장은 보험사 약관과 심사에 따라 달라집니다.</p>
+    </div>
+
+    <section class="prose" id="read-result" style="margin-top:20px;">
+      <h2>결과 읽는 법</h2>
+      <p>왼쪽은 <b>지금 보험을 유지</b>했을 때, 오른쪽은 <b>4세대로 전환</b>했을 때의 10년 누적 총비용입니다. 보험료만 보면 4세대가 항상 싸지만, 자기부담금을 넣으면 결론이 뒤집히기도 합니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>지표</th><th>의미</th><th>판단</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>10년 보험료</td><td>인상률을 반영한 누적 보험료</td><td>4세대가 대개 40~70% 적음</td></tr>
+            <tr><td>10년 자기부담금</td><td>병원비 중 내가 내는 몫</td><td>1세대는 0원, 4세대는 비급여의 30%</td></tr>
+            <tr><td>누적 총비용</td><td>보험료 + 자기부담금</td><td>이 차이가 전환 손익</td></tr>
+            <tr><td>손익분기</td><td>누적이 역전되는 해</td><td>빠를수록 전환이 유리</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <span class="callout-title">병원을 거의 가지 않는다면 답은 대개 '전환'입니다</span>
+        1세대 보험료가 월 5만원이고 4세대가 월 1만 5,000원이라면 한 달 차액이 3만 5,000원, 10년이면 <b>420만원</b>입니다. 이 돈을 자기부담금으로 쓰려면 비급여로 매년 140만원씩(자기부담 30% 기준) 써야 합니다. 실제로 그만큼 비급여를 쓰는 사람은 많지 않습니다.
+      </div>
+    </section>
+
+    <section class="prose" id="examples" style="margin-top:16px;">
+      <h2>사례 — 3세대 월 3만 2,000원, 비급여 연 120만원</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>보험료 인상률 5%, 의료비 증가율 3%, 4세대 월 1만 8,000원 가정</caption>
+          <thead>
+            <tr><th>기간</th><th class="num">유지 (3세대)</th><th class="num">전환 (4세대)</th><th class="num">차이</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5년 보험료</td><td class="num">212만원</td><td class="num">119만원</td><td class="num">−93만원</td></tr>
+            <tr><td>5년 자기부담금</td><td class="num">191만원</td><td class="num">255만원</td><td class="num">+64만원</td></tr>
+            <tr><td><b>5년 합계</b></td><td class="num"><b>403만원</b></td><td class="num"><b>374만원</b></td><td class="num"><b>−29만원</b></td></tr>
+            <tr><td><b>10년 합계</b></td><td class="num"><b>896만원</b></td><td class="num"><b>822만원</b></td><td class="num"><b>−74만원</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>이 사례에서는 4세대 전환이 <b>10년에 74만원</b> 유리합니다. 자기부담금이 10년 동안 138만원 늘어나지만, 보험료가 211만원 줄어 상쇄되고도 남습니다. 다만 차이가 크지 않습니다. 비급여 지출이 연 120만원이면 3세대 자기부담(20%)과 4세대 자기부담(30%)의 차이는 <b>연 12만원</b>뿐이기 때문입니다.</p>
+      <p>비급여를 매년 700만원씩 쓰는 사람이라면 달라집니다. 4세대 자기부담금만 연 210만원이 되어, 10년이면 자기부담 차이만 <b>802만원</b>입니다. 보험료 절감 211만원을 빼도 유지가 590만원가량 유리해집니다. 도수치료나 비급여 주사를 꾸준히 받는다면 유지가 답입니다.</p>
+      <p>1세대라면 차이가 더 큽니다. 월 5만 4,000원과 4세대 월 1만 5,000원의 차액은 10년에 <b>468만원</b>(인상률 제외)입니다. 1세대 가입자가 전환을 망설이는 이유는 보험료가 아니라 <b>자기부담률 0%를 포기한다는 심리</b>인 경우가 많습니다. 숫자로 비교해 보면 판단이 쉬워집니다.</p>
+    </section>
+
+    <section class="prose" id="faq" style="margin-top:16px;">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details open>
+          <summary><span class="q">Q</span>1세대 실손은 무조건 유지하는 게 좋나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>무조건은 아닙니다. 1세대는 자기부담금이 거의 없어 병원을 자주 이용하면 유리하지만, 보험료가 4세대의 네 배에 이르는 경우도 있습니다. 최근 3년간 비급여 지출이 거의 없었다면 4세대 전환이 누적 비용에서 유리해지는 경우가 많습니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>4세대 실손의 자기부담률은 얼마인가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>급여는 20%, 비급여는 30%입니다. 3세대까지는 급여 10~20%, 비급여 20% 수준이었으므로 비급여를 많이 쓰는 사람은 전환 후 본인 부담이 늘어납니다. 대신 보험료 자체가 크게 낮아집니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>4세대 보험료 할인·할증은 어떻게 정해지나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>직전 1년간 받은 비급여 보험금을 기준으로 비급여 특약 보험료를 조정합니다. 지급액이 없으면 5% 안팎 할인, 100만원 미만이면 그대로, 100만~150만원은 두 배, 150만~300만원은 세 배, 300만원 이상은 네 배까지 오릅니다. 매년 다시 계산됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>전환 후 마음에 안 들면 되돌릴 수 있나요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>전환 청약 후 6개월 안에 철회할 수 있습니다. 다만 전환 후 보험금을 받은 이력이 있으면 제한되고, 3개월 안에 철회하면 보험금 지급 사유가 있어도 철회가 가능합니다. 철회는 계약자별로 한 번만 됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>5세대 실손이 나왔다는데 4세대와 뭐가 다른가요?<span class="chev">▾</span></summary>
+          <div class="a">
+            <p>5세대는 비급여를 중증과 비중증으로 나눠 특약으로 만들고 보험료를 더 낮춘 상품입니다. 4세대 신규 판매는 2026년 5월에 끝난 것으로 공시되어 있어, 지금 전환을 고민한다면 실제 가입 가능한 상품이 4세대인지 5세대인지 보험사에 먼저 확인해야 합니다.</p>
+          </div>
+        </details>
+      </div>
+
+      <h2>참고한 기준</h2>
+      <ul>
+        <li>생명보험협회 공시실 — 1~4세대 실손의료보험 상품별 특징(자기부담률·갱신주기·판매 시기)</li>
+        <li>생명보험협회 계약전환제도 안내 — 철회 제도, 4세대 비급여 보험료 할인·할증 구간, 무사고 할인</li>
+        <li>한국보험신문(2022.1) — 세대별 월 보험료 비교 사례와 전환 시 유의점</li>
+        <li>보험업감독규정 및 실손의료보험 표준약관</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13.5px;color:#6B7684;">※ 이 페이지는 일반적인 정보이며 특정 보험사나 상품을 추천하지 않습니다. 전환 전 보험사 상품설명서와 약관을 확인하세요.</p>
+    </section>
+
+    <div class="next-tools">
+      <a href="guide-insurance-check.html">
+        <b>보험 갱신 점검 가이드</b>
+        <span>실손 세대별 자기부담률과 비급여 청구 팁을 정리했습니다.</span>
+      </a>
+      <a href="car-insurance-discount.html">
+        <b>자동차보험 할인 계산기</b>
+        <span>마일리지·블랙박스 특약으로 보험료를 줄이는 계산입니다.</span>
+      </a>
+      <a href="medical-tax.html">
+        <b>부부 의료비 몰아주기</b>
+        <span>병원비가 많다면 연말정산 의료비 공제도 함께 확인하세요.</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-mark" src="assets/logo-mark.svg" alt="" width="30" height="30">
+        <span class="brand-name">킷랩</span>
+        <span class="brand-sub">KitLab</span>
+        <p>돈과 관련된 결정을 할 때 필요한 계산을 빠르게 끝내 주는 생활 계산기 모음입니다. 모든 계산은 브라우저 안에서만 이루어집니다.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <b>세금·연말정산</b>
+          <a href="medical-tax.html">의료비 몰아주기</a>
+          <a href="card-tax.html">카드 공제 문턱</a>
+          <a href="salary-net.html">연봉 실수령액</a>
+          <a href="severance-pay.html">퇴직금·퇴직소득세</a>
+          <a href="tax-refund-check.html">경정청구 환급 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>대출·주거</b>
+          <a href="loan-switch.html">대환 실익</a>
+          <a href="dsr-limit.html">DSR 한도</a>
+          <a href="jeonse-vs-wolse.html">전세 vs 월세</a>
+          <a href="prepay-vs-invest.html">중도상환 vs 예치</a>
+          <a href="real-estate-fee.html">복비·취득세</a>
+          <a href="policy-loan-check.html">정책대출 자격</a>
+        </div>
+        <div class="footer-col">
+          <b>생활금융</b>
+          <a href="costco-break-even.html">코스트코 손익분기</a>
+          <a href="deposit-interest.html">예적금 이자</a>
+          <a href="car-insurance-discount.html">자동차보험 할인</a>
+          <a href="silson-switch.html">실손 세대 전환</a>
+        </div>
+        <div class="footer-col">
+          <b>실용 가이드</b>
+          <a href="guide-tax-refund.html">경정청구 체크리스트</a>
+          <a href="guide-jeonse-loan.html">전세대출 갈아타기</a>
+          <a href="guide-tax-saving.html">절세 3종 비교</a>
+          <a href="guide-hidden-money.html">숨은 돈 점검</a>
+          <a href="guide-insurance-check.html">보험 갱신 점검</a>
+        </div>
+        <div class="footer-col">
+          <b>안내</b>
+          <a href="about.html">사이트 소개</a>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">본 사이트의 계산 결과와 안내는 참고용 정보이며, 세무·금융·법률 자문이 아닙니다. 실제 신고·대출·가입 전에는 관련 기관과 전문가의 안내를 확인하시기 바랍니다.</div>
+    <div class="footer-bottom">
+      <span>© 2026 킷랩 (KitLab) · usefulkit.kr. All rights reserved.</span>
+      <span>문의: besunp1004@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* SS-CORE-START */
+var SS_GEN = {
+  1: { label: '1세대', pay: 0.00, nonPay: 0.00, factor: 0.27 },
+  2: { label: '2세대', pay: 0.10, nonPay: 0.20, factor: 0.43 },
+  3: { label: '3세대', pay: 0.20, nonPay: 0.20, factor: 0.81 }
+};
+var SS_NEW = { pay: 0.20, nonPay: 0.30, nonPayShare: 0.40, noClaimDiscount: 0.10 };
+
+/* 4세대 비급여 지급보험금에 따른 할인·할증 배수 */
+function ssMalus(paidWon){
+  var p = Math.max(0, paidWon || 0);
+  if (p <= 0) return -0.05;
+  if (p < 1000000) return 0;
+  if (p < 1500000) return 1.0;
+  if (p < 3000000) return 2.0;
+  return 3.0;
+}
+
+function ssEvaluate(cfg){
+  cfg = cfg || {};
+  var genKey = String(cfg.gen || 3);
+  var gen = SS_GEN[genKey] || SS_GEN[3];
+  var premium = Math.max(0, cfg.premium || 0);
+  var premium4 = Math.max(0, cfg.premium4 || 0);
+  if (premium4 <= 0) premium4 = Math.round(premium * gen.factor);
+  var pay = Math.max(0, (cfg.pay || 0) * 10000);
+  var nonPay = Math.max(0, (cfg.nonPay || 0) * 10000);
+  var g = Math.max(0, cfg.growth || 0) / 100;
+  var mg = Math.max(0, cfg.medGrowth || 0) / 100;
+  var paidNonPay = nonPay * (1 - SS_NEW.nonPay);
+  var malus = ssMalus(paidNonPay);
+  var nonPayFactor = (1 - SS_NEW.nonPayShare) + SS_NEW.nonPayShare * (1 + malus);
+  var noClaim = cfg.noClaim ? (1 - SS_NEW.noClaimDiscount) : 1;
+
+  var rows = [];
+  var keepTotal = 0, newTotal = 0, keepPremTotal = 0, newPremTotal = 0, keepOopTotal = 0, newOopTotal = 0;
+  var at5 = null, at10 = null, breakYear = 0;
+  for (var t = 0; t < 10; t++){
+    var premKeep = premium * 12 * Math.pow(1 + g, t);
+    var premNew = premium4 * 12 * Math.pow(1 + g, t) * nonPayFactor * noClaim;
+    var oopKeep = pay * Math.pow(1 + mg, t) * gen.pay + nonPay * Math.pow(1 + mg, t) * gen.nonPay;
+    var oopNew = pay * Math.pow(1 + mg, t) * SS_NEW.pay + nonPay * Math.pow(1 + mg, t) * SS_NEW.nonPay;
+    keepPremTotal += premKeep; newPremTotal += premNew;
+    keepOopTotal += oopKeep; newOopTotal += oopNew;
+    keepTotal += premKeep + oopKeep; newTotal += premNew + oopNew;
+    rows.push({
+      year: t + 1,
+      keepPrem: Math.round(premKeep), newPrem: Math.round(premNew),
+      keepOop: Math.round(oopKeep), newOop: Math.round(oopNew),
+      keepTotal: Math.round(keepTotal), newTotal: Math.round(newTotal)
+    });
+    if (t === 4) at5 = { keep: Math.round(keepTotal), fresh: Math.round(newTotal), diff: Math.round(newTotal - keepTotal) };
+    if (t === 9) at10 = { keep: Math.round(keepTotal), fresh: Math.round(newTotal), diff: Math.round(newTotal - keepTotal) };
+    if (!breakYear && newTotal < keepTotal) breakYear = t + 1;
+  }
+  return {
+    gen: genKey, genLabel: gen.label, genPay: gen.pay, genNonPay: gen.nonPay,
+    premium: premium, premium4: premium4, pay: pay, nonPay: nonPay,
+    malus: malus, nonPayFactor: nonPayFactor, paidNonPay: Math.round(paidNonPay),
+    rows: rows, at5: at5, at10: at10, breakYear: breakYear,
+    keep: { prem: Math.round(keepPremTotal), oop: Math.round(keepOopTotal), total: Math.round(keepTotal) },
+    fresh: { prem: Math.round(newPremTotal), oop: Math.round(newOopTotal), total: Math.round(newTotal) },
+    diff: Math.round(newTotal - keepTotal),
+    winner: newTotal < keepTotal ? 'switch' : 'keep',
+    empty: premium <= 0
+  };
+}
+
+function ssComma(n){
+  var s = String(Math.round(n));
+  var neg = s.charAt(0) === '-';
+  if (neg) s = s.slice(1);
+  var out = '';
+  for (var i = 0; i < s.length; i++){
+    if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+    out += s.charAt(i);
+  }
+  return (neg ? '-' : '') + out;
+}
+function ssWon(n){ return ssComma(Math.round(n || 0)) + '원'; }
+function ssMan(n){
+  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
+  var whole = Math.floor(v);
+  var dec = Math.round((v - whole) * 10);
+  return (n < 0 ? '-' : '') + ssComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
+}
+/* SS-CORE-END */
+
+(function(){
+  'use strict';
+  var ROOT = document.getElementById('calc');
+  if (!ROOT) return;
+  function $(id){ return document.getElementById(id); }
+  var el = {
+    gen: $('ss-gen'), premium: $('ss-premium'), premium4: $('ss-premium4'),
+    pay: $('ss-pay'), nonPay: $('ss-nonpay'), growth: $('ss-growth'), medGrowth: $('ss-medGrowth'),
+    noClaim: $('ss-noClaim'), verdict: $('ss-verdict'), resKeep: $('ss-resKeep'), resNew: $('ss-resNew'),
+    summary: $('ss-summary'), yearBody: $('ss-yearBody'), genBody: $('ss-genBody'), toast: $('ss-toast')
+  };
+
+  function num(v){
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+  function readCfg(){
+    return {
+      gen: el.gen.value,
+      premium: num(el.premium.value),
+      premium4: num(el.premium4.value),
+      pay: num(el.pay.value),
+      nonPay: num(el.nonPay.value),
+      growth: el.growth.value === '' ? 5 : num(el.growth.value),
+      medGrowth: el.medGrowth.value === '' ? 3 : num(el.medGrowth.value),
+      noClaim: el.noClaim.checked
+    };
+  }
+  function pct(r){ return (r * 100).toFixed(r * 100 % 1 === 0 ? 0 : 1) + '%'; }
+
+  function render(){
+    var cfg = readCfg();
+    var r = ssEvaluate(cfg);
+
+    if (r.empty){
+      el.verdict.className = 'calc-verdict is-empty';
+      el.verdict.innerHTML = '<span class="v-tag">입력 대기</span><span class="v-title">현재 월 보험료를 입력하세요</span>'
+        + '<span class="v-desc">현재 세대와 보험료, 최근 1년 병원비를 넣으면 유지와 전환의 10년 누적 비용을 비교합니다.</span>';
+      el.resKeep.className = 'calc-res';
+      el.resKeep.innerHTML = '<div class="r-head">유지 (10년)</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.resNew.className = 'calc-res';
+      el.resNew.innerHTML = '<div class="r-head">4세대 전환 (10년)</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
+      el.summary.innerHTML = '<div><dt>현재 세대</dt><dd>' + r.genLabel + '</dd></div><div class="total"><dt>차이</dt><dd>—</dd></div>';
+      el.yearBody.innerHTML = '<table class="calc-table"><tbody><tr><td>보험료를 입력하면 표가 만들어집니다.</td></tr></tbody></table>';
+      el.genBody.innerHTML = '';
+      return;
+    }
+
+    var better = r.winner === 'switch';
+    el.verdict.className = 'calc-verdict ' + (better ? 'is-good' : 'is-tight');
+    el.verdict.innerHTML = '<span class="v-tag">' + r.genLabel + ' → 4세대 · 10년 누적</span>'
+      + '<span class="v-title">' + (better ? '전환이 ' + ssMan(Math.abs(r.diff)) + ' 유리합니다' : '지금 보험 유지가 ' + ssMan(Math.abs(r.diff)) + ' 유리합니다') + '</span>'
+      + '<span class="v-desc">유지 ' + ssMan(r.keep.total) + ' vs 전환 ' + ssMan(r.fresh.total) + '. '
+      + (better ? '4세대 보험료 월 ' + ssComma(r.premium4) + '원 기준으로 ' : '')
+      + '비급여 자기부담이 ' + pct(SS_NEW.nonPay) + '로 올라가지만 보험료 차이가 더 큽니다. '
+      + (r.breakYear ? '누적 비용은 ' + r.breakYear + '년 차에 역전됩니다.' : '10년 안에는 역전되지 않습니다.')
+      + '</span>';
+
+    el.resKeep.className = 'calc-res';
+    el.resKeep.innerHTML = '<div class="r-head">유지 · ' + r.genLabel + ' (10년)</div><dl>'
+      + '<div><dt>월 보험료</dt><dd>' + ssComma(r.premium) + '원</dd></div>'
+      + '<div><dt>보험료 누적</dt><dd>' + ssMan(r.keep.prem) + '</dd></div>'
+      + '<div><dt>자기부담금</dt><dd>' + ssMan(r.keep.oop) + '</dd></div>'
+      + '<div><dt>총비용</dt><dd class="big">' + ssMan(r.keep.total) + '</dd></div>'
+      + '</dl>';
+
+    el.resNew.className = 'calc-res';
+    el.resNew.innerHTML = '<div class="r-head">4세대 전환 (10년)</div><dl>'
+      + '<div><dt>월 보험료</dt><dd>' + ssComma(r.premium4) + '원</dd></div>'
+      + '<div><dt>보험료 누적</dt><dd>' + ssMan(r.fresh.prem) + '</dd></div>'
+      + '<div><dt>자기부담금</dt><dd>' + ssMan(r.fresh.oop) + '</dd></div>'
+      + '<div><dt>총비용</dt><dd class="big">' + ssMan(r.fresh.total) + '</dd></div>'
+      + '</dl>';
+
+    var sum = '';
+    sum += '<div><dt>5년 차이</dt><dd>' + (r.at5.diff <= 0 ? '전환이 ' + ssMan(-r.at5.diff) + ' 유리' : '유지가 ' + ssMan(r.at5.diff) + ' 유리') + '</dd></div>';
+    sum += '<div><dt>10년 차이</dt><dd>' + (r.diff <= 0 ? '전환이 ' + ssMan(-r.diff) + ' 유리' : '유지가 ' + ssMan(r.diff) + ' 유리') + '</dd></div>';
+    sum += '<div><dt>비급여 지급 추정</dt><dd>' + ssMan(r.paidNonPay) + ' · 차등 ' + (r.malus === 0 ? '없음' : (r.malus < 0 ? '할인' : r.malus + '배')) + '</dd></div>';
+    sum += '<div class="total"><dt>' + (better ? '전환 순이익 (10년)' : '유지 순이익 (10년)') + '</dt><dd class="pos">' + ssMan(Math.abs(r.diff)) + '</dd></div>';
+    el.summary.innerHTML = sum;
+
+    var tb = '<table class="calc-table"><thead><tr><th>연차</th><th>유지 연 비용</th><th>전환 연 비용</th><th>유지 누적</th><th>전환 누적</th></tr></thead><tbody>';
+    for (var i = 0; i < r.rows.length; i++){
+      var w = r.rows[i];
+      tb += '<tr><td>' + w.year + '년</td><td>' + ssMan(w.keepPrem + w.keepOop) + '</td><td>' + ssMan(w.newPrem + w.newOop) + '</td><td>'
+        + ssMan(w.keepTotal) + '</td><td>' + ssMan(w.newTotal) + '</td></tr>';
+    }
+    tb += '</tbody></table>';
+    el.yearBody.innerHTML = tb;
+
+    var gb = '<table class="calc-table"><thead><tr><th>세대</th><th>급여 자기부담</th><th>비급여 자기부담</th></tr></thead><tbody>';
+    ['1', '2', '3'].forEach(function(k){
+      var g2 = SS_GEN[k];
+      gb += '<tr><td>' + g2.label + (k === r.gen ? ' ●' : '') + '</td><td>' + pct(g2.pay) + '</td><td>' + pct(g2.nonPay) + '</td></tr>';
+    });
+    gb += '<tr><td>4세대</td><td>' + pct(SS_NEW.pay) + '</td><td>' + pct(SS_NEW.nonPay) + '</td></tr>';
+    gb += '</tbody></table>';
+    el.genBody.innerHTML = gb;
+  }
+
+  ['ss-premium', 'ss-premium4', 'ss-pay', 'ss-nonpay', 'ss-growth', 'ss-medGrowth'].forEach(function(id){
+    $(id).addEventListener('input', render);
+  });
+  el.gen.addEventListener('change', render);
+  el.noClaim.addEventListener('change', render);
+
+  function toast(msg){
+    el.toast.textContent = msg;
+    el.toast.classList.add('show');
+    setTimeout(function(){ el.toast.classList.remove('show'); }, 1600);
+  }
+
+  $('ss-example').addEventListener('click', function(){
+    el.gen.value = '3';
+    el.premium.value = '32000';
+    el.premium4.value = '18000';
+    el.pay.value = '60';
+    el.nonPay.value = '120';
+    el.growth.value = '5';
+    el.medGrowth.value = '3';
+    el.noClaim.checked = false;
+    render();
+  });
+  $('ss-reset').addEventListener('click', function(){
+    el.gen.value = '3';
+    el.premium.value = '';
+    el.premium4.value = '';
+    el.pay.value = '';
+    el.nonPay.value = '';
+    el.growth.value = '5';
+    el.medGrowth.value = '3';
+    el.noClaim.checked = false;
+    render();
+  });
+  $('ss-copy').addEventListener('click', function(){
+    var r = ssEvaluate(readCfg());
+    if (r.empty){ toast('월 보험료를 먼저 입력하세요'); return; }
+    var text = '실손보험 전환 손익\n'
+      + '· 현재 ' + r.genLabel + ' 월 ' + ssComma(r.premium) + '원 → 4세대 월 ' + ssComma(r.premium4) + '원\n'
+      + '· 최근 1년 급여 ' + ssMan(r.pay) + ' / 비급여 ' + ssMan(r.nonPay) + '\n'
+      + '· 10년 유지 ' + ssMan(r.keep.total) + ' (보험료 ' + ssMan(r.keep.prem) + ' + 자기부담 ' + ssMan(r.keep.oop) + ')\n'
+      + '· 10년 전환 ' + ssMan(r.fresh.total) + ' (보험료 ' + ssMan(r.fresh.prem) + ' + 자기부담 ' + ssMan(r.fresh.oop) + ')\n'
+      + '· ' + (r.winner === 'switch' ? '전환이 ' : '유지가 ') + ssMan(Math.abs(r.diff)) + ' 유리 (10년)\n'
+      + '계산: usefulkit.kr/silson-switch.html';
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사했어요'); } catch (e) { toast('복사가 안 됐어요'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast('복사했어요'); }, fallback);
+    } else fallback();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
