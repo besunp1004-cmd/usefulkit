@@ -75,8 +75,7 @@ button,input,select,textarea{font-family:inherit; font-size:inherit;}
 .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; flex:0 0 auto; min-width:0;}
 .brand:hover .brand-name{color:var(--brand-deep);}
 .brand-mark{
-  width:34px; height:34px; border-radius:10px; flex:0 0 auto; display:block;
-  box-shadow:0 4px 12px rgba(14,165,233,.28);
+  width:34px; height:34px; flex:0 0 auto; display:block;
 }
 .brand-text{display:block; line-height:1.15; min-width:0;}
 .brand-name{display:block; font-size:17px; font-weight:800; color:var(--ink); letter-spacing:-0.04em; white-space:nowrap; transition:color .16s;}
@@ -306,8 +305,7 @@ main{padding:22px 0 64px;}
 .footer-top{display:flex; justify-content:space-between; gap:28px; flex-wrap:wrap;}
 .footer-brand{max-width:420px;}
 .footer-brand .footer-mark{
-  width:30px; height:30px; border-radius:9px; display:block; margin-bottom:11px;
-  box-shadow:0 3px 10px rgba(14,165,233,.26);
+  width:30px; height:30px; display:block; margin-bottom:11px;
 }
 .footer-brand .brand-name{color:var(--ink); font-size:16px; display:block;}
 .footer-brand .brand-sub{color:var(--brand-deep); display:block; margin-top:2px;}
