@@ -458,4 +458,5 @@ main{padding:22px 0 64px;}
 
 /* ---------- 레퍼런스 페이지(용어·비교) 본문 폭 ---------- */
 .ref-page > .wrap > .prose{max-width:860px; margin-left:auto; margin-right:auto;}
+.ref-page > .wrap > .article-hero-illu{max-width:760px; margin-left:auto; margin-right:auto;}
 .ref-page .page-lead mark{background:var(--brand-soft); color:var(--brand-ink); padding:1px 5px; border-radius:6px;}
