@@ -291,6 +291,13 @@ main{padding:22px 0 64px;}
 }
 .toc a:hover{background:var(--brand-soft); color:var(--brand-ink);}
 
+/* 본문 상단 일러스트 */
+.article-hero-illu{
+  margin:20px 0 0; border:1px solid var(--line); border-radius:var(--radius);
+  background:#F7F9FA; overflow:hidden; box-shadow:var(--shadow);
+}
+.article-hero-illu img{display:block; width:100%; height:auto;}
+
 /* ---------- 푸터 ---------- */
 .site-footer{background:#F7F9FA; border-top:1px solid var(--line); color:var(--sub); margin-top:24px;}
 .site-footer .inner{max-width:var(--max); margin:0 auto; padding:40px 20px 32px;}
@@ -361,6 +368,7 @@ main{padding:22px 0 64px;}
   .prose{padding:24px 18px; border-radius:18px;}
   .prose h2{font-size:18.5px; padding-left:13px;}
   .prose h2::before{top:3px; height:16px;}
+  .article-hero-illu{margin-top:16px; border-radius:16px;}
   .prose p, .prose ul, .prose ol{font-size:14.5px; line-height:1.82;}
   .next-tools{grid-template-columns:1fr;}
   .pickle-card{padding:28px 20px 26px; border-radius:20px;}
