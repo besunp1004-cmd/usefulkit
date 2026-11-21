@@ -6,7 +6,7 @@
   --c-ink:#191F28; --c-sub:#6B7684; --c-line:#E5E8EB;
   --c-brand:#0EA5E9; --c-brand-d:#0284C7; --c-brand-ink:#0369A1;
   --c-soft:#E0F2FE; --c-soft-line:#BAE6FD;
-  --c-good:#059669; --c-good-bg:#ECFDF5;
+  --c-good:#059669; --c-good-bg:#ECFDF5;   /* 이득/절감 수치의 의미색 — 브랜드 하늘색과 구분 */
   --c-warn:#B26A00; --c-warn-bg:#FFF7E6;
   --c-red:#F04452; --c-red-bg:#FFEEEF;
   --c-navy:#191F28; --c-r:18px;
@@ -133,7 +133,7 @@
 }
 .calc-verdict .v-title{display:block; font-size:17px; font-weight:800; letter-spacing:-0.02em; margin-bottom:4px;}
 .calc-verdict .v-desc{display:block; font-size:13px; line-height:1.7;}
-.calc-verdict.is-good{background:var(--c-good-bg); border-color:#A7F3D0; color:#065F46;}
+.calc-verdict.is-good{background:var(--c-soft); border-color:var(--c-soft-line); color:#075985;}
 .calc-verdict.is-good .v-tag{background:var(--c-brand); color:#fff;}
 .calc-verdict.is-tight{background:var(--c-warn-bg); border-color:#F6E3B8; color:#7A5200;}
 .calc-verdict.is-tight .v-tag{background:#E39C1A; color:#fff;}
