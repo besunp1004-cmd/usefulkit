@@ -1,15 +1,16 @@
 /* ============================================================
    킷랩 (KitLab) — 공통 스타일
-   화이트/오프화이트 바탕 + 에메랄드 민트 + 딥 차콜의 핀테크 톤.
-   외부 CDN·웹폰트 없이 시스템 폰트만 사용합니다.
+   화이트/오프화이트 바탕 + 하늘색(sky) + 딥 차콜의 핀테크 톤.
+   본문 웹폰트는 Pretendard(프리텐다드) — 각 페이지 <head>에서 jsDelivr dynamic-subset CSS를,
+   폰트 스택은 아래 body에서 지정합니다.
    ============================================================ */
 :root{
-  /* 브랜드 — 에메랄드 민트 */
-  --brand:#00C471;
-  --brand-deep:#00A85F;
-  --brand-ink:#00875A;
-  --brand-soft:#E7F9F0;
-  --brand-line:#C6F0DD;
+  /* 브랜드 — 하늘색(sky) */
+  --brand:#0EA5E9;
+  --brand-deep:#0284C7;
+  --brand-ink:#0369A1;
+  --brand-soft:#E0F2FE;
+  --brand-line:#BAE6FD;
   /* 글자 — 딥 차콜 */
   --ink:#191F28;
   --ink-soft:#333D4B;
@@ -21,12 +22,12 @@
   /* 표면 */
   --bg:#F7F8FA;
   --soft:#F5F7F8;
-  --soft2:#E7F9F0;
+  --soft2:#E0F2FE;
   --line:#E5E8EB;
   --line-soft:#F1F3F5;
-  /* 상태 */
-  --good:#00A85F;
-  --good-bg:#E7F9F0;
+  /* 상태 — 긍정(이득·절감)은 의미색으로 에메랄드 유지, 나머지는 브랜드 하늘색과 조화 */
+  --good:#059669;
+  --good-bg:#ECFDF5;
   --warn:#B26A00;
   --warn-bg:#FFF7E6;
   --red:#F04452;
@@ -35,8 +36,8 @@
   --radius:20px;
   --radius-sm:14px;
   --shadow:0 1px 2px rgba(25,31,40,.04), 0 8px 24px rgba(25,31,40,.05);
-  --shadow-hover:0 2px 6px rgba(0,166,95,.08), 0 18px 36px rgba(25,31,40,.09);
-  --ring:0 0 0 3px rgba(0,196,113,.18);
+  --shadow-hover:0 2px 6px rgba(14,165,233,.10), 0 18px 36px rgba(25,31,40,.09);
+  --ring:0 0 0 3px rgba(14,165,233,.20);
   --max:1080px;
   --read:800px;
 }
@@ -44,11 +45,11 @@
 html{-webkit-text-size-adjust:100%;}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","맑은 고딕",system-ui,"Segoe UI",Roboto,sans-serif;
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
   font-size:16px; line-height:1.72; letter-spacing:-0.011em; word-break:keep-all;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-::selection{background:#BFF3DA; color:#0B2E1F;}
+::selection{background:#BAE6FD; color:#082F49;}
 a{color:var(--brand-ink); text-underline-offset:3px; text-decoration-thickness:1px;}
 a:hover{color:var(--brand-deep);}
 img{max-width:100%; height:auto;}
@@ -75,7 +76,7 @@ button,input,select,textarea{font-family:inherit; font-size:inherit;}
 .brand:hover .brand-name{color:var(--brand-deep);}
 .brand-mark{
   width:34px; height:34px; border-radius:10px; flex:0 0 auto; display:block;
-  box-shadow:0 4px 12px rgba(0,196,113,.26);
+  box-shadow:0 4px 12px rgba(14,165,233,.28);
 }
 .brand-text{display:block; line-height:1.15;}
 .brand-name{display:block; font-size:17px; font-weight:800; color:var(--ink); letter-spacing:-0.04em; transition:color .16s;}
@@ -103,18 +104,18 @@ main{padding:22px 0 64px;}
 .hero{
   position:relative; overflow:hidden; color:var(--ink);
   background:
-    radial-gradient(90% 130% at 96% -10%, #D6F7E7 0%, rgba(214,247,231,0) 58%),
-    linear-gradient(160deg,#F4FDF8 0%,#FFFFFF 64%);
-  border:1px solid #E1F2E9; border-radius:26px; padding:42px 38px 38px;
-  box-shadow:0 10px 30px rgba(0,166,95,.07);
+    radial-gradient(90% 130% at 96% -10%, #DBEAFE 0%, rgba(219,234,254,0) 58%),
+    linear-gradient(160deg,#F5FAFF 0%,#FFFFFF 64%);
+  border:1px solid #DCEFFB; border-radius:26px; padding:42px 38px 38px;
+  box-shadow:0 10px 30px rgba(2,132,199,.07);
 }
 .hero::before{
   content:""; position:absolute; right:78px; top:50%; width:196px; height:196px; margin-top:-98px;
-  background:url(logo-mark.svg) center/contain no-repeat; opacity:.12; pointer-events:none;
+  background:url(logo-mark.png) center/contain no-repeat; opacity:.12; pointer-events:none;
 }
 .hero::after{
   content:""; position:absolute; right:-100px; bottom:-140px; width:340px; height:340px; border-radius:50%;
-  background:radial-gradient(circle,rgba(0,196,113,.15),rgba(0,196,113,0) 68%); pointer-events:none;
+  background:radial-gradient(circle,rgba(14,165,233,.16),rgba(14,165,233,0) 68%); pointer-events:none;
 }
 .hero > *{position:relative; z-index:1;}
 .hero h1{font-size:32px; line-height:1.34; font-weight:800; letter-spacing:-0.035em; color:var(--ink);}
@@ -123,7 +124,7 @@ main{padding:22px 0 64px;}
 .hero-tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;}
 .hero-tags span{
   font-size:12.5px; font-weight:700; padding:7px 13px; border-radius:999px;
-  background:#fff; border:1px solid #DFEBE5; color:var(--sub);
+  background:#fff; border:1px solid #DCEFFB; color:var(--sub);
 }
 .hero .hero-cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:24px;}
 .btn{
@@ -132,10 +133,10 @@ main{padding:22px 0 64px;}
   text-decoration:none; border:1px solid transparent; transition:background .16s, box-shadow .16s, border-color .16s, color .16s, transform .16s;
 }
 .btn:active{transform:translateY(1px);}
-.btn-primary{background:var(--brand); color:#fff; box-shadow:0 6px 16px rgba(0,196,113,.26);}
-.btn-primary:hover{background:var(--brand-deep); color:#fff; box-shadow:0 8px 22px rgba(0,196,113,.30);}
+.btn-primary{background:var(--brand); color:#fff; box-shadow:0 6px 16px rgba(14,165,233,.26);}
+.btn-primary:hover{background:var(--brand-deep); color:#fff; box-shadow:0 8px 22px rgba(14,165,233,.30);}
 .btn-ghost{background:#fff; color:var(--ink-soft); border-color:#DDE5E9;}
-.btn-ghost:hover{background:#F3FBF7; border-color:var(--brand-line); color:var(--brand-ink);}
+.btn-ghost:hover{background:#F0F9FF; border-color:var(--brand-line); color:var(--brand-ink);}
 
 /* ---------- 계산기 카드 ---------- */
 .tool-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px;}
@@ -176,7 +177,7 @@ main{padding:22px 0 64px;}
 }
 .prose h2::before{
   content:""; position:absolute; left:0; top:4px; width:4px; height:18px; border-radius:2px;
-  background:linear-gradient(180deg,#00D97E,#00A85F);
+  background:linear-gradient(180deg,#38BDF8,#0284C7);
 }
 .prose h2:not(:first-child){margin-top:34px;}
 .prose h3{font-size:16.5px; font-weight:800; letter-spacing:-0.025em; margin-top:26px; margin-bottom:8px; color:var(--ink);}
@@ -185,10 +186,10 @@ main{padding:22px 0 64px;}
 .prose p + p{margin-top:12px;}
 .prose p + h2, .prose p + h3, .prose ul + h2, .prose ul + h3, .prose ol + h2, .prose ol + h3, .prose table + h3{margin-top:26px;}
 .prose strong{color:var(--ink); font-weight:800;}
-.prose em{font-style:normal; background:linear-gradient(transparent 60%, #C9F7E1 60%); font-weight:700; color:var(--ink);}
+.prose em{font-style:normal; background:linear-gradient(transparent 60%, #BAE6FD 60%); font-weight:700; color:var(--ink);}
 .prose ul, .prose ol{margin-top:10px; font-size:15px; line-height:1.82; color:var(--ink-soft);}
 .prose ul > li{position:relative; padding-left:16px; margin-top:6px;}
-.prose ul > li::before{content:""; position:absolute; left:2px; top:11px; width:5px; height:5px; border-radius:50%; background:#7BDDB4;}
+.prose ul > li::before{content:""; position:absolute; left:2px; top:11px; width:5px; height:5px; border-radius:50%; background:#38BDF8;}
 .prose ol{list-style:none; counter-reset:ol;}
 .prose ol > li{position:relative; padding-left:28px; margin-top:8px; counter-increment:ol;}
 .prose ol > li::before{
@@ -201,7 +202,7 @@ main{padding:22px 0 64px;}
 
 /* 표 */
 .table-wrap{overflow-x:auto; margin-top:16px; border:1px solid var(--line); border-radius:16px;}
-.prose table{border-collapse:collapse; width:100%; font-size:13.8px; background:#fff; min-width:480px;}
+.prose table{border-collapse:collapse; width:100%; font-size:13.8px; background:#fff; min-width:480px; font-variant-numeric:tabular-nums;}
 .prose caption{caption-side:top; text-align:left; font-size:12.5px; color:var(--muted); padding:10px 12px 0;}
 .prose th, .prose td{padding:12px 14px; border-bottom:1px solid var(--line-soft); text-align:left; vertical-align:top; line-height:1.62;}
 .prose thead th{background:#F7F9FA; font-weight:800; color:var(--ink-soft); font-size:12.8px; white-space:nowrap;}
@@ -216,8 +217,8 @@ main{padding:22px 0 64px;}
 .callout b{color:var(--ink);}
 .callout.warn{background:var(--warn-bg); border-color:#F6E3B8; color:#7A5200;}
 .callout.warn b{color:#614000;}
-.callout.tip{background:var(--brand-soft); border-color:var(--brand-line); color:#08603E;}
-.callout.tip b{color:#064A30;}
+.callout.tip{background:var(--brand-soft); border-color:var(--brand-line); color:#075985;}
+.callout.tip b{color:#0C4A6E;}
 .callout .callout-title{display:block; font-weight:800; margin-bottom:5px; font-size:13.5px;}
 
 /* 스텝 목록 */
@@ -256,7 +257,7 @@ main{padding:22px 0 64px;}
 .faq .a p + p{margin-top:10px;}
 .faq .a ul{margin-top:8px;}
 .faq .a ul > li{position:relative; padding-left:13px; margin-top:4px;}
-.faq .a ul > li::before{content:""; position:absolute; left:1px; top:10px; width:4px; height:4px; border-radius:50%; background:#9EE3C6;}
+.faq .a ul > li::before{content:""; position:absolute; left:1px; top:10px; width:4px; height:4px; border-radius:50%; background:#38BDF8;}
 
 /* 관련 계산기 / 다음 단계 */
 .next-tools{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:16px;}
@@ -264,7 +265,7 @@ main{padding:22px 0 64px;}
   display:block; background:#fff; border:1px solid var(--line); border-radius:16px;
   padding:17px 19px; text-decoration:none; color:inherit; transition:border-color .16s, background .16s, box-shadow .16s;
 }
-.next-tools a:hover{border-color:var(--brand-line); background:#F7FDFA; box-shadow:0 6px 18px rgba(0,166,95,.08);}
+.next-tools a:hover{border-color:var(--brand-line); background:#F0F9FF; box-shadow:0 6px 18px rgba(2,132,199,.10);}
 .next-tools b{display:block; font-size:14.5px; color:var(--ink); font-weight:800;}
 .next-tools span{display:block; margin-top:4px; font-size:12.8px; color:var(--sub); line-height:1.62;}
 
@@ -305,7 +306,7 @@ main{padding:22px 0 64px;}
 .footer-brand{max-width:420px;}
 .footer-brand .footer-mark{
   width:30px; height:30px; border-radius:9px; display:block; margin-bottom:11px;
-  box-shadow:0 3px 10px rgba(0,196,113,.24);
+  box-shadow:0 3px 10px rgba(14,165,233,.26);
 }
 .footer-brand .brand-name{color:var(--ink); font-size:16px; display:block;}
 .footer-brand .brand-sub{color:var(--brand-deep); display:block; margin-top:2px;}
@@ -328,7 +329,7 @@ main{padding:22px 0 64px;}
 .pickle-card{
   position:relative; overflow:hidden; color:#fff; border-radius:26px; padding:38px 36px 34px;
   background:
-    radial-gradient(120% 140% at 100% 0%, #153B2C 0%, rgba(21,59,44,0) 56%),
+    radial-gradient(120% 140% at 100% 0%, #0C2A3D 0%, rgba(12,42,61,0) 56%),
     linear-gradient(135deg,#191F28 0%,#11161C 100%);
   box-shadow:0 18px 44px rgba(15,20,25,.26);
 }

@@ -4,9 +4,9 @@
    ============================================================ */
 .calc{
   --c-ink:#191F28; --c-sub:#6B7684; --c-line:#E5E8EB;
-  --c-brand:#00C471; --c-brand-d:#00A85F; --c-brand-ink:#00875A;
-  --c-soft:#E7F9F0; --c-soft-line:#C6F0DD;
-  --c-good:#00A85F; --c-good-bg:#E7F9F0;
+  --c-brand:#0EA5E9; --c-brand-d:#0284C7; --c-brand-ink:#0369A1;
+  --c-soft:#E0F2FE; --c-soft-line:#BAE6FD;
+  --c-good:#059669; --c-good-bg:#ECFDF5;
   --c-warn:#B26A00; --c-warn-bg:#FFF7E6;
   --c-red:#F04452; --c-red-bg:#FFEEEF;
   --c-navy:#191F28; --c-r:18px;
@@ -23,10 +23,10 @@
 .calc-hero{
   position:relative; overflow:hidden;
   background:
-    radial-gradient(90% 130% at 96% -10%, #D6F7E7 0%, rgba(214,247,231,0) 58%),
-    linear-gradient(160deg,#F4FDF8 0%,#FFFFFF 66%);
-  border:1px solid #E1F2E9; border-radius:22px; padding:24px 22px 22px; color:var(--c-ink);
-  box-shadow:0 10px 26px rgba(0,166,95,.07); margin-bottom:14px;
+    radial-gradient(90% 130% at 96% -10%, #DBEAFE 0%, rgba(219,234,254,0) 58%),
+    linear-gradient(160deg,#F5FAFF 0%,#FFFFFF 66%);
+  border:1px solid #DCEFFB; border-radius:22px; padding:24px 22px 22px; color:var(--c-ink);
+  box-shadow:0 10px 26px rgba(2,132,199,.07); margin-bottom:14px;
 }
 .calc-badge{
   display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:.02em;
@@ -59,7 +59,7 @@
   background:#F7F9FA; border:1px solid #E8EBEE; border-radius:14px;
   transition:border-color .16s, box-shadow .16s, background .16s;
 }
-.calc-input:focus-within{border-color:var(--c-brand); background:#fff; box-shadow:0 0 0 3px rgba(0,196,113,.15);}
+.calc-input:focus-within{border-color:var(--c-brand); background:#fff; box-shadow:0 0 0 3px rgba(14,165,233,.18);}
 .calc-input input, .calc-input select{
   flex:1 1 auto; min-width:0; width:100%; height:100%; border:0; background:transparent; outline:none;
   font-family:inherit; font-size:17px; font-weight:800; color:var(--c-ink); text-align:right;
@@ -122,7 +122,7 @@
 .calc-adv-body{padding:4px 0 15px; border-top:1px solid var(--c-line);}
 
 /* 결과 */
-.calc-card-result{border-color:var(--c-soft-line); background:linear-gradient(180deg,#F8FEFB,#fff 46%);}
+.calc-card-result{border-color:var(--c-soft-line); background:linear-gradient(180deg,#F7FCFF,#fff 46%);}
 .calc-verdict{
   border-radius:16px; padding:16px 16px 15px; margin-bottom:14px;
   border:1px solid; font-size:14px; line-height:1.72;
@@ -133,7 +133,7 @@
 }
 .calc-verdict .v-title{display:block; font-size:17px; font-weight:800; letter-spacing:-0.02em; margin-bottom:4px;}
 .calc-verdict .v-desc{display:block; font-size:13px; line-height:1.7;}
-.calc-verdict.is-good{background:var(--c-good-bg); border-color:var(--c-soft-line); color:#08603E;}
+.calc-verdict.is-good{background:var(--c-good-bg); border-color:#A7F3D0; color:#065F46;}
 .calc-verdict.is-good .v-tag{background:var(--c-brand); color:#fff;}
 .calc-verdict.is-tight{background:var(--c-warn-bg); border-color:#F6E3B8; color:#7A5200;}
 .calc-verdict.is-tight .v-tag{background:#E39C1A; color:#fff;}
@@ -164,7 +164,7 @@
 .calc-summary > div:last-child{border-bottom:0;}
 .calc-summary dt{font-size:13px; color:var(--c-sub); font-weight:700;}
 .calc-summary dd{font-size:14.5px; font-weight:800; font-variant-numeric:tabular-nums;}
-.calc-summary > div.total{background:#F3FCF8;}
+.calc-summary > div.total{background:#F0F9FF;}
 .calc-summary > div.total dt{color:var(--c-brand-ink); font-weight:800;}
 .calc-summary > div.total dd{font-size:16px; color:var(--c-navy);}
 .calc-summary dd.pos{color:var(--c-good);}
@@ -191,7 +191,7 @@
   background:#fff; color:var(--c-sub); font-size:13.5px; font-weight:800; transition:.16s;
 }
 .calc-btn:hover{background:#F5F7F8; color:var(--c-ink);}
-.calc-btn-primary{background:var(--c-brand); border-color:var(--c-brand); color:#fff; box-shadow:0 4px 12px rgba(0,196,113,.22);}
+.calc-btn-primary{background:var(--c-brand); border-color:var(--c-brand); color:#fff; box-shadow:0 4px 12px rgba(14,165,233,.24);}
 .calc-btn-primary:hover{background:var(--c-brand-d); color:#fff;}
 .calc-toast{
   margin-top:10px; text-align:center; font-size:12.5px; font-weight:700; color:var(--c-brand-ink);
@@ -202,7 +202,7 @@
 .calc-notes{margin-top:2px; display:grid; gap:9px;}
 .calc-notes li{
   display:flex; gap:10px; font-size:13px; line-height:1.72; color:var(--c-sub);
-  background:#F8FAF9; border-radius:13px; padding:12px 14px;
+  background:#F7FAFC; border-radius:13px; padding:12px 14px;
 }
 .calc-notes li b{flex:0 0 auto; color:var(--c-brand-ink); font-weight:800;}
 .calc-disclaimer{
