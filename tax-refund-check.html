@@ -632,6 +632,11 @@ function trBracketRate(taxBaseWon){
 function trDeadline(year){
   return (Number(year) + 6) + '-03-10';
 }
+function trDateText(iso){
+  var parts = String(iso || '').split('-');
+  if (parts.length < 3) return iso;
+  return parts[0] + '년 ' + Number(parts[1]) + '월 ' + Number(parts[2]) + '일';
+}
 function trEligible(year, today){
   var t = today || new Date().toISOString().slice(0, 10);
   return t <= trDeadline(year);
@@ -769,7 +774,7 @@ function trMan(n){
   function render(){
     var cfg = readCfg();
     var r = trEvaluate(cfg);
-    el.yearTip.textContent = cfg.year + '년 귀속 청구 기한은 ' + r.deadline + '입니다.';
+    el.yearTip.textContent = cfg.year + '년 귀속 청구 기한은 ' + trDateText(r.deadline) + '입니다.';
 
     if (r.empty){
       el.verdict.className = 'calc-verdict is-empty';
@@ -792,7 +797,7 @@ function trMan(n){
       + '<span class="v-desc">항목별 합계는 ' + trWon(r.raw) + '이고, 결정세액 ' + trWon(r.decided) + '을 한도로 적용했습니다.'
       + (r.capped ? ' 합계가 결정세액을 넘어 실제 환급은 결정세액까지만 가능합니다.' : '')
       + (r.decided <= 0 ? ' 결정세액이 0원이면 돌려받을 세금이 없습니다.' : '')
-      + ' 청구 기한은 ' + r.deadline + '입니다.</span>';
+      + ' 청구 기한은 ' + trDateText(r.deadline) + '입니다.</span>';
 
     el.resRefund.className = 'calc-res';
     el.resRefund.innerHTML = '<div class="r-head">예상 환급액</div><dl>'
@@ -805,7 +810,7 @@ function trMan(n){
     el.resLimit.className = 'calc-res';
     el.resLimit.innerHTML = '<div class="r-head">청구 조건</div><dl>'
       + '<div><dt>귀속연도</dt><dd>' + cfg.year + '년</dd></div>'
-      + '<div><dt>청구 기한</dt><dd>' + r.deadline + '</dd></div>'
+      + '<div><dt>청구 기한</dt><dd>' + trDateText(r.deadline) + '</dd></div>'
       + '<div><dt>청구 가능</dt><dd>' + (r.eligible ? '가능' : '불가') + '</dd></div>'
       + '<div><dt>적용 한계세율</dt><dd>' + pct(r.marginal) + '</dd></div>'
       + '</dl>';
@@ -835,7 +840,7 @@ function trMan(n){
     [2021, 2022, 2023, 2024, 2025].forEach(function(y){
       var dl = trDeadline(y);
       var open = cfg.today <= dl;
-      yb += '<tr><td>' + y + '년</td><td>' + dl + '</td><td>' + (open ? '가능' : '기한 경과') + (y === cfg.year ? ' ●' : '') + '</td></tr>';
+      yb += '<tr><td>' + y + '년</td><td>' + trDateText(dl) + '</td><td>' + (open ? '가능' : '기한 경과') + (y === cfg.year ? ' ●' : '') + '</td></tr>';
     });
     yb += '</tbody></table>';
     el.yearBody.innerHTML = yb;
@@ -905,7 +910,7 @@ function trMan(n){
       text += '· ' + r.items[i].label + ': ' + trWon(r.items[i].saving) + '\n';
     }
     text += '· 예상 환급 ' + trWon(r.refund) + ' (항목 합계 ' + trWon(r.raw) + ')\n'
-      + '· 청구 기한 ' + r.deadline + ' (' + (r.eligible ? '청구 가능' : '기한 경과') + ')\n'
+      + '· 청구 기한 ' + trDateText(r.deadline) + ' (' + (r.eligible ? '청구 가능' : '기한 경과') + ')\n'
       + '계산: usefulkit.kr/tax-refund-check.html';
     function fallback(){
       var ta = document.createElement('textarea');
