@@ -215,6 +215,21 @@
 }
 .calc-toast.show{opacity:1; height:auto;}
 
+/* 유료 수요 측정 — 준비 중 기능 안내 (jeonse-vs-wolse) */
+.calc-demand{margin-top:16px; padding-top:14px; border-top:1px dashed var(--c-line);}
+.calc-demand-btn{
+  flex:0 0 auto; width:100%; height:auto; min-height:46px; padding:11px 14px;
+  border:1px dashed var(--c-soft-line); background:#F5FAFF; color:var(--c-brand-ink);
+  font-size:12.8px; line-height:1.45; letter-spacing:-0.01em;
+}
+.calc-demand-btn:hover{background:var(--c-soft); border-color:var(--c-brand); color:var(--c-brand-ink);}
+.calc-demand-btn[aria-expanded="true"]{border-style:solid; background:#fff;}
+.calc-demand-note{
+  margin-top:10px; padding:11px 13px; border-radius:12px;
+  background:var(--c-soft); color:var(--c-brand-ink);
+  font-size:12.3px; line-height:1.65; font-weight:600;
+}
+
 .calc-notes{margin-top:2px; display:grid; gap:9px;}
 .calc-notes li{
   display:flex; gap:10px; font-size:13px; line-height:1.72; color:var(--c-sub);
