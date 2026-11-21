@@ -658,9 +658,15 @@ function rfComma(n){
 }
 function rfWon(n){ return rfComma(Math.round(n || 0)) + '원'; }
 function rfMan(n){
-  var v = Math.round(Math.abs(n || 0) / 1000) / 10;
-  var whole = Math.floor(v);
-  var dec = Math.round((v - whole) * 10);
+  var v = Math.round(Math.abs(n || 0));
+  if (v >= 100000000){
+    var eok = Math.floor(v / 100000000);
+    var rest = Math.round((v % 100000000) / 10000);
+    return (n < 0 ? '-' : '') + rfComma(eok) + '억' + (rest > 0 ? ' ' + rfComma(rest) + '만원' : '원');
+  }
+  var m = Math.round(v / 1000) / 10;
+  var whole = Math.floor(m);
+  var dec = Math.round((m - whole) * 10);
   return (n < 0 ? '-' : '') + rfComma(whole) + (dec > 0 ? '.' + dec : '') + '만원';
 }
 /* RF-CORE-END */
