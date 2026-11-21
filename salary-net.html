@@ -203,7 +203,7 @@
         <li><span class="n">1</span><span class="t"><b>과세급여</b>연봉에서 비과세(식대 등)를 뺀 금액입니다.</span></li>
         <li><span class="n">2</span><span class="t"><b>소득공제</b>근로소득공제(총급여 구간별), 인적공제(1인당 150만원), 연금보험료공제(국민연금 근로자분), 보험료 특별소득공제(건강보험·장기요양·고용보험 근로자분)를 뺍니다.</span></li>
         <li><span class="n">3</span><span class="t"><b>세율 적용</b>과세표준에 기본세율(6~45%)을 적용하고 누진공제를 뺍니다.</span></li>
-        <li><span class="n">4</span><span class="t"><b>세액공제</b>자녀세액공제(1명 15만원, 2명 30만원)를 빼고, 남은 세금의 10%를 지방소득세로 더합니다.</span></li>
+        <li><span class="n">4</span><span class="t"><b>세액공제</b>자녀세액공제(9세 이상 1명 25만원, 2명 55만원)를 빼고, 남은 세금의 10%를 지방소득세로 더합니다.</span></li>
       </ol>
       <p>여기서 중요한 점은 <b>4대보험료가 다시 소득공제로 돌아온다</b>는 것입니다. 보험료를 많이 낼수록 과세표준이 줄어 소득세는 조금 덜 내게 됩니다. 그래서 실수령액은 '연봉 − 보험료 − 세금'으로 단순 계산했을 때보다 조금 더 나옵니다.</p>
 
@@ -247,9 +247,9 @@
             <p class="calc-tip">1인당 150만원 소득공제가 적용됩니다.</p>
           </div>
           <div class="calc-field">
-            <label class="calc-label" for="sn-children">자녀 수 (20세 이하)</label>
+            <label class="calc-label" for="sn-children">자녀 수 (9세 이상)</label>
             <div class="calc-input calc-input-sm"><input id="sn-children" type="number" inputmode="numeric" min="0" max="6" step="1" placeholder="0"><span class="calc-unit">명</span></div>
-            <p class="calc-tip">자녀세액공제 1명 15만원, 2명 30만원.</p>
+            <p class="calc-tip">자녀세액공제 1명 25만원, 2명 55만원(3명째부터 1명당 40만원 추가). 2026년 귀속은 9세 이상 자녀가 대상입니다.</p>
           </div>
         </div>
       </section>
@@ -521,8 +521,8 @@ function snBasicTax(base){
 function snChildCredit(children){
   var c = Math.max(0, Math.min(6, Math.round(children || 0)));
   if (c <= 0) return 0;
-  if (c === 1) return 150000;
-  return 300000 + (c - 2) * 300000;
+  if (c === 1) return 250000;
+  return 550000 + (c - 2) * 400000;
 }
 
 function snEvaluate(cfg){
