@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 연말정산 부부 의료비 공제 계산기 (몰아주기) | 킷랩 (KitLab)</title>
-<meta name="description" content="총급여 3% 문턱과 700만원 한도, 한도 없는 의료비 항목까지 반영해 남편·아내 중 누구에게 의료비를 몰아줄 때 환급이 큰지 계산합니다. 실손보험금 차감 원칙과 공제 규정도 함께 정리했습니다.">
+<meta name="description" content="총급여 3% 문턱과 700만원 한도, 한도 없는 의료비 항목까지 반영해 남편·아내 중 누구에게 의료비를 몰아줄 때 세금이 더 줄어드는지 계산합니다. 실손보험금 차감 원칙과 공제 규정도 함께 정리했습니다.">
 <link rel="canonical" href="https://usefulkit.kr/medical-tax.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="킷랩 (KitLab)">
@@ -34,7 +34,7 @@
   "@type": "WebApplication",
   "name": "2026 연말정산 부부 의료비 공제 계산기 (몰아주기)",
   "url": "https://usefulkit.kr/medical-tax.html",
-  "description": "총급여 3% 문턱과 700만원 한도, 한도 없는 의료비 항목까지 반영해 남편·아내 중 누구에게 의료비를 몰아줄 때 환급이 큰지 계산합니다. 실손보험금 차감 원칙과 공제 규정도 함께 정리했습니다.",
+  "description": "총급여 3% 문턱과 700만원 한도, 한도 없는 의료비 항목까지 반영해 남편·아내 중 누구에게 의료비를 몰아줄 때 세금이 더 줄어드는지 계산합니다. 실손보험금 차감 원칙과 공제 규정도 함께 정리했습니다.",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
   "inLanguage": "ko-KR",
@@ -75,7 +75,7 @@
       "name": "의료비를 남편에게 몰아주면 얼마나 더 받나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "부부의 총급여 차이와 결정세액에 따라 달라집니다. 두 사람 총급여가 8,000만원과 3,000만원이고 의료비가 600만원이라면, 소득이 적은 쪽에 몰아줄 때 24만원 이상 차이가 나는 경우가 있습니다. 계산기에 두 사람 총급여와 의료비를 넣으면 바로 비교됩니다."
+        "text": "부부의 총급여 차이와 남은 소득세에 따라 달라집니다. 두 사람 총급여가 8,000만원과 3,000만원이고 의료비가 600만원이라면, 소득이 적은 쪽에 몰아줄 때 24만원 이상 차이가 나는 경우가 있습니다. 계산기에 두 사람 총급여와 의료비를 넣으면 바로 비교됩니다."
       }
     },
     {
@@ -157,7 +157,7 @@
     <div class="page-head">
       <span class="eyebrow">연말정산</span>
       <h1>2026 연말정산 부부 의료비 공제 계산기</h1>
-      <p class="page-lead">의료비는 <b>누구에게 몰아주느냐</b>에 따라 돌려받는 금액이 달라집니다. 총급여 3% 문턱, 700만원 한도, 한도가 없는 항목까지 반영해 <b>남편과 아내 중 유리한 쪽</b>을 계산합니다.</p>
+      <p class="page-lead">의료비는 <b>누구에게 몰아주느냐</b>에 따라 세금이 줄어드는 금액이 달라집니다. 총급여 3% 문턱, 700만원 한도, 한도가 없는 항목까지 반영해 <b>남편과 아내 중 유리한 쪽</b>을 계산합니다.</p>
       <div class="page-meta">
         <span>2026년 귀속 · 2027년 2월 정산</span>
         <span>소득세 + 지방소득세 반영</span>
@@ -189,7 +189,7 @@
       <p>의료비 공제는 '병원에 쓴 돈의 일정 비율을 <b>내가 낼 세금에서 빼주는</b>' 제도입니다. 근로소득자가 연말정산 때 자동으로 반영되지만, 아래 세 가지 원칙을 모르면 실제보다 많이 돌려받을 것으로 착각하기 쉽습니다.</p>
       <ol>
         <li><b>총급여의 3%를 넘는 금액만</b> 공제 대상입니다. 병원비를 200만원 썼어도 총급여가 5,000만원이면 150만원은 그냥 사라지고 50만원만 공제됩니다.</li>
-        <li><b>공제율은 항목별로 15·20·30%</b>이고, 여기에 지방소득세 10%가 붙어 실제 환급은 16.5·22·33%로 계산됩니다.</li>
+        <li><b>공제율은 항목별로 15·20·30%</b>이고, 여기에 지방소득세 10%가 붙어 실제로는 16.5·22·33%만큼 세금이 줄어듭니다.</li>
         <li><b>일반 의료비는 연 700만원 한도</b>가 있습니다. 다만 본인·6세 이하 자녀·만 65세 이상·장애인·중증질환·미숙아·난임시술비는 한도가 없습니다.</li>
       </ol>
       <div class="table-wrap">
@@ -218,9 +218,9 @@
       <h2>몰아주기, 누구에게 몰아야 하나</h2>
       <p>판단 기준은 세 가지입니다.</p>
       <ul>
-        <li><b>결정세액이 남아 있는가</b> — 원천징수영수증의 결정세액이 0원이면, 공제를 아무리 받아도 돌려받을 세금이 없습니다. 이 계산기가 '면세자 함정'을 따로 표시하는 이유입니다.</li>
+        <li><b>의료비 공제 전 남은 소득세가 있는가</b> — 남은 소득세가 0원이면, 공제를 아무리 받아도 줄어들 세금이 없습니다. 이 계산기가 '면세자 함정'을 따로 표시하는 이유입니다.</li>
         <li><b>총급여 3% 문턱이 낮은 쪽인가</b> — 소득이 적은 배우자에게 몰아주면 문턱이 낮아 공제 대상 금액이 커지는 경우가 많습니다.</li>
-        <li><b>700만원 한도를 다 쓰고 남았는가</b> — 둘 다 결정세액이 충분하고 일반 의료비가 700만원을 넘는다면, 한쪽에 몰아주기보다 <b>각자 700만원씩 나눠 받는 편</b>이 유리합니다.</li>
+        <li><b>700만원 한도를 다 쓰고 남았는가</b> — 둘 다 남은 소득세가 충분하고 일반 의료비가 700만원을 넘는다면, 한쪽에 몰아주기보다 <b>각자 700만원씩 나눠 받는 편</b>이 유리합니다.</li>
       </ul>
       <p>여기에 하나 더. <b>결제 명의</b>입니다. 소득이 있는 배우자의 의료비는 원칙적으로 <b>공제받는 사람 명의의 카드·현금영수증·계좌</b>로 결제한 것만 인정됩니다. 올해 이미 결제가 끝났다면 돌이킬 수 없지만, 12월에 남은 병원비가 있다면 몰아줄 사람 명의로 결제하세요.</p>
 
@@ -305,7 +305,7 @@
 #med-calc-app .mc-tip b{color:#6B7684;}
 #med-calc-app .mc-mt{margin-top:4px;}
 
-/* 결정세액 선택 */
+/* 남은 소득세 선택 */
 #med-calc-app .mc-seg{display:flex; gap:5px; background:#F2F4F6; padding:4px; border-radius:12px;}
 #med-calc-app .mc-seg label{flex:1 1 0; position:relative; display:block; min-width:0;}
 #med-calc-app .mc-seg input{position:absolute; opacity:0; width:1px; height:1px; pointer-events:none;}
@@ -315,8 +315,8 @@
 }
 #med-calc-app .mc-seg input:checked + span{background:#fff; color:var(--mc-brand); box-shadow:0 1px 4px rgba(25,31,40,.10);}
 #med-calc-app .mc-seg input:focus-visible + span{outline:2px solid var(--mc-brand); outline-offset:2px;}
-#med-calc-app .mc-cap{margin-top:8px; display:flex; align-items:center; gap:8px;}
-#med-calc-app .mc-cap label{flex:0 0 auto; font-size:12px; font-weight:700; color:#6B7684;}
+#med-calc-app .mc-cap{margin-top:8px; display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px;}
+#med-calc-app .mc-cap label{flex:1 1 100%; font-size:12px; font-weight:700; color:#6B7684; line-height:1.45;}
 #med-calc-app .mc-cap .mc-input{flex:1 1 auto; height:38px;}
 
 /* 특수 의료비 접이식 */
@@ -387,7 +387,8 @@
 #med-calc-app .mc-chip-red{background:var(--mc-red-bg); color:var(--mc-red);}
 #med-calc-app .mc-chip-amber{background:var(--mc-warn-bg); color:var(--mc-warn);}
 #med-calc-app .mc-rescard-main{display:flex; flex-direction:column; gap:1px;}
-#med-calc-app .mc-rescard-label{font-size:11px; font-weight:700; color:#6B7684;}
+#med-calc-app .mc-rescard-label{font-size:11px; font-weight:700; color:#6B7684; line-height:1.4;}
+#med-calc-app .mc-assume{display:block; margin-top:5px; font-size:10.5px; font-weight:700; line-height:1.45; color:#8A5A00; background:#FFF7E6; border-radius:7px; padding:4px 7px;}
 #med-calc-app .mc-rescard-main strong{font-size:23px; font-weight:800; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; color:#191F28;}
 #med-calc-app .mc-winner .mc-rescard-main strong{color:#0369A1;}
 #med-calc-app .mc-rescard-note{font-size:11px; color:#6B7684; margin-top:-4px;}
@@ -405,6 +406,7 @@
 }
 #med-calc-app .mc-split b{color:#0284C7;}
 
+#med-calc-app .mc-split-note{margin-top:8px; padding:0 2px; font-size:11.5px; line-height:1.6; color:#6B7684;}
 #med-calc-app .mc-break{margin-top:12px; border-top:1px solid #F2F4F6; padding-top:10px;}
 #med-calc-app .mc-break summary{list-style:none; cursor:pointer; font-size:12.5px; font-weight:800; color:#6B7684; display:flex; justify-content:space-between;}
 #med-calc-app .mc-break summary::-webkit-details-marker{display:none;}
@@ -477,12 +479,12 @@
   <header class="mc-hero">
     <span class="mc-badge">2026년 귀속 · 2027년 2월 정산</span>
     <h2 class="mc-title">부부 의료비 몰아주기 계산기</h2>
-    <p class="mc-lead">남편과 아내 중 <b>누구에게 의료비를 몰아줄 때 환급이 큰지</b>, 3% 문턱과 700만원 한도까지 반영해 계산합니다. <b>12월 31일 결제분</b>까지가 2026년 귀속이에요.</p>
+    <p class="mc-lead">남편과 아내 중 <b>누구에게 의료비를 몰아줄 때 세금이 더 줄어드는지</b>, 3% 문턱과 700만원 한도까지 반영해 계산합니다. <b>12월 31일 결제분</b>까지가 2026년 귀속이에요.</p>
   </header>
 
   <!-- ① 소득 -->
   <section class="mc-card">
-    <div class="mc-step"><span class="mc-num">1</span><h2>부부 총급여와 결정세액</h2></div>
+    <div class="mc-step"><span class="mc-num">1</span><h2>부부 총급여와 남은 소득세</h2></div>
 
     <div class="mc-grid2">
       <div class="mc-field">
@@ -497,32 +499,32 @@
     </div>
 
     <div class="mc-field mc-mt">
-      <span class="mc-label">남편 A 결정세액</span>
-      <div class="mc-seg" role="radiogroup" aria-label="남편 A 결정세액 상태">
+      <span class="mc-label">남편 A · 의료비 공제 전 남은 소득세</span>
+      <div class="mc-seg" role="radiogroup" aria-label="남편 A 의료비 공제 전 남은 소득세 상태">
         <label><input type="radio" name="mc-taxA" value="unknown" checked><span>잘 모름</span></label>
         <label><input type="radio" name="mc-taxA" value="yes"><span>세액 있음</span></label>
         <label><input type="radio" name="mc-taxA" value="zero"><span>0원(면세)</span></label>
       </div>
       <div class="mc-cap" id="mc-capWrapA" hidden>
-        <label for="mc-capA">결정세액</label>
-        <div class="mc-input mc-input-sm"><input id="mc-capA" type="number" inputmode="numeric" min="0" step="10" placeholder="모르면 비워두세요"><span class="mc-unit">만원</span></div>
+        <label for="mc-capA">올해 의료비 공제를 적용하기 전 남은 소득세(지방소득세 제외)</label>
+        <div class="mc-input mc-input-sm"><input id="mc-capA" type="number" inputmode="numeric" min="0" step="10" placeholder="모르면 ‘잘 모름’"><span class="mc-unit">만원</span></div>
       </div>
     </div>
 
     <div class="mc-field mc-mt">
-      <span class="mc-label">아내 B 결정세액</span>
-      <div class="mc-seg" role="radiogroup" aria-label="아내 B 결정세액 상태">
+      <span class="mc-label">아내 B · 의료비 공제 전 남은 소득세</span>
+      <div class="mc-seg" role="radiogroup" aria-label="아내 B 의료비 공제 전 남은 소득세 상태">
         <label><input type="radio" name="mc-taxB" value="unknown" checked><span>잘 모름</span></label>
         <label><input type="radio" name="mc-taxB" value="yes"><span>세액 있음</span></label>
         <label><input type="radio" name="mc-taxB" value="zero"><span>0원(면세)</span></label>
       </div>
       <div class="mc-cap" id="mc-capWrapB" hidden>
-        <label for="mc-capB">결정세액</label>
-        <div class="mc-input mc-input-sm"><input id="mc-capB" type="number" inputmode="numeric" min="0" step="10" placeholder="모르면 비워두세요"><span class="mc-unit">만원</span></div>
+        <label for="mc-capB">올해 의료비 공제를 적용하기 전 남은 소득세(지방소득세 제외)</label>
+        <div class="mc-input mc-input-sm"><input id="mc-capB" type="number" inputmode="numeric" min="0" step="10" placeholder="모르면 ‘잘 모름’"><span class="mc-unit">만원</span></div>
       </div>
     </div>
 
-    <p class="mc-tip" style="margin-top:10px;">원천징수영수증의 <b>‘결정세액’</b>을 보면 바로 알 수 있어요. 0원이면 의료비를 넣어도 환급이 없습니다.</p>
+    <p class="mc-tip" style="margin-top:10px;">원천징수영수증의 <b>‘결정세액’은 의료비 공제가 이미 반영된 금액</b>이라 그대로 넣으면 실제보다 적게 계산됩니다. 결정세액에 <b>의료비 세액공제(소득세분)</b>를 더하면 ‘올해 의료비 공제를 적용하기 전 남은 소득세’가 됩니다(지방소득세는 빼고 입력). 모르면 <b>‘잘 모름’</b>을 고르세요.</p>
   </section>
 
   <!-- ② 의료비 -->
@@ -578,6 +580,7 @@
       <div class="mc-rescard" id="mc-resB"></div>
     </div>
     <div class="mc-split" id="mc-split" hidden></div>
+    <p class="mc-split-note">누가 실제로 의료비를 부담하는지에 따른 비교이며, 이미 지급한 의료비는 실제 지출자와 부양가족 공제 요건을 확인해야 합니다.</p>
 
     <details class="mc-break" id="mc-break">
       <summary>항목별 계산 내역 보기</summary>
@@ -596,12 +599,12 @@
   <section class="mc-card">
     <h2 class="mc-h2">몰아주기 전에 꼭 확인하세요</h2>
     <ul class="mc-notes-list">
-      <li><b>① 결정세액이 0원이면 환급도 0원</b><span>총급여가 3,000만원 안팎이거나 면세자라면, 3% 문턱을 넘겨 공제를 받아도 <b>돌려받을 세금이 없어</b> 몰아주기의 실익이 사라집니다. 원천징수영수증의 결정세액을 먼저 확인하세요.</span></li>
+      <li><b>① 의료비 공제 전 남은 소득세가 0원이면 줄어드는 세금도 0원</b><span>총급여가 3,000만원 안팎이거나 이미 낼 세금이 없으면, 3% 문턱을 넘겨 공제를 받아도 <b>줄어들 세금이 없어</b> 몰아주기의 실익이 사라집니다. 원천징수영수증에서 의료비 공제 전 남은 소득세(지방소득세 제외)를 먼저 확인하세요.</span></li>
       <li><b>② 실손보험금은 반드시 빼고 계산</b><span>간소화 자료의 의료비에는 실손보험금으로 돌려받은 금액이 반영되지 않습니다. 보험금·본인부담상한제 환급금을 뺀 <b>순수 본인부담액</b>만 공제 대상입니다.</span></li>
       <li><b>③ 결제 명의 원칙</b><span>소득이 있는 배우자의 의료비는 <b>공제받는 사람 명의 카드·현금영수증·계좌</b>로 결제한 것만 원칙적으로 인정됩니다. 앞으로는 몰아줄 사람 명의로 결제하세요.</span></li>
       <li><b>④ 700만원 한도</b><span>일반 부양가족 의료비는 연 700만원까지입니다. 다만 <b>본인·6세 이하·만 65세 이상·장애인·중증질환·미숙아·선천성이상아·난임시술비</b>는 한도가 없습니다.</span></li>
       <li><b>⑤ 의료비는 이월되지 않습니다</b><span>쓰지 못한 의료비는 다음 해로 넘어가지 않습니다. 12월 31일까지 결제해야 2026년 귀속입니다.</span></li>
-      <li><b>⑥ 둘 다 세액이 남아 있다면</b><span>일반 의료비가 700만원을 넘고 두 사람 모두 결정세액이 충분하면, 한쪽에 몰아주기보다 <b>각자 700만원 한도씩 나눠 받는 편</b>이 유리할 수 있습니다(각자 3% 문턱은 따로 적용). 위 결과의 ‘나눠 받으면’ 안내를 확인하세요.</span></li>
+      <li><b>⑥ 둘 다 세액이 남아 있다면</b><span>일반 의료비가 700만원을 넘고 두 사람 모두 남은 소득세가 충분하면, 한쪽에 몰아주기보다 <b>각자 700만원 한도씩 나눠 받는 편</b>이 유리할 수 있습니다(각자 3% 문턱은 따로 적용). 위 결과의 ‘나눠 받으면’ 안내를 확인하세요.</span></li>
     </ul>
   </section>
 
@@ -620,7 +623,7 @@
         <li>3% 문턱은 공제율이 낮은 ①에서 먼저 차감하고, 모자라면 ②→③→④ 순으로 차감합니다(조문의 단서 순서).</li>
         <li>6세 이하 판정은 과세기간 개시일(1월 1일) 기준, 만 65세 이상 판정은 과세기간 종료일(12월 31일) 기준입니다.</li>
       </ul>
-      <p><b>표시 방식</b> — 소득세 세액공제에 지방소득세 10%를 더해 16.5%·22%·33%로 표시했습니다. 원 단위는 절사했습니다. 결정세액을 입력하면 그 금액까지만 환급되는 것으로 계산합니다(세액공제가 산출세액을 넘으면 초과분은 소멸).</p>
+      <p><b>표시 방식</b> — 소득세 세액공제에 지방소득세 10%를 더해 16.5%·22%·33%로 표시했습니다. 원 단위는 절사했습니다. ‘의료비 공제 전 남은 소득세’를 입력하면 소득세 공제가 그 금액까지만 적용되고, 지방소득세 10%를 더해 최종 금액을 표시합니다(세액공제가 남은 소득세를 넘으면 초과분은 소멸).</p>
       <p><b>포함하지 않은 것</b> — 산후조리원비(출산 1회 200만원 한도), 안경·콘택트렌즈(1인 50만원 한도)는 별도 한도가 있어 구분하지 않았습니다. 해당 금액은 일반 의료비에 포함해 입력하면 한도 계산이 조금 달라질 수 있습니다. 부양가족 요건(나이·소득), 다른 형제와의 중복 공제 여부는 직접 확인이 필요합니다.</p>
       <p><b>주의</b> — 계산 결과는 예상치입니다. 세법이 개정되면 달라질 수 있으니, 실제 신고 전에는 국세청 홈택스 ‘연말정산 미리보기’로 확인하세요.</p>
     </div>
@@ -659,7 +662,7 @@ function mcMan(won){
 /* 한 사람이 몰아받았을 때의 계산.
    parts: general(일반·700만 한도), unlimited15(본인·6세이하·65세이상·장애인·중증),
           premature(미숙아 20%), infertility(난임 30%)  — 모두 원 단위
-   taxMode: 'unknown' | 'yes' | 'zero', capWon: 결정세액(원, 모르면 0) */
+   taxMode: 'unknown' | 'yes' | 'zero', capWon: 의료비 공제 전 남은 소득세(원, 모르면 0) */
 function mcSide(grossWon, parts, taxMode, capWon){
   var gross = Math.max(0, Math.round(grossWon || 0));
   var threshold = Math.round(gross * 0.03);
@@ -694,6 +697,7 @@ function mcSide(grossWon, parts, taxMode, capWon){
 
   return {
     gross: gross, threshold: threshold,
+    assumeMax: (taxMode === 'unknown' || (taxMode === 'yes' && !(capWon > 0))),
     d: d, c: c, b: b, a: a,
     dD: dD, cD: cD, bD: bD, aD: aD,
     deduct: deduct,
@@ -746,14 +750,22 @@ function mcSplit(gA, gB, general, c, b, a, ownA, ownB, taxA, taxB){
   return best;
 }
 
+/* 한 사람의 줄어드는 세금이 0원인 이유: 문턱 미달(below) / 남은 소득세 0원(zero) */
+function mcZeroReason(s){
+  if (s.gross === 0) return 'noincome';
+  if (s.deduct === 0) return 'below';
+  return 'zero';
+}
+
 /* 결론 판정 */
 function mcDecide(A, B, gA, gB){
   if (gA === 0 && gB === 0) return { winner: 'none', reason: 'nobody', diff: 0 };
   if (gA === 0) return { winner: 'B', reason: 'single', diff: B.refund };
   if (gB === 0) return { winner: 'A', reason: 'single', diff: A.refund };
   if (A.refund === 0 && B.refund === 0){
-    var bothBelow = A.deduct === 0 && B.deduct === 0;
-    return { winner: 'none', reason: bothBelow ? 'bothBelow' : 'bothZero', diff: 0 };
+    var zeroA = mcZeroReason(A), zeroB = mcZeroReason(B);
+    var bothBelow = zeroA === 'below' && zeroB === 'below';
+    return { winner: 'none', reason: bothBelow ? 'bothBelow' : 'bothZero', diff: 0, zeroA: zeroA, zeroB: zeroB };
   }
   if (A.refund === B.refund) return { winner: 'tie', reason: 'tie', diff: 0 };
   if (A.refund > B.refund) return { winner: 'A', reason: 'win', diff: A.refund - B.refund };
@@ -791,7 +803,9 @@ function mcDecide(A, B, gA, gB){
     var cap = 0;
     if (mode === 'yes' && String(capEl.value).trim() !== ''){
       cap = mcToWon(capEl.value);
-      if (cap === 0) mode = 'zero';   // 결정세액을 0으로 적은 경우
+      if (cap === 0) mode = 'zero';   // 남은 소득세를 0으로 적은 경우
+    } else if (mode === 'yes'){
+      mode = 'unknown';               // 금액을 비우면 '잘 모름'과 같게 계산한다
     }
     return { mode: mode, cap: cap };
   }
@@ -863,12 +877,14 @@ function mcDecide(A, B, gA, gB){
     h += '<div class="mc-rescard-top"><span class="mc-rescard-name">' + name + '</span><span>' + chips(s, isWinner) + '</span></div>';
 
     if (s.gross === 0){
-      h += '<div class="mc-rescard-main"><span class="mc-rescard-label">예상 환급</span><strong>—</strong></div>';
+      h += '<div class="mc-rescard-main"><span class="mc-rescard-label">의료비 공제로 줄어드는 예상 세금(지방소득세 포함)</span><strong>—</strong></div>';
       h += '<p class="mc-rescard-note">소득이 없어 공제받을 수 없어요</p>';
       return h + '<p class="mc-mini">총급여 0원</p>';
     }
 
-    h += '<div class="mc-rescard-main"><span class="mc-rescard-label">예상 환급 (지방세 포함)</span><strong>' + mcComma(s.refund) + '원</strong></div>';
+    h += '<div class="mc-rescard-main"><span class="mc-rescard-label">의료비 공제로 줄어드는 예상 세금(지방소득세 포함)</span><strong>' + mcComma(s.refund) + '원</strong>';
+    if (s.assumeMax) h += '<span class="mc-assume">급여 수준에 관계없이 공제할 세금이 충분할 때의 최대 금액</span>';
+    h += '</div>';
     h += '<p class="mc-rescard-note">소득세 ' + mcComma(s.refundIncome) + ' + 지방소득세 ' + mcComma(s.refundLocal) + '</p>';
 
     h += '<ul class="mc-rescard-kv">';
@@ -878,16 +894,31 @@ function mcDecide(A, B, gA, gB){
     h += '</ul>';
 
     if (s.taxMode === 'zero'){
-      h += '<p class="mc-mini mc-mini-red">결정세액 0원 → 계산상 ' + mcComma(s.credit) + '원이어도 실제 환급은 0원</p>';
-    } else if (s.taxMode === 'unknown' && s.gross <= 30000000){
-      h += '<p class="mc-mini mc-mini-warn">총급여 3,000만원 이하 → 면세자라면 환급이 0원이에요</p>';
+      h += '<p class="mc-mini mc-mini-red">남은 소득세 0원 → 계산상 ' + mcComma(s.credit + s.creditLocal) + '원이어도 실제로 줄어드는 세금은 0원</p>';
+    } else if (s.assumeMax && s.gross <= 30000000){
+      h += '<p class="mc-mini mc-mini-warn">총급여 3,000만원 이하 → 면세자라면 줄어드는 세금이 0원이에요</p>';
     } else if (s.deduct === 0){
       h += '<p class="mc-mini mc-mini-warn">의료비가 3% 문턱(' + mcMan(s.threshold) + ')을 넘지 못했어요</p>';
     }
     if (s.capped){
-      h += '<p class="mc-mini mc-mini-warn">결정세액 ' + mcMan(s.refundIncome) + ' 한도로 환급액이 잘렸어요</p>';
+      h += '<p class="mc-mini mc-mini-warn">의료비 공제 전 남은 소득세 ' + mcComma(s.refundIncome) + '원까지만 줄어들어요(지방소득세 포함 ' + mcComma(s.refund) + '원)</p>';
     }
     return h;
+  }
+
+  function zeroReasonText(name, s, reason){
+    if (reason === 'noincome') return name + '는 소득이 없어 0원';
+    if (reason === 'below') return name + '는 의료비가 3% 문턱(' + mcMan(s.threshold) + ')을 넘지 못해 0원';
+    return name + '는 의료비 공제 전 남은 소득세가 0원이라 0원';
+  }
+
+  function assumeLine(A, B){
+    var n = [];
+    if (A.gross > 0 && A.assumeMax) n.push('남편 A');
+    if (B.gross > 0 && B.assumeMax) n.push('아내 B');
+    if (!n.length) return '';
+    return '<p class="mc-verdict-why">※ ' + n.join('·') + '는 남은 소득세를 ‘잘 모름’으로 두었습니다. '
+      + '급여 수준에 관계없이 공제할 세금이 충분할 때의 최대 금액으로 계산했습니다.</p>';
   }
 
   function verdictHtml(d, A, B, gA, gB, total){
@@ -905,52 +936,76 @@ function mcDecide(A, B, gA, gB){
       var s = onlyA ? A : B;
       var other = onlyA ? '아내' : '남편';
       var sub = s.refund > 0
-        ? ('예상 환급 <b>' + mcComma(s.refund) + '원</b>')
-        : (s.taxMode === 'zero' ? '결정세액이 0원이라 환급은 없어요' : '3% 문턱을 못 넘어 현재 환급은 0원이에요');
+        ? ('줄어드는 세금 <b>' + mcComma(s.refund) + '원</b>(지방소득세 포함)')
+        : (s.taxMode === 'zero' ? '남은 소득세가 0원이라 줄어드는 세금이 없어요' : '3% 문턱을 못 넘어 현재 줄어드는 세금은 0원이에요');
       return '<p class="mc-verdict-kicker">결론</p>' +
         '<p class="mc-verdict-main">' + (onlyA ? '남편 A' : '아내 B') + '에게 전부 넣으세요</p>' +
-        '<p class="mc-verdict-sub">' + other + '는 소득이 없어 공제받을 수 없어요 · ' + sub + '</p>';
+        '<p class="mc-verdict-sub">' + other + '는 소득이 없어 공제받을 수 없어요 · ' + sub + '</p>' +
+        assumeLine(A, B);
     }
 
     if (d.reason === 'bothBelow'){
       return '<p class="mc-verdict-kicker">결론</p>' +
         '<p class="mc-verdict-main">둘 다 3% 문턱을 못 넘어 <b>공제 0원</b>이에요</p>' +
-        '<p class="mc-verdict-sub">남편 문턱 ' + mcMan(A.threshold) + ' · 아내 문턱 ' + mcMan(B.threshold) + '. 12월 31일까지 의료비를 더 쓰면 결과가 달라질 수 있어요(의료비는 이월되지 않습니다).</p>';
+        '<p class="mc-verdict-sub">남편 문턱 ' + mcMan(A.threshold) + ' · 아내 문턱 ' + mcMan(B.threshold) + '. 12월 31일까지 의료비를 더 쓰면 결과가 달라질 수 있어요(의료비는 이월되지 않습니다).</p>' +
+        assumeLine(A, B);
     }
 
     if (d.reason === 'bothZero'){
       return '<p class="mc-verdict-kicker">결론</p>' +
-        '<p class="mc-verdict-main">어느 쪽도 돌려받을 세금이 없어요</p>' +
-        '<p class="mc-verdict-sub">결정세액이 0원(면세)이라 의료비를 몰아줘도 환급이 생기지 않습니다. 원천징수영수증의 결정세액을 확인해 보세요.</p>';
+        '<p class="mc-verdict-main">어느 쪽도 줄어드는 세금이 없어요</p>' +
+        '<p class="mc-verdict-sub">' + zeroReasonText('남편 A', A, d.zeroA) + ' · ' + zeroReasonText('아내 B', B, d.zeroB) + '.</p>' +
+        assumeLine(A, B);
     }
 
     if (d.reason === 'tie'){
       return '<p class="mc-verdict-kicker">결론</p>' +
         '<p class="mc-verdict-main">두 사람에게 몰아줘도 결과가 같아요</p>' +
-        '<p class="mc-verdict-sub">각 ' + mcComma(A.refund) + '원 · 어느 쪽이든 결정세액이 충분한 사람에게 넣으세요.</p>';
+        '<p class="mc-verdict-sub">각 ' + mcComma(A.refund) + '원(지방소득세 포함) · 어느 쪽이든 남은 소득세가 충분한 사람에게 넣으세요.</p>' +
+        assumeLine(A, B);
     }
 
     var win = d.winner === 'A' ? A : B;
     var lose = d.winner === 'A' ? B : A;
     var winName = d.winner === 'A' ? '남편 A' : '아내 B';
     var loseName = d.winner === 'A' ? '아내 B' : '남편 A';
+    var winCredit = win.credit + win.creditLocal;
+    var loseCredit = lose.credit + lose.creditLocal;
     var h = '<p class="mc-verdict-kicker">결론</p>';
     h += '<p class="mc-verdict-main">' + winName + '에게 몰아주는 게 <b>' + mcComma(d.diff) + '원</b> 더 유리해요</p>';
     h += '<p class="mc-verdict-sub">' + winName + ' ' + mcComma(win.refund) + '원 · ' + loseName + ' ' + mcComma(lose.refund) + '원 (지방소득세 포함)</p>';
 
     var why = '';
-    if (win.threshold < lose.threshold && lose.deduct > 0){
-      why = '3% 문턱이 ' + mcMan(win.threshold) + '로 ' + loseName + '(' + mcMan(lose.threshold) + ')보다 ' +
-            mcMan(lose.threshold - win.threshold) + ' 낮아, 공제 대상이 그만큼 많이 남습니다.';
+    if (lose.capped && loseCredit >= winCredit){
+      /* 공제 대상 금액은 같거나 많은데 남은 소득세에서 잘린 경우 — 문턱 차이로 설명하면 틀린다 */
+      var sameDeduct = (lose.deduct === win.deduct);
+      var bothLimit = (win.dD === MC_LIMIT && lose.dD === MC_LIMIT);
+      why = (sameDeduct
+                ? loseName + '와 ' + winName + '의 공제 대상 금액은 ' + mcMan(lose.deduct) + '으로 같습니다.'
+                : loseName + '의 공제 대상 금액(' + mcMan(lose.deduct) + ')은 ' + winName + '(' + mcMan(win.deduct) + ')보다 적지 않습니다.')
+        + (bothLimit ? ' 둘 다 일반 의료비 700만원 한도를 가득 채웠고요.' : '')
+        + ' 차이는 의료비 공제 전 남은 소득세에서 나옵니다'
+        + (win.capped
+            ? ' — ' + winName + ' ' + mcComma(win.refundIncome) + '원, ' + loseName + ' ' + mcComma(lose.refundIncome) + '원까지만 줄어듭니다.'
+            : ' — ' + loseName + '는 ' + mcComma(lose.refundIncome) + '원까지만 줄어듭니다.');
+    } else if (lose.capped){
+      why = loseName + '는 의료비 공제 전 남은 소득세가 ' + mcComma(lose.refundIncome) + '원뿐이고, '
+        + '공제 대상 금액도 ' + winName + '보다 ' + mcMan(Math.max(0, win.deduct - lose.deduct)) + ' 적습니다.';
     } else if (lose.deduct === 0){
       why = loseName + '는 의료비가 3% 문턱(' + mcMan(lose.threshold) + ')을 넘지 못해 공제가 0원입니다.';
+    } else if (win.threshold < lose.threshold && win.deduct > lose.deduct){
+      why = '3% 문턱이 ' + mcMan(win.threshold) + '으로 ' + loseName + '(' + mcMan(lose.threshold) + ')보다 ' +
+            mcMan(lose.threshold - win.threshold) + ' 낮아, 공제 대상이 ' + mcMan(win.deduct - lose.deduct) + ' 더 남습니다.';
+    } else if (win.deduct > lose.deduct){
+      why = '공제 대상 금액이 ' + loseName + ' ' + mcMan(lose.deduct) + '보다 ' + mcMan(win.deduct) + '으로 ' +
+            mcMan(win.deduct - lose.deduct) + ' 더 큽니다.';
     }
     if (why) h += '<p class="mc-verdict-why">' + why + '</p>';
 
     if (lose.taxMode === 'zero' && lose.credit > 0){
-      h += '<p class="mc-verdict-why">※ ' + loseName + '는 결정세액이 0원이라 계산상 ' + mcComma(lose.credit) + '원이어도 <b>실제 환급은 0원</b>입니다.</p>';
+      h += '<p class="mc-verdict-why">※ ' + loseName + '는 남은 소득세가 0원이라 계산상 ' + mcComma(loseCredit) + '원이어도 <b>실제로 줄어드는 세금은 0원</b>입니다.</p>';
     }
-    return h;
+    return h + assumeLine(A, B);
   }
 
   function breakdownHtml(A, B, taxA, taxB){
@@ -971,10 +1026,10 @@ function mcDecide(A, B, gA, gB){
     h += row('공제 대상 합계', kw(A, A.deduct), kw(B, B.deduct), 'mc-sub');
     h += row('소득세 세액공제', A.gross === 0 ? '—' : mcComma(A.refundIncome) + '원', B.gross === 0 ? '—' : mcComma(B.refundIncome) + '원');
     h += row('지방소득세 (10%)', A.gross === 0 ? '—' : mcComma(A.refundLocal) + '원', B.gross === 0 ? '—' : mcComma(B.refundLocal) + '원');
-    h += row('최종 환급', A.gross === 0 ? '—' : mcComma(A.refund) + '원', B.gross === 0 ? '—' : mcComma(B.refund) + '원', 'mc-total');
+    h += row('줄어드는 세금 합계 (지방소득세 포함)', A.gross === 0 ? '—' : mcComma(A.refund) + '원', B.gross === 0 ? '—' : mcComma(B.refund) + '원', 'mc-total');
     h += '</tbody></table>';
-    if (taxA.mode === 'yes' && taxA.cap > 0) h += '<p class="mc-mini" style="margin-top:6px;">남편 결정세액 ' + mcMan(taxA.cap) + ' 기준으로 환급 한도를 적용했습니다.</p>';
-    if (taxB.mode === 'yes' && taxB.cap > 0) h += '<p class="mc-mini" style="margin-top:6px;">아내 결정세액 ' + mcMan(taxB.cap) + ' 기준으로 환급 한도를 적용했습니다.</p>';
+    if (taxA.mode === 'yes' && taxA.cap > 0) h += '<p class="mc-mini" style="margin-top:6px;">남편 A의 의료비 공제 전 남은 소득세 ' + mcMan(taxA.cap) + '을 한도로 계산했습니다.</p>';
+    if (taxB.mode === 'yes' && taxB.cap > 0) h += '<p class="mc-mini" style="margin-top:6px;">아내 B의 의료비 공제 전 남은 소득세 ' + mcMan(taxB.cap) + '을 한도로 계산했습니다.</p>';
     return h;
   }
 
@@ -1072,13 +1127,16 @@ function mcDecide(A, B, gA, gB){
     if (!last) return;
     var d = last.d, A = last.A, B = last.B;
     var lines = ['[2026 연말정산 부부 의료비 몰아주기]'];
-    lines.push('· 남편 A 총급여 ' + mcMan(A.gross) + ' → 문턱 ' + mcMan(A.threshold) + ', 환급 ' + mcComma(A.refund) + '원');
-    if (B.gross > 0) lines.push('· 아내 B 총급여 ' + mcMan(B.gross) + ' → 문턱 ' + mcMan(B.threshold) + ', 환급 ' + mcComma(B.refund) + '원');
-    if (d.reason === 'win') lines.push('→ ' + (d.winner === 'A' ? '남편 A' : '아내 B') + '에게 몰아주는 게 ' + mcComma(d.diff) + '원 유리');
+    lines.push('· 남편 A 총급여 ' + mcMan(A.gross) + ' → 3% 문턱 ' + mcMan(A.threshold) + ', 의료비 공제로 줄어드는 세금 ' + mcComma(A.refund) + '원(지방소득세 포함)');
+    if (B.gross > 0) lines.push('· 아내 B 총급여 ' + mcMan(B.gross) + ' → 3% 문턱 ' + mcMan(B.threshold) + ', 의료비 공제로 줄어드는 세금 ' + mcComma(B.refund) + '원(지방소득세 포함)');
+    if (A.gross > 0 && A.assumeMax) lines.push('· 남편 A는 남은 소득세 ‘잘 모름’ → 급여 수준에 관계없이 공제할 세금이 충분할 때의 최대 금액');
+    if (B.gross > 0 && B.assumeMax) lines.push('· 아내 B는 남은 소득세 ‘잘 모름’ → 급여 수준에 관계없이 공제할 세금이 충분할 때의 최대 금액');
+    if (d.reason === 'win') lines.push('→ ' + (d.winner === 'A' ? '남편 A' : '아내 B') + '에게 몰아주는 게 ' + mcComma(d.diff) + '원 유리 (지방소득세 포함)');
     else if (d.reason === 'single') lines.push('→ 소득이 있는 ' + (last.gA > 0 ? '남편 A' : '아내 B') + '에게 전부 공제');
     else if (d.reason === 'bothBelow') lines.push('→ 둘 다 3% 문턱 미달, 공제 0원');
-    else if (d.reason === 'tie') lines.push('→ 차이 없음 (각 ' + mcComma(A.refund) + '원)');
-    else lines.push('→ 환급 실익 없음');
+    else if (d.reason === 'bothZero') lines.push('→ 둘 다 줄어드는 세금 0원');
+    else if (d.reason === 'tie') lines.push('→ 차이 없음 (각 ' + mcComma(A.refund) + '원, 지방소득세 포함)');
+    else lines.push('→ 줄어드는 세금 없음');
     lines.push('결과 링크: https://usefulkit.kr/medical-tax.html');
     lines.push('킷랩(KitLab) 생활 계산기');
     var text = lines.join('\n');
@@ -1103,7 +1161,7 @@ function mcDecide(A, B, gA, gB){
 
     <section class="prose" id="read-result" style="margin-top:20px;">
       <h2>결과 읽는 법 — 결론은 네 가지</h2>
-      <p>계산기는 두 사람 각각의 환급액을 계산한 뒤, 큰 쪽을 결론으로 보여 줍니다. 결론 문구와 함께 <b>두 사람의 환급액 차이</b>를 보세요. 차이가 1만원 안쪽이면 어느 쪽으로 몰아도 사실상 같습니다.</p>
+      <p>계산기는 두 사람 각각에 대해 의료비 공제로 줄어드는 세금을 계산한 뒤, 큰 쪽을 결론으로 보여 줍니다. 결론 문구와 함께 <b>두 사람의 금액 차이</b>를 보세요. 차이가 1만원 안쪽이면 어느 쪽으로 몰아도 사실상 같습니다.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1112,36 +1170,37 @@ function mcDecide(A, B, gA, gB){
           <tbody>
             <tr><td><b>남편 A 단독</b></td><td>남편에게 몰아주는 쪽이 유리</td><td>남편 명의로 결제하고, 연말정산 때 남편 의료비로 제출</td></tr>
             <tr><td><b>아내 B 단독</b></td><td>아내에게 몰아주는 쪽이 유리</td><td>아내 명의 결제분을 모아 아내 회사에 제출</td></tr>
-            <tr><td><b>둘 다 0원</b></td><td>3% 문턱을 못 넘거나 결정세액이 0원</td><td>지출을 더 모으거나, 내년에는 결제 명의를 바꿔 볼 것</td></tr>
+            <tr><td><b>둘 다 0원</b></td><td>3% 문턱을 못 넘거나 의료비 공제 전 남은 소득세가 0원</td><td>지출을 더 모으거나, 내년에는 결제 명의를 바꿔 볼 것</td></tr>
             <tr><td><b>나눠 받기 안내</b></td><td>각자 700만원 한도를 쓰는 게 유리</td><td>의료비를 두 사람에게 나눠 제출(각자 3% 문턱 적용)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout tip">
         <span class="callout-title">'나눠 받기'가 나왔다면</span>
-        일반 의료비가 700만원을 넘고 두 사람 모두 결정세액이 충분할 때입니다. 한쪽에 몰아주면 700만원까지만 공제되지만, 나눠 받으면 각자 700만원까지 공제받을 수 있습니다. 다만 실제로 나눠 제출하려면 <b>결제 명의도 나눠야</b> 하므로, 12월 결제 전에 계획을 세우세요.
+        일반 의료비가 700만원을 넘고 두 사람 모두 남은 소득세가 충분할 때입니다. 한쪽에 몰아주면 700만원까지만 공제되지만, 나눠 받으면 각자 700만원까지 공제받을 수 있습니다. 다만 실제로 나눠 제출하려면 <b>결제 명의도 나눠야</b> 하므로, 12월 결제 전에 계획을 세우세요.
       </div>
 
-      <h2 id="cases">숫자로 보는 세 가지 케이스</h2>
-      <p>아래는 이해를 돕기 위한 가정입니다. 실제 환급액은 다른 공제 항목과 결정세액에 따라 달라집니다.</p>
+      <h2 id="cases">숫자로 보는 네 가지 케이스</h2>
+      <p>아래는 이해를 돕기 위한 가정입니다. 실제 금액은 다른 공제 항목과 남은 소득세에 따라 달라집니다.</p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr><th>상황</th><th class="num">남편 A</th><th class="num">아내 B</th><th class="num">결론</th></tr>
           </thead>
           <tbody>
-            <tr><td>외벌이, 총급여 8,000만 / 의료비 500만</td><td class="num">환급 429,000원</td><td class="num">소득 없음</td><td class="num">A 단독</td></tr>
+            <tr><td>외벌이, 총급여 8,000만 / 의료비 500만</td><td class="num">429,000원</td><td class="num">소득 없음</td><td class="num">A 단독</td></tr>
             <tr><td>맞벌이, 8,000만 / 3,000만 / 의료비 600만</td><td class="num">594,000원</td><td class="num">841,500원</td><td class="num">B가 247,500원 유리</td></tr>
-            <tr><td>맞벌이인데 아내 결정세액 0원 / 의료비 600만</td><td class="num">594,000원</td><td class="num">계산상 765,000원 → 실제 0원</td><td class="num">A 단독(594,000원)</td></tr>
+            <tr><td>맞벌이인데 아내 의료비 공제 전 남은 소득세 0원 / 의료비 600만</td><td class="num">594,000원</td><td class="num">계산상 841,500원 → 실제 0원</td><td class="num">A 단독(594,000원)</td></tr>
             <tr><td>맞벌이 8,000만 / 7,000만 / 일반 의료비 2,000만</td><td class="num">1,155,000원</td><td class="num">1,155,000원</td><td class="num">나눠 받으면 2,310,000원</td></tr>
           </tbody>
         </table>
       </div>
-      <p style="margin-top:14px;">두 번째와 세 번째 줄이 핵심입니다. 아내 소득이 3,000만원이면 3% 문턱이 90만원으로 낮아 공제 대상이 커지지만, <b>결정세액이 0원이면 그 공제는 아무 데도 쓰이지 않습니다</b>. 총급여가 3,000만원 안팎이거나 각종 소득공제로 세금이 이미 0원이 된 경우가 여기에 해당합니다. 배우자의 원천징수영수증에서 '결정세액'을 먼저 확인하세요.</p>
+      <p style="margin-top:14px;font-size:13px;color:#6B7684;">표의 금액은 지방소득세 10%를 포함해 의료비 공제로 줄어드는 세금입니다.</p>
+      <p>두 번째와 세 번째 줄이 핵심입니다. 아내 소득이 3,000만원이면 3% 문턱이 90만원으로 낮아 공제 대상이 커지지만, <b>의료비 공제 전 남은 소득세가 0원이면 그 공제는 아무 데도 쓰이지 않습니다</b>. 총급여가 3,000만원 안팎이거나 각종 소득공제·세액공제로 낼 세금이 이미 0원이 된 경우가 여기에 해당합니다. 배우자의 원천징수영수증에서 의료비 공제 전 남은 소득세(지방소득세 제외)를 먼저 확인하세요.</p>
 
       <h2 id="checklist">12월 전에 준비할 것</h2>
       <ol class="steps">
-        <li><span class="n">1</span><span class="t"><b>두 사람의 총급여와 결정세액 확인</b>근로자용 소득·세액공제 신고서나 원천징수영수증, 또는 홈택스 '연말정산 미리보기'에서 확인할 수 있습니다.</span></li>
+        <li><span class="n">1</span><span class="t"><b>두 사람의 총급여와 의료비 공제 전 남은 소득세 확인</b>근로자용 소득·세액공제 신고서나 원천징수영수증, 또는 홈택스 '연말정산 미리보기'에서 확인할 수 있습니다.</span></li>
         <li><span class="n">2</span><span class="t"><b>실손보험금 정리</b>올해 받은 실손보험금과 본인부담상한제 환급금을 합산해 두세요. 이 금액을 빼야 실제 공제 대상이 나옵니다.</span></li>
         <li><span class="n">3</span><span class="t"><b>한도 없는 항목 분리</b>본인·6세 이하 자녀·만 65세 이상·장애인·중증질환·미숙아·난임시술비를 따로 적어 두면 계산이 정확해집니다.</span></li>
         <li><span class="n">4</span><span class="t"><b>12월 결제 명의 정하기</b>남은 병원비·약값은 몰아줄 사람 명의 카드나 현금영수증으로 결제하세요. 12월 31일 결제분까지 2026년 귀속입니다.</span></li>
@@ -1153,7 +1212,7 @@ function mcDecide(A, B, gA, gB){
         <details open>
           <summary><span class="q">Q</span>의료비를 남편에게 몰아주면 얼마나 더 받나요?<span class="chev">▾</span></summary>
           <div class="a">
-            <p>부부의 총급여 차이와 결정세액에 따라 달라집니다. 두 사람 총급여가 8,000만원과 3,000만원이고 의료비가 600만원이라면, 소득이 적은 쪽에 몰아줄 때 24만원 이상 차이가 나는 경우가 있습니다. 계산기에 두 사람 총급여와 의료비를 넣으면 바로 비교됩니다.</p>
+            <p>부부의 총급여 차이와 남은 소득세에 따라 달라집니다. 두 사람 총급여가 8,000만원과 3,000만원이고 의료비가 600만원이라면, 소득이 적은 쪽에 몰아줄 때 24만원 이상 차이가 나는 경우가 있습니다. 계산기에 두 사람 총급여와 의료비를 넣으면 바로 비교됩니다.</p>
           </div>
         </details>
         <details>
