@@ -1097,8 +1097,8 @@ function mcDecide(A, B, gA, gB){
     el.chkC.checked = true;
     el.c.value = 180;
     el.rowC.classList.remove('is-off');
-    ROOT.querySelector('input[name="mc-taxA"][value="yes"]').checked = true;
-    ROOT.querySelector('input[name="mc-taxB"][value="yes"]').checked = true;
+    ROOT.querySelector('input[name="mc-taxA"][value="unknown"]').checked = true;
+    ROOT.querySelector('input[name="mc-taxB"][value="unknown"]').checked = true;
     syncCap('A'); syncCap('B');
     calc();
     el.verdict.scrollIntoView({ behavior: 'smooth', block: 'center' });
