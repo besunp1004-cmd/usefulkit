@@ -7,7 +7,7 @@
 <style>
   body{margin:0;background:#222;color:#fff;font:13px/1.5 monospace}
   #wrap{width:390px;overflow:hidden}
-  iframe{width:390px;height:1600px;border:0;display:block;background:#fff}
+  iframe{width:390px;height:844px;border:0;display:block;background:#fff}
   #qa-out{white-space:pre-wrap;padding:8px;background:#000;color:#0f0;width:390px}
 </style>
 </head>
@@ -48,7 +48,7 @@ f.addEventListener('load', function(){
         over.slice(0, 6).join(' | ')
       ].join('\n');
       document.getElementById('qa-out').textContent = out;
-      q('#jw-verdict').scrollIntoView({block: 'start'});
+      q('#jw-detailBox').open = true; q('#jw-detailBox').scrollIntoView({block: 'start'});
     }, 400);
   } catch (e) {
     document.getElementById('qa-out').textContent = 'ERR ' + e.message;
