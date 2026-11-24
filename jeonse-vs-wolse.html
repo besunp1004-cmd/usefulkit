@@ -115,7 +115,7 @@
       "name": "전세 3억원을 월세로 바꾸면 월세 얼마까지가 손익분기인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "전세대출 70%(2억 1,000만원, 연 3.4%), 기회비용 3.5%, 월세 보증금 1,000만원 기준으로 손익분기 월세는 828,333원입니다. 손익분기 전환율은 3.43%입니다. 이보다 월세가 낮으면 월세가 유리합니다."
+        "text": "전세대출 70%(2억 1,000만원, 연 3.4%), 예금 금리 3.5%(세후 2.96%), 월세 보증금 1,000만원 기준으로 손익분기 월세는 792,400원입니다. 손익분기 전환율은 3.28%입니다. 이보다 월세가 낮으면 월세가 유리합니다."
       }
     },
     {
@@ -123,7 +123,7 @@
       "name": "전환율이 높으면 전세가 유리한가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "시장 전환율이 손익분기 전환율보다 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산하므로, 같은 보증금이라면 월세가 높을수록 전환율이 올라갑니다. 다만 대출 금리와 기회비용 수익률을 실제 조건으로 넣어야 결론이 정확해집니다."
+        "text": "입력한 매물의 전환율이 내 손익분기 전환율보다 높으면 전세 쪽 연 비용이 낮습니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산하므로, 같은 보증금이라면 월세가 높을수록 전환율이 올라갑니다. 다만 대출 금리와 세후 기회비용을 실제 조건으로 넣어야 결론이 정확해집니다."
       }
     }
   ]
@@ -213,12 +213,12 @@
       <p>이렇게 맞춰 놓으면 결론은 하나의 숫자로 나옵니다. <strong>연 실질 주거비가 더 적은 쪽</strong>이 유리합니다. 여기에 이사·중개보수·대출 갈아타기 비용은 별도로 더해야 합니다.</p>
 
       <h2>기회비용 수익률은 얼마로 잡아야 하나</h2>
-      <p>기회비용 수익률은 <b>그 돈을 넣어 두었다면 안전하게 얻을 수 있었던 수익률</b>로 잡습니다. 요즘 같으면 파킹통장·정기예금 금리(세후)를 기준으로 삼는 것이 무난합니다. 예금 이자에 15.4% 세금이 붙으므로, 예금 금리 3.5%라면 세후 2.96%가 실제 기회비용입니다.</p>
-      <p>여기에 투자 수익률을 넣고 싶다면 <b>같은 조건으로 두 번 계산</b>해 보세요. 예금 금리로 계산했을 때와 주식 기대수익률(예: 연 6%)로 계산했을 때 결론이 달라진다면, 그 차이는 '전세 유지 vs 월세 유지'가 아니라 <b>투자 결정</b>에서 나온 것입니다. 투자 손실 가능성까지 감안하면 보수적인(낮은) 수익률로 판단하는 편이 안전합니다.</p>
+      <p>기회비용 수익률은 <b>그 돈을 넣어 두었다면 안전하게 얻을 수 있었던 수익률</b>로 잡습니다. 요즘 같으면 파킹통장·정기예금 금리를 기준으로 삼는 것이 무난합니다. 입력란에는 <b>세전 예금 금리</b>를 넣으세요. 예금 이자에 이자소득세 15.4%가 붙으므로, 계산기는 3.5%를 세후 <b>2.961%</b>로 환산해 자기자본 기회비용으로 씁니다.</p>
+      <p>투자 기대수익률로 따져 보고 싶다면 <b>같은 조건으로 두 번 계산</b>해 보세요. 이 계산기는 입력한 금리에서 이자·배당소득세 15.4%를 뺀 값을 쓰므로, 주식 기대수익률은 세후로 환산해 넣습니다(예: 연 6% → 5.08%). 예금 금리로 계산했을 때와 결론이 달라진다면 그 차이는 '전세 유지 vs 월세 유지'가 아니라 <b>투자 결정</b>에서 나온 것입니다. 투자 손실 가능성까지 감안하면 보수적인(낮은) 수익률로 판단하는 편이 안전합니다.</p>
 
       <h2>전월세 전환율 — 숫자 하나로 시장 가격 보기</h2>
       <p>전월세 전환율은 보증금을 월세로 바꿀 때 적용되는 연 이율입니다. 보증금 5,000만원을 월 15만원으로 바꿨다면 연 180만원이므로 전환율은 <b>3.6%</b>입니다.</p>
-      <p>이 계산기는 두 조건의 비용이 같아지는 <b>손익분기 전환율</b>을 계산해 실제 전환율과 비교합니다. 시장 전환율이 손익분기보다 <b>높으면 월세가 비싸고(전세 유리)</b>, 낮으면 월세가 싼 것입니다. 주택임대차보호법 시행령은 전환율 상한을 <b>한국은행 기준금리 + 연 2%</b>로 정하고 있으니, 계약 전에 기준금리와 함께 확인해 보세요.</p>
+      <p>이 계산기는 두 조건의 비용이 같아지는 <b>손익분기 전환율</b>을 계산해 입력한 매물의 전환율과 비교합니다. 입력한 매물의 전환율이 손익분기보다 <b>높으면 전세 쪽 연 비용이 낮고</b>, 낮으면 월세 쪽 연 비용이 낮습니다. 법정 전환율 상한은 <b>연 10%와 한국은행 기준금리 + 연 2% 중 낮은 값</b>이고, 기준금리 + 2% 상한은 <b>기존 계약을 월세로 전환할 때</b> 적용됩니다. 신규 계약의 전환율은 시장에서 정해지므로 계약 전에 기준금리와 지역 시세를 함께 확인하세요.</p>
       <div class="callout">
         <span class="callout-title">보증금이 다르면 '전환율'만으로 비교하지 마세요</span>
         전환율은 보증금 차액에 대한 비율입니다. 두 조건의 보증금 차이가 작으면 전환율이 크게 흔들리고, 전세 보증금이 월세 보증금보다 작으면 전환율 자체가 의미를 잃습니다. 이 계산기는 그 경우 경고를 표시하고 <b>연 주거비 비교만</b> 보여 줍니다.
@@ -263,12 +263,13 @@
         <div class="calc-grid2 calc-mt">
           <div class="calc-field">
             <label class="calc-label" for="jw-jRate">전세대출 금리 (연)</label>
-            <div class="calc-input calc-input-sm"><input id="jw-jRate" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="0"><span class="calc-unit">%</span></div>
+            <div class="calc-input calc-input-sm"><input id="jw-jRate" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="3.4"><span class="calc-unit">%</span></div>
+            <p class="calc-tip">비워 두면 <b>연 3.4%</b>로 계산합니다. <b>0</b>을 넣으면 0%로 계산합니다.</p>
           </div>
           <div class="calc-field">
-            <label class="calc-label" for="jw-jYield">자기자본 기회비용 수익률 (연)</label>
-            <div class="calc-input calc-input-sm"><input id="jw-jYield" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="0"><span class="calc-unit">%</span></div>
-            <p class="calc-tip">보증금에서 대출을 뺀 <b>내 돈</b>에 적용됩니다. 월세 보증금에도 같은 수익률을 씁니다.</p>
+            <label class="calc-label" for="jw-jYield">예금 금리 (세전, 연)</label>
+            <div class="calc-input calc-input-sm"><input id="jw-jYield" type="number" inputmode="decimal" min="0" max="30" step="0.01" placeholder="3.5"><span class="calc-unit">%</span></div>
+            <p class="calc-tip">보증금에서 대출을 뺀 <b>내 돈</b>에 이자소득세 15.4%를 뺀 세후 수익률을 적용합니다(3.5% → 2.96%). 월세 보증금에도 같은 금리를 쓰며, 비워 두면 3.5%로 계산합니다.</p>
           </div>
         </div>
       </section>
@@ -281,8 +282,9 @@
             <div class="calc-input"><input id="jw-wDeposit" type="number" inputmode="numeric" min="0" step="100" placeholder="0"><span class="calc-unit">만원</span></div>
           </div>
           <div class="calc-field">
-            <label class="calc-label" for="jw-wRent">월세</label>
+            <label class="calc-label" for="jw-wRent">월세 (유상 월세)</label>
             <div class="calc-input"><input id="jw-wRent" type="number" inputmode="numeric" min="0" step="1" placeholder="0"><span class="calc-unit">만원</span></div>
+            <p class="calc-tip">관리비·수도광열비를 뺀 <b>집주인에게 내는 월세</b>입니다. 관리비·수선비는 3단계에 따로 넣으세요.</p>
           </div>
         </div>
         <div class="calc-grid2 calc-mt">
@@ -332,6 +334,7 @@
         </div>
 
         <dl class="calc-summary" id="jw-summary"></dl>
+        <p class="calc-horizon" id="jw-horizon"></p>
 
         <!-- SIM:START -->
         <div class="calc-sim" id="jw-sim" role="group" aria-label="실시간 슬라이더 시뮬레이터">
@@ -352,7 +355,7 @@
 
           <div class="calc-sim-row">
             <div class="calc-sim-top">
-              <label class="calc-sim-name" for="jw-simShare">전세대출 비중 (보증금 대비)</label>
+              <label class="calc-sim-name" for="jw-simShare">전세대출 비중 (보증금 대비, 예시)</label>
               <output class="calc-sim-val" id="jw-simShareOut" for="jw-simShare">70%</output>
             </div>
             <input type="range" id="jw-simShare" min="0" max="100" step="any" value="70" aria-describedby="jw-simShareSub">
@@ -361,11 +364,11 @@
 
           <div class="calc-sim-row">
             <div class="calc-sim-top">
-              <label class="calc-sim-name" for="jw-simYield">예금 기회비용 수익률</label>
+              <label class="calc-sim-name" for="jw-simYield">예금 금리 (세전)</label>
               <output class="calc-sim-val" id="jw-simYieldOut" for="jw-simYield">3.5%</output>
             </div>
             <input type="range" id="jw-simYield" min="0" max="8" step="any" value="3.5" aria-describedby="jw-simYieldSub">
-            <p class="calc-sim-sub" id="jw-simYieldSub">세후 2.96% (이자소득세 15.4% 차감)</p>
+            <p class="calc-sim-sub" id="jw-simYieldSub">세후 <b>2.96%</b> · 이자소득세 15.4% 차감</p>
           </div>
 
           <div class="calc-sim-live" id="jw-simLive" aria-live="polite">보증금과 월세를 입력하면 슬라이더를 움직이는 대로 결과가 바뀝니다.</div>
@@ -432,21 +435,21 @@
             <tr><th>항목</th><th>이 계산기의 기준</th><th>바꾸는 곳</th></tr>
           </thead>
           <tbody>
-            <tr><td>전세대출 금리</td><td>입력한 금리를 연 이자(만기일시상환, 이자만 납부)로 계산합니다. 비워 두면 <b>연 3.4%</b>로 가정합니다. 보증료·인지세는 넣지 않습니다.</td><td>1단계 입력 · 슬라이더</td></tr>
-            <tr><td>전세대출 한도</td><td>보증금의 <b>70%</b>를 예시 기본값으로 씁니다. 실제 한도는 보증기관(HUG·HF·SGI)·DSR·소득에 따라 달라집니다.</td><td>1단계 입력 · 슬라이더</td></tr>
+            <tr><td>전세대출 금리</td><td>입력한 금리를 연 이자(만기일시상환, 이자만 납부)로 계산합니다. 비워 두면 <b>연 3.4%</b>, <b>0</b>을 넣으면 0%로 계산합니다. 보증료·인지세는 넣지 않습니다.</td><td>1단계 입력 · 슬라이더</td></tr>
+            <tr><td>전세대출 비중</td><td>보증금의 <b>70%</b>를 <b>예시 대출 비중(70%)</b>으로 씁니다. 실제 대출 한도가 아니며, 보증기관(HUG·HF·SGI)·DSR·소득에 따라 달라집니다.</td><td>1단계 입력 · 슬라이더</td></tr>
             <tr><td>보증금</td><td>입력한 금액(만원) 그대로입니다. 대출이 보증금보다 크면 보증금까지만 반영합니다.</td><td>1·2단계 입력</td></tr>
-            <tr><td>예금 기회비용</td><td>보증금에서 대출을 뺀 <b>자기자본</b>에만 적용합니다. 예금 금리 <b>3.5%</b>면 이자소득세 15.4%를 뺀 <b>세후 2.96%</b>를 씁니다. 월세 보증금에도 같은 수익률을 적용합니다.</td><td>1단계 입력 · 슬라이더</td></tr>
-            <tr><td>거주기간</td><td><b>1년</b> 기준으로 연 환산합니다. 2년 계약이면 결과를 2배로 보세요(중개보수·이사비 같은 1회성 비용은 2년에 한 번).</td><td>—</td></tr>
+            <tr><td>예금 기회비용</td><td>보증금에서 대출을 뺀 <b>자기자본</b>에만 적용합니다. 입력란의 <b>세전 예금 금리</b>에서 이자소득세 15.4%를 뺀 세후 수익률을 씁니다(예금 3.5% → <b>2.961%</b>). 월세 보증금에도 같은 금리를 적용하며, 비워 두면 3.5%로 계산합니다.</td><td>1단계 입력 · 슬라이더</td></tr>
+            <tr><td>거주기간</td><td><b>1년</b> 기준으로 연 환산합니다. 2년 계약이면 연 차이를 2배로 보고, 한쪽에만 드는 중개보수·이사비 같은 1회성 비용이 그 금액을 넘을 때 결론이 바뀝니다(결과 아래에 함께 표시).</td><td>—</td></tr>
             <tr><td>관리비·수선비</td><td>월 관리비 × 12 + 연 수선·수리비. 두 조건의 차액만 반영됩니다. 모르면 0으로 두고 차이가 큰 항목만 넣으세요.</td><td>3단계 입력</td></tr>
             <tr><td>중개보수·수수료</td><td><b>포함하지 않았습니다.</b> 이사비·청소비·대출 보증료·인지세도 넣지 않았습니다. 판단이 아슬아슬할 때는 이 1회성 비용이 결론을 뒤집습니다.</td><td>복비·취득세 계산기</td></tr>
-            <tr><td>전월세 전환율</td><td>월세 × 12 ÷ (전세 보증금 − 월세 보증금). 법정 상한은 <b>한국은행 기준금리 + 연 2%</b>입니다.</td><td>자동 계산</td></tr>
-            <tr><td>슬라이더 범위</td><td>금리 0~8%, 대출 비중 0~100%, 기회비용 0~8%를 0.1 단위로 움직입니다. 슬라이더는 입력값을 덮어쓰지 않고 결과만 바꿉니다.</td><td>4단계 시뮬레이터</td></tr>
+            <tr><td>전환율(입력 매물)</td><td>월세 × 12 ÷ (전세 보증금 − 월세 보증금)로 입력한 매물의 전환율을 구해 손익분기 전환율과 비교합니다. 법정 상한은 <b>연 10%와 한국은행 기준금리 + 연 2% 중 낮은 값</b>이고, 기준금리 + 2% 상한은 <b>기존 계약을 월세로 전환할 때</b> 적용됩니다.</td><td>자동 계산</td></tr>
+            <tr><td>슬라이더 범위</td><td>금리 0~8%, 대출 비중 0~100%, 예금 금리 0~8%를 0.1 단위로 움직입니다. 입력란이 8%를 넘으면 슬라이더는 8%에 맞춰지고 계산은 입력값으로 합니다. 슬라이더는 입력값을 덮어쓰지 않고 결과만 바꿉니다.</td><td>4단계 시뮬레이터</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout tip">
         <span class="callout-title">세후 2.96%가 나오는 계산</span>
-        예금 3.5% × (1 − 0.154) = <b>2.961%</b>. 이자소득세는 소득세 14% + 지방소득세 1.4%입니다. 세금우대·비과세 상품이라면 슬라이더를 실제 세후 수익률에 맞춰 올려 잡으세요.
+        예금 3.5% × (1 − 0.154) = <b>2.961%</b>. 이자소득세는 소득세 14% + 지방소득세 1.4%입니다. 계산 코어가 이 세후 수익률을 그대로 적용하며, 세금우대·비과세 상품이라면 세전 금리를 올려 실제 세후 수익률에 맞추세요.
       </div>
     </section>
 
@@ -469,19 +472,19 @@
       <p>전세를 월세로 바꿀 때 '월세 얼마까지면 전세와 같아지는지'를 보증금 규모별로 계산했습니다.</p>
       <div class="table-wrap">
         <table>
-          <caption>전세대출 70% · 금리 3.4% · 기회비용 3.5% · 월세 보증금은 전세의 10% 가정</caption>
+          <caption>전세대출 70% · 금리 3.4% · 예금 금리 3.5%(세후 2.96%) · 월세 보증금은 전세의 10% 가정</caption>
           <thead>
             <tr><th>전세 보증금</th><th class="num">전세대출</th><th class="num">월세 보증금</th><th class="num">손익분기 월세</th><th class="num">손익분기 전환율</th></tr>
           </thead>
           <tbody>
-            <tr><td>3억원</td><td class="num">2억 1,000만원 (70%)</td><td class="num">3,000만원</td><td class="num">77만원</td><td class="num">3.42%</td></tr>
-            <tr><td>4억원</td><td class="num">2억 8,000만원 (70%)</td><td class="num">4,000만원</td><td class="num">102.7만원</td><td class="num">3.42%</td></tr>
-            <tr><td>5억원</td><td class="num">3억 5,000만원 (70%)</td><td class="num">5,000만원</td><td class="num">128.3만원</td><td class="num">3.42%</td></tr>
-            <tr><td>6억원</td><td class="num">4억 2,000만원 (70%)</td><td class="num">6,000만원</td><td class="num">154만원</td><td class="num">3.42%</td></tr>
+            <tr><td>3억원</td><td class="num">2억 1,000만원 (70%)</td><td class="num">3,000만원</td><td class="num">74.3만원</td><td class="num">3.30%</td></tr>
+            <tr><td>4억원</td><td class="num">2억 8,000만원 (70%)</td><td class="num">4,000만원</td><td class="num">99.1만원</td><td class="num">3.30%</td></tr>
+            <tr><td>5억원</td><td class="num">3억 5,000만원 (70%)</td><td class="num">5,000만원</td><td class="num">123.8만원</td><td class="num">3.30%</td></tr>
+            <tr><td>6억원</td><td class="num">4억 2,000만원 (70%)</td><td class="num">6,000만원</td><td class="num">148.6만원</td><td class="num">3.30%</td></tr>
           </tbody>
         </table>
       </div>
-      <p>손익분기 월세보다 실제 월세가 낮으면 월세가, 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산합니다. 2026년 11월 기준 시장 전환율은 4%대 중반입니다.</p>
+      <p>손익분기 월세보다 실제 월세가 낮으면 월세가, 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산합니다. 지역·주택 유형·계약 시점에 따라 시장 전환율이 다르니, 같은 지역·같은 유형 매물의 전환율과 비교하세요. 법정 상한은 연 10%와 한국은행 기준금리 + 연 2% 중 낮은 값입니다.</p>
     </section>
 <!-- GROWTH:SCENARIO-END -->
     <section class="prose" id="read-result" style="margin-top:20px;">
@@ -494,39 +497,39 @@
           </thead>
           <tbody>
             <tr><td><b>전세가 유리</b></td><td>월세 연 비용 &gt; 전세 연 비용 (월 1만원 이상 차이)</td><td>같은 집이라면 전세를 유지하는 쪽이 1년에 그만큼 이득입니다.</td></tr>
-            <tr><td><b>월세가 유리</b></td><td>전세 연 비용 &gt; 월세 연 비용</td><td>보증금을 굴릴 수익률이 전환율보다 높다는 뜻입니다.</td></tr>
+            <tr><td><b>월세가 유리</b></td><td>전세 연 비용 &gt; 월세 연 비용</td><td>입력한 매물의 전환율이 손익분기 전환율보다 낮다는 뜻입니다.</td></tr>
             <tr><td><b>거의 같음</b></td><td>월 차이 1만원 미만</td><td>비용은 같습니다. 현금흐름·목돈 계획·계약 안정성으로 결정하세요.</td></tr>
             <tr><td><b>비교 주의</b></td><td>전세 보증금 ≤ 월세 보증금</td><td>전환율 비교가 성립하지 않습니다. 연 비용 비교만 참고하세요.</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout tip">
-        <span class="callout-title">전환율이 기회비용 수익률보다 높으면 전세가 유리합니다</span>
-        이건 공식처럼 외워도 됩니다. 시장 전환율이 내가 돈을 굴려 얻을 수 있는 수익률보다 높다면, 보증금을 더 넣고 월세를 아끼는 쪽(전세)이 계산상 이득입니다. 다만 목돈이 묶이는 부담은 별개입니다.
+        <span class="callout-title">입력한 매물의 전환율이 내 손익분기 전환율보다 높으면 전세 쪽 연 비용이 낮습니다</span>
+        손익분기 전환율은 내 대출 금리와 세후 기회비용으로 정해집니다. 같은 집이라면 매물의 전환율이 이보다 높을수록 월세가 비싸다는 뜻이므로 전세 쪽 연 비용이 낮게 나옵니다. 다만 목돈이 묶이는 부담과 전세 보증금 반환 위험은 별개로 판단하세요.
       </div>
     </section>
 
     <section class="prose" id="examples" style="margin-top:16px;">
-      <h2>사례 — 전환율 3.77% vs 기회비용 3.5%</h2>
-      <p>전세 4억원(대출 2억 5천만원, 연 3.6%), 월세 보증금 5,000만원에 월 110만원인 집을 비교해 보겠습니다. 기회비용 수익률은 3.5%로 잡았습니다.</p>
+      <h2>사례 — 입력 매물 전환율 3.77% vs 손익분기 3.42%</h2>
+      <p>전세 4억원(대출 2억 5천만원, 연 3.6%), 월세 보증금 5,000만원에 월 110만원인 집을 비교해 보겠습니다. 예금 금리는 세전 3.5%(세후 2.961%)로 잡았습니다.</p>
       <div class="table-wrap">
         <table>
-          <caption>계산기로 확인한 사례(원 단위 반올림)</caption>
+          <caption>계산기로 확인한 사례(원 단위)</caption>
           <thead>
             <tr><th>항목</th><th class="num">전세</th><th class="num">월세</th></tr>
           </thead>
           <tbody>
             <tr><td>보증금</td><td class="num">4억원</td><td class="num">5,000만원</td></tr>
             <tr><td>대출 이자 (연)</td><td class="num">900만원</td><td class="num">0원</td></tr>
-            <tr><td>자기자본 기회비용 (연)</td><td class="num">525만원</td><td class="num">175만원</td></tr>
+            <tr><td>자기자본 기회비용 (연)</td><td class="num">444만 1,500원</td><td class="num">148만 500원</td></tr>
             <tr><td>월세 (연)</td><td class="num">0원</td><td class="num">1,320만원</td></tr>
-            <tr><td><b>연 실질 주거비</b></td><td class="num"><b>1,425만원</b></td><td class="num"><b>1,495만원</b></td></tr>
-            <tr><td>월 환산</td><td class="num">118만 7,500원</td><td class="num">124만 5,833원</td></tr>
+            <tr><td><b>연 실질 주거비</b></td><td class="num"><b>1,344만 1,500원</b></td><td class="num"><b>1,468만 500원</b></td></tr>
+            <tr><td>기회비용 포함 월 환산 비용</td><td class="num">112만 125원</td><td class="num">122만 3,375원</td></tr>
           </tbody>
         </table>
       </div>
-      <p>전세가 <b>연 70만원(월 5만 8,333원)</b> 저렴합니다. 전환율로 보면 이 조건의 시장 전환율은 3.77%, 손익분기 전환율은 3.57%입니다. 시장 전환율이 더 높으니 <b>전세가 유리</b>하다는 결론과 같은 방향입니다.</p>
-      <p>만약 월세가 110만원이 아니라 95만원이었다면 월세 연 비용은 1,140만원 + 175만원 = 1,315만원으로 전세보다 110만원 저렴해집니다. <b>월세 15만원 차이로 결론이 뒤집히는</b> 것입니다. 그래서 월세는 '내가 실제로 계약할 금액'을 정확히 넣어야 합니다.</p>
+      <p>전세가 <b>연 123만 9,000원(월 10만 3,250원)</b> 저렴합니다. 입력 매물의 전환율은 3.77%, 손익분기 전환율은 3.42%입니다. 매물 전환율이 손익분기보다 높으니 전세 쪽 연 비용이 낮다는 결론과 같은 방향입니다.</p>
+      <p>만약 월세가 110만원이 아니라 95만원이었다면 월세 연 비용은 1,140만원 + 148만 500원 = 1,288만 500원으로 전세보다 56만 1,000원 저렴해집니다. <b>월세 15만원 차이로 결론이 뒤집히는</b> 것입니다. 그래서 월세는 '내가 실제로 계약할 금액'을 정확히 넣어야 합니다.</p>
     </section>
 
     <section class="prose" id="faq" style="margin-top:16px;">
@@ -566,13 +569,13 @@
         <details>
           <summary><span class="q">Q</span>전세 3억원을 월세로 바꾸면 월세 얼마까지가 손익분기인가요?<span class="chev">▾</span></summary>
           <div class="a">
-            <p>전세대출 70%(2억 1,000만원, 연 3.4%), 기회비용 3.5%, 월세 보증금 1,000만원 기준으로 손익분기 월세는 <b>828,333원</b>입니다. 손익분기 전환율은 3.43%입니다. 이보다 월세가 낮으면 월세가 유리합니다.</p>
+            <p>전세대출 70%(2억 1,000만원, 연 3.4%), 예금 금리 3.5%(세후 2.96%), 월세 보증금 1,000만원 기준으로 손익분기 월세는 <b>792,400원</b>입니다. 손익분기 전환율은 3.28%입니다. 이보다 월세가 낮으면 월세가 유리합니다.</p>
           </div>
         </details>
         <details>
           <summary><span class="q">Q</span>전환율이 높으면 전세가 유리한가요?<span class="chev">▾</span></summary>
           <div class="a">
-            <p>시장 전환율이 손익분기 전환율보다 높으면 전세가 유리합니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산하므로, 같은 보증금이라면 월세가 높을수록 전환율이 올라갑니다. 다만 대출 금리와 기회비용 수익률을 실제 조건으로 넣어야 결론이 정확해집니다.</p>
+            <p>입력한 매물의 전환율이 내 손익분기 전환율보다 높으면 전세 쪽 연 비용이 낮습니다. 전환율은 (월세 × 12) ÷ (전세 보증금 − 월세 보증금)으로 계산하므로, 같은 보증금이라면 월세가 높을수록 전환율이 올라갑니다. 다만 대출 금리와 세후 기회비용을 실제 조건으로 넣어야 결론이 정확해집니다.</p>
           </div>
         </details>
 <!-- GROWTH:FAQ-END -->
@@ -674,24 +677,27 @@
 
 <script>
 /* JW-CORE-START */
+/* 이자소득세 15.4%(소득세 14% + 지방소득세 1.4%) — 입력한 세전 금리를 세후 기회비용으로 환산한다. */
+var JW_OC_TAX = 0.154;
 function jwEvaluate(cfg){
   cfg = cfg || {};
   function won(v){ return Math.max(0, Math.round(v || 0)); }
   var jd = won(cfg.jDeposit), jLoan = Math.min(won(cfg.jLoan), won(cfg.jDeposit));
   var jRate = Math.max(0, cfg.jRate || 0), yieldRate = Math.max(0, cfg.jYield || 0);
+  var yieldNet = yieldRate * (1 - JW_OC_TAX);
   var wd = won(cfg.wDeposit), wRent = won(cfg.wRent), wLoan = Math.min(won(cfg.wLoan), won(cfg.wDeposit));
   var wRate = Math.max(0, cfg.wRate || 0);
   var jMaint = won(cfg.jMaint), wMaint = won(cfg.wMaint), jRepair = won(cfg.jRepair), wRepair = won(cfg.wRepair);
 
   var jLoanInt = jLoan * jRate / 100;
   var jEquityCapital = Math.max(0, jd - jLoan);
-  var jEquityCost = jEquityCapital * yieldRate / 100;
+  var jEquityCost = jEquityCapital * yieldNet / 100;
   var jMaintYear = jMaint * 12 + jRepair;
   var jAnnual = jLoanInt + jEquityCost + jMaintYear;
 
   var wLoanInt = wLoan * wRate / 100;
   var wEquityCapital = Math.max(0, wd - wLoan);
-  var wEquityCost = wEquityCapital * yieldRate / 100;
+  var wEquityCost = wEquityCapital * yieldNet / 100;
   var wMaintYear = wMaint * 12 + wRepair;
   var wAnnual = wRent * 12 + wLoanInt + wEquityCost + wMaintYear;
 
@@ -701,7 +707,7 @@ function jwEvaluate(cfg){
   var wCapital = wLoanInt + wEquityCost;
 
   var out = {
-    jDeposit: jd, jLoan: jLoan, jRate: jRate, jYield: yieldRate, jEquityCapital: jEquityCapital,
+    jDeposit: jd, jLoan: jLoan, jRate: jRate, jYield: yieldRate, jYieldNet: yieldNet, jEquityCapital: jEquityCapital,
     wDeposit: wd, wRent: wRent, wLoan: wLoan, wRate: wRate, wEquityCapital: wEquityCapital,
     jLoanInt: jLoanInt, jEquityCost: jEquityCost, jMaintYear: jMaintYear,
     jAnnual: jAnnual, jMonthly: jAnnual / 12,
@@ -719,7 +725,8 @@ function jwEvaluate(cfg){
   }
   if (jd <= 0 || wRent <= 0) return out;
   if (depositGap <= 0) out.verdict = 'gap';
-  else if (Math.abs(diff) < 10000) out.verdict = 'even';
+  /* '거의 같음'은 월 환산 차이 1만 원 미만(연 12만 원 미만) 기준 */
+  else if (Math.abs(diff) / 12 < 10000) out.verdict = 'even';
   else out.verdict = diff > 0 ? 'jeonse' : 'wolse';
   return out;
 }
@@ -753,7 +760,7 @@ function jwMan(n){
     wDeposit: $('jw-wDeposit'), wRent: $('jw-wRent'), wLoan: $('jw-wLoan'), wRate: $('jw-wRate'),
     jMaint: $('jw-jMaint'), wMaint: $('jw-wMaint'), jRepair: $('jw-jRepair'), wRepair: $('jw-wRepair'),
     verdict: $('jw-verdict'), resJ: $('jw-resJ'), resW: $('jw-resW'),
-    summary: $('jw-summary'), detailBody: $('jw-detailBody'), toast: $('jw-toast'),
+    summary: $('jw-summary'), horizon: $('jw-horizon'), detailBody: $('jw-detailBody'), toast: $('jw-toast'),
     sim: $('jw-sim'), simRate: $('jw-simRate'), simRateOut: $('jw-simRateOut'), simRateSub: $('jw-simRateSub'),
     simShare: $('jw-simShare'), simShareOut: $('jw-simShareOut'), simShareSub: $('jw-simShareSub'),
     simYield: $('jw-simYield'), simYieldOut: $('jw-simYieldOut'), simYieldSub: $('jw-simYieldSub'),
@@ -764,20 +771,29 @@ function jwMan(n){
     var n = parseFloat(v);
     return isFinite(n) && n > 0 ? n : 0;
   }
+  /* 빈칸과 '0' 입력을 구분한다: 빈칸이면 안내된 기본값, 0을 넣으면 0으로 계산한다. */
+  function isBlank(v){ return v === null || v === undefined || String(v).trim() === ''; }
+  function numOr(v, dflt){
+    if (isBlank(v)) return dflt;
+    var n = parseFloat(v);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
   function readCfg(){
     return {
       jDeposit: Math.round(num(el.jDeposit.value) * 10000),
       jLoan: Math.round(num(el.jLoan.value) * 10000),
-      jRate: num(el.jRate.value),
-      jYield: num(el.jYield.value),
+      jRate: numOr(el.jRate.value, SIM_DEFAULT_RATE),
+      jYield: numOr(el.jYield.value, SIM_DEFAULT_OC),
       wDeposit: Math.round(num(el.wDeposit.value) * 10000),
       wRent: Math.round(num(el.wRent.value) * 10000),
       wLoan: Math.round(num(el.wLoan.value) * 10000),
-      wRate: num(el.wRate.value),
+      wRate: numOr(el.wRate.value, 0),
       jMaint: Math.round(num(el.jMaint.value) * 10000),
       wMaint: Math.round(num(el.wMaint.value) * 10000),
       jRepair: Math.round(num(el.jRepair.value) * 10000),
-      wRepair: Math.round(num(el.wRepair.value) * 10000)
+      wRepair: Math.round(num(el.wRepair.value) * 10000),
+      jRateBlank: isBlank(el.jRate.value),
+      jYieldBlank: isBlank(el.jYield.value)
     };
   }
 
@@ -826,23 +842,26 @@ function jwMan(n){
     if (!node || !node.style || typeof node.style.setProperty !== 'function') return;
     node.style.setProperty('--pct', Math.max(0, Math.min(100, pct)) + '%');
   }
+  function netOf(rate){ return (rate || 0) * (1 - 0.154); }
+  function isEven(r){ return Math.abs(r.diff) / 12 < 10000; }
 
   function syncSim(base, r, r0){
-    var bRate = base.jRate > 0 ? base.jRate : SIM_DEFAULT_RATE;
-    var bOc = base.jYield > 0 ? base.jYield : SIM_DEFAULT_OC;
+    /* 기본값은 readCfg에서 이미 채워져 있다(빈칸 3.4% / 0 입력은 0%) */
+    var bRate = base.jRate;
+    var bOc = base.jYield;
     var bShare = base.jDeposit > 0 ? Math.min(100, Math.round(base.jLoan / base.jDeposit * 1000) / 10) : SIM_DEFAULT_SHARE;
     var rate = sim.rate === null ? bRate : sim.rate;
     var oc = sim.oc === null ? bOc : sim.oc;
     var share = sim.share === null ? bShare : sim.share;
     var on = sim.active;
 
-    if (sim.rate === null) el.simRate.value = String(snap1(rate));
-    if (sim.oc === null) el.simYield.value = String(snap1(oc));
+    if (sim.rate === null) el.simRate.value = String(snap1(Math.min(rate, 8)));
+    if (sim.oc === null) el.simYield.value = String(snap1(Math.min(oc, 8)));
     if (sim.share === null) el.simShare.value = String(snap1(share));
     el.simShare.disabled = base.jDeposit <= 0;
 
-    setPct(el.simRate, rate / 8 * 100);
-    setPct(el.simYield, oc / 8 * 100);
+    setPct(el.simRate, Math.min(rate, 8) / 8 * 100);
+    setPct(el.simYield, Math.min(oc, 8) / 8 * 100);
     setPct(el.simShare, share);
 
     el.simRateOut.textContent = fmt1(rate) + '%';
@@ -853,12 +872,14 @@ function jwMan(n){
     el.simState.className = 'calc-sim-state' + (on ? ' is-on' : '');
     el.simReset.disabled = !on;
 
-    if (base.jRate > 0){
-      var dr = rate - base.jRate;
-      el.simRateSub.innerHTML = '입력값 ' + fmt2(base.jRate) + '%' +
-        (Math.abs(dr) < 0.05 ? ' 그대로' : ' · <b>' + (dr > 0 ? '+' : '−') + fmt1(Math.abs(dr)) + '%p</b>');
+    if (base.jRateBlank){
+      el.simRateSub.innerHTML = '대출금리를 비워 두어 <b>연 ' + fmt1(SIM_DEFAULT_RATE) + '%</b>로 계산합니다. 0을 넣으면 0%입니다.';
     } else {
-      el.simRateSub.innerHTML = '금리를 입력하지 않아 <b>연 ' + fmt1(SIM_DEFAULT_RATE) + '%</b>로 가정했습니다.';
+      var dr = rate - base.jRate;
+      var rSub = '입력값 ' + fmt2(base.jRate) + '%' +
+        (Math.abs(dr) < 0.05 ? ' 그대로' : ' · <b>' + (dr > 0 ? '+' : '−') + fmt1(Math.abs(dr)) + '%p</b>');
+      if (sim.rate === null && base.jRate > 8) rSub += ' · 슬라이더 상한(8%)을 넘는 입력이라 계산에만 반영됩니다';
+      el.simRateSub.innerHTML = rSub;
     }
 
     if (base.jDeposit > 0){
@@ -869,8 +890,11 @@ function jwMan(n){
       el.simShareSub.innerHTML = '전세 보증금을 먼저 입력하면 대출 비중을 조절할 수 있습니다.';
     }
 
-    el.simYieldSub.innerHTML = '세후 <b>' + (Math.round(oc * 0.846 * 100) / 100).toFixed(2) + '%</b> · 이자소득세 15.4% 차감' +
-      (base.jYield > 0 ? ' · 입력값 ' + fmt2(base.jYield) + '%' : '');
+    var ySub = '세후 <b>' + netOf(oc).toFixed(2) + '%</b> · 이자소득세 15.4% 차감';
+    if (base.jYieldBlank) ySub += ' · 예금 금리를 비워 두어 ' + fmt1(SIM_DEFAULT_OC) + '%로 계산';
+    else ySub += ' · ' + (sim.oc === null ? '입력값 ' + fmt2(base.jYield) + '%' : '적용 ' + fmt1(oc) + '%');
+    if (sim.oc === null && base.jYield > 8) ySub += ' · 슬라이더 상한(8%)을 넘는 입력이라 계산에만 반영됩니다';
+    el.simYieldSub.innerHTML = ySub;
 
     if (r.verdict === 'empty'){
       el.simLive.innerHTML = '<b>보증금과 월세를 입력하면</b> 슬라이더를 움직이는 대로 결과가 바뀝니다.';
@@ -881,7 +905,7 @@ function jwMan(n){
     if (r.verdict === 'gap'){
       head = '전세 보증금이 월세 보증금보다 작아 <b>전환율 비교는 생략</b>됩니다 · 연 차이 ' +
         (r.diff >= 0 ? '+' : '−') + jwWon(Math.abs(r.diff));
-    } else if (Math.abs(r.diff) < 10000){
+    } else if (isEven(r)){
       head = '<b>두 조건의 비용이 거의 같습니다</b> · 월 차이 ' + jwWon(Math.abs(r.diffMonthly));
     } else {
       head = r.diff > 0
@@ -905,6 +929,20 @@ function jwMan(n){
     el.simLive.innerHTML = head + be + '<span class="delta">' + delta + '</span>';
   }
 
+  function horizonText(r){
+    if (r.verdict === 'empty') return '';
+    var two = Math.abs(r.diff) * 2;
+    if (r.verdict === 'gap'){
+      return '2년 계약 기준 연 비용 차이는 <b>' + jwWon(two) + '</b>입니다. 보증금이 역전되어 전환율 비교는 생략하고 연 비용만 봅니다.';
+    }
+    if (isEven(r)){
+      return '2년 계약 기준 차이는 <b>' + jwWon(two) + '</b>입니다. 한쪽에만 더 드는 계약 비용(중개보수·이사비 등)이 이 금액을 넘으면 결론이 바뀝니다.';
+    }
+    return '2년 계약 기준 연 비용 차이는 <b>' + jwWon(two) + '</b>(' +
+      (r.diff > 0 ? '전세가 유리' : '월세가 유리') +
+      ')입니다. 한쪽에만 더 드는 계약 비용(중개보수·이사비 등)이 이 금액을 넘으면 결론이 바뀝니다.';
+  }
+
   function render(){
     var base = readCfg();
     var cfg = simCfg();
@@ -921,6 +959,7 @@ function jwMan(n){
       el.resW.className = 'calc-res';
       el.resW.innerHTML = '<div class="r-head">월세 연 실질 주거비</div><dl><div><dt>—</dt><dd>—</dd></div></dl>';
       el.summary.innerHTML = '<div><dt>연 비용 차이</dt><dd>—</dd></div><div class="total"><dt>판정</dt><dd>—</dd></div>';
+      el.horizon.innerHTML = '';
       el.detailBody.innerHTML = '<table class="calc-table"><tbody><tr><td>값을 입력하면 비교표가 만들어집니다.</td></tr></tbody></table>';
       syncSim(base, r, r0);
       return;
@@ -933,7 +972,7 @@ function jwMan(n){
         : '두 조건의 연 비용이 같습니다.');
     var rateText = '';
     if (r.marketRate !== null){
-      rateText = ' 시장 전환율 ' + r.marketRate.toFixed(2) + '%, 손익분기 전환율 ' + r.beRate.toFixed(2) + '%입니다.';
+      rateText = ' 입력 매물 전환율 ' + r.marketRate.toFixed(2) + '%, 손익분기 전환율 ' + r.beRate.toFixed(2) + '%입니다.';
     } else {
       rateText = ' 전세 보증금이 월세 보증금보다 작아 전환율 비교는 생략했습니다. 연 비용만 보세요.';
     }
@@ -943,7 +982,7 @@ function jwMan(n){
     el.resJ.className = 'calc-res';
     el.resJ.innerHTML = '<div class="r-head">전세 연 실질 주거비</div><dl>'
       + '<div><dt>연 비용</dt><dd class="big">' + jwMan(r.jAnnual) + '</dd></div>'
-      + '<div><dt>월 환산</dt><dd>' + jwWon(r.jMonthly) + '</dd></div>'
+      + '<div><dt>기회비용 포함 월 환산 비용</dt><dd>' + jwWon(r.jMonthly) + '</dd></div>'
       + '<div><dt>대출 이자</dt><dd>' + jwMan(r.jLoanInt) + '</dd></div>'
       + '<div><dt>기회비용</dt><dd>' + jwMan(r.jEquityCost) + '</dd></div>'
       + '<div><dt>관리비·수선비</dt><dd>' + jwMan(r.jMaintYear) + '</dd></div>'
@@ -952,7 +991,7 @@ function jwMan(n){
     el.resW.className = 'calc-res';
     el.resW.innerHTML = '<div class="r-head">월세 연 실질 주거비</div><dl>'
       + '<div><dt>연 비용</dt><dd class="big">' + jwMan(r.wAnnual) + '</dd></div>'
-      + '<div><dt>월 환산</dt><dd>' + jwWon(r.wMonthly) + '</dd></div>'
+      + '<div><dt>기회비용 포함 월 환산 비용</dt><dd>' + jwWon(r.wMonthly) + '</dd></div>'
       + '<div><dt>월세 (연)</dt><dd>' + jwMan(r.wRent * 12) + '</dd></div>'
       + '<div><dt>보증금 이자</dt><dd>' + jwMan(r.wLoanInt) + '</dd></div>'
       + '<div><dt>기회비용</dt><dd>' + jwMan(r.wEquityCost) + '</dd></div>'
@@ -966,9 +1005,9 @@ function jwMan(n){
       sum += '<div><dt>손익분기 월세</dt><dd>' + jwWon(r.beRent) + '</dd></div>';
     }
     if (r.beRate !== null && r.marketRate !== null){
-      sum += '<div><dt>시장 전환율 / 손익분기</dt><dd>' + r.marketRate.toFixed(2) + '% / ' + r.beRate.toFixed(2) + '%</dd></div>';
+      sum += '<div><dt>입력 매물 전환율 / 손익분기</dt><dd>' + r.marketRate.toFixed(2) + '% / ' + r.beRate.toFixed(2) + '%</dd></div>';
     }
-    sum += '<div class="total"><dt>1년 기준 유리한 쪽</dt><dd>' + (Math.abs(r.diff) < 10000 ? '차이 없음' : (r.diff > 0 ? '전세' : '월세')) + '</dd></div>';
+    sum += '<div class="total"><dt>1년 기준 유리한 쪽</dt><dd>' + (isEven(r) ? '차이 없음' : (r.diff > 0 ? '전세' : '월세')) + '</dd></div>';
     el.summary.innerHTML = sum;
 
     var tb = '<table class="calc-table"><thead><tr><th>항목</th><th>전세</th><th>월세</th></tr></thead><tbody>';
@@ -981,10 +1020,11 @@ function jwMan(n){
     tb += '<tr><td>관리비·수선비 (연)</td><td>' + jwWon(r.jMaintYear) + '</td><td>' + jwWon(r.wMaintYear) + '</td></tr>';
     tb += '<tr><td><b>합계 (연)</b></td><td><b>' + jwWon(r.jAnnual) + '</b></td><td><b>' + jwWon(r.wAnnual) + '</b></td></tr>';
     if (r.beRate !== null && r.marketRate !== null){
-      tb += '<tr><td>시장 전환율</td><td colspan="2">' + r.marketRate.toFixed(2) + '% (손익분기 ' + r.beRate.toFixed(2) + '%)</td></tr>';
+      tb += '<tr><td>입력 매물 전환율</td><td colspan="2">' + r.marketRate.toFixed(2) + '% (손익분기 ' + r.beRate.toFixed(2) + '%)</td></tr>';
     }
     tb += '</tbody></table>';
     el.detailBody.innerHTML = tb;
+    el.horizon.innerHTML = horizonText(r);
     syncSim(base, r, r0);
   }
 
@@ -1064,10 +1104,12 @@ $('jw-copy').addEventListener('click', function(){
       + '· 전세 ' + jwMan(r.jDeposit) + ' (대출 ' + jwMan(r.jLoan) + ') → 연 ' + jwWon(r.jAnnual) + ' (월 ' + jwWon(r.jMonthly) + ')\n'
       + '· 월세 보증금 ' + jwMan(r.wDeposit) + ' / 월 ' + jwMan(r.wRent) + ' → 연 ' + jwWon(r.wAnnual) + ' (월 ' + jwWon(r.wMonthly) + ')\n'
       + '· 차이 ' + (r.diff >= 0 ? '+' : '−') + jwWon(Math.abs(r.diff)) + (r.beRent !== null ? ' / 손익분기 월세 ' + jwWon(r.beRent) : '') + '\n'
-      + (r.marketRate !== null ? '· 전환율 시장 ' + r.marketRate.toFixed(2) + '% / 손익분기 ' + r.beRate.toFixed(2) + '%\n' : '')
-      + (sim.active ? '· 적용 가정: 전세대출 금리 ' + fmt1(cfg.jRate) + '%, 대출 비중 ' + shareNow + '%, 기회비용 ' + fmt1(cfg.jYield) + '%\n' : '')
+      + (r.marketRate !== null ? '· 입력 매물 전환율 ' + r.marketRate.toFixed(2) + '% / 손익분기 ' + r.beRate.toFixed(2) + '%\n' : '')
+      + '· 적용 조건: 전세대출 금리 ' + fmt2(cfg.jRate) + '%' + (cfg.jRateBlank ? '(빈칸 기본값)' : '') +
+        ', 대출 비중 ' + shareNow + '%, 예금 금리 ' + fmt2(cfg.jYield) + '%' + (cfg.jYieldBlank ? '(빈칸 기본값)' : '') +
+        ' → 세후 ' + netOf(cfg.jYield).toFixed(2) + '%\n'
       + '· 판정: ' + VERDICT[r.verdict][2] + '\n'
-      + '결과 링크: https://usefulkit.kr/jeonse-vs-wolse.html\n킷랩(KitLab) 생활 계산기';
+      + '계산기 링크: https://usefulkit.kr/jeonse-vs-wolse.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
       var ta = document.createElement('textarea');
       ta.value = text;
@@ -1105,6 +1147,14 @@ $('jw-copy').addEventListener('click', function(){
     buttons[i].addEventListener('click', function(){
       var cfg;
       try { cfg = JSON.parse(this.getAttribute('data-uk-preset')); } catch (e) { return; }
+      /* 프리셋은 관리비·수선비까지 비워 이전 입력이 남지 않게 한다(재현성) */
+      var clearIds = ['jw-jMaint', 'jw-wMaint', 'jw-jRepair', 'jw-wRepair'];
+      for (var c = 0; c < clearIds.length; c++){
+        var cn = document.getElementById(clearIds[c]);
+        if (!cn) continue;
+        cn.value = '';
+        fire(cn);
+      }
       for (var id in cfg){
         if (!Object.prototype.hasOwnProperty.call(cfg, id)) continue;
         var node = document.getElementById(id);

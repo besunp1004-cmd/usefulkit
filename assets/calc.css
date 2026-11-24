@@ -160,6 +160,12 @@
   margin-top:10px; display:grid; gap:0; background:#fff; border:1px solid var(--c-line);
   border-radius:16px; overflow:hidden;
 }
+.calc-horizon{
+  margin:8px 0 0; padding:10px 13px; background:#F7F8FA; border:1px solid var(--c-line);
+  border-radius:12px; font-size:12.2px; line-height:1.62; color:var(--c-sub);
+}
+.calc-horizon:empty{display:none;}
+.calc-horizon b{color:#333D4B; font-weight:800;}
 .calc-summary > div{display:flex; justify-content:space-between; gap:10px; padding:12px 15px; border-bottom:1px solid #F2F4F6; align-items:baseline;}
 .calc-summary > div:last-child{border-bottom:0;}
 .calc-summary dt{font-size:13px; color:var(--c-sub); font-weight:700;}
