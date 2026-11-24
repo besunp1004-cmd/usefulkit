@@ -29,6 +29,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/calc.css">
+<style>
+/* 390px대 모바일: 항목별 비교표가 결과 카드 폭 안에 들어오도록(다른 계산기 표에는 영향 없음) */
+@media (max-width: 560px){
+  #jw-detailBody .calc-table{min-width:0; font-size:12px;}
+  #jw-detailBody .calc-table th, #jw-detailBody .calc-table td{padding:8px 6px;}
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
