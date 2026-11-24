@@ -4,67 +4,69 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <title>QA 390px</title>
-<style>html,body{margin:0;padding:0;background:#fff}iframe{display:block;width:390px;height:3200px;border:0}</style>
+<style>
+  html,body{margin:0;padding:0;background:#eef;font:12px/1.4 monospace}
+  .row{display:flex;gap:6px;align-items:flex-start}
+  .col{width:390px;flex:0 0 390px}
+  .cap{height:16px;color:#333;overflow:hidden}
+  iframe{display:block;width:390px;border:1px solid #f00}
+  #out{position:fixed;left:0;bottom:0;max-width:1900px;background:#fff;font-size:10px;white-space:pre-wrap;z-index:9}
+</style>
 </head>
 <body>
-<iframe id="f" src="/jeonse-vs-wolse.html?qa=1" title="390px QA"></iframe>
+<div class="row">
+  <div class="col"><div class="cap">A · 측정(정확히 390px)</div><iframe id="a" src="/jeonse-vs-wolse.html?qa=a" height="940" title="measure"></iframe></div>
+  <div class="col"><div class="cap">B · #jw-sim</div><iframe id="b" src="/jeonse-vs-wolse.html?qa=b#jw-sim" height="940" title="sim"></iframe></div>
+  <div class="col"><div class="cap">C · #assumptions</div><iframe id="c" src="/jeonse-vs-wolse.html?qa=c#assumptions" height="940" title="assume"></iframe></div>
+</div>
 <pre id="out">measuring</pre>
 <script>
 (function(){
-  var f = document.getElementById('f');
-  f.addEventListener('load', function(){
-    try {
-      var doc = f.contentDocument;
-      /* 배포 직후 캐시된 calc.css 대신 새 사본을 넣어 스타일을 확실히 반영한다 */
-      var l = doc.createElement('link');
-      l.rel = 'stylesheet';
-      l.href = '/assets/calc.css?cb=' + Date.now();
-      doc.head.appendChild(l);
-      l.addEventListener('load', function(){ after(); });
-      setTimeout(after, 1500);
-    } catch (e) {
-      document.getElementById('out').textContent = 'ERR ' + e;
-    }
-  });
+  var a = document.getElementById('a');
   var done = false;
-  function after(){
+  a.addEventListener('load', function(){
+    setTimeout(run, 900);
+  });
+  function run(){
     if (done) return; done = true;
-    var doc = f.contentDocument, de = doc.documentElement, out = {};
-    doc.getElementById('jw-example').click();
-    var s = doc.getElementById('jw-simRate');
-    s.value = '4.6';
-    s.dispatchEvent(new Event('input', {bubbles:true}));
-    var bad = [];
-    doc.querySelectorAll('.calc-sim,.calc-sim-row,.calc-sim-top,.calc-sim-live,.calc-sim-reset,.calc-res,.calc-res-grid,.calc-summary,.calc-card,.next-tools,.table-wrap,.toc,.site-nav,.site-header,.brand,.calc-actions').forEach(function(el){
-      if (el.scrollWidth > el.clientWidth + 1) bad.push((el.className||el.tagName) + ':' + el.scrollWidth + '>' + el.clientWidth);
-    });
-    var navTops = new Set();
-    doc.querySelectorAll('.site-nav a').forEach(function(a){ navTops.add(Math.round(a.getBoundingClientRect().top)); });
-    out.viewport = de.clientWidth;
-    out.docScrollW = de.scrollWidth;
-    out.bodyScrollW = doc.body.scrollWidth;
-    out.horizontalScroll = de.scrollWidth > de.clientWidth;
-    out.navRows = navTops.size;
-    out.overflow = bad;
-    out.sliderW = Math.round(doc.getElementById('jw-simRate').getBoundingClientRect().width);
-    out.simRules = 0;
-    for (var i = 0; i < doc.styleSheets.length; i++){
-      try {
-        var rs = doc.styleSheets[i].cssRules;
-        for (var j = 0; j < rs.length; j++) if (rs[j].selectorText && rs[j].selectorText.indexOf('calc-sim') === 0) out.simRules++;
-      } catch (e) {}
-    }
-    out.state = doc.getElementById('jw-simState').textContent;
-    out.rateOut = doc.getElementById('jw-simRateOut').textContent;
-    out.shareVal = doc.getElementById('jw-simShare').value;
-    out.shareOut = doc.getElementById('jw-simShareOut').textContent;
-    out.shareSub = doc.getElementById('jw-simShareSub').textContent;
-    out.verdict = doc.getElementById('jw-verdict').innerText.replace(/\n/g,' | ');
-    out.live = doc.getElementById('jw-simLive').innerText.replace(/\n/g,' | ');
-    out.jRateInput = doc.getElementById('jw-jRate').value;
-    out.resJ = doc.querySelector('#jw-resJ .big') ? doc.querySelector('#jw-resJ .big').textContent : '';
-    out.guides = doc.querySelectorAll('#next-guides a').length;
-    out.assumeRows = doc.querySelectorAll('#assumptions tbody tr').length;
+    var out = {};
+    try {
+      var doc = a.contentDocument, de = doc.documentElement;
+      /* 스크롤바가 폭을 먹지 않게 해 정확히 390px 레이아웃을 잰다 */
+      var st = doc.createElement('style');
+      st.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}';
+      doc.head.appendChild(st);
+      doc.getElementById('jw-example').click();
+      var s = doc.getElementById('jw-simRate');
+      s.value = '4.6';
+      s.dispatchEvent(new Event('input', {bubbles:true}));
+      var bad = [];
+      doc.querySelectorAll('.calc-sim,.calc-sim-row,.calc-sim-top,.calc-sim-live,.calc-sim-reset,.calc-res,.calc-res-grid,.calc-summary,.calc-card,.calc-actions,.prose,.table-wrap,.toc,.site-header,.brand').forEach(function(el){
+        if (el.scrollWidth > el.clientWidth + 1) bad.push((el.className||el.tagName) + ':' + el.scrollWidth + '>' + el.clientWidth);
+      });
+      var navTops = new Set();
+      doc.querySelectorAll('.site-nav a').forEach(function(x){ navTops.add(Math.round(x.getBoundingClientRect().top)); });
+      out.viewport = de.clientWidth;
+      out.docScrollW = de.scrollWidth;
+      out.horizontalScroll = de.scrollWidth > de.clientWidth;
+      out.navRows = navTops.size;
+      out.overflow = bad;
+      out.sliderW = Math.round(doc.getElementById('jw-simRate').getBoundingClientRect().width);
+      out.sliderH = Math.round(doc.getElementById('jw-simRate').getBoundingClientRect().height);
+      out.thumbRule = false;
+      for (var i = 0; i < doc.styleSheets.length; i++){
+        try { for (var j = 0; j < doc.styleSheets[i].cssRules.length; j++){
+          var rs = doc.styleSheets[i].cssRules[j].selectorText || '';
+          if (rs.indexOf('calc-sim') === 0) out.thumbRule = true;
+        } } catch (e) {}
+      }
+      out.state = doc.getElementById('jw-simState').textContent;
+      out.rateOut = doc.getElementById('jw-simRateOut').textContent;
+      out.shareVal = doc.getElementById('jw-simShare').value;
+      out.verdict = doc.querySelector('#jw-verdict .v-title').textContent;
+      out.resJ = doc.querySelector('#jw-resJ .big').textContent;
+      out.liveDelta = doc.querySelector('#jw-simLive .delta').textContent;
+    } catch (e) { out.error = String(e); }
     document.getElementById('out').textContent = 'RESULT ' + JSON.stringify(out);
   }
 })();
