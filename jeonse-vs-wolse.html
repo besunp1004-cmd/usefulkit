@@ -1167,10 +1167,12 @@ $('jw-copy').addEventListener('click', function(){
       + (r.wLoan > 0 ? '· 월세 보증금 대출 ' + jwMan(r.wLoan) + ', 비중 ' + wShare + '% → 연 이자 ' + jwWon(r.wLoanInt) + '\n' : '')
       + '· 차이 ' + (r.diff >= 0 ? '+' : '−') + jwWon(Math.abs(r.diff)) + (r.beRent !== null ? ' / 손익분기 월세 ' + jwWon(r.beRent) : '') + '\n'
       + (r.marketRate !== null ? '· 입력 매물 전환율 ' + r.marketRate.toFixed(2) + '% / 손익분기 ' + r.beRate.toFixed(2) + '%\n' : '')
+      /* 세후 수익률은 예금 금리에 바로 붙여 표기한다(월세 대출금리가 뒤에 와도 어느 금리의 세후인지 분명하게). */
       + '· 적용 조건: 전세대출 금리 ' + fmt2(cfg.jRate) + '%' + (cfg.jRateBlank ? '(빈칸 기본값)' : '') +
-        ', 대출 비중 ' + jShare + '%, 예금 금리 ' + fmt2(cfg.jYield) + '%' + (cfg.jYieldBlank ? '(빈칸 기본값)' : '') +
+        ', 대출 비중 ' + jShare + '%, 예금 금리 ' + fmt2(cfg.jYield) + '%' +
+        (cfg.jYieldBlank ? '(빈칸 기본값, 세후 ' : '(세후 ') + netOf(cfg.jYield).toFixed(2) + '%)' +
         (r.wLoan > 0 ? ', 월세 보증금 대출금리 ' + fmt2(cfg.wRate) + '%' + (cfg.wRateBlank ? '(빈칸 기본값)' : '') : '') +
-        ' → 세후 ' + netOf(cfg.jYield).toFixed(2) + '%\n'
+        '\n'
       + '· 판정: ' + (r.verdict === 'even' ? evenLabel(r) : VERDICT[r.verdict][2]) + '\n'
       + '계산기 링크: https://usefulkit.kr/jeonse-vs-wolse.html\n킷랩(KitLab) 생활 계산기';
     function fallback(){
