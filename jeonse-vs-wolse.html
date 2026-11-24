@@ -346,7 +346,7 @@
               <label class="calc-sim-name" for="jw-simRate">전세대출 금리</label>
               <output class="calc-sim-val" id="jw-simRateOut" for="jw-simRate">3.4%</output>
             </div>
-            <input type="range" id="jw-simRate" min="0" max="8" step="0.1" value="3.4" aria-describedby="jw-simRateSub">
+            <input type="range" id="jw-simRate" min="0" max="8" step="any" value="3.4" aria-describedby="jw-simRateSub">
             <p class="calc-sim-sub" id="jw-simRateSub">입력값 3.4% 기준</p>
           </div>
 
@@ -355,7 +355,7 @@
               <label class="calc-sim-name" for="jw-simShare">전세대출 비중 (보증금 대비)</label>
               <output class="calc-sim-val" id="jw-simShareOut" for="jw-simShare">70%</output>
             </div>
-            <input type="range" id="jw-simShare" min="0" max="100" step="1" value="70" aria-describedby="jw-simShareSub">
+            <input type="range" id="jw-simShare" min="0" max="100" step="any" value="70" aria-describedby="jw-simShareSub">
             <p class="calc-sim-sub" id="jw-simShareSub">전세 보증금을 입력하면 비중을 조절할 수 있습니다.</p>
           </div>
 
@@ -364,7 +364,7 @@
               <label class="calc-sim-name" for="jw-simYield">예금 기회비용 수익률</label>
               <output class="calc-sim-val" id="jw-simYieldOut" for="jw-simYield">3.5%</output>
             </div>
-            <input type="range" id="jw-simYield" min="0" max="8" step="0.1" value="3.5" aria-describedby="jw-simYieldSub">
+            <input type="range" id="jw-simYield" min="0" max="8" step="any" value="3.5" aria-describedby="jw-simYieldSub">
             <p class="calc-sim-sub" id="jw-simYieldSub">세후 2.96% (이자소득세 15.4% 차감)</p>
           </div>
 
@@ -440,7 +440,7 @@
             <tr><td>관리비·수선비</td><td>월 관리비 × 12 + 연 수선·수리비. 두 조건의 차액만 반영됩니다. 모르면 0으로 두고 차이가 큰 항목만 넣으세요.</td><td>3단계 입력</td></tr>
             <tr><td>중개보수·수수료</td><td><b>포함하지 않았습니다.</b> 이사비·청소비·대출 보증료·인지세도 넣지 않았습니다. 판단이 아슬아슬할 때는 이 1회성 비용이 결론을 뒤집습니다.</td><td>복비·취득세 계산기</td></tr>
             <tr><td>전월세 전환율</td><td>월세 × 12 ÷ (전세 보증금 − 월세 보증금). 법정 상한은 <b>한국은행 기준금리 + 연 2%</b>입니다.</td><td>자동 계산</td></tr>
-            <tr><td>슬라이더 범위</td><td>금리 0~8%(0.1%p), 대출 비중 0~100%(1%), 기회비용 0~8%(0.1%p). 슬라이더는 입력값을 덮어쓰지 않고 결과만 바꿉니다.</td><td>4단계 시뮬레이터</td></tr>
+            <tr><td>슬라이더 범위</td><td>금리 0~8%, 대출 비중 0~100%, 기회비용 0~8%를 0.1 단위로 움직입니다. 슬라이더는 입력값을 덮어쓰지 않고 결과만 바꿉니다.</td><td>4단계 시뮬레이터</td></tr>
           </tbody>
         </table>
       </div>
@@ -816,6 +816,12 @@ function jwMan(n){
     var r = Math.round((v || 0) * 10) / 10;
     return String(r);
   }
+  function fmt2(v){
+    return String(Math.round((v || 0) * 100) / 100);
+  }
+  function snap1(v){
+    return Math.round((v || 0) * 10) / 10;
+  }
   function setPct(node, pct){
     if (!node || !node.style || typeof node.style.setProperty !== 'function') return;
     node.style.setProperty('--pct', Math.max(0, Math.min(100, pct)) + '%');
@@ -830,9 +836,9 @@ function jwMan(n){
     var share = sim.share === null ? bShare : sim.share;
     var on = sim.active;
 
-    if (sim.rate === null) el.simRate.value = String(rate);
-    if (sim.oc === null) el.simYield.value = String(oc);
-    if (sim.share === null) el.simShare.value = String(share);
+    if (sim.rate === null) el.simRate.value = String(snap1(rate));
+    if (sim.oc === null) el.simYield.value = String(snap1(oc));
+    if (sim.share === null) el.simShare.value = String(snap1(share));
     el.simShare.disabled = base.jDeposit <= 0;
 
     setPct(el.simRate, rate / 8 * 100);
@@ -849,7 +855,7 @@ function jwMan(n){
 
     if (base.jRate > 0){
       var dr = rate - base.jRate;
-      el.simRateSub.innerHTML = '입력값 ' + fmt1(base.jRate) + '%' +
+      el.simRateSub.innerHTML = '입력값 ' + fmt2(base.jRate) + '%' +
         (Math.abs(dr) < 0.05 ? ' 그대로' : ' · <b>' + (dr > 0 ? '+' : '−') + fmt1(Math.abs(dr)) + '%p</b>');
     } else {
       el.simRateSub.innerHTML = '금리를 입력하지 않아 <b>연 ' + fmt1(SIM_DEFAULT_RATE) + '%</b>로 가정했습니다.';
@@ -864,7 +870,7 @@ function jwMan(n){
     }
 
     el.simYieldSub.innerHTML = '세후 <b>' + (Math.round(oc * 0.846 * 100) / 100).toFixed(2) + '%</b> · 이자소득세 15.4% 차감' +
-      (base.jYield > 0 ? ' · 입력값 ' + fmt1(base.jYield) + '%' : '');
+      (base.jYield > 0 ? ' · 입력값 ' + fmt2(base.jYield) + '%' : '');
 
     if (r.verdict === 'empty'){
       el.simLive.innerHTML = '<b>보증금과 월세를 입력하면</b> 슬라이더를 움직이는 대로 결과가 바뀝니다.';
@@ -997,7 +1003,7 @@ function jwMan(n){
     node.addEventListener('input', function(){
       var v = parseFloat(node.value);
       if (!isFinite(v)) return;
-      sim[axis] = v;
+      sim[axis] = snap1(v);
       sim.active = true;
       render();
     });
