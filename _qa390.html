@@ -5,69 +5,51 @@
 <meta name="robots" content="noindex,nofollow">
 <title>QA 390px</title>
 <style>
-  html,body{margin:0;padding:0;background:#eef;font:12px/1.4 monospace}
-  .row{display:flex;gap:6px;align-items:flex-start}
-  .col{width:390px;flex:0 0 390px}
-  .cap{height:16px;color:#333;overflow:hidden}
-  iframe{display:block;width:390px;border:1px solid #f00}
-  #out{position:fixed;left:0;bottom:0;max-width:1900px;background:#fff;font-size:10px;white-space:pre-wrap;z-index:9}
+  html,body{margin:0;padding:0;background:#fff;font:11px/1.3 monospace}
+  iframe{display:block;width:390px;height:940px;border:0}
+  #out{position:fixed;left:400px;top:0;width:1400px;background:#fff;white-space:pre-wrap}
 </style>
 </head>
 <body>
-<div class="row">
-  <div class="col"><div class="cap">A · 측정(정확히 390px)</div><iframe id="a" src="/jeonse-vs-wolse.html?qa=a" height="940" title="measure"></iframe></div>
-  <div class="col"><div class="cap">B · #jw-sim</div><iframe id="b" src="/jeonse-vs-wolse.html?qa=b#jw-sim" height="940" title="sim"></iframe></div>
-  <div class="col"><div class="cap">C · #assumptions</div><iframe id="c" src="/jeonse-vs-wolse.html?qa=c#assumptions" height="940" title="assume"></iframe></div>
-</div>
+<iframe id="a" src="/jeonse-vs-wolse.html?qa=3#jw-sim" title="390px"></iframe>
 <pre id="out">measuring</pre>
 <script>
 (function(){
-  var a = document.getElementById('a');
-  var done = false;
+  var a = document.getElementById('a'), done = false;
   a.addEventListener('load', function(){
-    setTimeout(run, 900);
-  });
-  function run(){
     if (done) return; done = true;
-    var out = {};
     try {
       var doc = a.contentDocument, de = doc.documentElement;
-      /* 스크롤바가 폭을 먹지 않게 해 정확히 390px 레이아웃을 잰다 */
-      var st = doc.createElement('style');
-      st.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}';
-      doc.head.appendChild(st);
-      doc.getElementById('jw-example').click();
-      var s = doc.getElementById('jw-simRate');
-      s.value = '4.6';
-      s.dispatchEvent(new Event('input', {bubbles:true}));
-      var bad = [];
-      doc.querySelectorAll('.calc-sim,.calc-sim-row,.calc-sim-top,.calc-sim-live,.calc-sim-reset,.calc-res,.calc-res-grid,.calc-summary,.calc-card,.calc-actions,.prose,.table-wrap,.toc,.site-header,.brand').forEach(function(el){
-        if (el.scrollWidth > el.clientWidth + 1) bad.push((el.className||el.tagName) + ':' + el.scrollWidth + '>' + el.clientWidth);
-      });
-      var navTops = new Set();
-      doc.querySelectorAll('.site-nav a').forEach(function(x){ navTops.add(Math.round(x.getBoundingClientRect().top)); });
-      out.viewport = de.clientWidth;
-      out.docScrollW = de.scrollWidth;
-      out.horizontalScroll = de.scrollWidth > de.clientWidth;
-      out.navRows = navTops.size;
-      out.overflow = bad;
-      out.sliderW = Math.round(doc.getElementById('jw-simRate').getBoundingClientRect().width);
-      out.sliderH = Math.round(doc.getElementById('jw-simRate').getBoundingClientRect().height);
-      out.thumbRule = false;
-      for (var i = 0; i < doc.styleSheets.length; i++){
-        try { for (var j = 0; j < doc.styleSheets[i].cssRules.length; j++){
-          var rs = doc.styleSheets[i].cssRules[j].selectorText || '';
-          if (rs.indexOf('calc-sim') === 0) out.thumbRule = true;
-        } } catch (e) {}
-      }
-      out.state = doc.getElementById('jw-simState').textContent;
-      out.rateOut = doc.getElementById('jw-simRateOut').textContent;
-      out.shareVal = doc.getElementById('jw-simShare').value;
-      out.verdict = doc.querySelector('#jw-verdict .v-title').textContent;
-      out.resJ = doc.querySelector('#jw-resJ .big').textContent;
-      out.liveDelta = doc.querySelector('#jw-simLive .delta').textContent;
-    } catch (e) { out.error = String(e); }
-    document.getElementById('out').textContent = 'RESULT ' + JSON.stringify(out);
+      var l = doc.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = '/assets/calc.css?cb=' + Date.now();
+      doc.head.appendChild(l);
+      setTimeout(measure, 900);
+    } catch (e) { out('ERR ' + e); }
+  });
+  function out(s){ document.getElementById('out').textContent = s; }
+  function measure(){
+    var doc = a.contentDocument, de = doc.documentElement, r = {};
+    doc.getElementById('jw-example').click();
+    var s = doc.getElementById('jw-simRate');
+    s.value = '4.6';
+    s.dispatchEvent(new Event('input', {bubbles:true}));
+    var bad = [];
+    doc.querySelectorAll('.calc-sim,.calc-sim-row,.calc-sim-top,.calc-sim-live,.calc-sim-reset,.calc-res,.calc-res-grid,.calc-summary,.calc-card,.calc-actions').forEach(function(el){
+      if (el.scrollWidth > el.clientWidth + 1) bad.push((el.className||el.tagName)+':'+el.scrollWidth+'>'+el.clientWidth);
+    });
+    r.viewport = de.clientWidth; r.docScrollW = de.scrollWidth;
+    r.hScroll = de.scrollWidth > de.clientWidth;
+    r.overflow = bad;
+    var rr = doc.getElementById('jw-simRate').getBoundingClientRect();
+    r.sliderW = Math.round(rr.width); r.sliderH = Math.round(rr.height);
+    r.pct = doc.getElementById('jw-simRate').style.getPropertyValue('--pct');
+    r.simRect = {x: Math.round(doc.getElementById('jw-sim').getBoundingClientRect().x), y: Math.round(doc.getElementById('jw-sim').getBoundingClientRect().y)};
+    r.rate = doc.getElementById('jw-simRateOut').textContent;
+    r.share = doc.getElementById('jw-simShare').value;
+    r.state = doc.getElementById('jw-simState').textContent;
+    r.windowScrollY = Math.round(doc.documentElement.scrollTop || doc.body.scrollTop);
+    out('RESULT ' + JSON.stringify(r));
   }
 })();
 </script>
