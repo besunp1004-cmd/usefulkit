@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>QA 390px</title>
+<style>html,body{margin:0;padding:0;background:#fff}iframe{display:block;width:390px;height:3200px;border:0}</style>
+</head>
+<body>
+<iframe id="f" src="/jeonse-vs-wolse.html?qa=1" title="390px QA"></iframe>
+<pre id="out">measuring</pre>
+<script>
+(function(){
+  var f = document.getElementById('f');
+  f.addEventListener('load', function(){
+    try {
+      var doc = f.contentDocument;
+      /* 배포 직후 캐시된 calc.css 대신 새 사본을 넣어 스타일을 확실히 반영한다 */
+      var l = doc.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = '/assets/calc.css?cb=' + Date.now();
+      doc.head.appendChild(l);
+      l.addEventListener('load', function(){ after(); });
+      setTimeout(after, 1500);
+    } catch (e) {
+      document.getElementById('out').textContent = 'ERR ' + e;
+    }
+  });
+  var done = false;
+  function after(){
+    if (done) return; done = true;
+    var doc = f.contentDocument, de = doc.documentElement, out = {};
+    doc.getElementById('jw-example').click();
+    var s = doc.getElementById('jw-simRate');
+    s.value = '4.6';
+    s.dispatchEvent(new Event('input', {bubbles:true}));
+    var bad = [];
+    doc.querySelectorAll('.calc-sim,.calc-sim-row,.calc-sim-top,.calc-sim-live,.calc-sim-reset,.calc-res,.calc-res-grid,.calc-summary,.calc-card,.next-tools,.table-wrap,.toc,.site-nav,.site-header,.brand,.calc-actions').forEach(function(el){
+      if (el.scrollWidth > el.clientWidth + 1) bad.push((el.className||el.tagName) + ':' + el.scrollWidth + '>' + el.clientWidth);
+    });
+    var navTops = new Set();
+    doc.querySelectorAll('.site-nav a').forEach(function(a){ navTops.add(Math.round(a.getBoundingClientRect().top)); });
+    out.viewport = de.clientWidth;
+    out.docScrollW = de.scrollWidth;
+    out.bodyScrollW = doc.body.scrollWidth;
+    out.horizontalScroll = de.scrollWidth > de.clientWidth;
+    out.navRows = navTops.size;
+    out.overflow = bad;
+    out.sliderW = Math.round(doc.getElementById('jw-simRate').getBoundingClientRect().width);
+    out.simRules = 0;
+    for (var i = 0; i < doc.styleSheets.length; i++){
+      try {
+        var rs = doc.styleSheets[i].cssRules;
+        for (var j = 0; j < rs.length; j++) if (rs[j].selectorText && rs[j].selectorText.indexOf('calc-sim') === 0) out.simRules++;
+      } catch (e) {}
+    }
+    out.state = doc.getElementById('jw-simState').textContent;
+    out.rateOut = doc.getElementById('jw-simRateOut').textContent;
+    out.shareVal = doc.getElementById('jw-simShare').value;
+    out.shareOut = doc.getElementById('jw-simShareOut').textContent;
+    out.shareSub = doc.getElementById('jw-simShareSub').textContent;
+    out.verdict = doc.getElementById('jw-verdict').innerText.replace(/\n/g,' | ');
+    out.live = doc.getElementById('jw-simLive').innerText.replace(/\n/g,' | ');
+    out.jRateInput = doc.getElementById('jw-jRate').value;
+    out.resJ = doc.querySelector('#jw-resJ .big') ? doc.querySelector('#jw-resJ .big').textContent : '';
+    out.guides = doc.querySelectorAll('#next-guides a').length;
+    out.assumeRows = doc.querySelectorAll('#assumptions tbody tr').length;
+    document.getElementById('out').textContent = 'RESULT ' + JSON.stringify(out);
+  }
+})();
+</script>
+</body>
+</html>
