@@ -27,6 +27,15 @@
  *   related_click          from_page, to_page          하단 .next-tools 연관 도구 카드 클릭
  *   report_interest_click  page                        수요 측정 버튼([data-uk-interest]) 클릭, 방문당 1회
  *
+ * 엣지케이스 처리(2026-11-26 추가)
+ *   - 한 칸만 넣어 결과가 아직 없을 때 예시를 누르면, 그 미완성 입력 흔적을 지우고 ①(예시)로
+ *     셉니다. '직접 입력'은 사용자의 입력으로 첫 유효 결과가 확정될 때만 인정합니다.
+ *   - 결과를 2.5초 안에 복사하거나 다른 도구로 이동하거나 페이지를 떠나면(pagehide·
+ *     visibilitychange) 대기 중인 타이머를 기다리지 않고 그 자리에서 완료를 확정합니다.
+ *   - 같은 탭에서 새로고침한 뒤 직접 입력을 마치면, 앞서 보낸 모드가 'preset'이면
+ *     'preset_modified'(②)로 통합합니다. 이미 ③으로 확정된 세션은 다시 세지 않습니다.
+ *     (그래서 ①·②·③의 세션 합계가 calc_complete 와 어긋나지 않습니다)
+ *
  * 세 가지 세션 구분은 append-only(보낸 이벤트를 고치지 않음) 방식입니다.
  *   예시만 본 세션(①)  = calc_session_preset 세션 수 − calc_session_preset_modified 세션 수
  *   예시 뒤 수정(②)    = calc_session_preset_modified 세션 수
@@ -152,6 +161,22 @@
     return true;
   }
 
+  /* 같은 세션(30분) 안에 이미 확정한 완료 모드('preset'|'preset_modified'|'custom').
+     새로고침해도 남아, 모드 기록이 모순(①+②+③ ≠ calc_complete)되지 않게 한다. */
+  function priorMode() {
+    var v = sget('uk_calc_mode:' + calcName());
+    if (v === null) return null;
+    var cut = String(v).lastIndexOf('|');
+    var mode = cut >= 0 ? String(v).slice(0, cut) : String(v);
+    var t = parseFloat(cut >= 0 ? String(v).slice(cut + 1) : '');
+    if (!isFinite(t) || now() - t >= SESSION_MS) return null;
+    return mode || null;
+  }
+
+  function recordMode(mode) {
+    sset('uk_calc_mode:' + calcName(), mode + '|' + now());
+  }
+
   /* ── 세션 모드 상태 ─────────────────────────────────────────────
      origin      : 마지막으로 결과를 움직인 입력의 출처('preset' | 'input' | null)
      sawPreset   : 이 페이지에서 프리셋·예시를 한 번이라도 불렀는지
@@ -178,19 +203,27 @@
     var name = calcName();
     var path = here();
     var mode = completionMode();
+    var prior = priorMode();
+    /* 이 세션의 완료 모드는 한 번만 정해진다. 새로고침으로 페이지가 새로 뜬 뒤
+       직접 입력을 마쳐도, 앞서 ①이었으면 ②(예시를 본 뒤 조정)로 통합하고
+       ③·②로 이미 확정된 세션은 다시 세지 않는다. */
+    if (prior === 'custom') mode = null;
+    else if (prior === 'preset_modified') mode = 'preset_modified';
+    else if (prior === 'preset' && mode === 'custom') mode = 'preset_modified';
     sendOnce('complete', 'calc_complete', { calculator_name: name, page_path: path });
+    if (mode === null) return;
     if (mode === 'preset') {
-      sendOnce('preset', 'calc_session_preset', {
+      if (sendOnce('preset', 'calc_session_preset', {
         calculator_name: name, page_path: path, completion_mode: mode
-      });
+      })) recordMode('preset');
     } else if (mode === 'preset_modified') {
-      sendOnce('preset_modified', 'calc_session_preset_modified', {
+      if (sendOnce('preset_modified', 'calc_session_preset_modified', {
         calculator_name: name, page_path: path, completion_mode: mode, from_mode: 'preset'
-      });
+      })) recordMode('preset_modified');
     } else {
-      sendOnce('custom', 'calc_session_custom', {
+      if (sendOnce('custom', 'calc_session_custom', {
         calculator_name: name, page_path: path, completion_mode: mode
-      });
+      })) recordMode('custom');
     }
   }
 
@@ -198,6 +231,30 @@
     if (timer && typeof W.clearTimeout === 'function') W.clearTimeout(timer);
     else if (timer) clearTimeout(timer);
     timer = setTimeout(settle, SETTLE_MS);
+  }
+
+  /* 대기 중인 완료를 지금 확정한다. 복사·타 도구 이동·페이지 이탈처럼 2.5초를 기다릴 수
+     없는 동작에서 부른다. gtag 는 GA4 로 keepalive 요청이라 페이지를 떠난 뒤에도 전송을
+     마저 시도한다(별도 sendBeacon 을 쓰면 client_id 가 갈라져 새 세션으로 잡힐 수 있다). */
+  function flushPending() {
+    if (!timer) return;
+    if (!resultShown()) return;
+    if (typeof W.clearTimeout === 'function') W.clearTimeout(timer);
+    else clearTimeout(timer);
+    settle();
+  }
+
+  /* 프리셋·예시를 부르면 완료 모드의 출처를 'preset'으로 되돌린다.
+     이때 아직 유효한 결과가 없었다면(= 한 칸만 넣은 미완성 입력) 그 흔적을 지운다.
+     처음 유효한 결과가 예시로 나온 세션을 '직접 입력'으로 잘못 세지 않기 위해서다. */
+  function startPreset() {
+    if (!resultShown()) {
+      inputFirst = false;
+      modified = false;
+    }
+    sawPreset = true;
+    origin = 'preset';
+    scheduleComplete();
   }
 
   function isInput(node) {
@@ -226,6 +283,8 @@
   D.addEventListener('input', onParamChange, false);
   D.addEventListener('change', onParamChange, false);
 
+  /* 캡처 단계에서 받는다 — 페이지가 값을 채우고 결과를 다시 그리기 전의 상태를 보려면
+     버튼 자신의 클릭 처리보다 먼저 실행돼야 한다(프리셋 클릭 전 결과 유무 판정). */
   D.addEventListener('click', function (e) {
     var t = e.target;
     if (!t) return;
@@ -237,24 +296,21 @@
         calculator_name: calcName(),
         preset_label: String(chip.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60)
       });
-      sawPreset = true;
-      origin = 'preset';
-      scheduleComplete();
+      startPreset();
       return;
     }
 
-    /* 2) 결과 요약·링크 복사 */
+    /* 2) 결과 요약·링크 복사 — 복사하면 대기를 끝내고 지금 확정한다 */
     var copy = closestOf(t, '[id$="-copy"]');
     if (copy) {
+      flushPending();
       send('copy_result', { calculator_name: calcName() });
       return;
     }
 
     /* 3) 예시로 채우기 — 값을 채우고 계산이 다시 그려진다 */
     if (closestOf(t, '[id$="-example"]')) {
-      sawPreset = true;
-      origin = 'preset';
-      scheduleComplete();
+      startPreset();
       return;
     }
 
@@ -269,13 +325,20 @@
       return;
     }
 
-    /* 5) 하단 연관 도구 카드 */
+    /* 5) 하단 연관 도구 카드 — 다른 도구로 떠나기 전에 완료를 확정한다 */
     var link = closestOf(t, '.next-tools a');
     if (link) {
+      flushPending();
       send('related_click', {
         from_page: here(),
         to_page: pageOf(link.getAttribute('href') || link.href)
       });
     }
+  }, true);
+
+  /* 페이지를 떠나는 순간에도 결과가 유효하면 완료를 확정한다. */
+  D.addEventListener('pagehide', flushPending, false);
+  D.addEventListener('visibilitychange', function () {
+    if (D.visibilityState === 'hidden' || D.hidden === true) flushPending();
   }, false);
 })();
