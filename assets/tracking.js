@@ -30,19 +30,23 @@
  * 엣지케이스 처리(2026-11-26 추가)
  *   - 한 칸만 넣어 결과가 아직 없을 때 예시를 누르면, 그 미완성 입력 흔적을 지우고 ①(예시)로
  *     셉니다. '직접 입력'은 사용자의 입력으로 첫 유효 결과가 확정될 때만 인정합니다.
- *   - 결과를 2.5초 안에 복사하거나 다른 도구로 이동하거나 페이지를 떠나면(pagehide·
- *     visibilitychange) 대기 중인 타이머를 기다리지 않고 그 자리에서 완료를 확정합니다.
+ *   - 결과를 2.5초 안에 복사하거나 다른 도구로 이동하거나 페이지를 떠나면(window 의
+ *     pagehide·document 의 visibilitychange) 대기 중인 타이머를 기다리지 않고 그 자리에서
+ *     완료를 확정합니다.
  *   - 같은 탭에서 새로고침한 뒤 직접 입력을 마치면, 앞서 보낸 모드가 'preset'이면
  *     'preset_modified'(②)로 통합합니다. 이미 ③으로 확정된 세션은 다시 세지 않습니다.
  *     (그래서 ①·②·③의 세션 합계가 calc_complete 와 어긋나지 않습니다)
  *
  * 세 가지 세션 구분은 append-only(보낸 이벤트를 고치지 않음) 방식입니다.
- *   예시만 본 세션(①)  = calc_session_preset 세션 수 − calc_session_preset_modified 세션 수
- *   예시 뒤 수정(②)    = calc_session_preset_modified 세션 수
- *   직접 입력(③)       = calc_session_custom 세션 수
- *   ①+②+③             = calc_complete 세션 수
- *   '예시 → 2.5초 안에 수정'처럼 첫 집계 시점에 이미 수정된 세션은 calc_session_preset 을
- *   보내지 않고 곧바로 calc_session_preset_modified 만 보내므로 위 뺄셈이 어긋나지 않습니다.
+ * 한 세션은 아래 우선순위로 '한 모드에만' 배타적으로 들어갑니다(GA4 리포트 집계 기준).
+ *   ② 예시 뒤 수정 = calc_session_preset_modified 가 있는 세션
+ *   ③ 직접 입력   = ②가 아닌 세션 중 calc_session_custom 이 있는 세션
+ *   ① 예시만     = ②·③이 아닌 세션 중 calc_session_preset 이 있는 세션
+ *   ①+②+③       = calc_complete 가 있는 세션 수
+ *   뺄셈(전체 preset 세션에서 preset_modified 세션을 빼는 방식)으로 세지 않는 이유: '예시 → 2.5초 안에 수정'
+ *   세션은 calc_session_preset 을 보내지 않아 ①이 음수가 되고, 같은 탭에서 앞서 ①을 보낸
+ *   세션이 새로고침 뒤 ②로 올라가면 ①·②가 같은 세션에 겹칩니다. 그래서 세션을 먼저 묶고
+ *   위 순서로 한 번만 분류합니다.
  */
 (function () {
   'use strict';
@@ -336,8 +340,10 @@
     }
   }, true);
 
-  /* 페이지를 떠나는 순간에도 결과가 유효하면 완료를 확정한다. */
-  D.addEventListener('pagehide', flushPending, false);
+  /* 페이지를 떠나는 순간에도 결과가 유효하면 완료를 확정한다.
+     pagehide 는 document 가 아니라 window 이벤트라 window 에 직접 건다(캡처·버블링 없음).
+     visibilitychange 는 document 이벤트이므로 그대로 document 에 둔다. */
+  if (typeof W.addEventListener === 'function') W.addEventListener('pagehide', flushPending, false);
   D.addEventListener('visibilitychange', function () {
     if (D.visibilityState === 'hidden' || D.hidden === true) flushPending();
   }, false);
