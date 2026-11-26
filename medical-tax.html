@@ -1047,8 +1047,12 @@ function mcDecide(A, B, gA, gB){
 
     el.resA.className = 'mc-rescard' + (d.winner === 'A' && d.reason === 'win' ? ' mc-winner' : (d.reason === 'single' && gA > 0 ? ' mc-winner' : ''));
     el.resB.className = 'mc-rescard' + (d.winner === 'B' && d.reason === 'win' ? ' mc-winner' : (d.reason === 'single' && gB > 0 ? ' mc-winner' : ''));
-    el.resA.innerHTML = resCardHtml('남편 A', A, d.winner === 'A' && (d.reason === 'win' || d.reason === 'single'));
-    el.resB.innerHTML = resCardHtml('아내 B', B, d.winner === 'B' && (d.reason === 'win' || d.reason === 'single'));
+    /* 의료비를 아직 넣지 않았으면(total === 0) '유리' 칩을 표시하지 않는다.
+       한쪽 총급여만 넣은 상태는 판정이 single 이라 소득 없는 쪽 카드에 '유리'와 '소득 없음'이
+       같이 붙었다. 계산 수치·mcDecide·배너 클래스·GA4 집계는 그대로이고 칩 표시만 정리한다. */
+    var showWin = total > 0;
+    el.resA.innerHTML = resCardHtml('남편 A', A, showWin && d.winner === 'A' && (d.reason === 'win' || d.reason === 'single'));
+    el.resB.innerHTML = resCardHtml('아내 B', B, showWin && d.winner === 'B' && (d.reason === 'win' || d.reason === 'single'));
 
     // 나눠 받기 참고
     var splitHtml = '';
@@ -1167,7 +1171,7 @@ function mcDecide(A, B, gA, gB){
 
       <h2>실손보험금은 반드시 빼고 계산합니다</h2>
       <p>국세청 연말정산 간소화 자료의 의료비에는 <b>실손보험이 돌려준 돈이 반영되지 않습니다</b>. 의료비 공제 대상은 실제로 본인이 부담한 금액이므로, 실손의료보험금이나 본인부담상한제 초과 환급금을 받았다면 그만큼 빼야 합니다. 이 계산기의 '연간 의료비' 입력칸에 들어갈 값은 <strong>간소화 자료 총액 − 실손보험금 − 본인부담상한제 환급금</strong>입니다.</p>
-      <p>여기서 흔한 오해가 있습니다. 실손보험금을 받으면 의료비 공제가 줄어드니 손해라고 생각하기 쉽지만, 실손보험금은 <b>보험료를 낸 만큼 돌려받는 구조</b>이고 세액공제는 <b>남은 본인부담에 대한 세금 감면</b>입니다. 두 제도는 같은 지출을 두 번 돌려주는 장치가 아니라 서로 역할이 다릅니다. 다만 실손 청구를 미루고 있다면, 청구 시점과 연말정산 시점을 함께 보고 어느 쪽이 유리한지 따져볼 필요는 있습니다.</p>
+      <p>여기서 흔한 오해가 있습니다. 실손보험금을 받으면 의료비 공제가 줄어드니 손해라고 생각하기 쉽지만, 실손보험은 <b>약관의 보장 범위와 자기부담금에 따라 의료비 일부를 보상</b>하고, 세액공제는 <b>남은 본인부담에 대한 세금 감면</b>입니다. 두 제도는 같은 지출을 두 번 돌려주는 장치가 아니라 서로 역할이 다릅니다. 다만 실손 청구를 미루고 있다면, 청구 시점과 연말정산 시점을 함께 보고 어느 쪽이 유리한지 따져볼 필요는 있습니다.</p>
 
       <h2>몰아주기, 누구에게 몰아야 하나</h2>
       <p>판단 기준은 세 가지입니다.</p>

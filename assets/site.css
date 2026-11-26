@@ -324,26 +324,6 @@ main{padding:22px 0 64px;}
   background:#fff; border:1px solid var(--line); border-radius:14px; padding:13px 16px;
 }
 
-/* ---------- 피클 소개 카드 ---------- */
-.pickle-card{
-  position:relative; overflow:hidden; color:#fff; border-radius:26px; padding:38px 36px 34px;
-  background:
-    radial-gradient(120% 140% at 100% 0%, #0C2A3D 0%, rgba(12,42,61,0) 56%),
-    linear-gradient(135deg,#191F28 0%,#11161C 100%);
-  box-shadow:0 18px 44px rgba(15,20,25,.26);
-}
-.pickle-card h2{
-  position:static; font-size:22px; line-height:1.44; font-weight:800; letter-spacing:-0.028em; color:#fff;
-  padding:0; border-bottom:0;
-}
-.pickle-card h2::before{content:none; display:none;}
-.prose .pickle-card h2{padding:0; border-bottom:0; color:#fff;}
-.prose .pickle-card p{color:rgba(255,255,255,.76);}
-.pickle-card p{margin-top:12px; font-size:14.5px; line-height:1.82; color:rgba(255,255,255,.76); max-width:720px;}
-.pickle-card p b{color:#fff;}
-.pickle-cta{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:22px;}
-.pickle-note{font-size:12px; line-height:1.7; color:rgba(255,255,255,.58); max-width:420px;}
-
 /* ---------- 반응형 ---------- */
 @media (max-width:900px){
   /* 좁은 화면에서는 내비게이션이 두 줄로 접히지 않고 한 줄로 가로 스크롤된다 */
@@ -380,9 +360,6 @@ main{padding:22px 0 64px;}
   .article-hero-illu{margin-top:16px; border-radius:16px;}
   .prose p, .prose ul, .prose ol{font-size:14.5px; line-height:1.82;}
   .next-tools{grid-template-columns:1fr;}
-  .pickle-card{padding:28px 20px 26px; border-radius:20px;}
-  .pickle-card h2{font-size:19px;}
-  .pickle-cta .btn{width:100%;}
   .page-head h1{font-size:23px;}
   .footer-links{gap:20px;}
   .footer-bottom{font-size:11.5px;}
